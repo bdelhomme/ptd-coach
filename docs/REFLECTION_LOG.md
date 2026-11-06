@@ -59,3 +59,19 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
   publiée et le code publié décrivent le même état.
 - **Traçabilité de publication** : l'état de publication et les contrôles réellement
   exécutés figurent dans PROJECT_STATUS.md ; ne pas déduire leur succès de cette entrée.
+
+## R-006 — 2026-11-06 — Retrouver un cadre global et sourcé
+
+- **Essai de cadrage** : une première proposition A2 a décliné trois capacités
+  (tâches, dépendances/validations, adaptation) ; l'ajout des durées et de la charge
+  a été posé comme question et n'a pas reçu d'accord.
+- **Retour du porteur** : s'appuyer sur des livres/travaux de management de projet ;
+  le détail isolé d'une petite compétence risque de faire perdre la vue d'ensemble.
+- **Recherche effectuée** : vérification de présentations officielles, sommaires
+  et résumé d'article pour Garel/Ika, IPMA ICB4/ICB4CCT, PMI, ISO et Helle et al.
+  Le corpus et ses limites de lecture sont consignés dans PROJECT_MANAGEMENT_FOUNDATIONS.md.
+- **Méthode proposée (D-024)** : cadre global → situations PTD → apprentissages →
+  articulation des compétences candidates → fiches et interventions du coach.
+- **Statut** : aucune adoption de corpus, aucun nouveau découpage ou descripteur
+  validé. Ne pas poursuivre mécaniquement la micro-décomposition d'A2 ; discuter
+  d'abord le socle d'ensemble et documenter les correspondances aux sources.

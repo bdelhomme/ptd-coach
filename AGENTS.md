@@ -8,6 +8,8 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 2. `docs/DECISIONS.md` et `docs/OPEN_QUESTIONS.md`
 3. `docs/PRODUCT_SPEC.md` et `docs/PEDAGOGY.md`
    Puis `docs/COACHING_FRAMEWORK.md` et les dernières entrées de `docs/REFLECTION_LOG.md`.
+   Consulter `docs/PROJECT_MANAGEMENT_FOUNDATIONS.md` pour la recherche préparatoire
+   et ses limites avant de détailler isolément une compétence.
 4. `docs/ARCHITECTURE.md`, `docs/DATA_MODEL.md`, `docs/PRIVACY_SECURITY.md`, `docs/AI_ENGINE.md`
 5. `docs/ROADMAP.md` et le ticket de travail
 

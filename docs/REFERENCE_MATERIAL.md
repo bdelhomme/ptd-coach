@@ -17,7 +17,7 @@
 - Les durées de coaching IA ne sont pas prévues par les sources : ce sont nos recommandations à tester.
 
 ## Références externes à vérifier et conserver (non constitutives de validations institutionnelles)
-- AFNOR, **NF ISO 21502** (2021) : recommandations de management de projet, notamment compétences techniques, comportementales et contextuelles. https://www.boutique.afnor.org/
+- ISO, **ISO 21502:2020** : recommandations relatives aux pratiques de management de projet ; [résumé officiel](https://www.iso.org/standard/74947.html). La structure People/Practice/Perspective relève de l'ICB4 ci-dessous, pas d'une lecture établie de cette norme.
 - IPMA, **Individual Competence Baseline ICB4** : https://products.ipma.world/wp-content/uploads/2016/03/IPMA_ICB_4_0_WEB.pdf ; pour les projets, 28 éléments (5 Perspective, 10 People, 13 Practice).
 - CDIO, **Syllabus 3.0** : https://www.cdio.org/content/cdio-syllabus-30
 - CTI, **Références et orientations** : https://www.cti-commission.fr/fonds-documentaire — vérifier l'édition applicable.
@@ -28,3 +28,15 @@
 - Guy Le Boterf : travaux sur compétence et savoir-agir en situation ; **préciser une édition bibliographique** avant citation formelle.
 
 Ne pas affirmer que ces auteurs ou normes « valident les onze compétences de PTD Coach ». Ils fournissent des ancrages ; le référentiel PTD est une **adaptation à justifier et faire examiner**.
+
+## Vérification préparatoire du 2026-11-06
+
+Une première recherche sourcée et ses limites de lecture figurent dans
+[PROJECT_MANAGEMENT_FOUNDATIONS.md](PROJECT_MANAGEMENT_FOUNDATIONS.md).
+Elle ajoute notamment l'ouvrage Garel/Ika (2026), le guide PMI et une référence
+IPMA sur la posture de coach. Les présentations/sommaires/résumés consultés ne
+constituent pas une lecture intégrale ou une validation des onze compétences.
+La formulation initiale associant à ISO 21502 les compétences techniques,
+comportementales et contextuelles a été corrigée ci-dessus pour éviter une
+attribution non étayée. Les autres références de la liste restent à examiner
+selon leur statut ; ne pas les considérer toutes vérifiées du fait de cette note.

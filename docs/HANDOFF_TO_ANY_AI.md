@@ -5,7 +5,12 @@
 > `docs/OPEN_QUESTIONS.md`, `docs/COACHING_FRAMEWORK.md`, `docs/REFLECTION_LOG.md`,
 > puis les spécifications, la pédagogie, la confidentialité, l'architecture et la
 > feuille de route. La priorité actuelle est le **ticket 003 : co-concevoir le
-> coaching par compétence avant de poursuivre les exercices**. Le porteur a confirmé
+> coaching par compétence avant de poursuivre les exercices**. Le dernier retour
+> du porteur demande un cadre global appuyé sur des livres/travaux de management
+> de projet avant le détail isolé d'A2 : lire PROJECT_MANAGEMENT_FOUNDATIONS.md
+> et R-006. Le corpus et les correspondances restent proposés ; les notices
+> consultées ne sont pas une lecture intégrale ou une validation du dispositif.
+> Le porteur a confirmé
 > l'aide sans faire à la place, la place des ressources et l'intérêt d'un
 > auto-positionnement formatif pour choisir où travailler. Les descripteurs,
 > ressources, modalités, échelles et fiches restent à discuter. Le référentiel à
@@ -37,7 +42,9 @@
   fixe les statuts. Ne pas déduire une décision d'un exemple proposé par l'IA.
 - Technique : architecture locale provisoire, D-015 toujours proposée, pas de SSO,
   de coach collectif ou de validation DSI/DPO ; ne pas exposer le serveur de démo.
-- Suite : discuter d'abord une fiche A2 (ticket 003), puis les dix autres compétences.
+- Suite : discuter le cadre global sourcé et son adaptation au PTD, puis les
+  fiches de coaching dans ce cadre (ticket 003). Ne pas déduire un accord sur les
+  durées/charges d'A2 ou sur un référentiel externe de la demande de sources.
 
 ## Comment fournir le contexte
 
