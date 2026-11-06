@@ -166,3 +166,42 @@ nav{display:flex;margin-top:20px;gap:6px}
 
 @media(max-width:650px){.topbar:has(#identity:empty){display:none}
 }
+
+/* Student guidance: three locations, one main action, optional detail on demand. */
+nav:empty{display:none}
+.journey-map{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;margin:27px 0}
+.journey-map li{display:flex;align-items:flex-start;gap:12px;padding:16px 0}
+.journey-number{display:grid;place-items:center;width:29px;height:29px;flex-shrink:0;border-radius:50%;background:#dde8d5;color:#28573e;font-size:.8rem;font-weight:700}
+.journey-map strong{display:block;font-size:.9rem;font-weight:600;line-height:1.5}
+.journey-map li div>span{display:block;color:var(--muted);font-size:.77rem;margin-top:5px}
+.quiet-details{margin:23px 0 0;font-size:.84rem;color:var(--muted);line-height:1.7}
+.quiet-details summary{cursor:pointer;font-size:.79rem;color:#4e6e5a}
+.quiet-details[open]>summary{margin-bottom:15px}
+.quiet-details .actions{margin-top:15px}
+.role-picker{margin-top:8px}
+.phase-strip{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;gap:12px;padding:0;margin:0 0 25px}
+.phase-strip li{padding:13px 15px;border-bottom:3px solid #dae3d5;color:#7a8779;font-size:.84rem;line-height:1.6}
+.phase-strip li.current{background:#e6efdf;border-color:var(--green);color:var(--ink);border-radius:8px 8px 0 0;font-weight:600}
+.phase-strip li.done{border-color:#91b295}
+.phase-place{display:block;font-size:.69rem;font-weight:400;margin-bottom:4px}
+.situation{border:1px solid #d8e2d2;border-radius:9px;background:#f9fbf5;padding:18px 20px;margin:23px 0}
+.situation .situation-question{font-weight:600;color:var(--ink)}
+.action-recap{border:1px solid #b9cda9;border-radius:10px;padding:22px;background:#eff5e7;margin:23px 0}
+.action-recap .recap-action{font-size:1rem;color:var(--ink);font-weight:600}
+.action-recap dl{margin-bottom:0}
+.action-recap dt{font-size:.73rem;color:var(--muted);margin-top:18px}
+.action-recap dd{font-size:.88rem;line-height:1.7;margin:5px 0 0;color:#36503e}
+.demo-hint{border-left:2px solid #d0b57d;padding-left:13px;font-size:.8rem!important;color:#6e674f!important}
+.saved-work{padding:0 4px}
+.previous-sessions{padding:0 4px}
+@media(max-width:650px){
+  .sidebar:has(nav:empty){padding:17px 20px}
+  .journey-map{grid-template-columns:1fr;gap:0;margin:15px 0}
+  .journey-map li{padding:12px 2px}
+  .journey-map li div>span{margin-top:2px}
+  .phase-strip{gap:5px;margin-bottom:18px}
+  .phase-strip li{padding:10px 8px;font-size:.72rem}
+  .phase-place{font-size:.62rem}
+  .role-picker{padding:15px}
+  .situation,.action-recap{padding:17px}
+}

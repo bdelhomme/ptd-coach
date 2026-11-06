@@ -103,6 +103,11 @@ reste à mettre en place.
 
 ## Prochaines étapes
 
+L'interface a été clarifiée après retour utilisateur : voir
+[ticket 002](tickets/002-student-journey-clarity.md). Le bouton d'entrée guidée
+ouvre une nouvelle séance fictive dans le compte étudiant A. Les autres rôles
+et la reprise des séances antérieures restent accessibles à la demande.
+
 Relire les feedbacks des trois cas avec un encadrant ; arbitrer la pile et les
 conditions institutionnelles ; migrer vers une authentification et une infrastructure
 appropriées. Sont hors de ce prototype : Mistral, budgets facturables, accès collectif,

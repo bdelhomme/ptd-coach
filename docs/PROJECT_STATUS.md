@@ -2,6 +2,22 @@
 
 Dernière mise à jour : **2026-11-06** · Version documentaire : **0.2 — prototype local**
 
+## Dernière évolution — lisibilité de la séance
+
+Suite au retour utilisateur « je me mets à la place d'un étudiant, je suis perdu »,
+l'interface distingue trois moments : s'entraîner ici, tester une action avec son
+équipe, puis revenir faire le point. Entrée guidée par un cas concret, plan
+séparé de l'exercice, pause explicite et partage facultatif sont décrits dans
+le [ticket 002](tickets/002-student-journey-clarity.md).
+
+Fichiers modifiés : `web/app.js`, `web/style.css`, `web/index.html` et documentation.
+Les 34 tests existants passent ; recette navigateur du parcours simplifié effectuée.
+La branche `feat/student-journey-clarity` est locale, sans nouvelle CI distante.
+Les décisions pédagogiques, scénarios versionnés d'origine, contrats et permissions
+backend sont conservés. L'entrée guidée crée une nouvelle séance fictive ; elle
+ne supprime aucune séance enregistrée. La compréhension réelle par un étudiant
+reste à vérifier avec un essai utilisateur.
+
 ## Réalisé
 - Cadrage des finalités individuelles / collectives et des trois rôles pédagogiques.
 - Analyse documentaire initiale du planning PTD 2027 et des grilles 2026 tuteurs / rapporteurs / clients (voir `REFERENCE_MATERIAL.md`).
