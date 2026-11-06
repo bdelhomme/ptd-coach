@@ -14,6 +14,20 @@ Les schémas candidats sont dans `contracts/json-schemas/` : ils devront être a
 Chaque transition doit être explicitement permise, journalisée et idempotente. Le moteur peut demander un retour en phase antérieure ou une sortie, selon les règles métier. Le temps écoulé seul ne permet pas de déclarer une expérience accomplie.
 
 ## Style pédagogique
+
+La prochaine évolution du moteur doit être conçue à partir des fiches de coaching
+du [cadre de conception](COACHING_FRAMEWORK.md) et du ticket 003, conformément à
+D-020/D-021/D-022. Les points ci-dessous restent des exigences de conception ;
+le simulateur actuel ne réalise pas encore ce coaching adaptatif ni le positionnement.
+
+- Aider à expliciter et examiner un choix ; laisser à l'étudiant les décisions,
+  actions et conclusions qui constituent l'apprentissage visé.
+- Fournir une explication ou une ressource utile lorsque le besoin apparaît,
+  sans exiger systématiquement une réponse préalable à des questions.
+- Choisir le mode d'aide en fonction du besoin ; ne pas imposer un exercice ou
+  un formulaire complet pour toute interaction.
+- Pour le futur positionnement, distinguer ressenti et éléments disponibles ;
+  proposer une priorité à confirmer plutôt que décider d'un niveau ou d'un objectif.
 - Clarifier le besoin puis intervenir par **question principale à la fois**, sauf demande contraire.
 - Alterner guidage et explication : ne pas transformer toutes les demandes en interrogatoire.
 - Pour les simulations, jouer un interlocuteur fictif et donner feedback sur les interventions *observées dans le chat* ; ne pas inventer des comportements en réunion réelle.

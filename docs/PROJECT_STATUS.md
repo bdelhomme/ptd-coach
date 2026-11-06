@@ -1,6 +1,27 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-06** · Version documentaire : **0.2 — prototype local**
+Dernière mise à jour : **2026-11-06** · Version documentaire : **0.3 — cadrage du coaching**
+
+## Priorité actuelle — concevoir l'accompagnement par compétence
+
+Le porteur souhaite définir comment faire progresser chaque compétence avec une
+posture de coach, avant de poursuivre les exercices. Il confirme l'accompagnement
+sans faire à la place, la place des ressources et l'intérêt d'une aide au
+positionnement pour choisir où travailler. Voir D-020 à D-023,
+[COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md) et [REFLECTION_LOG.md](REFLECTION_LOG.md).
+
+Les principes sont confirmés par le porteur ; les fiches, descripteurs, ressources,
+modalités de positionnement et leur éventuelle validation institutionnelle restent
+à discuter. Aucune fonctionnalité de positionnement n'est implémentée.
+Le prototype A2 constitue une preuve de fonctionnement technique ; il ne vaut
+pas validation de la pertinence des exercices. La prochaine tâche est le
+[ticket 003](tickets/003-coaching-design.md).
+
+## Synchronisation documentaire en cours
+
+Branche de travail : `docs/coaching-orientation`, issue des commits locaux du
+prototype A2 et de la clarification de parcours. La publication de cette branche
+et les résultats CI seront renseignés après vérification, sans présumer leur succès.
 
 ## Dernière évolution — lisibilité de la séance
 
@@ -66,9 +87,11 @@ reste à vérifier avec un essai utilisateur.
   continuer à passer par une branche et une pull request.
 
 ## Prochaine priorité
-Faire relire par un encadrant les trois cas et leurs feedbacks **PROPOSÉS** du
-prototype A2, puis arbitrer la pile/infrastructure avec la DSI. Le périmètre local
-du ticket 001 est réalisé ; il ne constitue pas un pilote institutionnel validé.
+Discuter avec le porteur une première fiche de coaching A2, ses capacités visées,
+ses ressources, les limites d'aide et le positionnement formatif, puis étendre aux
+autres compétences candidates. Les modalités restent à relire avec les encadrants.
+L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
+de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
 ## Après ticket 001
 - Contrat et adaptateur Mistral, journal de tokens, budget.
@@ -104,3 +127,17 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
 - **Limites / suite** : les comptes librement sélectionnables ne protègent pas
   contre une personne utilisant une autre identité fictive. Démonstration locale
   exclusivement ; relecture pédagogique, avis DSI et authentification réelle à préparer.
+
+## Passation — mémoire du cadrage pédagogique
+- **Objectif / exigences** : D-020/D-021/D-022/D-023 ; conserver les évolutions
+  significatives de réflexion pour permettre une reprise indépendante du chat.
+- **Fichiers** : cadre de coaching, journal de réflexion, ticket 003 ; AGENTS,
+  README, décisions, questions ouvertes, spécification, pédagogie, moteur IA,
+  feuille de route, guide GitHub et passation actualisés.
+- **Décisions / hypothèses** : accord de conception du porteur sur les principes ;
+  les modalités détaillées et l'illustration A2 restent proposées. Onze compétences
+  candidates conservées, sans adoption de descripteurs, barème ou échelle.
+- **Contrôles** : contrôles documentaires et CI à renseigner dans la section de
+  synchronisation après exécution ; aucune nouvelle fonctionnalité à tester ici.
+- **Suite immédiate** : reprendre le ticket 003, puis consigner chaque accord
+  significatif dans le journal/registre sans assimiler une proposition à une décision.

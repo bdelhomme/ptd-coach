@@ -7,6 +7,7 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 1. `docs/PROJECT_STATUS.md`
 2. `docs/DECISIONS.md` et `docs/OPEN_QUESTIONS.md`
 3. `docs/PRODUCT_SPEC.md` et `docs/PEDAGOGY.md`
+   Puis `docs/COACHING_FRAMEWORK.md` et les dernières entrées de `docs/REFLECTION_LOG.md`.
 4. `docs/ARCHITECTURE.md`, `docs/DATA_MODEL.md`, `docs/PRIVACY_SECURITY.md`, `docs/AI_ENGINE.md`
 5. `docs/ROADMAP.md` et le ticket de travail
 
@@ -20,6 +21,9 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 - Ne pas introduire de dépendance obligatoire à Mistral ni à une plateforme d'hébergement ou à un agent de codage propriétaire.
 - Tout nouveau code exige un test et une mise à jour documentaire ; ne jamais promettre des tests non exécutés.
 - Ne pas ajouter de token, secret, clé, email personnel ou document original confidentiel à Git. Ne jamais supprimer l'historique des décisions.
+- L'orientation actuelle privilégie la conception des fiches de coaching par compétence
+  avant l'ajout d'exercices. Le prototype A2 démontre un fonctionnement technique,
+  pas une pédagogie validée. Voir D-020 à D-023 et `docs/COACHING_FRAMEWORK.md`.
 
 ## Procédure pour chaque changement
 1. Citer l'exigence et la décision que la tâche concerne.
@@ -28,6 +32,22 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 4. Exécuter les tests disponibles ou signaler explicitement leur impossibilité.
 5. Renseigner `docs/PROJECT_STATUS.md` et, si arbitrage, `docs/DECISIONS.md` / un ADR.
 6. En passation, indiquer fichiers modifiés, tests, risques et prochaine étape.
+
+## Mémoire des réflexions et reprise entre IA
+
+À chaque évolution significative de réflexion (orientation confirmée, contrainte,
+changement de priorité ou question structurante), actualiser la documentation même
+sans changement de code : `docs/REFLECTION_LOG.md`, puis selon le cas
+`docs/DECISIONS.md`, `docs/OPEN_QUESTIONS.md` et `docs/PROJECT_STATUS.md`.
+Une idée de l'assistant ou un exemple illustratif reste PROPOSÉ tant que le porteur
+ne l'a pas confirmé. Un accord de conception du porteur ne vaut pas validation
+scientifique, pédagogique collective ou institutionnelle du référentiel.
+
+Maintenir la passation cohérente avec le code et distinguer fichiers locaux,
+branche publiée et intégration sur `main`. Publier les évolutions significatives
+dans le dépôt privé dans le cadre de l'autorisation donnée par le porteur, via une
+branche et une pull request ; signaler tout blocage d'authentification. Ne pas
+annoncer une publication ou une CI distante avant leur vérification.
 
 ## Format d'un compte rendu de passation
 - Objectif / exigences

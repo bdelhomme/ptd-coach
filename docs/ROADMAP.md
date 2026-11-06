@@ -1,5 +1,18 @@
 # Feuille de route priorisée — tâches et livrables
 
+## Priorité actuelle — cadrage du coaching (ticket 003)
+
+Cette priorité précède l'ajout d'exercices ou l'extension du prototype.
+Principes confirmés : D-020 à D-023 ; voir [COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md).
+
+- [x] Consigner les orientations confirmées, propositions et questions dans les documents.
+- [ ] Co-concevoir une première fiche A2 : capacités, situations, positionnement et limites d'aide.
+- [ ] Préciser les ressources utiles et leurs sources/droits/relecture.
+- [ ] Construire et discuter les fiches des dix autres compétences candidates.
+- [ ] Définir les modalités du positionnement formatif privé et de sa reprise après action.
+- [ ] Faire relire les fiches et exemples par les encadrants ; distinguer accord du porteur et validation institutionnelle.
+- [ ] Déduire les évolutions applicatives et tests du cadrage retenu, puis reprendre l'implémentation.
+
 ## P0 — Documentation fondatrice (réalisé dans le bootstrap)
 - [x] Créer dossier Git versionnable, README, AGENTS, état courant.
 - [x] Consigner décisions VALIDÉES et hypothèses PROPOSÉES.
@@ -8,6 +21,10 @@
 - [ ] Faire relire les décisions aux responsables pédagogiques.
 
 ## P1 — Premier parcours individuel A2, sans données réelles
+
+Le prototype local décrit par les tickets 001/002 fournit une base technique ;
+ses exercices restent expérimentaux. Les tâches applicatives ci-dessous ne
+doivent pas prendre le pas sur la priorité de conception ci-dessus.
 - [ ] Définir les critères de feedback sur 3 cas de planification, validés par un encadrant.
 - [x] Définir écrans et contrats API du prototype A2 local (ticket 001 ; exhaustivité institutionnelle à revoir).
 - [x] Documenter une architecture provisoire pour la démonstration (ADR-0005 ; choix DSI toujours ouvert).

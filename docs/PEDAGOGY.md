@@ -3,6 +3,25 @@
 ## Finalité et principe
 Le PTD réel est un terrain d'apprentissage. L'individu apprend à gérer des projets en comprenant les méthodes, en s'entraînant, en les expérimentant dans l'équipe et en débriefant. Le coach collectif facilite les décisions réelles sans prendre la place des étudiants.
 
+## Orientation de conception confirmée le 2026-11-06
+
+Le porteur confirme la priorité au cadrage par compétence, à l'accompagnement
+sans faire à la place, aux ressources et à l'aide au positionnement pour choisir
+où travailler (D-020/D-021/D-022). Voir [le cadre de coaching](COACHING_FRAMEWORK.md)
+et [le journal des réflexions](REFLECTION_LOG.md).
+
+L'exercice devient une intervention possible, à choisir selon le besoin ;
+l'explication, l'exemple fictif, la ressource et le débrief ont également leur place.
+Les fiches de coaching et les descripteurs concrets sont à co-concevoir, avant
+l'ajout de nouveaux exercices. Les exemples existants ne sont pas validés par le
+seul fait que le prototype fonctionne.
+
+Un auto-positionnement formatif et privé est à concevoir : distinguer ressenti,
+expérience décrite et éléments disponibles ; aider l'étudiant à confirmer une
+priorité et à se repositionner après action. Questions et éventuelles échelles
+restent proposées ; aucune notation ou certification de compétence automatique.
+Ces orientations ne modifient pas encore la machine à états ou les JSON existants.
+
 ## Boucle d'apprentissage (proposée)
 `OBJECTIVE_SELECTED → LEARNING → PRACTICING → EXPERIMENT_PLANNED → AWAITING_EXPERIENCE → REFLECTING → REVIEWED → CLOSED`.
 

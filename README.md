@@ -1,6 +1,6 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
-**Statut : premier prototype local A2, données fictives et coach simulé ; non destiné à un pilote réel.**
+**Statut : prototype local A2 expérimental ; priorité actuelle au cadrage du coaching par compétence.**
 **Date de référence : 6 novembre 2026.**  
 **Pilote envisagé : Chimie ParisTech – PSL, PTD 2027.**
 
@@ -9,6 +9,16 @@ PTD Coach vise le **développement individuel des compétences de management de 
 Ce dépôt est fait pour être repris par **n'importe quel développeur ou assistant IA**. Les décisions et leur justification figurent dans des fichiers plutôt que dans les historiques de conversation.
 
 ## Commencer ici
+
+### Priorité actuelle : définir le coaching avant de poursuivre les exercices
+
+Le porteur confirme l'accompagnement sans faire à la place, la place de ressources
+et l'intérêt d'aider l'étudiant à se positionner pour choisir où travailler.
+Les fiches, descripteurs et modalités restent à discuter ; les onze compétences
+demeurent candidates. Lire [le cadre de coaching](docs/COACHING_FRAMEWORK.md),
+[le journal des réflexions](docs/REFLECTION_LOG.md) et [le ticket 003](docs/tickets/003-coaching-design.md).
+Le prototype ci-dessous permet des essais techniques ; ses exercices ne sont
+pas approuvés par le seul fait qu'ils sont exécutables.
 
 ### Essayer le prototype local
 
@@ -54,10 +64,11 @@ que des données inventées. Voir [DEVELOPMENT.md](docs/DEVELOPMENT.md) et
 
 ## Prochain jalon
 
-Faire relire le parcours et les feedbacks du prototype A2 par un encadrant,
-puis arbitrer avec la DSI la pile et l'infrastructure cible avant migration et
-adaptation Mistral. La qualification réglementaire du système est à examiner
-*avant* un pilote avec vrais étudiants.
+Co-concevoir avec le porteur une première fiche de coaching A2, puis les autres
+compétences candidates ; préciser les ressources, les limites d'aide et le
+positionnement formatif privé. Faire relire les propositions par les encadrants.
+L'arbitrage DSI, l'adaptation Mistral et la qualification réglementaire restent
+nécessaires avant un pilote avec vrais étudiants.
 
 ## Historique
 
@@ -65,3 +76,6 @@ adaptation Mistral. La qualification réglementaire du système est à examiner
 - **2026-11-06, prototype A2 local** : parcours individuel persistant, simulateur,
   partage explicite et révocation, export personnel et tests de confidentialité ;
   architecture technique provisoire selon ADR-0005.
+- **2026-11-06, évolution du cadrage** : priorité aux fiches de coaching,
+  à l'aide sans substitution, aux ressources et au positionnement formatif ;
+  journal de réflexion et consigne de mémoire continue dans le dépôt.
