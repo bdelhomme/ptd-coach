@@ -171,5 +171,11 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
 
 ## Synchronisation des fondements
 
-Branche de travail : `docs/project-management-foundations`. Cette entrée doit
-indiquer les contrôles et la publication réellement vérifiés, sans les présumer.
+La branche `docs/project-management-foundations` est publiée dans le dépôt privé ;
+intégration suivie dans la [pull request 3](https://github.com/bdelhomme/ptd-coach/pull/3).
+`make check` réussi sur 58 fichiers suivis et `git diff --cached --check` sans erreur.
+CI réussie sur le commit documentaire `65a94be` :
+[exécution 42265320345](https://github.com/bdelhomme/ptd-coach/actions/runs/42265320345).
+Les contrôles du dernier commit et le statut d'intégration sont consultables dans
+la pull request et Actions. La mise à jour est exclusivement documentaire ; elle
+ne vaut ni adoption du corpus proposé, ni validation pédagogique du dispositif.
