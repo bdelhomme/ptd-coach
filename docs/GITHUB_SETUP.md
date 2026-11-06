@@ -1,6 +1,32 @@
 # Publier le dépôt Git **privé** sur GitHub
 
-Le bootstrap fourni contient déjà un dépôt `.git` avec un premier commit local. **Aucun dépôt distant n'a été créé.** Ne pas y ajouter les documents sources institutionnels avant autorisation.
+## État actuel — 2026-11-06
+
+Le dépôt [bdelhomme/ptd-coach](https://github.com/bdelhomme/ptd-coach) existe et est
+privé. `origin` est configuré, la branche par défaut est `main` et les commits
+initiaux ont été conservés. Ne pas recréer le dépôt. Voir PROJECT_STATUS.md pour
+les branches synchronisées et les contrôles réellement exécutés.
+
+La protection de `main` a été refusée par l'API avec HTTP 403, l'offre actuelle
+exigeant GitHub Pro pour ce dépôt privé. Garder le dépôt privé et passer par des
+branches et pull requests. Aucun changement d'offre ou de visibilité n'est présumé.
+
+## Mettre à jour le dépôt existant
+
+Après une évolution significative, actualiser les docs pertinentes selon AGENTS.md,
+indexer explicitement les fichiers, puis exécuter `make check` et
+`git diff --cached --check`. Pour du code, exécuter également les tests appropriés.
+Créer un commit, pousser la branche puis ouvrir une pull request vers `main`.
+Vérifier la CI et le résultat de l'intégration avant d'annoncer la synchronisation.
+Ne jamais committer des identifiants de connexion, fichiers d'environnement réels
+ou données étudiantes ; toute authentification reste extérieure au dépôt.
+
+## Procédure historique du bootstrap — à réutiliser seulement pour une nouvelle copie sans distant
+
+Le bootstrap initial contenait un dépôt `.git` local sans distant. Les options
+ci-dessous décrivent sa première publication ; elles ne sont plus à exécuter
+pour le dépôt existant. Ne pas ajouter les documents sources institutionnels
+avant autorisation.
 
 ## Option A — Avec GitHub CLI (recommandée)
 1. Installer GitHub CLI sur le Mac : `brew install gh` (Homebrew installé au préalable).

@@ -1,5 +1,18 @@
 # Spécification produit — PTD Coach v0.2
 
+## Priorité de conception — complément du 2026-11-06
+
+Les principes D-020/D-021/D-022 sont confirmés par le porteur : cadrer le coaching
+par compétence, accompagner sans faire à la place avec des ressources et aider
+l'étudiant à se positionner pour choisir où travailler. Leur traduction en
+capacités, dialogues, ressources et fonctionnalités reste à discuter ; voir
+[COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md) et [ticket 003](tickets/003-coaching-design.md).
+
+L'auto-positionnement est envisagé dans l'espace individuel privé, avec une
+priorité confirmée par l'étudiant et un retour possible après expérience. Aucun
+questionnaire, barème, écran, contrat API ou nouveau niveau de compétence n'est
+adopté ou implémenté par ce complément. Le référentiel reste candidat.
+
 ## Proposition de valeur
 Application d'entraînement, d'expérimentation et de retour réflexif **individualisés**, articulée à la conduite d'un PTD **collectif**, avec encadrement humain et pilotage pédagogique transversal.
 

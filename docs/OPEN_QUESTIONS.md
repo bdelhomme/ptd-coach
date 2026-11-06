@@ -6,6 +6,10 @@
 | P0 | Quelles données peuvent être utilisées et à quelles conditions ? Base légale, conservation, AIPD, qualification du système IA | DPO, établissement | Pilote avec vrais étudiants |
 | P0 | Quelle est l'infrastructure cible acceptée (containers, SSO, sortie Internet, logs, backups) ? | DSI | Choix techniques définitifs |
 | P0 | Quel référentiel institutionnel de compétences et quels acquis PTD ont déjà été actés ? | Responsables pédagogiques | Finalisation du référentiel |
+| P0 | Quelles capacités concrètes, situations PTD, interventions du coach et limites d'aide retenir pour chaque compétence candidate ? | Porteur puis encadrants | Fiches de coaching avant nouveaux exercices, ticket 003 |
+| P1 | Comment organiser le positionnement formatif : ressenti, expériences disponibles, confirmation de la priorité et reprise après action ? Faut-il une échelle et laquelle ? | Porteur, encadrants ; DPO pour les données | Spécification du positionnement individuel privé ; aucune échelle arrêtée |
+| P1 | Quelles ressources courtes proposer, avec quelles sources, droits, versions et relecture pédagogique ? | Porteur, encadrants, établissement pour les droits | Catalogue de ressources et aide contextualisée |
+| P1 | À quels moments le coach doit-il proposer l'appui de l'encadrant humain, et selon quelle procédure ? | Porteur et encadrants | Limites d'intervention dans les fiches de coaching |
 | P1 | Procédure exacte d'autorisation d'accès aux extraits ciblés du coach collectif | DPO, pédagogues, étudiants | Écran accès exceptionnel |
 | P1 | Exacte articulation rapport final, dossier école 6 pages et page individuelle | Coordination PTD | Portfolios, remises |
 | P1 | Quelles dates de PTD 2027 seront confirmées par la scolarité ? | Scolarité | Parcours daté |

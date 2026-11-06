@@ -1,6 +1,52 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
+Dernière mise à jour : **2026-11-06** · Version documentaire : **0.3 — cadrage du coaching**
+
+## Priorité actuelle — concevoir l'accompagnement par compétence
+
+Le porteur souhaite définir comment faire progresser chaque compétence avec une
+posture de coach, avant de poursuivre les exercices. Il confirme l'accompagnement
+sans faire à la place, la place des ressources et l'intérêt d'une aide au
+positionnement pour choisir où travailler. Voir D-020 à D-023,
+[COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md) et [REFLECTION_LOG.md](REFLECTION_LOG.md).
+
+Les principes sont confirmés par le porteur ; les fiches, descripteurs, ressources,
+modalités de positionnement et leur éventuelle validation institutionnelle restent
+à discuter. Aucune fonctionnalité de positionnement n'est implémentée.
+Le prototype A2 constitue une preuve de fonctionnement technique ; il ne vaut
+pas validation de la pertinence des exercices. La prochaine tâche est le
+[ticket 003](tickets/003-coaching-design.md).
+
+## Publication GitHub — 2026-11-06
+
+La branche `docs/coaching-orientation` est publiée dans le dépôt privé et rassemble
+les commits du prototype, de la clarification et du cadrage pédagogique.
+Intégration suivie dans la [pull request 2](https://github.com/bdelhomme/ptd-coach/pull/2).
+Le cadrage est enregistré à partir du commit `6989a84`. Contrôles locaux exécutés :
+`make verify` réussi (57 fichiers suivis contrôlés, 34 tests réussis) et
+`git diff --cached --check` sans erreur.
+CI distante réussie sur le commit `d035191` :
+[exécution 42257391522](https://github.com/bdelhomme/ptd-coach/actions/runs/42257391522).
+Pour connaître l'intégration et la validation du dernier commit, consulter la
+pull request et les exécutions Actions ; ne pas confondre réussite du démonstrateur
+et validation pédagogique des exercices.
+
+## Dernière évolution — lisibilité de la séance
+
+Suite au retour utilisateur « je me mets à la place d'un étudiant, je suis perdu »,
+l'interface distingue trois moments : s'entraîner ici, tester une action avec son
+équipe, puis revenir faire le point. Entrée guidée par un cas concret, plan
+séparé de l'exercice, pause explicite et partage facultatif sont décrits dans
+le [ticket 002](tickets/002-student-journey-clarity.md).
+
+Fichiers modifiés : `web/app.js`, `web/style.css`, `web/index.html` et documentation.
+Les 34 tests existants passent ; recette navigateur du parcours simplifié effectuée.
+Cette évolution a d'abord été réalisée sur `feat/student-journey-clarity`, puis
+publiée avec la synchronisation suivie dans la pull request 2.
+Les décisions pédagogiques, scénarios versionnés d'origine, contrats et permissions
+backend sont conservés. L'entrée guidée crée une nouvelle séance fictive ; elle
+ne supprime aucune séance enregistrée. La compréhension réelle par un étudiant
+reste à vérifier avec un essai utilisateur.
 
 ## Réalisé
 - Cadrage des finalités individuelles / collectives et des trois rôles pédagogiques.
@@ -22,11 +68,24 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
 - CI GitHub Actions réussie sur la branche de préparation :
   [exécution 42235620971](https://github.com/bdelhomme/ptd-coach/actions/runs/42235620971).
   Intégration suivie dans la [pull request 1](https://github.com/bdelhomme/ptd-coach/pull/1).
+- Prototype A2 exécutable sur `http://127.0.0.1:8765` via `make run` : sélection
+  d'objectif/cas, explication, exercice, plan d'action, expérience déclarée,
+  débrief, bilan privé et clôture sans niveau attribué.
+- Persistance SQLite locale, sessions fictives, requêtes filtrées par propriétaire,
+  fournisseur simulé avec contrats validés, transitions explicites, contrôle de
+  version et commandes idempotentes.
+- Preuve sélectionnée séparément, partage confirmé vers le tuteur fictif de
+  l'équipe, révocation, audit de métadonnées et export limité au propriétaire.
+- 34 tests locaux réussis : dix documentaires, dix-sept domaine/contrats et sept
+  HTTP. Parcours complet et partage/révocation vérifiés dans le navigateur.
+  Architecture provisoire : [ADR-0005](adr/0005-local-a2-prototype.md) ;
+  contrat et recette : [ticket 001](tickets/001-a2-local.md).
 
 ## Non réalisé
-- Aucun serveur ni application n'a été créé.
-- Pas de code frontend/backend, pas d'API Mistral ni d'authentification, pas de base,
-  pas de tests automatisés applicatifs. Les tests du dépôt ne prouvent pas l'isolation des données.
+- Pas de serveur déployé, d'API Mistral, de SSO ou d'authentification institutionnelle,
+  ni de PostgreSQL/conteneurs. Le serveur et la base du prototype sont locaux.
+- Pas de coach collectif, synthèses validées, budget réel ou restauration
+  institutionnelle. Tests e2e du navigateur non automatisés.
 - Pas d'accord DSI/DPO ; ni de validation du référentiel par les encadrants.
 - Pas d'étude contractuelle/licence/propriété achevée.
 - Protection serveur de `main` non activée : l'API GitHub répond HTTP 403 et
@@ -34,8 +93,12 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
   mais n'est pas imposée par une règle de protection ; les contributions doivent
   continuer à passer par une branche et une pull request.
 
-## Prochaine priorité (ticket 001)
-Écrire la spécification de bout en bout du cycle individuel **A2 — Structurer et planifier un projet**, puis implémenter une tranche verticale fonctionnant en mode **simulateur** sur des données fictives, avec tests d'isolation entre étudiants.
+## Prochaine priorité
+Discuter avec le porteur une première fiche de coaching A2, ses capacités visées,
+ses ressources, les limites d'aide et le positionnement formatif, puis étendre aux
+autres compétences candidates. Les modalités restent à relire avec les encadrants.
+L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
+de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
 ## Après ticket 001
 - Contrat et adaptateur Mistral, journal de tokens, budget.
@@ -56,3 +119,33 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
   proposée. Aucun changement du référentiel, des scénarios ou des principes validés.
 - **Limites / suite** : valider la pile avec la DSI puis traiter le ticket 001 ;
   appliquer les critères de recette applicatifs avant toute démonstration réelle.
+
+## Passation — premier prototype A2
+- **Objectif / exigences** : F-01/F-03/F-04/F-09/F-12/F-13/F-14 ;
+  D-001/D-009/D-010/D-012. Parcours individuel privé, sans notation automatique.
+- **Fichiers** : `ptd_coach/`, `web/`, `tests/test_a2_service.py`,
+  `tests/test_a2_http.py`, `pedagogy/scenarios/A2-demo-cases-v0.1.json`,
+  `docs/tickets/001-a2-local.md`, ADR-0005, Makefile et documentation actualisée.
+- **Tests** : `make test` (34 réussis), parcours navigateur complet, partage et
+  révocation, rechargement et redémarrage du serveur. Aucun test distant annoncé.
+- **Décisions / hypothèses** : D-019 et ADR-0005 documentent un choix technique
+  provisoire ; D-015 reste proposée. Décisions pédagogiques validées, référentiel
+  candidat et scénario A2 d'origine conservés ; trois cas de démo ajoutés comme propositions.
+- **Limites / suite** : les comptes librement sélectionnables ne protègent pas
+  contre une personne utilisant une autre identité fictive. Démonstration locale
+  exclusivement ; relecture pédagogique, avis DSI et authentification réelle à préparer.
+
+## Passation — mémoire du cadrage pédagogique
+- **Objectif / exigences** : D-020/D-021/D-022/D-023 ; conserver les évolutions
+  significatives de réflexion pour permettre une reprise indépendante du chat.
+- **Fichiers** : cadre de coaching, journal de réflexion, ticket 003 ; AGENTS,
+  README, décisions, questions ouvertes, spécification, pédagogie, moteur IA,
+  feuille de route, guide GitHub et passation actualisés.
+- **Décisions / hypothèses** : accord de conception du porteur sur les principes ;
+  les modalités détaillées et l'illustration A2 restent proposées. Onze compétences
+  candidates conservées, sans adoption de descripteurs, barème ou échelle.
+- **Contrôles** : `make verify` réussi (34 tests), liens/structure/exclusions
+  vérifiés, diff sans erreur d'espacement ; aucune nouvelle fonctionnalité.
+  CI distante réussie sur la branche publiée ; voir la section Publication GitHub.
+- **Suite immédiate** : reprendre le ticket 003, puis consigner chaque accord
+  significatif dans le journal/registre sans assimiler une proposition à une décision.

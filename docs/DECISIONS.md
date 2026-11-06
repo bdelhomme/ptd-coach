@@ -22,6 +22,16 @@
 | D-016 | PROPOSÉ | Deux objectifs individuels actifs par étudiant | Limiter la charge cognitive | Tester en pilote |
 | D-017 | PROPOSÉ | Coaching collectif ~10–15 min ; bilans individuels ponctuels | Ne pas concurrencer tutorat humain | Affiner avec calendrier réel |
 | D-018 | PROPOSÉ | Dépôt Git privé, docs Markdown, AGENTS.md et ADR | Passation multi-IA | Premier dépôt local prêt |
+| D-019 | PROPOSÉ | Prototype A2 local en Python standard, SQLite et interface HTML/CSS/JS, comptes fictifs et coach simulé | Éprouver le parcours et ses frontières de données sans dépendance externe | Mise en œuvre de démonstration décrite par ADR-0005 ; ne remplace pas D-015 ni l'avis DSI |
+| D-020 | VALIDÉ | Définir, compétence par compétence, la progression visée et la posture du coach avant de poursuivre l'ajout d'exercices | Le porteur remet en question la pertinence pédagogique du premier parcours et confirme la nécessité de ce cadrage | Priorité au ticket 003 et aux fiches de coaching ; exercices existants considérés comme expérimentaux |
+| D-021 | VALIDÉ | Accompagner sans faire à la place ; donner aussi des explications et des ressources pour aider à comprendre et agir | Le porteur confirme le principe « aider, sans faire » et la nécessité de ressources | Expliciter les formes et limites d'aide ; l'étudiant garde les choix, actions et conclusions ; modalités détaillées proposées dans COACHING_FRAMEWORK.md |
+| D-022 | VALIDÉ | Aider l'étudiant à se positionner sur les compétences pour choisir où travailler et revoir sa progression | Le porteur propose cette fonction puis confirme son intérêt | Concevoir un auto-positionnement formatif et privé ; descripteurs, questions, échelles et modalités restent à discuter, sans notation automatique |
+| D-023 | VALIDÉ | Maintenir dans le dépôt privé la mémoire des évolutions significatives de réflexion, afin de permettre la reprise par toute IA | Demande explicite du porteur le 2026-11-06 | Journal de réflexion, décisions, état et passation actualisés lorsque pertinent ; publication GitHub vérifiée |
+
+Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
+échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
+consensus des encadrants, validation scientifique, accord DSI/DPO ou approbation
+de tous les exemples et modalités proposés. Voir [le journal de réflexion](REFLECTION_LOG.md).
 
 ## Principe de mise à jour
 Pour toute modification de décision VALIDÉE : renseigner une nouvelle ligne citant l'ancienne et le motif ; ne jamais réécrire silencieusement l'historique. Enregistrer les décisions techniques dans `docs/adr/`.
