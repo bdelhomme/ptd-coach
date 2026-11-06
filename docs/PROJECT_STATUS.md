@@ -4,6 +4,12 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.3 — cadr
 
 ## Priorité actuelle — concevoir l'accompagnement par compétence
 
+**Dernier retour du porteur** : s'appuyer sur des livres/travaux de management
+de projet et retrouver une vue d'ensemble avant de détailler isolément A2.
+Recherche préparatoire : [PROJECT_MANAGEMENT_FOUNDATIONS.md](PROJECT_MANAGEMENT_FOUNDATIONS.md),
+journal R-006, proposition D-024. Présentations officielles, sommaires et résumé
+d'article vérifiés ; aucun ouvrage complet lu ou nouveau corpus adopté.
+
 Le porteur souhaite définir comment faire progresser chaque compétence avec une
 posture de coach, avant de poursuivre les exercices. Il confirme l'accompagnement
 sans faire à la place, la place des ressources et l'intérêt d'une aide au
@@ -14,8 +20,9 @@ Les principes sont confirmés par le porteur ; les fiches, descripteurs, ressour
 modalités de positionnement et leur éventuelle validation institutionnelle restent
 à discuter. Aucune fonctionnalité de positionnement n'est implémentée.
 Le prototype A2 constitue une preuve de fonctionnement technique ; il ne vaut
-pas validation de la pertinence des exercices. La prochaine tâche est le
-[ticket 003](tickets/003-coaching-design.md).
+pas validation de la pertinence des exercices. Le [ticket 003](tickets/003-coaching-design.md)
+doit commencer par la discussion d'un cadre global sourcé et de son articulation
+aux situations PTD, avant les fiches détaillées.
 
 ## Publication GitHub — 2026-11-06
 
@@ -94,9 +101,10 @@ reste à vérifier avec un essai utilisateur.
   continuer à passer par une branche et une pull request.
 
 ## Prochaine priorité
-Discuter avec le porteur une première fiche de coaching A2, ses capacités visées,
-ses ressources, les limites d'aide et le positionnement formatif, puis étendre aux
-autres compétences candidates. Les modalités restent à relire avec les encadrants.
+Discuter avec le porteur le socle global de références, les grandes situations PTD
+et les apprentissages visés ; examiner la cohérence des onze compétences candidates.
+En déduire ensuite les fiches, ressources, limites d'aide et positionnement.
+Les références et modalités proposées restent à relire avec les encadrants.
 L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
 de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
@@ -149,3 +157,19 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
   CI distante réussie sur la branche publiée ; voir la section Publication GitHub.
 - **Suite immédiate** : reprendre le ticket 003, puis consigner chaque accord
   significatif dans le journal/registre sans assimiler une proposition à une décision.
+
+## Passation — recherche de fondements
+- **Exigence** : demande du porteur d'un ancrage dans les livres/travaux de
+  management de projet et d'une vue globale ; D-020/D-023, proposition D-024.
+- **Fichiers** : note de fondements, journal, références, cadre, décisions,
+  questions ouvertes, priorité, ticket 003 et passation actualisés.
+- **Vérification** : sources primaires consultées au niveau des pages publiques,
+  sommaires et résumés ; limites explicites. Contrôles locaux et état de publication
+  sont renseignés dans la note de synchronisation ci-dessous après exécution.
+- **Statut** : corpus et matrice d'alignement proposés, aucun label ou format
+  pédagogique changé ; question des durées/charges dans A2 non tranchée.
+
+## Synchronisation des fondements
+
+Branche de travail : `docs/project-management-foundations`. Cette entrée doit
+indiquer les contrôles et la publication réellement vérifiés, sans les présumer.

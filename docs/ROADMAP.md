@@ -6,6 +6,8 @@ Cette priorité précède l'ajout d'exercices ou l'extension du prototype.
 Principes confirmés : D-020 à D-023 ; voir [COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md).
 
 - [x] Consigner les orientations confirmées, propositions et questions dans les documents.
+- [x] Vérifier un premier corpus de notices/sommaires/résumés sur sources primaires (lecture intégrale et choix du corpus à faire).
+- [ ] Discuter le cadre global sourcé et l'articulation sources → situations PTD → apprentissages → compétences candidates.
 - [ ] Co-concevoir une première fiche A2 : capacités, situations, positionnement et limites d'aide.
 - [ ] Préciser les ressources utiles et leurs sources/droits/relecture.
 - [ ] Construire et discuter les fiches des dix autres compétences candidates.

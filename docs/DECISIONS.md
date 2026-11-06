@@ -27,6 +27,7 @@
 | D-021 | VALIDÉ | Accompagner sans faire à la place ; donner aussi des explications et des ressources pour aider à comprendre et agir | Le porteur confirme le principe « aider, sans faire » et la nécessité de ressources | Expliciter les formes et limites d'aide ; l'étudiant garde les choix, actions et conclusions ; modalités détaillées proposées dans COACHING_FRAMEWORK.md |
 | D-022 | VALIDÉ | Aider l'étudiant à se positionner sur les compétences pour choisir où travailler et revoir sa progression | Le porteur propose cette fonction puis confirme son intérêt | Concevoir un auto-positionnement formatif et privé ; descripteurs, questions, échelles et modalités restent à discuter, sans notation automatique |
 | D-023 | VALIDÉ | Maintenir dans le dépôt privé la mémoire des évolutions significatives de réflexion, afin de permettre la reprise par toute IA | Demande explicite du porteur le 2026-11-06 | Journal de réflexion, décisions, état et passation actualisés lorsque pertinent ; publication GitHub vérifiée |
+| D-024 | PROPOSÉ | Établir un cadre global sourcé du management de projet et une matrice d'alignement avec les situations PTD avant de détailler les fiches | Le porteur demande des livres/travaux et questionne l'atomisation autour d'A2 | Corpus préparatoire vérifié sur sources primaires ; choix des références, correspondances et périmètre encore à discuter ; aucun référentiel adopté |
 
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,

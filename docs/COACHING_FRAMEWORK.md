@@ -5,6 +5,12 @@ D-020/D-021/D-022. Les modalités décrites comme **PROPOSÉES** restent à disc
 Les onze compétences de `candidate-v0.3.json` sont toujours candidates, sans
 validation scientifique ou institutionnelle présumée.
 
+**Complément de méthode du 2026-11-06** : le porteur demande un ancrage dans des
+ouvrages/travaux et une vue globale avant le détail isolé d'A2. Voir
+[les fondements préparatoires](PROJECT_MANAGEMENT_FOUNDATIONS.md), R-006 et D-024.
+Les fiches ci-dessous doivent être articulées à cette vue d'ensemble ; aucun
+corpus ou découpage nouveau n'est adopté automatiquement.
+
 ## Pourquoi ce cadrage devient prioritaire
 
 Le premier prototype A2 a permis de tester un parcours, la persistance et les
@@ -150,8 +156,9 @@ l'autonomie de l'étudiant et éviter l'ajout systématique de devoirs.
 
 ## Suite immédiate
 
-Traiter [le ticket 003](tickets/003-coaching-design.md) : discuter une première
-fiche A2, préciser ses limites d'aide et ses ressources, puis étendre la méthode
-aux dix autres compétences candidates. Définir les critères de relecture et les
-changements applicatifs seulement après accord sur le cadrage concerné.
+Traiter [le ticket 003](tickets/003-coaching-design.md) : discuter d'abord un cadre
+global sourcé, le relier aux situations et objectifs PTD et vérifier l'articulation
+des compétences candidates. En déduire ensuite les fiches, leurs limites d'aide et
+ressources. Définir les critères de relecture et changements applicatifs seulement
+après accord sur le cadrage concerné.
 Historique et décisions : [journal](REFLECTION_LOG.md), [registre](DECISIONS.md).

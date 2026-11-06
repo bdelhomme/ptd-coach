@@ -17,6 +17,9 @@ et l'intérêt d'aider l'étudiant à se positionner pour choisir où travailler
 Les fiches, descripteurs et modalités restent à discuter ; les onze compétences
 demeurent candidates. Lire [le cadre de coaching](docs/COACHING_FRAMEWORK.md),
 [le journal des réflexions](docs/REFLECTION_LOG.md) et [le ticket 003](docs/tickets/003-coaching-design.md).
+Le dernier retour demande une vue globale appuyée sur des ouvrages et travaux
+avant le détail d'A2 : voir [la recherche préparatoire](docs/PROJECT_MANAGEMENT_FOUNDATIONS.md).
+Le corpus et son adaptation au PTD restent à discuter.
 Le prototype ci-dessous permet des essais techniques ; ses exercices ne sont
 pas approuvés par le seul fait qu'ils sont exécutables.
 
@@ -64,9 +67,10 @@ que des données inventées. Voir [DEVELOPMENT.md](docs/DEVELOPMENT.md) et
 
 ## Prochain jalon
 
-Co-concevoir avec le porteur une première fiche de coaching A2, puis les autres
-compétences candidates ; préciser les ressources, les limites d'aide et le
-positionnement formatif privé. Faire relire les propositions par les encadrants.
+Discuter un cadre global sourcé du management de projet, son adaptation au PTD et
+l'articulation des compétences candidates. En déduire les fiches de coaching,
+ressources, limites d'aide et positionnement formatif privé. Faire relire les
+propositions par les encadrants.
 L'arbitrage DSI, l'adaptation Mistral et la qualification réglementaire restent
 nécessaires avant un pilote avec vrais étudiants.
 

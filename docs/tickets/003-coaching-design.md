@@ -10,19 +10,28 @@ avec des ressources et une aide au positionnement. D-001/D-009/D-012 : finalité
 individuelle, confidentialité et absence de notation institutionnelle automatique.
 Référence : [COACHING_FRAMEWORK.md](../COACHING_FRAMEWORK.md).
 
+Dernier retour du porteur (R-006) : s'inspirer de livres/travaux de management de
+projet et garder une vue d'ensemble avant le détail d'A2. La recherche est
+consignée dans [PROJECT_MANAGEMENT_FOUNDATIONS.md](../PROJECT_MANAGEMENT_FOUNDATIONS.md).
+La méthode d'articulation ci-dessous et le corpus restent proposés (D-024).
+
 ## Livrables proposés
 
-1. Discuter une première fiche A2 : capacités visées, situations PTD pertinentes,
+1. Discuter un petit corpus global, lire les passages nécessaires et tracer ce
+   qui a été réellement consulté ; distinguer cadre professionnel et apprentissage.
+2. Décrire les situations et objectifs du PTD puis construire une matrice sources →
+   situations → apprentissages → compétences candidates, avec lacunes et recouvrements.
+3. Discuter ensuite une première fiche A2 : capacités visées, situations PTD pertinentes,
    obstacles possibles et limites d'aide du coach.
-2. Décrire des dialogues contrastés : explication demandée, difficulté à se
+4. Décrire des dialogues contrastés : explication demandée, difficulté à se
    positionner, demande de livrable prêt à remettre, besoin d'une ressource,
    expérimentation et retour avec éléments insuffisants.
-3. Préciser quelles ressources seraient utiles, ce qu'elles expliquent, leur
+5. Préciser quelles ressources seraient utiles, ce qu'elles expliquent, leur
    provenance et la relecture nécessaire.
-4. Définir un positionnement qui distingue ressenti et expériences disponibles,
+6. Définir un positionnement qui distingue ressenti et expériences disponibles,
    laisse la priorité à l'étudiant et puisse être repris après l'action.
-5. Étendre les fiches aux dix autres compétences candidates, avec leur statut.
-6. Préparer seulement ensuite les évolutions d'interface, de données et de tests.
+7. Étendre les fiches aux autres compétences candidates dans le cadre d'ensemble, avec leur statut.
+8. Préparer seulement ensuite les évolutions d'interface, de données et de tests.
 
 ## Critères de discussion / relecture proposés
 
