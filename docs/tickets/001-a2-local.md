@@ -77,5 +77,6 @@ Les versions du scénario et du référentiel sont attachées au cycle et à l'e
   son écran affiche « Aucune preuve reçue ».
 - Redémarrage réel du serveur effectué ; les données locales sont conservées et
   les sessions en mémoire doivent être rouvertes.
-- Branche locale `feat/a2-local-prototype` ; aucune exécution CI distante de cette
-  évolution n'est encore annoncée.
+- Travail initial sur `feat/a2-local-prototype`, ensuite publié avec la
+  [pull request 2](https://github.com/bdelhomme/ptd-coach/pull/2).
+  Contrôles de publication : voir [PROJECT_STATUS.md](../PROJECT_STATUS.md).

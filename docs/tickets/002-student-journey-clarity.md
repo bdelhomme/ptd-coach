@@ -45,5 +45,6 @@ doivent être utilisées. Le fournisseur reste un simulateur déterministe.
   séances précédentes. Ce contrôle manuel ne prouve pas encore la compréhension
   par des étudiants ; une relecture et un essai utilisateur restent nécessaires.
 
-Branche locale : `feat/student-journey-clarity`, issue de `feat/a2-local-prototype`.
-Aucune publication GitHub ou exécution distante de cette évolution n'est présumée.
+Travail initial sur `feat/student-journey-clarity`, issue de `feat/a2-local-prototype`,
+ensuite publié avec la [pull request 2](https://github.com/bdelhomme/ptd-coach/pull/2).
+Contrôles de publication : voir [PROJECT_STATUS.md](../PROJECT_STATUS.md).

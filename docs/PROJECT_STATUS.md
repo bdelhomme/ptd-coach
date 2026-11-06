@@ -17,15 +17,19 @@ Le prototype A2 constitue une preuve de fonctionnement technique ; il ne vaut
 pas validation de la pertinence des exercices. La prochaine tâche est le
 [ticket 003](tickets/003-coaching-design.md).
 
-## Synchronisation documentaire en cours
+## Publication GitHub — 2026-11-06
 
-Branche de travail : `docs/coaching-orientation`, issue des commits locaux du
-prototype A2 et de la clarification de parcours. Le cadrage est enregistré dans
-le commit `6989a84`. Contrôles locaux exécutés : `make verify` réussi (57 fichiers
-suivis contrôlés, 34 tests réussis) et `git diff --cached --check` sans erreur.
-La publication attend la reconnexion GitHub CLI demandée au porteur ; aucune
-nouvelle branche publiée, pull request, CI distante ou intégration n'est annoncée.
-Mettre à jour ce point après vérification effective de la synchronisation.
+La branche `docs/coaching-orientation` est publiée dans le dépôt privé et rassemble
+les commits du prototype, de la clarification et du cadrage pédagogique.
+Intégration suivie dans la [pull request 2](https://github.com/bdelhomme/ptd-coach/pull/2).
+Le cadrage est enregistré à partir du commit `6989a84`. Contrôles locaux exécutés :
+`make verify` réussi (57 fichiers suivis contrôlés, 34 tests réussis) et
+`git diff --cached --check` sans erreur.
+CI distante réussie sur le commit `d035191` :
+[exécution 42257391522](https://github.com/bdelhomme/ptd-coach/actions/runs/42257391522).
+Pour connaître l'intégration et la validation du dernier commit, consulter la
+pull request et les exécutions Actions ; ne pas confondre réussite du démonstrateur
+et validation pédagogique des exercices.
 
 ## Dernière évolution — lisibilité de la séance
 
@@ -37,7 +41,8 @@ le [ticket 002](tickets/002-student-journey-clarity.md).
 
 Fichiers modifiés : `web/app.js`, `web/style.css`, `web/index.html` et documentation.
 Les 34 tests existants passent ; recette navigateur du parcours simplifié effectuée.
-La branche `feat/student-journey-clarity` est locale, sans nouvelle CI distante.
+Cette évolution a d'abord été réalisée sur `feat/student-journey-clarity`, puis
+publiée avec la synchronisation suivie dans la pull request 2.
 Les décisions pédagogiques, scénarios versionnés d'origine, contrats et permissions
 backend sont conservés. L'entrée guidée crée une nouvelle séance fictive ; elle
 ne supprime aucune séance enregistrée. La compréhension réelle par un étudiant
@@ -81,8 +86,6 @@ reste à vérifier avec un essai utilisateur.
   ni de PostgreSQL/conteneurs. Le serveur et la base du prototype sont locaux.
 - Pas de coach collectif, synthèses validées, budget réel ou restauration
   institutionnelle. Tests e2e du navigateur non automatisés.
-- La branche `feat/a2-local-prototype` est locale : les contrôles du nouveau
-  prototype n'ont pas encore été exécutés par GitHub Actions.
 - Pas d'accord DSI/DPO ; ni de validation du référentiel par les encadrants.
 - Pas d'étude contractuelle/licence/propriété achevée.
 - Protection serveur de `main` non activée : l'API GitHub répond HTTP 403 et
@@ -143,6 +146,6 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
   candidates conservées, sans adoption de descripteurs, barème ou échelle.
 - **Contrôles** : `make verify` réussi (34 tests), liens/structure/exclusions
   vérifiés, diff sans erreur d'espacement ; aucune nouvelle fonctionnalité.
-  CI distante en attente de publication, sans résultat présumé.
+  CI distante réussie sur la branche publiée ; voir la section Publication GitHub.
 - **Suite immédiate** : reprendre le ticket 003, puis consigner chaque accord
   significatif dans le journal/registre sans assimiler une proposition à une décision.

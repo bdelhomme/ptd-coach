@@ -93,8 +93,9 @@ des données personnelles. Les ancres et les liens externes ne sont pas contrôl
 `make test` exécute 34 tests synthétiques : dix contrôles documentaires,
 dix-sept cas domaine/contrats et sept tests HTTP. `make verify` exécute les deux
 commandes. Les tests utilisent des bases temporaires distinctes des données de démo.
-Le workflow GitHub Actions existant exécutera les mêmes commandes après publication
-de cette branche ; aucune exécution distante du nouveau prototype n'est encore présumée.
+Le workflow GitHub Actions exécute les mêmes commandes sur push et pull request.
+Le prototype et les évolutions de cadrage ont été publiés via la pull request 2 ;
+voir PROJECT_STATUS.md pour la trace des contrôles vérifiés.
 
 Vérification navigateur manuelle : parcours complet, reprise après rechargement,
 preuve sélectionnée visible côté tuteur et révocation ; effectuer cette recette
