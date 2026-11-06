@@ -19,6 +19,9 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
   `make bootstrap` deux fois, `make verify` (dix tests réussis),
   `git diff --cached --check`. Aucun signal détecté dans l'historique contrôlé ;
   ce contrôle ne constitue pas un audit exhaustif.
+- CI GitHub Actions réussie sur la branche de préparation :
+  [exécution 42235620971](https://github.com/bdelhomme/ptd-coach/actions/runs/42235620971).
+  Intégration suivie dans la [pull request 1](https://github.com/bdelhomme/ptd-coach/pull/1).
 
 ## Non réalisé
 - Aucun serveur ni application n'a été créé.
@@ -26,6 +29,10 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
   pas de tests automatisés applicatifs. Les tests du dépôt ne prouvent pas l'isolation des données.
 - Pas d'accord DSI/DPO ; ni de validation du référentiel par les encadrants.
 - Pas d'étude contractuelle/licence/propriété achevée.
+- Protection serveur de `main` non activée : l'API GitHub répond HTTP 403 et
+  exige GitHub Pro pour ce dépôt privé. Le dépôt reste privé. La CI s'exécute,
+  mais n'est pas imposée par une règle de protection ; les contributions doivent
+  continuer à passer par une branche et une pull request.
 
 ## Prochaine priorité (ticket 001)
 Écrire la spécification de bout en bout du cycle individuel **A2 — Structurer et planifier un projet**, puis implémenter une tranche verticale fonctionnant en mode **simulateur** sur des données fictives, avec tests d'isolation entre étudiants.
