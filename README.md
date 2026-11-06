@@ -24,6 +24,7 @@ Ce dépôt est fait pour être repris par **n'importe quel développeur ou assis
 - `contracts/json-schemas/` : propositions de contrats neutres vis-à-vis des fournisseurs IA.
 - `tests/` : stratégie et cas de recette à développer.
 - `infra/` : futur environnement portable ; **pas encore installé**.
+- `scripts/`, `Makefile`, `.github/workflows/` : outillage documentaire et contrôles automatisés ; voir [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 - `assets/` : manifeste des documents source ; originaux non intégrés au dépôt.
 
 ## Règles de publication
