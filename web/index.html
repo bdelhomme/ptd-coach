@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#103c37">
+  <title>PTD Coach — Mon parcours</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Aller au parcours</a>
+  <div class="demo-banner"><span class="demo-dot"></span>Démonstration locale · comptes fictifs · coach simulé</div>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navigation principale">
+      <a href="/" class="brand"><span class="brand-icon" aria-hidden="true">P<span>↗</span></span><span>PTD <strong>Coach</strong><small>APPRENDRE EN FAISANT</small></span></a>
+      <div class="sidebar-section">MON ESPACE</div>
+      <nav id="navigation"></nav>
+      <div class="sidebar-note"><span aria-hidden="true">✦</span><p>Le projet est collectif.<br><strong>Votre apprentissage est personnel.</strong></p></div>
+      <footer>Prototype pédagogique<br>Chimie ParisTech–PSL</footer>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><span class="breadcrumb">Mon espace <span>/</span> <strong id="page-label">Bienvenue</strong></span><div id="identity"></div></header>
+      <div class="page">
+        <div id="notice" class="notice" role="alert" hidden></div>
+        <main id="workspace" tabindex="-1"><p class="loading">Ouverture de votre espace…</p></main>
+        <footer class="page-footer">Comprendre. S’entraîner. Expérimenter. Prendre du recul.</footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -9,12 +9,12 @@
 
 ## P1 — Premier parcours individuel A2, sans données réelles
 - [ ] Définir les critères de feedback sur 3 cas de planification, validés par un encadrant.
-- [ ] Définir écrans et contrats API exhaustifs du parcours A2.
-- [ ] Choisir pile technique après examen rapide DSI (ou documenter architecture provisoire).
+- [x] Définir écrans et contrats API du prototype A2 local (ticket 001 ; exhaustivité institutionnelle à revoir).
+- [x] Documenter une architecture provisoire pour la démonstration (ADR-0005 ; choix DSI toujours ouvert).
 - [ ] Initialiser backend, frontend, DB et Docker Compose local.
-- [ ] Développer accès fictif et autorisations individuelles.
-- [ ] Développer cycle d'apprentissage avec fournisseur simulé.
-- [ ] Ajouter tests d'intégration, e2e et confidentialité.
+- [x] Développer accès fictif et autorisations individuelles dans le prototype local.
+- [x] Développer cycle d'apprentissage avec fournisseur simulé local.
+- [ ] Compléter les tests : domaine/HTTP/confidentialité exécutés ; e2e navigateur manuel, automatisation à prévoir.
 - [ ] Adapter Mistral, limites de consommation et suivi tokens.
 
 ## P2 — Coach collectif et tuteurs

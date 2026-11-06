@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "status": "PROPOSED_NOT_VALIDATED",
+  "cases": [
+    {
+      "id": "client-delay",
+      "title": "Une validation client retardée",
+      "context": "Projet fictif : concevoir un protocole de traitement d'eau. Le client fictif devait valider le besoin lundi ; il répondra jeudi. Le choix du protocole dépend de cette validation. Une revue est prévue vendredi.",
+      "question": "Comment réorganiser les tâches et préparer la revue sans présumer de la validation du client ?",
+      "focus": "Distinguer ce qui dépend de la validation et ce qui peut avancer sans elle."
+    },
+    {
+      "id": "shared-equipment",
+      "title": "Une ressource partagée indisponible",
+      "context": "Projet fictif : comparer deux procédés. L'équipement nécessaire aux essais est réservé par une autre équipe jusqu'à mercredi. L'analyse de résultats attend les essais ; une revue est prévue vendredi.",
+      "question": "Quel enchaînement proposer en tenant compte de l'équipement partagé et des dépendances ?",
+      "focus": "Rendre visible la disponibilité de la ressource et l'effet sur les tâches suivantes."
+    },
+    {
+      "id": "parallel-tasks",
+      "title": "Des tâches qui semblent parallèles",
+      "context": "Projet fictif : comparer des solutions de recyclage. L'équipe veut lancer la comparaison et rédiger une recommandation en même temps, mais n'a pas encore confirmé les critères de choix avec le client fictif.",
+      "question": "Quelles tâches peuvent réellement avancer en parallèle et quelles validations sont nécessaires ?",
+      "focus": "Expliciter les hypothèses et les critères avant de figer une recommandation."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
+Dernière mise à jour : **2026-11-06** · Version documentaire : **0.2 — prototype local**
 
 ## Réalisé
 - Cadrage des finalités individuelles / collectives et des trois rôles pédagogiques.
@@ -22,11 +22,26 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
 - CI GitHub Actions réussie sur la branche de préparation :
   [exécution 42235620971](https://github.com/bdelhomme/ptd-coach/actions/runs/42235620971).
   Intégration suivie dans la [pull request 1](https://github.com/bdelhomme/ptd-coach/pull/1).
+- Prototype A2 exécutable sur `http://127.0.0.1:8765` via `make run` : sélection
+  d'objectif/cas, explication, exercice, plan d'action, expérience déclarée,
+  débrief, bilan privé et clôture sans niveau attribué.
+- Persistance SQLite locale, sessions fictives, requêtes filtrées par propriétaire,
+  fournisseur simulé avec contrats validés, transitions explicites, contrôle de
+  version et commandes idempotentes.
+- Preuve sélectionnée séparément, partage confirmé vers le tuteur fictif de
+  l'équipe, révocation, audit de métadonnées et export limité au propriétaire.
+- 34 tests locaux réussis : dix documentaires, dix-sept domaine/contrats et sept
+  HTTP. Parcours complet et partage/révocation vérifiés dans le navigateur.
+  Architecture provisoire : [ADR-0005](adr/0005-local-a2-prototype.md) ;
+  contrat et recette : [ticket 001](tickets/001-a2-local.md).
 
 ## Non réalisé
-- Aucun serveur ni application n'a été créé.
-- Pas de code frontend/backend, pas d'API Mistral ni d'authentification, pas de base,
-  pas de tests automatisés applicatifs. Les tests du dépôt ne prouvent pas l'isolation des données.
+- Pas de serveur déployé, d'API Mistral, de SSO ou d'authentification institutionnelle,
+  ni de PostgreSQL/conteneurs. Le serveur et la base du prototype sont locaux.
+- Pas de coach collectif, synthèses validées, budget réel ou restauration
+  institutionnelle. Tests e2e du navigateur non automatisés.
+- La branche `feat/a2-local-prototype` est locale : les contrôles du nouveau
+  prototype n'ont pas encore été exécutés par GitHub Actions.
 - Pas d'accord DSI/DPO ; ni de validation du référentiel par les encadrants.
 - Pas d'étude contractuelle/licence/propriété achevée.
 - Protection serveur de `main` non activée : l'API GitHub répond HTTP 403 et
@@ -34,8 +49,10 @@ Dernière mise à jour : **2026-11-06** · Version documentaire : **0.1**
   mais n'est pas imposée par une règle de protection ; les contributions doivent
   continuer à passer par une branche et une pull request.
 
-## Prochaine priorité (ticket 001)
-Écrire la spécification de bout en bout du cycle individuel **A2 — Structurer et planifier un projet**, puis implémenter une tranche verticale fonctionnant en mode **simulateur** sur des données fictives, avec tests d'isolation entre étudiants.
+## Prochaine priorité
+Faire relire par un encadrant les trois cas et leurs feedbacks **PROPOSÉS** du
+prototype A2, puis arbitrer la pile/infrastructure avec la DSI. Le périmètre local
+du ticket 001 est réalisé ; il ne constitue pas un pilote institutionnel validé.
 
 ## Après ticket 001
 - Contrat et adaptateur Mistral, journal de tokens, budget.
@@ -56,3 +73,18 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
   proposée. Aucun changement du référentiel, des scénarios ou des principes validés.
 - **Limites / suite** : valider la pile avec la DSI puis traiter le ticket 001 ;
   appliquer les critères de recette applicatifs avant toute démonstration réelle.
+
+## Passation — premier prototype A2
+- **Objectif / exigences** : F-01/F-03/F-04/F-09/F-12/F-13/F-14 ;
+  D-001/D-009/D-010/D-012. Parcours individuel privé, sans notation automatique.
+- **Fichiers** : `ptd_coach/`, `web/`, `tests/test_a2_service.py`,
+  `tests/test_a2_http.py`, `pedagogy/scenarios/A2-demo-cases-v0.1.json`,
+  `docs/tickets/001-a2-local.md`, ADR-0005, Makefile et documentation actualisée.
+- **Tests** : `make test` (34 réussis), parcours navigateur complet, partage et
+  révocation, rechargement et redémarrage du serveur. Aucun test distant annoncé.
+- **Décisions / hypothèses** : D-019 et ADR-0005 documentent un choix technique
+  provisoire ; D-015 reste proposée. Décisions pédagogiques validées, référentiel
+  candidat et scénario A2 d'origine conservés ; trois cas de démo ajoutés comme propositions.
+- **Limites / suite** : les comptes librement sélectionnables ne protègent pas
+  contre une personne utilisant une autre identité fictive. Démonstration locale
+  exclusivement ; relecture pédagogique, avis DSI et authentification réelle à préparer.

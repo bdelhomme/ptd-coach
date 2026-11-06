@@ -1,6 +1,6 @@
 PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
-.PHONY: bootstrap check test verify
+.PHONY: bootstrap check test verify run
 
 bootstrap:
 	python3 -m venv .venv
@@ -13,3 +13,6 @@ test:
 	$(PYTHON) -m unittest discover -s tests -p 'test_*.py' -v
 
 verify: check test
+
+run:
+	$(PYTHON) -m ptd_coach

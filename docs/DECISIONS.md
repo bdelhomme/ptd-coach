@@ -22,6 +22,7 @@
 | D-016 | PROPOSÉ | Deux objectifs individuels actifs par étudiant | Limiter la charge cognitive | Tester en pilote |
 | D-017 | PROPOSÉ | Coaching collectif ~10–15 min ; bilans individuels ponctuels | Ne pas concurrencer tutorat humain | Affiner avec calendrier réel |
 | D-018 | PROPOSÉ | Dépôt Git privé, docs Markdown, AGENTS.md et ADR | Passation multi-IA | Premier dépôt local prêt |
+| D-019 | PROPOSÉ | Prototype A2 local en Python standard, SQLite et interface HTML/CSS/JS, comptes fictifs et coach simulé | Éprouver le parcours et ses frontières de données sans dépendance externe | Mise en œuvre de démonstration décrite par ADR-0005 ; ne remplace pas D-015 ni l'avis DSI |
 
 ## Principe de mise à jour
 Pour toute modification de décision VALIDÉE : renseigner une nouvelle ligne citant l'ancienne et le motif ; ne jamais réécrire silencieusement l'historique. Enregistrer les décisions techniques dans `docs/adr/`.

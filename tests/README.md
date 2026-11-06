@@ -1,8 +1,20 @@
-# Tests — contrôles du dépôt et stratégie applicative
+# Tests du dépôt et du prototype A2
 
-`make verify` exécute les contrôles documentaires et dix tests du contrôleur
-sur fichiers synthétiques. Voir [l'environnement de développement](../docs/DEVELOPMENT.md).
-Ces tests ne couvrent pas l'application, qui n'est pas encore développée.
-Voir [les critères de recette](../docs/ACCEPTANCE_TESTS.md).
+`make verify` exécute les contrôles du dépôt et 34 tests sur données synthétiques :
 
-Priorité de développement : contrôle de permissions à l'API, non-fuite de contexte dans les appels IA, invalidité du JSON, cycle A2 complet avec mock, limitation des dépenses.
+- Dix tests du contrôleur documentaire.
+- Dix-sept tests de domaine/contrats : cycle complet, persistance après reprise,
+  isolation entre étudiants et rôles, version optimiste, idempotence, sortie IA
+  invalide, propositions non exécutées, contexte filtré, partage explicite,
+  révocation, métadonnées d'audit et export propriétaire.
+- Sept tests HTTP : session, cookie, origine/CSRF/hôte, statiques, validation des
+  entrées, accès aux cycles/exports, refus d'exposition réseau et configuration.
+
+Voir [l'environnement](../docs/DEVELOPMENT.md), [le ticket 001](../docs/tickets/001-a2-local.md)
+et [les critères de recette](../docs/ACCEPTANCE_TESTS.md).
+
+Couverture initiale de T-01/T-02/T-03/T-07/T-08/T-09/T-11/T-12/T-14/T-15 limitée
+au simulateur local et à l'export, sans restauration institutionnelle. Aucun test
+de SSO, Mistral, budget réel, coach collectif ou environnement de production.
+Les tests du mock ne valident pas la qualité pédagogique d'un modèle réel.
+Le navigateur est vérifié manuellement ; ses tests e2e automatisés restent à écrire.
