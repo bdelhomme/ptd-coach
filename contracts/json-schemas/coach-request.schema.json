@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/ptd-coach/coach-request-v0.1.schema.json",
+  "title": "CoachRequest v0.1 proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "activity",
+    "pedagogical_state",
+    "competency_ids",
+    "authorized_context",
+    "student_message",
+    "prompt_version"
+  ],
+  "properties": {
+    "mode": {
+      "enum": [
+        "individual",
+        "collective"
+      ]
+    },
+    "activity": {
+      "enum": [
+        "explain",
+        "practice",
+        "simulate",
+        "prepare_action",
+        "debrief",
+        "weekly_review"
+      ]
+    },
+    "pedagogical_state": {
+      "type": "string"
+    },
+    "competency_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authorized_context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "text"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "student_message": {
+      "type": "string"
+    },
+    "prompt_version": {
+      "type": "string"
+    }
+  }
+}

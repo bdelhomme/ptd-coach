@@ -1,0 +1,70 @@
+{
+  "id": "ptd-competencies",
+  "version": "candidate-v0.3",
+  "status": "PROPOSED_NOT_VALIDATED",
+  "derived_from": [
+    "PTD syllabus",
+    "PTD evaluation grids 2026",
+    "ISO 21502 conceptual alignment",
+    "IPMA ICB4 conceptual alignment",
+    "CDIO 3.0 conceptual alignment"
+  ],
+  "warning": "Not endorsed by ISO/IPMA/CDIO, not approved by Chimie ParisTech. No automatic grading.",
+  "competencies": [
+    {
+      "id": "A1",
+      "title": "Analyser et reformuler une demande",
+      "status": "candidate"
+    },
+    {
+      "id": "A2",
+      "title": "Structurer et planifier le projet",
+      "status": "candidate"
+    },
+    {
+      "id": "A3",
+      "title": "Piloter et adapter la réalisation",
+      "status": "candidate"
+    },
+    {
+      "id": "B1",
+      "title": "Organiser et coordonner le travail collectif",
+      "status": "candidate"
+    },
+    {
+      "id": "B2",
+      "title": "Communiquer et construire des décisions collectives",
+      "status": "candidate"
+    },
+    {
+      "id": "B3",
+      "title": "Animer et responsabiliser un collectif",
+      "status": "candidate"
+    },
+    {
+      "id": "C1",
+      "title": "Analyser un problème complexe et construire une réponse argumentée",
+      "status": "candidate"
+    },
+    {
+      "id": "C2",
+      "title": "Intégrer les enjeux et responsabilités du projet",
+      "status": "candidate"
+    },
+    {
+      "id": "D1",
+      "title": "Interagir avec un commanditaire et les parties prenantes",
+      "status": "candidate"
+    },
+    {
+      "id": "D2",
+      "title": "Analyser son expérience pour progresser",
+      "status": "candidate"
+    },
+    {
+      "id": "D3",
+      "title": "Produire et présenter une restitution professionnelle argumentée",
+      "status": "candidate"
+    }
+  ]
+}

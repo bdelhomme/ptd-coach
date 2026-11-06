@@ -1,0 +1,45 @@
+{
+  "id": "A2-first-cycle",
+  "version": "0.1",
+  "status": "proposal",
+  "competency_id": "A2",
+  "title": "Anticiper les dépendances dans un projet",
+  "persona": "student_demo_01",
+  "context": "Projet et client fictifs uniquement",
+  "steps": [
+    {
+      "state": "OBJECTIVE_SELECTED",
+      "expected": "L’étudiant choisit un objectif concret"
+    },
+    {
+      "state": "LEARNING",
+      "expected": "Clarifier tâche, jalon, dépendance, validation"
+    },
+    {
+      "state": "PRACTICING",
+      "expected": "Raisonner sur le retard d’une validation client"
+    },
+    {
+      "state": "EXPERIMENT_PLANNED",
+      "expected": "Définir une action au sein de la réunion de l’équipe"
+    },
+    {
+      "state": "AWAITING_EXPERIENCE",
+      "expected": "Ne pas inférer que l’action a eu lieu"
+    },
+    {
+      "state": "REFLECTING",
+      "expected": "Distinguer faits rapportés, interprétations et plan d’amélioration"
+    },
+    {
+      "state": "REVIEWED",
+      "expected": "Bilan personnel privé et preuve facultative"
+    }
+  ],
+  "test_cases": [
+    "réponse incomplète de l’étudiant",
+    "échec de l’appel IA",
+    "tentative du tuteur de lire conversation privée",
+    "partage explicite d’une preuve"
+  ]
+}

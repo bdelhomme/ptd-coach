@@ -1,0 +1,29 @@
+# Secrets & environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*secret*
+credentials.json
+# Python / JS artifacts
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.next/
+dist/
+coverage/
+.pytest_cache/
+# System / editors
+.DS_Store
+.idea/
+.vscode/
+# Local data, student information, institutional originals
+*.sqlite
+*.sqlite3
+local-data/
+private-source-documents/
+student-data/
+*.dump
+*.bak
