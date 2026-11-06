@@ -20,8 +20,12 @@ pas validation de la pertinence des exercices. La prochaine tâche est le
 ## Synchronisation documentaire en cours
 
 Branche de travail : `docs/coaching-orientation`, issue des commits locaux du
-prototype A2 et de la clarification de parcours. La publication de cette branche
-et les résultats CI seront renseignés après vérification, sans présumer leur succès.
+prototype A2 et de la clarification de parcours. Le cadrage est enregistré dans
+le commit `6989a84`. Contrôles locaux exécutés : `make verify` réussi (57 fichiers
+suivis contrôlés, 34 tests réussis) et `git diff --cached --check` sans erreur.
+La publication attend la reconnexion GitHub CLI demandée au porteur ; aucune
+nouvelle branche publiée, pull request, CI distante ou intégration n'est annoncée.
+Mettre à jour ce point après vérification effective de la synchronisation.
 
 ## Dernière évolution — lisibilité de la séance
 
@@ -137,7 +141,8 @@ Lire `README.md` et `AGENTS.md`. Vérifier les décisions ouvertes ; ne pas inf�
 - **Décisions / hypothèses** : accord de conception du porteur sur les principes ;
   les modalités détaillées et l'illustration A2 restent proposées. Onze compétences
   candidates conservées, sans adoption de descripteurs, barème ou échelle.
-- **Contrôles** : contrôles documentaires et CI à renseigner dans la section de
-  synchronisation après exécution ; aucune nouvelle fonctionnalité à tester ici.
+- **Contrôles** : `make verify` réussi (34 tests), liens/structure/exclusions
+  vérifiés, diff sans erreur d'espacement ; aucune nouvelle fonctionnalité.
+  CI distante en attente de publication, sans résultat présumé.
 - **Suite immédiate** : reprendre le ticket 003, puis consigner chaque accord
   significatif dans le journal/registre sans assimiler une proposition à une décision.
