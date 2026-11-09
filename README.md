@@ -8,6 +8,14 @@ PTD Coach vise le **développement individuel des compétences de management de 
 
 Ce dépôt est fait pour être repris par **n'importe quel développeur ou assistant IA**. Les décisions et leur justification figurent dans des fichiers plutôt que dans les historiques de conversation.
 
+## Revue pédagogique publique
+
+Le dépôt est désormais public. Le corpus fictif V0.7 est consultable dans
+[le dossier de revue](pedagogy/evaluations/mistral-small-v07/README.md) :
+12 scénarios, 26 réponses exactes v1.2, grilles vierges et anciens passages.
+Cette publication autorisée (D-028) n'ajoute aucune donnée étudiante réelle
+et ne modifie pas le coach. La revue indépendante précède toute nouvelle phase.
+
 ## Commencer ici
 
 ### Essayer une vraie conversation
@@ -85,7 +93,8 @@ que des données inventées. Voir [DEVELOPMENT.md](docs/DEVELOPMENT.md) et
 
 ## Règles de publication
 
-**Créer d'abord un dépôt GitHub PRIVÉ.** Ne pas ajouter de documents confidentiels, de données étudiantes, de clés API ou de secrets. Les documents institutionnels originaux ne sont pas joints volontairement ; le manifeste précise les sources à récupérer et leurs versions. Aucun choix de licence logicielle n'est présumé : droits et réutilisation doivent être clarifiés avec l'établissement.
+**Consigne de création historique : dépôt initialement privé.** La visibilité
+actuelle publique et la publication du corpus fictif sont consignées par D-028. Ne pas ajouter de documents confidentiels, de données étudiantes, de clés API ou de secrets. Les documents institutionnels originaux ne sont pas joints volontairement ; le manifeste précise les sources à récupérer et leurs versions. Aucun choix de licence logicielle n'est présumé : droits et réutilisation doivent être clarifiés avec l'établissement.
 
 ## Prochain jalon
 

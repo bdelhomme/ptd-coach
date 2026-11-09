@@ -36,6 +36,23 @@ class RepositoryChecksTest(unittest.TestCase):
         paths = [self.write("a.md", "[missing](missing.md)")]
         self.assertTrue(any("Broken local link" in e for e in check_repository(self.root, paths)))
 
+    def test_verbatim_links_are_not_navigation_but_real_links_are_checked(self):
+        for fence in ("```", "~~~", "````"):
+            with self.subTest(fence=fence):
+                content = fence + "text\n[R01](id='R01') [outside](../private.md)\n" + fence + "\n"
+                paths = [self.write("quoted.md", content)]
+                self.assertEqual(check_repository(self.root, paths), [])
+                self.write("quoted.md", content + "[missing](missing.md)")
+                errors = check_repository(self.root, paths)
+                self.assertEqual(len(errors), 1)
+                self.assertIn("Broken local link", errors[0])
+
+    def test_nested_short_fence_does_not_end_verbatim_and_secrets_still_fail(self):
+        paths = [self.write("quoted.md", "````text\n```\n[quoted](missing.md)\n````\n")]
+        self.assertEqual(check_repository(self.root, paths), [])
+        self.write("quoted.md", "~~~text\n" + "ghp_" + "x" * 36 + "\n~~~\n")
+        self.assertEqual(check_repository(self.root, paths), ["Potential credential in: quoted.md"])
+
     def test_external_links_and_anchors_are_offline(self):
         paths = [self.write("a.md", "[web](https://example.invalid) [anchor](#section)")]
         self.assertEqual(check_repository(self.root, paths), [])

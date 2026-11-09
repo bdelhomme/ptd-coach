@@ -90,9 +90,9 @@ cibles des liens Markdown locaux simples, exclusions et quelques formats de jeto
 (sans leur valeur). Il ne remplace ni un audit de secrets, ni un contrôle exhaustif
 des données personnelles. Les ancres et les liens externes ne sont pas contrôlés.
 
-`make test` exécute 72 tests synthétiques : les 34 A2/documentaires (dix contrôles
+`make test` exécute 78 tests synthétiques : les 34 A2/documentaires (dix contrôles
 documentaires, dix-sept cas domaine/contrats et sept HTTP), douze tests des outils
-V0.7, deux de préservation/intégration et 24 de conversation applicative. `make verify` exécute les deux
+V0.7, deux de préservation/intégration et 24 de conversation applicative, plus quatre de fidélité du corpus publié et deux de liens verbatim. `make verify` exécute les deux
 commandes. Les tests utilisent des bases temporaires distinctes des données de démo.
 Le workflow GitHub Actions exécute les mêmes commandes sur push et pull request.
 Le prototype et les évolutions de cadrage ont été publiés via la pull request 2 ;

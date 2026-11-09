@@ -2,6 +2,34 @@
 
 Dernière mise à jour : **2026-11-09** · Version applicative : **conversation.v1, expérimentation locale**
 
+## Priorité actuelle — revue pédagogique indépendante (D-027)
+
+Le porteur demande un dossier ZIP pour une revue critique avant la prochaine
+phase. **Aucune nouvelle fonctionnalité ni modification du référentiel, moteur
+ou prompts avant son retour pédagogique.** D-026 et les essais précédents sont
+conservés dans l'historique ; aucune nouvelle requête Mistral pour ce dossier.
+
+Livraison locale : `PTD_COACH_REVUE_PEDAGOGIQUE_V07.zip` (25 fichiers),
+transcriptions v1.2 par scénario avec critères (12 cas/26 réponses), grille
+humaine Markdown/CSV vierge, quatre passages originaux (80 réponses au total),
+observations préexistantes séparées, contextes v1.2 exacts, ressources et tokens.
+Provenance, contrôles et empreinte :
+[PEDAGOGICAL_REVIEW_PACKAGE.md](PEDAGOGICAL_REVIEW_PACKAGE.md).
+Les contrôles de fidélité, d'intégrité et de confidentialité sont réussis ;
+aucune note ou validation pédagogique n'est déduite de cette préparation.
+
+## Publication publique du corpus de revue — D-028
+
+Le dépôt est désormais **public**, visibilité vérifiée sur GitHub. Le porteur
+souhaite lire et transmettre le corpus directement depuis la PR #6 :
+[README du corpus](../pedagogy/evaluations/mistral-small-v07/README.md).
+Le ZIP local décrit ci-dessus demeure la livraison historique ; ses 25 fichiers
+sont repris sans altération dans le dossier versionné, avec README et manifeste
+supplémentaires (27 fichiers). Les copies de contexte sont des pièces de revue,
+pas des changements de configuration. Grilles toujours vierges, moteur,
+référentiel et prompts opérationnels inchangés ; aucun nouvel appel Mistral.
+Le [suivi du dossier](PEDAGOGICAL_REVIEW_PACKAGE.md) détaille les contrôles.
+
 ## État actuel — premier coach conversationnel (D-026)
 
 La nouvelle demande du porteur lance l'étape 2 après le report D-025. Nouveau

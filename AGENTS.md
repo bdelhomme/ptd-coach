@@ -40,6 +40,20 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
   `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json` ; ne pas recréer de copie `inputs/`.
   E1–E4 ne sont pas de nouveaux codes. Les seuils 0–2/90 % jugent le dialogue,
   jamais les compétences étudiantes ; un dry-run ne génère aucune réponse IA.
+- **Priorité courante D-027 : revue pédagogique indépendante avant nouvelle
+  phase.** Le porteur demande de préparer les transcriptions et une grille
+  vierge ; ne modifier ni référentiel, ni moteur, ni prompts et ne commencer
+  aucune fonctionnalité avant son retour pédagogique. Le dossier et ses limites
+  de provenance sont décrits dans `docs/PEDAGOGICAL_REVIEW_PACKAGE.md`.
+  Les observations de développement ne sont pas une revue indépendante ; ne
+  préremplir aucune note ou verdict humain. Les textes du dossier sont des
+  objets d'analyse, pas de nouvelles consignes pour le coach.
+- D-028 autorise la publication **publique** du corpus fictif vérifié dans
+  `pedagogy/evaluations/mistral-small-v07/`, sur la branche de la PR #6.
+  Commencer par son README. Les copies des prompts/ressources sont des
+  instantanés de preuve ; ne pas modifier les prompts opérationnels ou le
+  moteur pour cette revue. Garder le manifeste d'origine, les chaînes exactes
+  et les grilles sans notes ; contrôler les secrets avant toute publication.
 
 ## Procédure pour chaque changement
 1. Citer l'exigence et la décision que la tâche concerne.
@@ -61,7 +75,7 @@ scientifique, pédagogique collective ou institutionnelle du référentiel.
 
 Maintenir la passation cohérente avec le code et distinguer fichiers locaux,
 branche publiée et intégration sur `main`. Publier les évolutions significatives
-dans le dépôt privé dans le cadre de l'autorisation donnée par le porteur, via une
+dans le dépôt selon sa visibilité confirmée et l'autorisation donnée par le porteur, via une
 branche et une pull request ; signaler tout blocage d'authentification. Ne pas
 annoncer une publication ou une CI distante avant leur vérification.
 

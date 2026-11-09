@@ -1,0 +1,133 @@
+{
+  "package": "PTD_COACH_REVUE_PEDAGOGIQUE_V07",
+  "prepared_date": "2026-11-09",
+  "purpose": "independent_pedagogical_review_no_scores_assigned",
+  "data": "synthetic_only",
+  "latest_prompt_version": "conversation-v1.2+v07-proposed",
+  "latest_context_sha256": "c321c72fa966b1d13a0e29f1ac8fcd120daafe3859f02b75477a05682322487a",
+  "latest_cases": 12,
+  "latest_responses": 26,
+  "all_archived_responses": 80,
+  "files": [
+    {
+      "path": "00_LIRE_D_ABORD.md",
+      "bytes": 3409,
+      "sha256": "36c0ec3b90b1dd485a4fc44d6351e802b94ee8c6d9821905747f51d538fa10b1"
+    },
+    {
+      "path": "01_TRANSCRIPTIONS_V1_2.md",
+      "bytes": 35881,
+      "sha256": "d84e468dd80e87e154e5159822978a573b285a566ec602abf9f7ce530efa26ce"
+    },
+    {
+      "path": "02_GRILLE_HUMAINE_VIERGE.csv",
+      "bytes": 19654,
+      "sha256": "000e4b59253bdf8a3458e61bfd0cd7b6ce0e89784395b01a1333fe1bee23c206"
+    },
+    {
+      "path": "02_GRILLE_HUMAINE_VIERGE.md",
+      "bytes": 2683,
+      "sha256": "a68de8021c3d13bb52a76eaf8c537bab6ceccee97cd92097dd960bc85059f85c"
+    },
+    {
+      "path": "03_PARAMETRES_TOKENS_PROVENANCE.md",
+      "bytes": 4963,
+      "sha256": "aaa22cb65e7effa38c5069e3f13aa5fa0058e722a4200c890aefd14aeb6fa28d"
+    },
+    {
+      "path": "04_OBSERVATIONS_PREEXISTANTES.md",
+      "bytes": 7156,
+      "sha256": "2e66dddb7a14285617e968781940782ac4c1b647057b02877bfb4ecd7e344001"
+    },
+    {
+      "path": "05_DEMANDE_REVUE_CRITIQUE_CHATGPT.md",
+      "bytes": 2528,
+      "sha256": "d8b9e46dcdbae58887d8f248fc19f14c9081756490b3a6c1c1fddd17f233434d"
+    },
+    {
+      "path": "CONTROLES.md",
+      "bytes": 1260,
+      "sha256": "c41017845e4a8be611caf1d08932a237da68dbb5717530007ba7e87b78c1ea19"
+    },
+    {
+      "path": "annexes/TRANSCRIPTIONS_SMOKE_V1.md",
+      "bytes": 2120,
+      "sha256": "644364160d700a99ae661ad667eb72ffa48be9a4fcf4e2289d53e16fb6cbd06d"
+    },
+    {
+      "path": "annexes/TRANSCRIPTIONS_V1.md",
+      "bytes": 33599,
+      "sha256": "9c3617275f6d84a0ba39282b38202dac82287e8a538a54372255f918d8b72052"
+    },
+    {
+      "path": "annexes/TRANSCRIPTIONS_V1_1.md",
+      "bytes": 31663,
+      "sha256": "05a6d3f47f1bc7f182bf66031d40dd59d6677063076bc9850d6fe08140a3ab4e"
+    },
+    {
+      "path": "contexte/CRITERES_ET_GRILLE_V07.md",
+      "bytes": 1747,
+      "sha256": "44a0110217065a4cef1b47d74cf5eccef3e5957a3ff658b6ac63fe965115ee34"
+    },
+    {
+      "path": "contexte/POLITIQUE_CONVERSATION_V06.md",
+      "bytes": 11198,
+      "sha256": "e20230ec5f78cf451af237bc0d6ccc583fa93be6959d9fd9ec971e5c06cd829a"
+    },
+    {
+      "path": "contexte/PROMPT_REFERENCE_V07.md",
+      "bytes": 3900,
+      "sha256": "ff9d6c7f195399c384350f34ce0f77a39810af6ef5f2951749f3b1c1c93988a8"
+    },
+    {
+      "path": "contexte/R01-coordination-et-engagements.md",
+      "bytes": 2946,
+      "sha256": "a778ecc84c782684f220d086e683e84a9d681a0f68bd38156318d50ee8dea509"
+    },
+    {
+      "path": "contexte/R02-debrief-factuel.md",
+      "bytes": 2681,
+      "sha256": "39bab6fd525aa99d5683f55d6cb3a187c0246a70c09a467061e6bae9b21d3b2d"
+    },
+    {
+      "path": "contexte/R03-cadrage-et-planification.md",
+      "bytes": 2483,
+      "sha256": "7dec31be655e6ae2946062805206ed7b8f424ebeeebcd2cf00fb5df987c1c211"
+    },
+    {
+      "path": "contexte/SYSTEME_COLLECTIF_V1_2.txt",
+      "bytes": 13903,
+      "sha256": "82a2c101d77e9bb86e7dce24591a8564e0df847e2d06e812a8f190d34379e97f"
+    },
+    {
+      "path": "contexte/SYSTEME_INDIVIDUEL_V1_2.txt",
+      "bytes": 13877,
+      "sha256": "e4efdc11c171265b9234f17233c21c3c8f85bc15ad53c05c4dcdae0960856e95"
+    },
+    {
+      "path": "donnees/SCENARIOS_V07.json",
+      "bytes": 9025,
+      "sha256": "a4dbabaabe1c9662387ac3ed1ab8163a70ea5de9463121bd7e8e127fd348afd2"
+    },
+    {
+      "path": "donnees/chat-v1-1-mistral-v07.jsonl",
+      "bytes": 36735,
+      "sha256": "573628b8c3a4f5bc19413b3946ce8c064d58d2a13f31ac38e360986f16ae873e"
+    },
+    {
+      "path": "donnees/chat-v1-2-mistral-v07.jsonl",
+      "bytes": 40984,
+      "sha256": "3e64f913ae685074e52b4be03f14932b334e345b99d14fb05e88d8ae57e85754"
+    },
+    {
+      "path": "donnees/chat-v1-mistral-smoke.jsonl",
+      "bytes": 2188,
+      "sha256": "2b109de9aa69134e6e96d8494aded45406769a4c1e4a7cd42a6d809d77731122"
+    },
+    {
+      "path": "donnees/chat-v1-mistral-v07.jsonl",
+      "bytes": 38678,
+      "sha256": "4008e82ab1c58e39a6107571fc1361257b99d09563fd563b059b3dcda6412aee"
+    }
+  ]
+}
