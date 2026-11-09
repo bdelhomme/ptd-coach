@@ -80,3 +80,13 @@ distincte d'une revue humaine ; la grille doit rester vierge jusqu'à la saisie
 des lecteurs. Attendre le retour avant toute nouvelle phase de développement.
 Les détails techniques de la première tranche restent dans
 [CONVERSATION_COACH_REPORT.md](CONVERSATION_COACH_REPORT.md).
+
+## Synchronisation documentaire
+
+Branche `docs/independent-pedagogical-review` publiée ;
+[PR #6](https://github.com/bdelhomme/ptd-coach/pull/6) ouverte, dépendante de #5,
+sans changement applicatif ni fusion automatique. Sur le commit `57550d8`,
+contrôles GitHub réussis :
+[pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42666593944)
+et [push](https://github.com/bdelhomme/ptd-coach/actions/runs/42666473032).
+Les contrôles du dernier suivi documentaire sont visibles dans la PR.
