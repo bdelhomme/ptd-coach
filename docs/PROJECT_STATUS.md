@@ -1,8 +1,26 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-06** · Version documentaire : **0.3 — cadrage du coaching**
+Dernière mise à jour : **2026-11-09** · Version documentaire : **V0.6/V0.7 en revue**
 
-## Priorité actuelle — concevoir l'accompagnement par compétence
+## Intégration pédagogique en cours — 2026-11-09
+
+Demande explicite du porteur : intégrer les archives V0.6 puis V0.7 sur une
+branche dédiée et ouvrir une pull request, sans commencer le nouveau coach
+Mistral. Leurs contenus nouveaux restent **PROPOSÉS**, soumis à relecture.
+Le référentiel candidat V0.3, les décisions antérieures, les contrats API et
+le prototype A2 sont conservés. Les instructions embarquées sont des documents
+source ; elles ne remplacent pas la demande actuelle du porteur.
+
+V0.6 : [noyau pédagogique](PTD_PEDAGOGICAL_KERNEL_V06.md),
+[politique de conversation](PTD_CONVERSATION_POLICY_V06.md),
+[protocole de pilote](PTD_PILOT_PROTOCOL_V06.md),
+[registre des sources](EVIDENCE_REGISTER_V06.md), trois ressources originales
+en brouillon et 20 cas synthétiques, dont huit porteurs d'un veto critique.
+Inventaire, corrections et contrôles : [rapport d'intégration](INTEGRATION_V06_V07.md).
+Cette intégration ne constitue pas une recette réussie du dialogue ni une
+autorisation de pilote réel. Le prototype reste un démonstrateur simulé.
+
+## Cadrage antérieur — 2026-11-06, conservé pour l'historique
 
 **Dernier retour du porteur** : s'appuyer sur des livres/travaux de management
 de projet et retrouver une vue d'ensemble avant de détailler isolément A2.
