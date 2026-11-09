@@ -1,13 +1,14 @@
 # Intégration pédagogique V0.6 puis V0.7 — 2026-11-09
 
-**Statut : travail de revue sur branche ; propositions non adoptées.**
+**Statut : branche publiée, PR de revue ouverte en brouillon ; propositions non adoptées.**
 Demande du porteur : intégrer les contenus et outils fournis, préserver
 l'historique et le candidat V0.3, vérifier et ouvrir une PR sans démarrer le
 nouveau coach Mistral. Références : D-001/D-009/D-010/D-012/D-020 à D-024.
 
 Base synchronisée : `efb3962c8488b9b064de0c6dd4279d9b111ab758` sur `main`.
 Branche : `docs/integrate-pedagogy-v06-v07`. Deux commits d'import successifs
-permettent de relire V0.6 avant V0.7 ; aucun historique réécrit.
+permettent de relire V0.6 (`79e75e6`) avant V0.7 (`95757ee`) ; aucun historique
+réécrit. Une mise à jour documentaire finale consigne les contrôles et la PR.
 
 ## V0.6 — huit fichiers intégrés
 
@@ -121,6 +122,13 @@ d'origine, des schémas, du code applicatif ou des trois fichiers de tests
 antérieurs ; chaque ligne de décision D-001 à D-024 est conservée.
 
 Le contrôle d'espacement a détecté deux espaces finaux sur la date du README ;
-corrigés avant publication. Le lien de PR et la CI distante seront ajoutés
-après leur vérification.
-Cette tâche ouvre une PR de revue et ne fusionne pas dans `main`.
+corrigés avant publication. `make check` et `git diff --cached --check`
+réussis après correction.
+
+Publication vérifiée : [PR #4](https://github.com/bdelhomme/ptd-coach/pull/4),
+ouverte en brouillon vers `main`, déclarée sans conflit par GitHub.
+Sur `95757ee`, CI distante réussie sur
+[pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42624841608)
+et [push](https://github.com/bdelhomme/ptd-coach/actions/runs/42624832705).
+Les statuts des commits documentaires suivants sont consultables dans la PR.
+Aucune fusion sur `main` réalisée pour cette tâche.

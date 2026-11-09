@@ -35,8 +35,13 @@ Contrôles locaux exécutés : `make verify` réussi (**79 fichiers suivis, 48
 tests**) ; les 34 tests antérieurs sont préservés. Deux dry-runs contrôlés :
 32 cas / 46 lignes sans réponse IA. Le candidat V0.3 est identique octet pour
 octet, aucun diff applicatif/contrat/scénario d'origine, D-001 à D-024 conservées.
-Publication et résultats distants à renseigner après vérification dans le
-rapport d'intégration ; ces contrôles techniques ne valent pas validation pédagogique.
+Publication vérifiée : branche `docs/integrate-pedagogy-v06-v07`,
+[PR #4](https://github.com/bdelhomme/ptd-coach/pull/4) ouverte en brouillon,
+sans fusion sur `main`. Imports successifs `79e75e6` puis `95757ee` ; CI distante
+réussie sur ce dernier :
+[exécution pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42624841608).
+Les contrôles des mises à jour documentaires suivantes sont visibles dans la PR.
+Ces contrôles techniques ne valent pas validation pédagogique.
 
 ## Cadrage antérieur — 2026-11-06, conservé pour l'historique
 
