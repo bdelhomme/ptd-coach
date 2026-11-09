@@ -1,5 +1,18 @@
 # Architecture pédagogique
 
+## Noyau et recette proposés — V0.6/V0.7, 2026-11-09
+
+Le [noyau V0.6](PTD_PEDAGOGICAL_KERNEL_V06.md) articule les situations de
+projet, la coopération et l'apprentissage individuel ; la
+[politique V0.6](PTD_CONVERSATION_POLICY_V06.md) propose des interventions
+souples, ressources directes et arrêt possible. La
+[recette V0.7](COACH_DIALOGUE_EVALUATION_V07.md) prépare une évaluation humaine
+des réponses. Ces contenus et les trois ressources R01–R03 sont **PROPOSÉS**,
+non validés institutionnellement. E1–E4 sont analytiques, le candidat V0.3 est
+conservé. Il ne s'agit ni de fonctions implémentées ni d'une nouvelle échelle
+étudiante. D-025 reporte le nouveau coach Mistral ; voir
+[l'intégration](INTEGRATION_V06_V07.md) pour le périmètre et les écarts.
+
 ## Finalité et principe
 Le PTD réel est un terrain d'apprentissage. L'individu apprend à gérer des projets en comprenant les méthodes, en s'entraînant, en les expérimentant dans l'équipe et en débriefant. Le coach collectif facilite les décisions réelles sans prendre la place des étudiants.
 

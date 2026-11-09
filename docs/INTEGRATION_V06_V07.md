@@ -25,6 +25,36 @@ E1–E4 sont une grille analytique de coopération, jamais quatre nouveaux codes
 Le dialogue souple et les sept intentions proposés complètent le cadrage du
 ticket 003 ; ils ne remplacent ni la machine A2 ni les contrats API.
 
+## V0.7 — six fichiers intégrés après V0.6
+
+- [Spécification d'évaluation des dialogues](COACH_DIALOGUE_EVALUATION_V07.md).
+- [Prompt expérimental](../pedagogy/prompts/COACH_SYSTEM_DRAFT_V07.md).
+- [Douze dialogues, 26 tours](../pedagogy/qa/COACH_MULTI_TURN_CASES_V07.json).
+- [Exécuteur expérimental](../scripts/run_coach_eval_v07.py).
+- [Préparation et résumé des grilles humaines](../scripts/review_coach_eval_v07.py).
+- [Tests de l'outillage](../tests/test_eval_v07.py).
+
+Le script d'appel fourni est importé **à l'identique**, sans raccordement au
+prototype. Prompt et suites JSON sont également conservés à l'identique.
+Le chemin API fourni n'a pas été exécuté et ne constitue pas un développement
+du nouveau coach Mistral. Le périmètre D-025 est limité à cette intégration.
+
+## Suivi et passation
+
+- [Manifeste des archives et empreintes source](../assets/PEDAGOGY_IMPORTS_V06_V07.json)
+  : les 19 fichiers source sont recensés, dont 14 intégrés, quatre briefs de
+  livraison analysés sans copie et un doublon dédupliqué. Les ZIP restent hors Git.
+- [Mode d'emploi hors réseau](EVALUATION_TOOLS_V07.md) et
+  [tests de préservation/intégration](../tests/test_pedagogy_integration.py).
+- [ADR-0006 proposé](adr/0006-dialogue-evaluation-compatibility.md) : aucune
+  migration de contrats ou de machine à états réalisée.
+- [Ticket 004](tickets/004-conversation-router.md), futur dialogue souple, et
+  [ticket 005](tickets/005-backend-boundaries.md), contrôles d'isolation :
+  proposés et non démarrés, réservés à une étape ultérieure.
+- AGENTS, README, état, passation, registre/journal, feuille de route, ticket 003,
+  questions ouvertes, spécifications produit/pédagogie/IA, cadre de coaching,
+  architecture, sources, développement et guide des tests actualisés.
+
 ## Écarts et arbitrages d'intégration
 
 - Aucun chemin de contenu V0.6 n'existait dans la base ; pas de conflit Git.
@@ -45,6 +75,24 @@ ticket 003 ; ils ne remplacent ni la machine A2 ni les contrats API.
 - Les niveaux d'accès aux sources dans le registre sont attribués aux auteurs
   du lot. Aucune lecture intégrale supplémentaire ou validation scientifique
   ne leur est substituée par l'intégration.
+- La copie `inputs/COACH_ACCEPTANCE_CASES_V06.json` de V0.7 est strictement
+  identique au fichier V0.6 : omise ; le test fourni utilise désormais le chemin
+  canonique `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json`.
+- La spécification V0.7 reçoit une note d'intégration datée : ses mentions
+  d'absence sur `main` décrivent la préparation du lot, pas un nouvel état constaté.
+- Deux corrections limitées dans le script de revue : refuser une entrée vide
+  lors de la création d'une grille et compter un veto déjà signalé même si
+  les autres dimensions ne sont pas encore remplies. Une grille incomplète
+  ne passe jamais le seuil. Six tests supplémentaires vérifient ces défauts,
+  l'absence d'appel en dry-run, les historiques, les critères hors contexte,
+  la sélection et les erreurs simulées. Aucun jugement humain remplacé.
+
+Il n'y a pas eu de conflit de fusion Git. Les écarts ci-dessus sont des
+incohérences documentaires ou d'outillage résolues explicitement. Les ressources
+et seuils restent soumis à relecture ; l'efficacité et la sécurité institutionnelle
+ne sont pas établies. Le résumé CSV ne prouve pas la couverture complète d'une
+suite : comparer les IDs/tours avant de conclure. Les limites de reproductibilité
+du banc fourni sont décrites dans son mode d'emploi, à traiter à l'étape 2.
 
 ## Préservation
 
@@ -57,7 +105,22 @@ restent inchangés. Aucune donnée réelle ni clé ajoutée.
 ## Vérification et publication
 
 Après V0.6 : `make verify` réussi (67 fichiers suivis, 34 tests antérieurs) et
-`git diff --cached --check` sans erreur. Les contrôles V0.7 seront consignés
-après son import. L'import documentaire ne
+`git diff --cached --check` sans erreur. L'import documentaire ne
 constitue pas un essai de modèle, un jugement pédagogique humain, une preuve
 d'apprentissage ou une recette de sécurité backend.
+
+Après V0.7 : `make verify` réussi (**79 fichiers suivis, 48 tests** : 34
+antérieurs, douze de l'outillage et deux de préservation/intégration).
+Les six tests fournis passaient aussi avant les compléments. Dry-runs des
+deux suites, V0.7 avec R01–R03 : **32 cas / 46 lignes JSONL**, IDs/tours uniques,
+`response: null`, `provider: dry-run`, `status: not_called` vérifiés sur chaque
+ligne. Les fichiers de sortie sont locaux, hors du dépôt.
+
+Comparaison automatisée avec la base : aucun diff du candidat V0.3, des scénarios
+d'origine, des schémas, du code applicatif ou des trois fichiers de tests
+antérieurs ; chaque ligne de décision D-001 à D-024 est conservée.
+
+Le contrôle d'espacement a détecté deux espaces finaux sur la date du README ;
+corrigés avant publication. Le lien de PR et la CI distante seront ajoutés
+après leur vérification.
+Cette tâche ouvre une PR de revue et ne fusionne pas dans `main`.

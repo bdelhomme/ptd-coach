@@ -9,6 +9,14 @@ Les idées des archives ne deviennent pas des décisions VALIDÉES par leur impo
 Le développement du nouveau coach Mistral attend une deuxième étape demandée
 par le porteur ; aucun appel distant ni modification du prototype pour ce lot.
 
+- [x] Intégrer V0.6, puis V0.7 sans copier les cas V0.6 dans `inputs/`.
+- [x] Conserver les propositions distinctes des décisions et tracer les écarts.
+- [x] Ajouter un mode d'emploi des outils de recette hors réseau.
+- [ ] Faire relire le noyau, la politique et R01–R03 ; enregistrer les retours.
+- [ ] Après nouvelle demande seulement : discuter puis développer l'étape 2,
+  [ticket 004](tickets/004-conversation-router.md) et
+  [ticket 005](tickets/005-backend-boundaries.md), ADR-0006 proposé.
+
 ## Chantier de conception — cadrage du coaching (ticket 003)
 
 Cette priorité précède l'ajout d'exercices ou l'extension du prototype.

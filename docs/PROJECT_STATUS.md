@@ -2,7 +2,7 @@
 
 Dernière mise à jour : **2026-11-09** · Version documentaire : **V0.6/V0.7 en revue**
 
-## Intégration pédagogique en cours — 2026-11-09
+## Priorité actuelle — revue de l'intégration V0.6/V0.7
 
 Demande explicite du porteur : intégrer les archives V0.6 puis V0.7 sur une
 branche dédiée et ouvrir une pull request, sans commencer le nouveau coach
@@ -19,6 +19,24 @@ en brouillon et 20 cas synthétiques, dont huit porteurs d'un veto critique.
 Inventaire, corrections et contrôles : [rapport d'intégration](INTEGRATION_V06_V07.md).
 Cette intégration ne constitue pas une recette réussie du dialogue ni une
 autorisation de pilote réel. Le prototype reste un démonstrateur simulé.
+
+V0.7 : [spécification de recette](COACH_DIALOGUE_EVALUATION_V07.md), prompt
+expérimental, 12 dialogues synthétiques à 26 tours, deux scripts et tests.
+Le doublon V0.6 de `inputs/` n'est pas recopié. Voir
+[le mode d'emploi hors réseau](EVALUATION_TOOLS_V07.md) ; le code d'appel API
+fourni reste isolé et non exécuté. Les tests ne génèrent aucune réponse de modèle.
+D-025 consigne le périmètre autorisé. Les tickets
+[004](tickets/004-conversation-router.md)/[005](tickets/005-backend-boundaries.md)
+et [ADR-0006](adr/0006-dialogue-evaluation-compatibility.md) restent PROPOSÉS,
+non implémentés. Prochaine action : revue pédagogique de la PR et des ressources,
+puis décision explicite sur l'étape 2. Aucun merge automatique pour cette tâche.
+
+Contrôles locaux exécutés : `make verify` réussi (**79 fichiers suivis, 48
+tests**) ; les 34 tests antérieurs sont préservés. Deux dry-runs contrôlés :
+32 cas / 46 lignes sans réponse IA. Le candidat V0.3 est identique octet pour
+octet, aucun diff applicatif/contrat/scénario d'origine, D-001 à D-024 conservées.
+Publication et résultats distants à renseigner après vérification dans le
+rapport d'intégration ; ces contrôles techniques ne valent pas validation pédagogique.
 
 ## Cadrage antérieur — 2026-11-06, conservé pour l'historique
 
@@ -118,7 +136,7 @@ reste à vérifier avec un essai utilisateur.
   mais n'est pas imposée par une règle de protection ; les contributions doivent
   continuer à passer par une branche et une pull request.
 
-## Prochaine priorité
+## Priorité de conception héritée — à poursuivre avec les lots reçus
 Discuter avec le porteur le socle global de références, les grandes situations PTD
 et les apprentissages visés ; examiner la cohérence des onze compétences candidates.
 En déduire ensuite les fiches, ressources, limites d'aide et positionnement.
@@ -126,7 +144,7 @@ Les références et modalités proposées restent à relire avec les encadrants.
 L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
 de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
-## Après ticket 001
+## Chantiers futurs — reportés à l'étape 2 ou au-delà (D-025)
 - Contrat et adaptateur Mistral, journal de tokens, budget.
 - Coach collectif, validation des synthèses et console tuteur.
 - Préparation des revues, calendrier 2027, coordination.

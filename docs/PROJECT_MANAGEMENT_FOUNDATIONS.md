@@ -126,3 +126,11 @@ notation institutionnelle automatique restent inchangés.
 La question précédente sur l'estimation des durées et de la charge dans A2 reste
 non tranchée. La recherche d'un cadre global ne vaut pas accord implicite sur ce point.
 Suite : étape de cadrage global du [ticket 003](tickets/003-coaching-design.md).
+
+## Complément reçu — 2026-11-09
+
+Le [noyau V0.6](PTD_PEDAGOGICAL_KERNEL_V06.md) propose désormais une
+articulation globale aux situations PTD ; son
+[registre de sources](EVIDENCE_REGISTER_V06.md) complète cette recherche.
+Leurs propositions restent à relire et ne remplacent pas les limites de lecture
+consignées ici. Les versions V0.4/V0.5 mentionnées dans les lots sont absentes.

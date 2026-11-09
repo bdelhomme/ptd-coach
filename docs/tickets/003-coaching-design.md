@@ -1,7 +1,7 @@
 # Ticket 003 — Co-concevoir le coaching par compétence
 
 Statut : **À DISCUTER avec le porteur**, puis relecture par les encadrants.
-Priorité : prochaine tâche de conception ; 2026-11-06.
+Priorité : relecture des propositions V0.6/V0.7 ; actualisation 2026-11-09.
 
 ## Exigence et décisions
 
@@ -14,6 +14,15 @@ Dernier retour du porteur (R-006) : s'inspirer de livres/travaux de management d
 projet et garder une vue d'ensemble avant le détail d'A2. La recherche est
 consignée dans [PROJECT_MANAGEMENT_FOUNDATIONS.md](../PROJECT_MANAGEMENT_FOUNDATIONS.md).
 La méthode d'articulation ci-dessous et le corpus restent proposés (D-024).
+
+## Éléments reçus et état
+
+Le [noyau V0.6](../PTD_PEDAGOGICAL_KERNEL_V06.md), la politique, les ressources
+et la recette V0.7 apportent une proposition globale à examiner, pas une validation
+des onze fiches. Reprendre ce ticket à partir de ces contenus sans recréer un
+corpus parallèle ; voir [le rapport d'intégration](../INTEGRATION_V06_V07.md).
+Le développement du coach et les frontières backend sont des tickets distincts
+004/005, non démarrés et reportés à l'étape 2 par D-025.
 
 ## Livrables proposés
 

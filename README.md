@@ -1,7 +1,7 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
-**Statut : prototype local A2 expérimental ; priorité actuelle au cadrage du coaching par compétence.**
-**Date de référence : 6 novembre 2026.**  
+**Statut : prototype A2 simulé ; lots pédagogiques V0.6/V0.7 proposés pour revue.**
+**Date de référence : 9 novembre 2026.**
 **Pilote envisagé : Chimie ParisTech – PSL, PTD 2027.**
 
 PTD Coach vise le **développement individuel des compétences de management de projet** à partir d'un **projet réel mené en équipe**, avec deux accompagnements complémentaires : un coach IA individuel et un coach IA collectif, supervisés par des encadrants humains. La coordination générale garde une vision transversale, sans accès aux conversations privées.
@@ -10,7 +10,21 @@ Ce dépôt est fait pour être repris par **n'importe quel développeur ou assis
 
 ## Commencer ici
 
-### Priorité actuelle : définir le coaching avant de poursuivre les exercices
+### Priorité actuelle : relire les lots V0.6/V0.7
+
+Les archives du porteur ont été intégrées dans l'ordre V0.6 puis V0.7, sur
+branche dédiée : voir [l'inventaire et les contrôles](docs/INTEGRATION_V06_V07.md).
+Elles apportent un noyau pédagogique, une politique de conversation souple,
+trois ressources en brouillon, 20 cas à un tour, 12 dialogues (26 tours) et
+des outils expérimentaux indépendants. Tout reste **PROPOSÉ** pour relecture.
+Le candidat V0.3 et le prototype sont préservés. Le nouveau coach Mistral attend
+une deuxième étape ; aucun appel API n'a été effectué pour cette intégration.
+
+Pour vérifier les outils sans modèle ni frais, lire
+[le mode d'emploi hors réseau](docs/EVALUATION_TOOLS_V07.md).
+Le dry-run produit 46 enregistrements sans réponse, pas une recette pédagogique.
+
+### Cadrage conservé
 
 Le porteur confirme l'accompagnement sans faire à la place, la place de ressources
 et l'intérêt d'aider l'étudiant à se positionner pour choisir où travailler.
@@ -67,6 +81,11 @@ que des données inventées. Voir [DEVELOPMENT.md](docs/DEVELOPMENT.md) et
 
 ## Prochain jalon
 
+Relire la PR d'intégration, le noyau, la politique et les ressources, puis définir
+la recette humaine. Les tickets 004/005 et l'ADR-0006 sont des propositions pour
+une étape ultérieure ; aucun routeur, coach Mistral ou contrat nouveau n'est
+implémenté. Poursuivre le ticket 003 avec ces éléments :
+
 Discuter un cadre global sourcé du management de projet, son adaptation au PTD et
 l'articulation des compétences candidates. En déduire les fiches de coaching,
 ressources, limites d'aide et positionnement formatif privé. Faire relire les
@@ -83,3 +102,7 @@ nécessaires avant un pilote avec vrais étudiants.
 - **2026-11-06, évolution du cadrage** : priorité aux fiches de coaching,
   à l'aide sans substitution, aux ressources et au positionnement formatif ;
   journal de réflexion et consigne de mémoire continue dans le dépôt.
+
+- **2026-11-09, intégration V0.6 puis V0.7** : spécifications proposées,
+  ressources, cas synthétiques et outils de recette hors application ; D-025,
+  candidat V0.3 inchangé, développement Mistral différé.

@@ -90,12 +90,18 @@ cibles des liens Markdown locaux simples, exclusions et quelques formats de jeto
 (sans leur valeur). Il ne remplace ni un audit de secrets, ni un contrôle exhaustif
 des données personnelles. Les ancres et les liens externes ne sont pas contrôlés.
 
-`make test` exécute 34 tests synthétiques : dix contrôles documentaires,
-dix-sept cas domaine/contrats et sept tests HTTP. `make verify` exécute les deux
+`make test` exécute 48 tests synthétiques : les 34 antérieurs (dix contrôles
+documentaires, dix-sept cas domaine/contrats et sept HTTP), douze tests des outils
+V0.7 et deux de préservation/intégration. `make verify` exécute les deux
 commandes. Les tests utilisent des bases temporaires distinctes des données de démo.
 Le workflow GitHub Actions exécute les mêmes commandes sur push et pull request.
 Le prototype et les évolutions de cadrage ont été publiés via la pull request 2 ;
 voir PROJECT_STATUS.md pour la trace des contrôles vérifiés.
+
+Les lots V0.6/V0.7 sont proposés pour revue ; les outils s'utilisent séparément,
+sans modifier le serveur. Voir [EVALUATION_TOOLS_V07.md](EVALUATION_TOOLS_V07.md).
+Leur import ne démarre pas le nouveau coach Mistral (D-025) ; seuls les dry-runs
+et tests avec doubles locaux font partie de cette étape.
 
 Vérification navigateur manuelle : parcours complet, reprise après rechargement,
 preuve sélectionnée visible côté tuteur et révocation ; effectuer cette recette
