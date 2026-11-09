@@ -29,3 +29,20 @@ Procédure **à arbitrer** : partage volontaire de l'équipe ou demande motivée
 
 ## Données techniques
 Ne jamais loguer prompts ou réponses privées en clair dans un outil tiers de monitoring sans décision explicite. Chiffrement TLS, secrets hors Git, sauvegardes testées, politique de vulnérabilités et rétention.
+
+## Démo conversationnelle — D-026
+
+Le nouveau fil privé est réservé au propriétaire ; le collectif aux étudiants
+de l'équipe. Les transcriptions/export restent interdits aux tuteurs,
+coordination et admin. Aucun partage/synthèse validée implémenté dans ce service.
+Ressources communes seulement, pas de recherche transversale, pas de mémoire A2
+ou d'un autre fil dans le contexte modèle. Sélecteur d'identités fictives :
+aucune garantie de confidentialité entre personnes pouvant changer de compte
+sur la même démo. Le navigateur annonce conservation locale et transmission
+Mistral ; clé uniquement côté serveur. Aucune donnée réelle autorisée.
+
+Les requêtes à Mistral contiennent le fil autorisé et les ressources, pas la
+base entière. Les conditions contractuelles de rétention du fournisseur restent
+à examiner pour un pilote institutionnel. Le ledger local d'usage ne copie pas
+les textes et n'est pas envoyé à un monitoring externe. Voir ADR-0007 et
+[le guide](TRY_CONVERSATION_COACH.md) pour les limites et erreurs de facturation.

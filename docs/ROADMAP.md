@@ -1,5 +1,18 @@
 # Feuille de route priorisée — tâches et livrables
 
+## Tranche D-026 — coach local sur données fictives
+
+- [x] Conserver A2 et ajouter conversation/Mistral configurables séparément.
+- [x] Historique multi-tours, ressources communes, tokens et export autorisé.
+- [x] Interface locale privé/collectif et tests de permissions/concurrence/erreurs.
+- [x] Runner V0.7 utilisant le même service ; recette API distincte des tests CI.
+- [ ] Faire remplir la grille humaine et relire les défauts pédagogiques observés.
+- [ ] Valider pédagogie, DSI/DPO et authentification avant tout pilote réel.
+
+Les mentions de report D-025 ci-dessous sont historiques ; D-026 lance la
+première tranche. Voir [le rapport courant](CONVERSATION_COACH_REPORT.md).
+
+
 ## Intégration V0.6/V0.7 — revue documentaire avant nouveau coach
 
 Demande du 2026-11-09 : intégrer les lots dans cet ordre, puis ouvrir une PR.

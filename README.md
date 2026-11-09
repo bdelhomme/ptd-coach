@@ -1,6 +1,6 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
-**Statut : prototype A2 simulé ; lots pédagogiques V0.6/V0.7 proposés pour revue.**
+**Statut : premier coach conversationnel Mistral local ; A2 simulé conservé.**
 **Date de référence : 9 novembre 2026.**
 **Pilote envisagé : Chimie ParisTech – PSL, PTD 2027.**
 
@@ -10,19 +10,27 @@ Ce dépôt est fait pour être repris par **n'importe quel développeur ou assis
 
 ## Commencer ici
 
-### Priorité actuelle : relire les lots V0.6/V0.7
+### Essayer une vraie conversation
 
-Les archives du porteur ont été intégrées dans l'ordre V0.6 puis V0.7, sur
-branche dédiée : voir [l'inventaire et les contrôles](docs/INTEGRATION_V06_V07.md).
-Elles apportent un noyau pédagogique, une politique de conversation souple,
-trois ressources en brouillon, 20 cas à un tour, 12 dialogues (26 tours) et
-des outils expérimentaux indépendants. Tout reste **PROPOSÉ** pour relecture.
-Le candidat V0.3 et le prototype sont préservés. Le nouveau coach Mistral attend
-une deuxième étape ; aucun appel API n'a été effectué pour cette intégration.
+Voir [le guide Mac](docs/TRY_CONVERSATION_COACH.md) : `make bootstrap`, renseigner
+`MISTRAL_API_KEY` dans `.env` ignoré, puis `make run`. Ouvrir
+**http://127.0.0.1:8765/coach** et choisir un compte étudiant fictif.
+Le modèle initial est `mistral-small-latest`, configurable avec `MISTRAL_MODEL`.
+Conserver `AI_PROVIDER=mock` pour A2 ; le dialogue indépendant utilise
+`CHAT_PROVIDER=mistral` (ou `mock` hors réseau).
 
-Pour vérifier les outils sans modèle ni frais, lire
-[le mode d'emploi hors réseau](docs/EVALUATION_TOOLS_V07.md).
-Le dry-run produit 46 enregistrements sans réponse, pas une recette pédagogique.
+La conversation peut expliquer, aider à préparer une action et examiner une
+expérience sans parcours imposé. Elle utilise R01–R03 (brouillons), affiche les
+tokens API et distingue privé et collectif par permissions backend. Les identités
+restent fictives et librement sélectionnables : aucune donnée réelle.
+Lire [le rapport de recette](docs/CONVERSATION_COACH_REPORT.md), les limites
+et [le contrat versionné](docs/CONVERSATION_API_V1.md). Les tests n'établissent
+pas une validation scientifique ou institutionnelle du coaching.
+
+Les lots V0.6/V0.7 restent proposés pour relecture ; leur
+[inventaire d'intégration](docs/INTEGRATION_V06_V07.md) conserve la provenance.
+D-026 lance l'étape 2 initialement différée par D-025 ; A2 et le candidat V0.3
+restent préservés.
 
 ### Cadrage conservé
 
@@ -81,17 +89,11 @@ que des données inventées. Voir [DEVELOPMENT.md](docs/DEVELOPMENT.md) et
 
 ## Prochain jalon
 
-Relire la PR d'intégration, le noyau, la politique et les ressources, puis définir
-la recette humaine. Les tickets 004/005 et l'ADR-0006 sont des propositions pour
-une étape ultérieure ; aucun routeur, coach Mistral ou contrat nouveau n'est
-implémenté. Poursuivre le ticket 003 avec ces éléments :
-
-Discuter un cadre global sourcé du management de projet, son adaptation au PTD et
-l'articulation des compétences candidates. En déduire les fiches de coaching,
-ressources, limites d'aide et positionnement formatif privé. Faire relire les
-propositions par les encadrants.
-L'arbitrage DSI, l'adaptation Mistral et la qualification réglementaire restent
-nécessaires avant un pilote avec vrais étudiants.
+Évaluer les réponses avec la grille humaine V0.7, discuter les limites observées
+et faire relire les ressources. La présence d'une API et les tests techniques
+ne constituent pas une preuve d'apprentissage. L'avis DSI/DPO, la validation
+pédagogique et l'authentification institutionnelle restent nécessaires avant
+un pilote avec de vraies données.
 
 ## Historique
 
@@ -106,3 +108,7 @@ nécessaires avant un pilote avec vrais étudiants.
 - **2026-11-09, intégration V0.6 puis V0.7** : spécifications proposées,
   ressources, cas synthétiques et outils de recette hors application ; D-025,
   candidat V0.3 inchangé, développement Mistral différé.
+
+- **2026-11-09, étape 2 autorisée (D-026)** : service conversationnel séparé,
+  API Mistral configurable, espaces privé/collectif, mesure des tokens, UI locale,
+  tests de frontières et recette réelle V0.7 ; données fictives uniquement.

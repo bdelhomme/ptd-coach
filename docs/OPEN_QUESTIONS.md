@@ -31,3 +31,10 @@
   L'ADR-0006 et les tickets 004/005 restent proposés, aucun modèle choisi ni testé.
 
 **Principe :** ne jamais résoudre une question ouverte par supposition silencieuse. Si une tranche de développement exige un arbitrage, l'expliciter dans le ticket.
+
+## Tranche autorisée D-026
+
+Le modèle initial de la démo est désormais `mistral-small-latest`, configurable,
+et le contrat de conversation v1 est implémenté séparément d'A2. Cela ne tranche
+pas le modèle ni le contrat fournisseur pour une exploitation institutionnelle.
+La grille humaine V0.7 et la relecture des ressources restent à effectuer.

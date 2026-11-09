@@ -1,8 +1,41 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-09** · Version documentaire : **V0.6/V0.7 en revue**
+Dernière mise à jour : **2026-11-09** · Version applicative : **conversation.v1, expérimentation locale**
 
-## Priorité actuelle — revue de l'intégration V0.6/V0.7
+## État actuel — premier coach conversationnel (D-026)
+
+La nouvelle demande du porteur lance l'étape 2 après le report D-025. Nouveau
+service de conversation Mistral réel à plusieurs tours, modèle configurable
+(`mistral-small-latest` initial), ressources R01–R03 en brouillon, tokens API,
+interface `/coach`, fils privés ou collectifs d'équipe, export autorisé.
+Le prototype A2, son simulateur, ses contrats et ses scénarios restent en place.
+Le candidat V0.3 et les décisions antérieures sont conservés.
+
+Branche `feat/mistral-conversation-coach`, basée sur le dernier commit publié
+de la PR #4 (`d8e252a`), encore ouverte lors du départ. La nouvelle PR dépend
+ainsi de la branche V0.6/V0.7 ; aucun merge de la PR #4 n'est présumé.
+Mode d'emploi : [TRY_CONVERSATION_COACH.md](TRY_CONVERSATION_COACH.md).
+Choix, contrat, tests, résultats et publication vérifiée dans
+[CONVERSATION_COACH_REPORT.md](CONVERSATION_COACH_REPORT.md),
+[ADR-0007](adr/0007-local-conversation-mistral.md) et
+[CONVERSATION_API_V1.md](CONVERSATION_API_V1.md).
+
+La clé est configurée uniquement dans `.env` ignoré/env serveur. La démo utilise
+un sélecteur d'identités fictives, pas un SSO ; aucun pilote réel autorisé.
+Pas d'outils d'action pour le modèle, de partage ou de synthèse validée dans le
+nouveau service. Les tests techniques et les réponses de recette ne prouvent
+ni compétence acquise ni efficacité pédagogique. La relecture humaine demeure
+la prochaine étape, avec les défauts et itérations conservés dans le rapport.
+
+Vérifications exécutées : `make verify` réussi (94 fichiers, 72 tests), diff
+sans erreur, référentiel/contrats/scénarios A2 et décisions préservés, clé locale
+absente de Git. Recette réelle courante : 12 cas / 26 réponses V0.7, aucun échec
+API, 91 945 tokens (87 949 entrée, 3 996 sortie). Recette navigateur : deux tours
+réels, reprise après redémarrage et ressources vérifiés. Grille humaine non notée.
+Le rapport consigne les passages précédents et les limites ; publication/CI
+à vérifier dans la section de synchronisation qui sera ajoutée après publication.
+
+## Historique — intégration V0.6/V0.7
 
 Demande explicite du porteur : intégrer les archives V0.6 puis V0.7 sur une
 branche dédiée et ouvrir une pull request, sans commencer le nouveau coach
@@ -130,9 +163,9 @@ reste à vérifier avec un essai utilisateur.
   contrat et recette : [ticket 001](tickets/001-a2-local.md).
 
 ## Non réalisé
-- Pas de serveur déployé, d'API Mistral, de SSO ou d'authentification institutionnelle,
+- Pas de serveur déployé, de SSO ou d'authentification institutionnelle,
   ni de PostgreSQL/conteneurs. Le serveur et la base du prototype sont locaux.
-- Pas de coach collectif, synthèses validées, budget réel ou restauration
+- Pas de console tuteur ou synthèses collectives validées, budget en euros ou restauration
   institutionnelle. Tests e2e du navigateur non automatisés.
 - Pas d'accord DSI/DPO ; ni de validation du référentiel par les encadrants.
 - Pas d'étude contractuelle/licence/propriété achevée.
@@ -149,8 +182,8 @@ Les références et modalités proposées restent à relire avec les encadrants.
 L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
 de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
-## Chantiers futurs — reportés à l'étape 2 ou au-delà (D-025)
-- Contrat et adaptateur Mistral, journal de tokens, budget.
+## Chantiers futurs — au-delà de la première tranche D-026
+- Contrat et adaptateur Mistral / tokens réalisés pour le dialogue local ; restent budget monétaire, exploitation et validation institutionnels.
 - Coach collectif, validation des synthèses et console tuteur.
 - Préparation des revues, calendrier 2027, coordination.
 - Analyse DPO/DSI et pilote limité.

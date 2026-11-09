@@ -29,6 +29,7 @@
 | D-023 | VALIDÉ | Maintenir dans le dépôt privé la mémoire des évolutions significatives de réflexion, afin de permettre la reprise par toute IA | Demande explicite du porteur le 2026-11-06 | Journal de réflexion, décisions, état et passation actualisés lorsque pertinent ; publication GitHub vérifiée |
 | D-024 | PROPOSÉ | Établir un cadre global sourcé du management de projet et une matrice d'alignement avec les situations PTD avant de détailler les fiches | Le porteur demande des livres/travaux et questionne l'atomisation autour d'A2 | Corpus préparatoire vérifié sur sources primaires ; choix des références, correspondances et périmètre encore à discuter ; aucun référentiel adopté |
 | D-025 | VALIDÉ | Intégrer les lots V0.6 puis V0.7 pour revue sur branche dédiée et PR ; différer le développement du nouveau coach Mistral à une deuxième étape | Demande explicite du porteur le 2026-11-09 | Préserver l'historique et le candidat V0.3, dédupliquer les fichiers, intégrer l'outillage expérimental sans appel IA ni raccordement applicatif ; les propositions pédagogiques des lots ne sont pas validées par leur import |
+| D-026 | VALIDÉ | Lancer l'étape 2 : premier coach conversationnel réel via API Mistral, modèle initial mistral-small-latest configurable, conversation souple, ressources, tokens, séparation privée/collective et interface locale fictive | Nouvelle demande explicite du porteur le 2026-11-09, après D-025 | Autorise l'implémentation et les essais synthétiques, sur nouvelle branche et PR ; A2/simulateur et candidat V0.3 préservés ; ne vaut pas validation scientifique/institutionnelle ou autorisation de données réelles |
 
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
@@ -38,6 +39,10 @@ de tous les exemples et modalités proposés. Voir [le journal de réflexion](RE
 D-025 autorise le travail d'intégration et en fixe les limites ; ce n'est pas
 une adoption pédagogique ou institutionnelle de V0.6/V0.7. Les décisions
 D-001 à D-024 sont conservées sans modification de statut.
+
+D-026 succède explicitement au report de D-025, qui reste dans l'historique.
+Il autorise le développement demandé et les appels de recette fictifs avec la
+clé locale configurée par le porteur, sans modifier les décisions pédagogiques.
 
 ## Principe de mise à jour
 Pour toute modification de décision VALIDÉE : renseigner une nouvelle ligne citant l'ancienne et le motif ; ne jamais réécrire silencieusement l'historique. Enregistrer les décisions techniques dans `docs/adr/`.

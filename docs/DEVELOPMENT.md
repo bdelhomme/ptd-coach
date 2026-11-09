@@ -90,9 +90,9 @@ cibles des liens Markdown locaux simples, exclusions et quelques formats de jeto
 (sans leur valeur). Il ne remplace ni un audit de secrets, ni un contrôle exhaustif
 des données personnelles. Les ancres et les liens externes ne sont pas contrôlés.
 
-`make test` exécute 48 tests synthétiques : les 34 antérieurs (dix contrôles
+`make test` exécute 72 tests synthétiques : les 34 A2/documentaires (dix contrôles
 documentaires, dix-sept cas domaine/contrats et sept HTTP), douze tests des outils
-V0.7 et deux de préservation/intégration. `make verify` exécute les deux
+V0.7, deux de préservation/intégration et 24 de conversation applicative. `make verify` exécute les deux
 commandes. Les tests utilisent des bases temporaires distinctes des données de démo.
 Le workflow GitHub Actions exécute les mêmes commandes sur push et pull request.
 Le prototype et les évolutions de cadrage ont été publiés via la pull request 2 ;
@@ -119,3 +119,11 @@ Relire les feedbacks des trois cas avec un encadrant ; arbitrer la pile et les
 conditions institutionnelles ; migrer vers une authentification et une infrastructure
 appropriées. Sont hors de ce prototype : Mistral, budgets facturables, accès collectif,
 synthèses validées, accès exceptionnel, SSO, restauration institutionnelle et déploiement.
+
+## Coach conversationnel indépendant — D-026
+
+`make run` démarre aussi `/coach` ; A2 reste simulé. Configuration locale
+`CHAT_PROVIDER`, `MISTRAL_MODEL`, `MISTRAL_API_KEY`, limites de tokens/appels.
+Aucune dépendance supplémentaire ; voir [le guide Mac](TRY_CONVERSATION_COACH.md)
+et [le rapport](CONVERSATION_COACH_REPORT.md) pour la recette et les résultats.
+Les nouveaux tests s'ajoutent aux 48 précédents sans appels externes en CI.

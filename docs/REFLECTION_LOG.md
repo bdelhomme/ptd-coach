@@ -94,3 +94,20 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Traçabilité** : ordre, apports V0.7, adaptations et résultats réels dans
   [INTEGRATION_V06_V07.md](INTEGRATION_V06_V07.md). V0.4/V0.5 non fournies ;
   aucune reconstitution ou validation de leurs décisions.
+
+## R-008 — 2026-11-09 — Premier coach conversationnel réel
+
+- **Demande du porteur** : lancer l'étape 2 avec Mistral, conversation souple
+  à plusieurs tours, ressources, réflexivité, préparation d'action, tokens,
+  espaces isolés, interface Mac pour étudiants fictifs et nouvelle PR.
+- **Accord enregistré** : D-026 succède au report D-025. A2, ses contrats et
+  le référentiel candidat V0.3 restent préservés ; aucune validation du référentiel.
+- **Implémentation provisoire** : service de conversation séparé, sans outils
+  d'action métier ni partage ; prompt V0.7 et R01–R03 conservés comme brouillons.
+  Le complément applicatif explicite les capacités et limites effectives.
+- **Méthode de recette** : tests structurels hors réseau distincts des réponses
+  réelles V0.7. Première exécution : défauts de provenance inventée et formulation
+  d'annulation de partage ; conservée, suivie d'un complément v1.1 et d'un nouveau
+  passage, sans masquer le premier. Grille humaine encore à remplir.
+- **Traçabilité** : ADR-0007, contrat conversation.v1, mode d'emploi et rapport
+  CONVERSATION_COACH_REPORT ; statut de publication à vérifier dans la PR.

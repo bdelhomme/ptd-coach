@@ -6,6 +6,8 @@ from pathlib import Path
 
 from .server import DemoServer
 from .service import Service
+from .chat_config import settings, provider_from_settings
+from .chat_service import ChatService
 
 
 def configuration(root):
@@ -35,8 +37,14 @@ def main():
     local = root / "local-data"
     local.mkdir(mode=0o700, exist_ok=True)
     service = Service(local / "a2-demo.sqlite3")
-    with DemoServer(("127.0.0.1", args.port), service) as server:
-        print("PTD Coach — démo fictive, coach simulé : http://127.0.0.1:{}".format(args.port), flush=True)
+    chat_settings = settings(root)
+    chat = ChatService(local / "coach-demo.sqlite3", provider_from_settings(chat_settings),
+                       max_calls=chat_settings["CHAT_MAX_CALLS"])
+    with DemoServer(("127.0.0.1", args.port), service, chat) as server:
+        print("PTD Coach — conversation fictive : http://127.0.0.1:{}/coach".format(args.port), flush=True)
+        print("Fournisseur conversation : {} ; modèle : {} ; clé configurée : {}".format(
+            chat.provider.name, chat.provider.model, "oui" if chat.provider.configured else "non"), flush=True)
+        print("Prototype A2 conservé, fournisseur simulé : http://127.0.0.1:{}".format(args.port), flush=True)
         try:
             server.serve_forever()
         except KeyboardInterrupt:

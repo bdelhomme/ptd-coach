@@ -40,3 +40,12 @@ Browser étudiants / tuteurs / coordination
 - Le prototype local A2 existe (ADR-0005) ; la pile cible ci-dessus reste proposée. Les outils de recette V0.7 en sont séparés (ADR-0006 proposé) et ne changent aucun service applicatif.
 
 Voir `docs/adr/`.
+
+## Extension locale de conversation — D-026
+
+Le serveur existant sert `/coach` et les routes `conversation.v1` ; service,
+fournisseur textuel et base `coach-demo.sqlite3` séparés d'A2. Mistral/Mock
+interchangeables, contexte préparé après vérification SQL des droits. Aucune
+récupération des traces privées A2 ou des autres conversations. Le choix reste
+provisoire et décrit par [ADR-0007](adr/0007-local-conversation-mistral.md),
+sans adoption de la pile institutionnelle proposée ci-dessus.
