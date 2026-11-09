@@ -24,3 +24,12 @@ IDs immuables (UUID recommandés), versions du référentiel et des scénarios, 
 
 ## Exemple de cycle individuel
 Voir `pedagogy/scenarios/A2-first-cycle.json`. Aucun progrès n'est déduit de la date cible ni du texte de l'IA ; une expérimentation terminée reste un fait *déclaré*.
+
+## Implémentation locale conversation.v1 — D-026
+
+Base séparée : `conversations` (scope immuable, propriétaire/équipe, version,
+pending), `chat_messages` (rôle/texte/auteur), `chat_requests` (clé idempotente,
+empreinte de commande, statut et métadonnées d'usage sans texte). Version SQLite
+1 indépendante d'A2 ; aucune migration de l'ancien schéma. Le contexte contient
+seulement les messages du fil préalablement autorisé. Voir
+[le contrat v1](CONVERSATION_API_V1.md) et ADR-0007.

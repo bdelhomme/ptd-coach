@@ -16,17 +16,20 @@ from .service import CASES, DomainError, exact_fields, require
 
 WEB = Path(__file__).resolve().parents[1] / "web"
 ASSETS = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"),
-          "/style.css": ("style.css", "text/css")}
+          "/style.css": ("style.css", "text/css"),
+          "/coach": ("coach.html", "text/html"), "/coach.js": ("coach.js", "text/javascript"),
+          "/coach.css": ("coach.css", "text/css")}
 COOKIE = "ptd_demo"
 
 
 class DemoServer(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, address, service):
+    def __init__(self, address, service, chat=None):
         if address[0] != "127.0.0.1":
             raise ValueError("The fictitious demo must bind to 127.0.0.1")
         self.service = service
+        self.chat = chat
         self.sessions = {}
         self.session_lock = threading.Lock()
         super().__init__(address, Handler)
@@ -60,7 +63,8 @@ class Handler(BaseHTTPRequestHandler):
         if cookie:
             self.send_header("Set-Cookie", cookie)
         if download:
-            self.send_header("Content-Disposition", 'attachment; filename="ptd-a2-prive.json"')
+            filename = download if isinstance(download, str) else "ptd-a2-prive.json"
+            self.send_header("Content-Disposition", 'attachment; filename="' + filename + '"')
         self.end_headers()
         self.wfile.write(body)
 
@@ -139,6 +143,29 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(200, {"logged_out": True}, cookie=COOKIE + "=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0")
             service = self.server.service
             key = self.headers.get("Idempotency-Key")
+            if path.startswith("/api/coach/"):
+                chat = self.server.chat
+                require(chat is not None, 503, "chat_unavailable", "Le coach conversationnel n'est pas activé sur ce serveur.")
+                chat.student(actor)
+                if path == "/api/coach/config" and method == "GET":
+                    return self.reply(200, chat.public_config())
+                if path == "/api/coach/resources" and method == "GET":
+                    return self.reply(200, chat.context.resources)
+                if path == "/api/coach/conversations":
+                    if method == "GET":
+                        return self.reply(200, chat.listing(actor))
+                    if method == "POST":
+                        return self.reply(201, chat.create(actor, key, self.body()))
+                parts = path.strip("/").split("/")
+                if len(parts) in (4, 5) and parts[:3] == ["api", "coach", "conversations"]:
+                    cid = parts[3]
+                    if len(parts) == 4 and method == "GET":
+                        return self.reply(200, chat.conversation(actor, cid))
+                    if len(parts) == 5 and parts[4] == "messages" and method == "POST":
+                        return self.reply(200, chat.send(actor, cid, key, self.body()))
+                    if len(parts) == 5 and parts[4] == "export" and method == "GET":
+                        return self.reply(200, chat.export(actor, cid), download="ptd-conversation-fictive.json")
+                raise DomainError(404, "not_found", "Page introuvable.")
             if method == "GET" and path == "/api/cases":
                 return self.reply(200, CASES)
             if path == "/api/cycles":

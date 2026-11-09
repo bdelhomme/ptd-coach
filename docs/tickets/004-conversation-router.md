@@ -1,6 +1,18 @@
 # Ticket 004 — Dialogue souple et compatibilité du futur coach
 
-**Statut : PROPOSÉ, NON DÉMARRÉ.** Étape 2, sur nouvelle demande du porteur.
+## Tranche locale réalisée — D-026, 2026-11-09
+
+Première implémentation expérimentale décrite dans
+[ADR-0007](../adr/0007-local-conversation-mistral.md) et
+[le rapport de recette](../CONVERSATION_COACH_REPORT.md). Conversation Mistral
+sans parcours imposé, service séparé, tests d'isolation et écritures limitées
+aux messages/usage. Les contrôles de synthèses validées, partage supplémentaire,
+recherche ou infrastructure institutionnelle restent non réalisés et hors de
+cette tranche. Les propositions initiales ci-dessous sont conservées ; elles
+ne signifient pas qu'un encadrant a relu/approuvé les ressources.
+
+
+**Statut du cadrage initial : PROPOSÉ ; tranche D-026 réalisée ci-dessus.** Étape 2, sur nouvelle demande du porteur.
 Exigences : F-03/F-05/F-12 ; D-010/D-020/D-021/D-025.
 
 ## Besoin

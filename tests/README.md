@@ -1,6 +1,6 @@
 # Tests du dépôt et du prototype A2
 
-`make verify` exécute les contrôles du dépôt et 48 tests sur données synthétiques :
+`make verify` exécute les contrôles du dépôt et 72 tests sur données synthétiques :
 
 - Dix tests du contrôleur documentaire.
 - Dix-sept tests de domaine/contrats : cycle complet, persistance après reprise,
@@ -31,3 +31,13 @@ au simulateur local et à l'export, sans restauration institutionnelle. Aucun te
 de SSO, Mistral, budget réel, coach collectif ou environnement de production.
 Les tests du mock ne valident pas la qualité pédagogique d'un modèle réel.
 Le navigateur est vérifié manuellement ; ses tests e2e automatisés restent à écrire.
+
+## Conversation applicative — 24 tests supplémentaires
+
+`test_chat.py` : 19 tests (domaine, fournisseurs, configuration, reprise,
+isolation des contextes, concurrence et ledger, limites, comptage réel/factice,
+rejeu des 46 tours V0.6/V0.7 à travers le service avec fournisseur de test).
+`test_chat_http.py` : cinq tests des nouvelles routes, rôles/CSRF, ressources,
+export et erreurs de clé. Tous restent hors API externe ; la CI n'a pas de clé.
+Les résultats API réels et la recette navigateur sont séparés dans
+[CONVERSATION_COACH_REPORT.md](../docs/CONVERSATION_COACH_REPORT.md).

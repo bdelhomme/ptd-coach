@@ -59,3 +59,13 @@ Un code de sortie CLI réussi ne suffit pas à conclure : contrôler les statuts
 JSONL et les cas attendus avant relecture, notamment en présence d'erreurs API.
 Voir [ADR-0006](adr/0006-dialogue-evaluation-compatibility.md) et les tickets
 [004](tickets/004-conversation-router.md)/[005](tickets/005-backend-boundaries.md).
+
+## Étape 2 — nouvelle voie applicative (D-026)
+
+Le report documenté ci-dessus décrit l'import historique. Le nouveau
+`scripts/run_conversation_eval.py` rejoue les mêmes suites via le contexte et
+le service utilisés par l'interface Mistral. Il conserve les critères hors du
+prompt et distingue dry-run/mock/API réelle. Voir
+[TRY_CONVERSATION_COACH.md](TRY_CONVERSATION_COACH.md) et
+[les résultats réellement exécutés](CONVERSATION_COACH_REPORT.md).
+Les outils d'origine restent disponibles et inchangés.

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#103c37">
+  <title>PTD Coach — Conversation</title>
+  <link rel="stylesheet" href="/coach.css">
+  <script src="/coach.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#message">Aller au message</a>
+  <div class="demo">Démonstration locale · étudiants fictifs uniquement · comptes librement sélectionnables</div>
+  <header class="top"><a class="brand" href="/coach">PTD <strong>Coach</strong><small>Apprendre dans le projet, ensemble.</small></a><a href="/">Prototype A2 simulé ↗</a></header>
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">VOTRE PROJET, VOTRE RÉFLEXION</p>
+      <h1>Un appui pour avancer.</h1>
+      <p>Comprendre une méthode, préparer une action ou prendre du recul sur le travail en équipe. Vous gardez les choix et les décisions.</p>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <section id="login" class="panel">
+      <h2>Essayer avec un étudiant fictif</h2>
+      <label for="student">Compte de démonstration</label>
+      <select id="student"><option value="student_demo_01">Étudiant A · équipe 1</option><option value="student_demo_02">Étudiant B · équipe 1</option><option value="student_demo_03">Étudiant C · équipe 2</option></select>
+      <button id="open">Ouvrir cet espace</button>
+      <p class="muted">Ces identités servent à tester les droits. Toute personne utilisant ce Mac peut changer de compte ; utilisez uniquement des situations inventées.</p>
+    </section>
+    <div id="workspace" hidden>
+      <div class="account"><span id="identity"></span><button id="logout" class="subtle">Changer de compte</button></div>
+      <div class="layout">
+        <aside class="panel side">
+          <h2>Mes conversations</h2>
+          <label for="scope">Nouvelle conversation</label>
+          <select id="scope"><option value="individual">Privée · moi uniquement</option><option value="collective">Collective · mon équipe</option></select>
+          <p id="scope-help" class="muted"></p>
+          <label class="confirm"><input id="synthetic" type="checkbox">J’utilise des données fictives. Mes messages seront conservés localement et, avec Mistral, transmis à son API.</label>
+          <button id="new">Commencer une conversation</button>
+          <nav id="conversations" aria-label="Conversations accessibles"></nav>
+          <details class="resources"><summary>Ressources de méthode · brouillons</summary><div id="resources"></div></details>
+        </aside>
+        <section class="panel conversation" aria-label="Conversation avec le coach">
+          <div class="conversation-head"><div><span id="visibility" class="badge">Choisissez votre espace</span><h2 id="conversation-title">De quoi avez-vous besoin ?</h2></div><button id="refresh" class="subtle">Actualiser</button></div>
+          <p id="provider" class="muted"></p>
+          <div id="starters" class="starters"><p>Quelques points de départ, à adapter :</p><button class="example" data-example="C’est quoi une dépendance entre deux tâches ?">Comprendre une notion</button><button class="example" data-example="Dans notre équipe fictive, les travaux avancent chacun de leur côté. Comment mieux nous coordonner ?">Examiner une difficulté</button><button class="example" data-example="Nous voyons le client demain. Comment vérifier que nous avons bien compris son besoin ?">Préparer une action</button><button class="example" data-example="J’ai essayé de faire participer tout le monde en réunion, mais seuls deux camarades ont parlé. J’aimerais prendre du recul.">Revenir sur une expérience</button></div>
+          <div id="messages" aria-live="polite" aria-relevant="additions"></div>
+          <p id="waiting" role="status" hidden>Le coach prépare sa réponse…</p>
+          <form id="compose"><label for="message">Votre message</label><textarea id="message" maxlength="4000" rows="4" placeholder="Décrivez votre besoin ou posez simplement votre question…" required></textarea><div class="compose-actions"><span class="muted">Pas de quiz ni d’objectif imposé.</span><button id="send" type="submit">Envoyer au coach</button></div></form>
+          <div class="foot"><p id="usage" class="muted"></p><button id="export" class="subtle">Exporter cette conversation</button></div>
+          <p class="muted boundary">Ce fil est conservé sur ce Mac et transmis à Mistral à chaque envoi en mode API. Les réponses sont des aides à examiner ; elles ne valident ni compétence ni engagement d’équipe. Aucun partage privé ni modification de planning n’est effectué par le coach.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>PTD Coach · Chimie ParisTech–PSL · Prototype expérimental</footer>
+</body>
+</html>

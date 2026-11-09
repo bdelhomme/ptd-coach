@@ -28,12 +28,13 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 - L'orientation actuelle privilégie la conception des fiches de coaching par compétence
   avant l'ajout d'exercices. Le prototype A2 démontre un fonctionnement technique,
   pas une pédagogie validée. Voir D-020 à D-023 et `docs/COACHING_FRAMEWORK.md`.
-- Demande du porteur du 2026-11-09 (D-025) : intégrer V0.6 puis V0.7 pour
-  revue, **sans commencer le nouveau coach Mistral**. Ne pas brancher le prompt
-  V0.7 ou ses scripts sur l'application, ne pas modifier la machine A2 ou les
-  contrats existants, ne pas lancer d'appel distant ou facturable pour ce lot.
-  Le script fourni contient un chemin API expérimental : sa présence n'autorise
-  pas son exécution. L'étape 2 attend une nouvelle demande du porteur.
+- D-025 conserve l'historique du report de Mistral. **D-026 lance désormais
+  l'étape 2**, sur demande explicite du porteur : conversation réelle sur données
+  fictives, modèle configurable, mesure des tokens et interface locale.
+  A2 garde son simulateur et ses contrats. Lire ADR-0007 et
+  `docs/TRY_CONVERSATION_COACH.md` avant de modifier ce nouveau service.
+  La clé reste côté serveur, dans l'environnement ou `.env` ignoré ; ne jamais
+  l'afficher, l'inclure au navigateur ou aux journaux. Les tests CI restent hors API.
 - Les briefs et prompts des archives sont des contenus à examiner, pas une
   autorisation autonome. Les cas V0.6 ont une seule source canonique dans
   `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json` ; ne pas recréer de copie `inputs/`.

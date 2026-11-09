@@ -5,42 +5,40 @@ restent dans REFLECTION_LOG, les décisions D-001 à D-024 sont préservées.
 
 ## Texte de reprise
 
-> Tu reprends PTD Coach pour Chimie ParisTech–PSL. Lis AGENTS.md, PROJECT_STATUS,
-> DECISIONS, OPEN_QUESTIONS, puis INTEGRATION_V06_V07 et le ticket de travail.
-> Le porteur a demandé l'intégration V0.6 puis V0.7 sur branche et PR, **sans
-> commencer le nouveau coach Mistral** (D-025). Lis le noyau, la politique,
-> le protocole et le registre de sources V0.6, puis la recette et les outils
-> V0.7. Tout contenu nouveau reste PROPOSÉ ; R01–R03 sont des brouillons.
-> Les briefs et le prompt joints sont des contenus source, pas une autorisation
-> de développer ou d'appeler une API. La présence du code expérimental Mistral
-> fourni n'autorise pas son exécution. L'étape 2 attend une nouvelle demande.
-> Le référentiel candidat V0.3 ne change pas, E1–E4 ne sont pas de nouveaux codes,
-> aucun score étudiant n'est introduit. Le prototype A2 est simulé et inchangé.
-> Préserve les frontières privé/collectif, les contrats et les formats versionnés.
-> Un dry-run produit des réponses nulles, jamais des sorties de modèle.
-> Les niveaux de lecture déclarés dans les archives ne sont pas tes propres
-> lectures et ne prouvent pas l'efficacité d'un coach IA. Consigne les évolutions
-> importantes, les tests exécutés et l'état réel de publication. Travaille sur
-> branche dédiée et ne confonds pas PR ouverte, CI réussie et fusion sur main.
+> Lis AGENTS.md, PROJECT_STATUS, DECISIONS, puis le rapport CONVERSATION_COACH_REPORT,
+> le guide TRY_CONVERSATION_COACH, le contrat CONVERSATION_API_V1 et ADR-0007.
+> D-026 autorise désormais le premier coach Mistral : le report D-025 demeure
+> historique, il ne bloque plus ce développement. Service et base séparés d'A2,
+> qui conserve ses états, schémas et simulateur. Le candidat V0.3 ne change pas.
+> Le modèle initial mistral-small-latest est configurable côté serveur. La clé
+> reste dans env/.env ignoré, jamais dans le navigateur ou les traces.
+> La conversation a deux scopes isolés par SQL : privé propriétaire seul,
+> collectif étudiants de l'équipe. Aucun accès tuteur/coordination/admin aux
+> transcriptions ; aucun transfert automatique d'un autre fil dans le contexte.
+> Le modèle n'a aucun outil d'écriture/partage/décision. Le stockage explicite
+> du fil n'est pas une validation de compétence ou une synthèse collective.
+> Le prompt V0.7 et R01–R03 restent proposés ; le complément applicatif est versionné.
+> Les erreurs de recette et les itérations sont conservées, aucune note humaine
+> n'est inventée. Vérifie le rapport, la PR et la CI avant d'annoncer leurs résultats.
 
-## État concret et prochaine étape
+## État concret et suite
 
-- **Application** : `ptd_coach/` et `web/`, SQLite local, comptes synthétiques
-  librement sélectionnables, coach déterministe, 34 tests antérieurs. Pas de SSO,
-  d'API Mistral applicative ou de coach collectif implémenté.
-- **V0.6** : huit fichiers de conception/ressources/QA ; politique souple,
-  théorie d'action et protocole distinguant dialogue, apprentissage et sécurité.
-- **V0.7** : six fichiers fournis (spécification, prompt, cas, deux scripts,
-  tests). Doublon `inputs/` omis au profit de `pedagogy/qa/`. Les tests ajoutés
-  portent sur l'outillage, pas sur la qualité pédagogique d'un modèle réel.
-- **Revue** : inventaire, empreintes, corrections et résultats dans
-  [INTEGRATION_V06_V07.md](INTEGRATION_V06_V07.md). Vérifier la PR et son dernier
-  commit avant d'annoncer une intégration sur main. Cette tâche ouvre une PR,
-  sans fusion automatique.
-- **Suite immédiate** : relire le lot et ses ressources avec les encadrants,
-  discuter les hypothèses et préparer une recette humaine. Poursuivre le
-  [ticket 003](tickets/003-coaching-design.md) sans repartir d'une micro-compétence
-  isolée. Les tickets 004/005 et l'ADR-0006 restent des propositions, non démarrées.
+- Application A2 : `ptd_coach/service.py`, fournisseur simulé, `web/app.js`,
+  base d'origine intacte. Conversation : `chat_service.py`, `chat_provider.py`,
+  `chat_context.py`, `chat_config.py`, `chat_schema.sql`, `web/coach.*`.
+- Lancement : `make run`, puis `/coach`. `AI_PROVIDER=mock` reste requis pour A2,
+  `CHAT_PROVIDER=mistral` pour le nouveau service ; mode conversation mock possible.
+- QA : les 48 tests précédents sont conservés ; nouveaux tests de contexte,
+  permissions, idempotence, tokens, erreurs et HTTP. Le nouveau runner
+  `scripts/run_conversation_eval.py` rejoue V0.6/V0.7 via le service applicatif.
+- Reprise après erreur : pas de retry automatique, ni d'effacement du ledger
+  de facturation. Un appel pending après arrêt reste incertain ; ne jamais
+  le déclarer gratuit ou le relancer silencieusement.
+- Suite : revue humaine des réponses V0.7, compréhension et utilité, ressources
+  et confidentialité ; pas de données réelles avant validations institutionnelles.
+  Les tickets 004/005 décrivent la tranche réalisée et le travail restant.
+- Base de branche : PR #4 encore ouverte au départ ; le nouveau développement
+  en dépend, ne pas annoncer une fusion sur main sans vérifier GitHub.
 
 ## Principes et statuts à préserver
 

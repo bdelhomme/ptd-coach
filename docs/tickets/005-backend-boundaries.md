@@ -1,6 +1,18 @@
 # Ticket 005 — Vérifier les frontières backend du futur coach
 
-**Statut : PROPOSÉ, NON DÉMARRÉ.** Dépend des futures routes/contrats et de
+## Tranche locale réalisée — D-026, 2026-11-09
+
+Première implémentation expérimentale décrite dans
+[ADR-0007](../adr/0007-local-conversation-mistral.md) et
+[le rapport de recette](../CONVERSATION_COACH_REPORT.md). Conversation Mistral
+sans parcours imposé, service séparé, tests d'isolation et écritures limitées
+aux messages/usage. Les contrôles de synthèses validées, partage supplémentaire,
+recherche ou infrastructure institutionnelle restent non réalisés et hors de
+cette tranche. Les propositions initiales ci-dessous sont conservées ; elles
+ne signifient pas qu'un encadrant a relu/approuvé les ressources.
+
+
+**Statut du cadrage initial : PROPOSÉ ; tranche D-026 réalisée ci-dessus.** Dépend des futures routes/contrats et de
 l'étape 2. Références : F-01/F-04/F-06/F-09/F-13/F-14, D-007/D-009/D-012/D-025.
 
 ## Existant à préserver

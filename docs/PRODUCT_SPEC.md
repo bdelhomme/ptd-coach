@@ -1,5 +1,17 @@
 # Spécification produit — PTD Coach v0.2
 
+## Mise à jour applicative — étape 2, D-026
+
+Le premier coach Mistral local est désormais développé dans un service séparé
+avec historique multi-tours, ressources et mesure des tokens, sans modifier A2
+ou le candidat V0.3. La demande du porteur succède au report historique D-025.
+Les détails pédagogiques V0.6/V0.7 restent proposés ; aucune validation
+institutionnelle n'est déduite du code. Voir [le guide d'essai](TRY_CONVERSATION_COACH.md),
+[le rapport de recette](CONVERSATION_COACH_REPORT.md) et
+[ADR-0007](adr/0007-local-conversation-mistral.md).
+Les mentions de non-implémentation ci-dessous décrivent les cadrages antérieurs.
+
+
 ## Évolution proposée — V0.6/V0.7, 2026-11-09
 
 Le [noyau V0.6](PTD_PEDAGOGICAL_KERNEL_V06.md) articule les situations de
