@@ -122,3 +122,12 @@ restent à examiner avec l'établissement avant un pilote réel.
 
 Suite immédiate : essayer la conversation, remplir la grille V0.7, faire relire
 R01–R03 et discuter les défauts observés avant d'élargir le périmètre.
+
+## Publication vérifiée
+
+Branche publiée, commit applicatif `34c5b0e` ;
+[PR #5](https://github.com/bdelhomme/ptd-coach/pull/5) ouverte vers
+`docs/integrate-pedagogy-v06-v07`, dépendante de #4. Aucun merge automatique.
+CI push réussie sur le commit applicatif :
+[exécution 42629214730](https://github.com/bdelhomme/ptd-coach/actions/runs/42629214730).
+Les résultats des derniers commits documentaires sont suivis dans la PR.

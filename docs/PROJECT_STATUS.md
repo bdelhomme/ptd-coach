@@ -32,8 +32,13 @@ sans erreur, référentiel/contrats/scénarios A2 et décisions préservés, cl�
 absente de Git. Recette réelle courante : 12 cas / 26 réponses V0.7, aucun échec
 API, 91 945 tokens (87 949 entrée, 3 996 sortie). Recette navigateur : deux tours
 réels, reprise après redémarrage et ressources vérifiés. Grille humaine non notée.
-Le rapport consigne les passages précédents et les limites ; publication/CI
-à vérifier dans la section de synchronisation qui sera ajoutée après publication.
+Le rapport consigne les passages précédents et les limites. Publication vérifiée :
+[PR #5](https://github.com/bdelhomme/ptd-coach/pull/5), ouverte et dépendante de #4,
+branche `feat/mistral-conversation-coach`, commit applicatif `34c5b0e`.
+CI distante réussie sur ce commit :
+[push 42629214730](https://github.com/bdelhomme/ptd-coach/actions/runs/42629214730).
+Les contrôles des mises à jour documentaires suivantes sont suivis dans la PR.
+Aucune fusion sur `main` effectuée pour cette tranche.
 
 ## Historique — intégration V0.6/V0.7
 
