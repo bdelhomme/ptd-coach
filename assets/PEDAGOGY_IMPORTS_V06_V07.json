@@ -1,0 +1,136 @@
+{
+  "integration_date": "2026-11-09",
+  "status": "proposed_for_review",
+  "base_commit": "efb3962c8488b9b064de0c6dd4279d9b111ab758",
+  "note": "Source fingerprints, not integrated-file hashes; corrections are documented in docs/INTEGRATION_V06_V07.md. Archives are not committed.",
+  "archives": [
+    {
+      "version": "0.6",
+      "archive": "PTD_COACH_V06.zip",
+      "archive_sha256": "efa326eb3d35c17e27c406cb7d4780423b72a7e93a22d223f594ef49f61d0d95",
+      "files": [
+        {
+          "source": "README.md",
+          "sha256": "1cf4b8bd1c19be73db5450765b62d4fd34f217f6096281e82104dfe62c792518",
+          "action": "reviewed_not_copied",
+          "reason": "Delivery brief; current request and repository instructions govern."
+        },
+        {
+          "source": "codex/INTEGRATE_V06.md",
+          "sha256": "e630c9faf91ba48cef88c875e1e9bda94312ca700f8028950e18f4ed198a3d6b",
+          "action": "reviewed_not_copied",
+          "reason": "Delivery brief; current request and repository instructions govern."
+        },
+        {
+          "source": "docs/EVIDENCE_REGISTER_V06.md",
+          "sha256": "ac8d7403e300b6b7d3dd05b441b27158f2db826979ff83f8ff33904ad49e3fc2",
+          "action": "integrated",
+          "target": "docs/EVIDENCE_REGISTER_V06.md"
+        },
+        {
+          "source": "docs/PTD_CONVERSATION_POLICY_V06.md",
+          "sha256": "e20230ec5f78cf451af237bc0d6ccc583fa93be6959d9fd9ec971e5c06cd829a",
+          "action": "integrated",
+          "target": "docs/PTD_CONVERSATION_POLICY_V06.md"
+        },
+        {
+          "source": "docs/PTD_PEDAGOGICAL_KERNEL_V06.md",
+          "sha256": "3ca9a841ac551a3aee83de5ba262a6b58e27d360301d958ca7bbc453dc8bafba",
+          "action": "integrated",
+          "target": "docs/PTD_PEDAGOGICAL_KERNEL_V06.md"
+        },
+        {
+          "source": "docs/PTD_PILOT_PROTOCOL_V06.md",
+          "sha256": "a933313a3863bdba80272a0fa5d8a1c614032b7b0a29ba15956fa687af9f8414",
+          "action": "integrated",
+          "target": "docs/PTD_PILOT_PROTOCOL_V06.md"
+        },
+        {
+          "source": "pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json",
+          "sha256": "7d5ef73881177b9e944d50b425f0fbba7343f3583d4b3b1c83f13799331636e9",
+          "action": "integrated",
+          "target": "pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json"
+        },
+        {
+          "source": "pedagogy/resources/R01-coordination-et-engagements.md",
+          "sha256": "a778ecc84c782684f220d086e683e84a9d681a0f68bd38156318d50ee8dea509",
+          "action": "integrated",
+          "target": "pedagogy/resources/R01-coordination-et-engagements.md"
+        },
+        {
+          "source": "pedagogy/resources/R02-debrief-factuel.md",
+          "sha256": "c5d661f3f0c91ed642d08a3376309f36001e3893231ee94284b8bc9be81da842",
+          "action": "integrated",
+          "target": "pedagogy/resources/R02-debrief-factuel.md"
+        },
+        {
+          "source": "pedagogy/resources/R03-cadrage-et-planification.md",
+          "sha256": "7dec31be655e6ae2946062805206ed7b8f424ebeeebcd2cf00fb5df987c1c211",
+          "action": "integrated",
+          "target": "pedagogy/resources/R03-cadrage-et-planification.md"
+        }
+      ]
+    },
+    {
+      "version": "0.7",
+      "archive": "PTD_COACH_V07.zip",
+      "archive_sha256": "34a7bc3216f713ba8e663bd984d1058aeff28aea5811520f81e5419e22c1983c",
+      "files": [
+        {
+          "source": "README.md",
+          "sha256": "bcf2f7abc3d1eed6612a2f4f7c340c473a41fd08cc734975c23f6d8687acaf59",
+          "action": "reviewed_not_copied",
+          "reason": "Delivery brief; current request and repository instructions govern."
+        },
+        {
+          "source": "codex/IMPLEMENT_V07.md",
+          "sha256": "86bffe011a9c8968bc874828f81036db55ea731c3633156f0dc6656eecdf7c7d",
+          "action": "reviewed_not_copied",
+          "reason": "Delivery brief; current request and repository instructions govern."
+        },
+        {
+          "source": "docs/COACH_DIALOGUE_EVALUATION_V07.md",
+          "sha256": "2b186ed76dc664756bdf114b7a415c59c46d0364ee516bc3fbbcb18d5ed58593",
+          "action": "integrated",
+          "target": "docs/COACH_DIALOGUE_EVALUATION_V07.md"
+        },
+        {
+          "source": "inputs/COACH_ACCEPTANCE_CASES_V06.json",
+          "sha256": "7d5ef73881177b9e944d50b425f0fbba7343f3583d4b3b1c83f13799331636e9",
+          "action": "deduplicated",
+          "target": "pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json"
+        },
+        {
+          "source": "pedagogy/prompts/COACH_SYSTEM_DRAFT_V07.md",
+          "sha256": "ff9d6c7f195399c384350f34ce0f77a39810af6ef5f2951749f3b1c1c93988a8",
+          "action": "integrated",
+          "target": "pedagogy/prompts/COACH_SYSTEM_DRAFT_V07.md"
+        },
+        {
+          "source": "pedagogy/qa/COACH_MULTI_TURN_CASES_V07.json",
+          "sha256": "a4dbabaabe1c9662387ac3ed1ab8163a70ea5de9463121bd7e8e127fd348afd2",
+          "action": "integrated",
+          "target": "pedagogy/qa/COACH_MULTI_TURN_CASES_V07.json"
+        },
+        {
+          "source": "scripts/review_coach_eval_v07.py",
+          "sha256": "f8547e4629b4caee7c7cdabe9104458ecb908668c5622d5d4ba57b7aac860906",
+          "action": "integrated",
+          "target": "scripts/review_coach_eval_v07.py"
+        },
+        {
+          "source": "scripts/run_coach_eval_v07.py",
+          "sha256": "ebfc805681b3f869bb17bfae0eb991f5c479b94ec6599a4928d332f1ea6a2ae9",
+          "action": "integrated",
+          "target": "scripts/run_coach_eval_v07.py"
+        },
+        {
+          "source": "tests/test_eval_v07.py",
+          "sha256": "bb33a9d5b012f1762b75a07ce34301e8bad9444612a1aa2ec830640cfd5c9082",
+          "action": "integrated",
+          "target": "tests/test_eval_v07.py"
+        }
+      ]
+    }
+  ]
+}

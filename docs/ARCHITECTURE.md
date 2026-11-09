@@ -37,6 +37,6 @@ Browser étudiants / tuteurs / coordination
 - Docker Compose dev n'implique pas que la DSI accepte Compose en prod.
 - Un stockage « en France » ne garantit pas à lui seul confidentialité, conformité ou souveraineté.
 - Les changements de modèle exigent une comparaison pédagogique, pas seulement un test technique.
-- L'application n'est pas encore développée et le diagramme ci-dessus n'est pas une preuve de faisabilité validée.
+- Le prototype local A2 existe (ADR-0005) ; la pile cible ci-dessus reste proposée. Les outils de recette V0.7 en sont séparés (ADR-0006 proposé) et ne changent aucun service applicatif.
 
 Voir `docs/adr/`.

@@ -75,3 +75,22 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Statut** : aucune adoption de corpus, aucun nouveau découpage ou descripteur
   validé. Ne pas poursuivre mécaniquement la micro-décomposition d'A2 ; discuter
   d'abord le socle d'ensemble et documenter les correspondances aux sources.
+
+## R-007 — 2026-11-09 — Intégrer V0.6 puis V0.7 avant le nouveau coach
+
+- **Demande explicite du porteur** : intégrer les deux archives dans l'ordre,
+  préserver décisions et candidat V0.3, éviter les doublons, vérifier et ouvrir
+  une PR dédiée ; ne pas commencer le développement du nouveau coach Mistral.
+- **Apport V0.6** : théorie d'action globale, articulation des onze codes sans
+  remplacement, capacités analytiques E1–E4, politique souple, trois ressources,
+  20 cas fictifs et distinction qualité du dialogue / apprentissage / sécurité.
+- **Statut** : intégration autorisée, propositions pédagogiques non adoptées,
+  ressources en brouillon. Les mentions d'accords ultérieurs dans les archives
+  ne constituent pas à elles seules la preuve d'une validation du porteur.
+- **Apport V0.7** : 12 dialogues (26 tours), prompt expérimental, exécuteur
+  dry-run et préparation de grilles humaines. Le chemin API fourni est conservé
+  à part de l'application, sans appel ni développement du nouveau coach.
+  La copie V0.6 est remplacée par le chemin canonique déjà intégré.
+- **Traçabilité** : ordre, apports V0.7, adaptations et résultats réels dans
+  [INTEGRATION_V06_V07.md](INTEGRATION_V06_V07.md). V0.4/V0.5 non fournies ;
+  aucune reconstitution ou validation de leurs décisions.

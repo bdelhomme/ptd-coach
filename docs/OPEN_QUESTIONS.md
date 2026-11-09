@@ -19,4 +19,15 @@
 | P2 | Quelle procédure d'évaluation du pilote permet d'observer des apprentissages réels ? | Pédagogues / évaluation | Déploiement plus large |
 | P2 | Quel hébergeur de démonstration ? | Porteur du prototype | Démo publique à données fictives |
 
+## Questions de revue ajoutées le 2026-11-09
+
+- Les encadrants approuvent-ils la théorie d'action, la grille analytique E1–E4,
+  le rôle transversal de D2 et l'articulation proposée des onze codes ?
+- Qui relit R01–R03, leurs sources et droits avant usage pédagogique ?
+- Comment calibrer la grille de dialogue, les désaccords entre lecteurs et les
+  seuils de recette proposés (0–2, 90 %, zéro veto) sans les confondre avec
+  une mesure des compétences étudiantes ?
+- Quel périmètre et contrat retenir pour l'étape 2 après nouvelle demande ?
+  L'ADR-0006 et les tickets 004/005 restent proposés, aucun modèle choisi ni testé.
+
 **Principe :** ne jamais résoudre une question ouverte par supposition silencieuse. Si une tranche de développement exige un arbitrage, l'expliciter dans le ticket.

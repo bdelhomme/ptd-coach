@@ -1,6 +1,23 @@
 # Feuille de route priorisée — tâches et livrables
 
-## Priorité actuelle — cadrage du coaching (ticket 003)
+## Intégration V0.6/V0.7 — revue documentaire avant nouveau coach
+
+Demande du 2026-11-09 : intégrer les lots dans cet ordre, puis ouvrir une PR.
+**Proposition V0.6 soumise à relecture** : noyau, politique, ressources et
+protocole dans [le rapport d'intégration](INTEGRATION_V06_V07.md).
+Les idées des archives ne deviennent pas des décisions VALIDÉES par leur import.
+Le développement du nouveau coach Mistral attend une deuxième étape demandée
+par le porteur ; aucun appel distant ni modification du prototype pour ce lot.
+
+- [x] Intégrer V0.6, puis V0.7 sans copier les cas V0.6 dans `inputs/`.
+- [x] Conserver les propositions distinctes des décisions et tracer les écarts.
+- [x] Ajouter un mode d'emploi des outils de recette hors réseau.
+- [ ] Faire relire le noyau, la politique et R01–R03 ; enregistrer les retours.
+- [ ] Après nouvelle demande seulement : discuter puis développer l'étape 2,
+  [ticket 004](tickets/004-conversation-router.md) et
+  [ticket 005](tickets/005-backend-boundaries.md), ADR-0006 proposé.
+
+## Chantier de conception — cadrage du coaching (ticket 003)
 
 Cette priorité précède l'ajout d'exercices ou l'extension du prototype.
 Principes confirmés : D-020 à D-023 ; voir [COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md).

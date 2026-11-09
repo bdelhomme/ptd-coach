@@ -1,5 +1,17 @@
 # Moteur conversationnel IA — contrat conceptuel
 
+## V0.6/V0.7 — spécification candidate, aucun raccordement applicatif
+
+La [politique V0.6](PTD_CONVERSATION_POLICY_V06.md) propose sept intentions
+combinables ; elles ne sont pas les états du cycle A2 ci-dessous. Le prompt et
+le banc de dialogue V0.7 restent isolés dans `pedagogy/` et `scripts/`.
+Aucun schéma existant n'est modifié ; la réponse en texte libre du banc n'est
+pas une réponse contractuelle du backend. Voir
+[ADR-0006 PROPOSÉ](adr/0006-dialogue-evaluation-compatibility.md) et
+[le mode d'emploi des outils](EVALUATION_TOOLS_V07.md).
+Le chemin API Mistral fourni avec le lot n'est pas le futur coach et n'a pas
+été exécuté. D-025 réserve son développement applicatif à une deuxième étape.
+
 ## Requête au modèle
 L'appelant autorisé fournit : `mode` (individual/collective), `activity`, `pedagogical_state`, `competency_ids`, `authorized_context`, `student_message`, `prompt_version` et un identifiant d'appel. Le backend constitue le contexte autorisé ; le modèle ne sélectionne pas les droits.
 

@@ -40,3 +40,14 @@ La formulation initiale associant à ISO 21502 les compétences techniques,
 comportementales et contextuelles a été corrigée ci-dessus pour éviter une
 attribution non étayée. Les autres références de la liste restent à examiner
 selon leur statut ; ne pas les considérer toutes vérifiées du fait de cette note.
+
+## Lots pédagogiques reçus le 2026-11-09
+
+Les archives V0.6/V0.7 sont intégrées pour revue ; inventaire et empreintes dans
+[INTEGRATION_V06_V07.md](INTEGRATION_V06_V07.md) et
+[le manifeste source](../assets/PEDAGOGY_IMPORTS_V06_V07.json).
+Le [registre V0.6](EVIDENCE_REGISTER_V06.md) distingue sources, limites et
+inférences. Ses niveaux de lecture sont déclarés par les auteurs du lot ; ils
+ne sont pas automatiquement de nouvelles lectures effectuées par l'intégrateur.
+La note d'intégration y trace une correction de DOI et les contrôles ciblés.
+Les lots V0.4/V0.5 évoqués n'ont pas été fournis ; leur contenu n'est pas présumé.

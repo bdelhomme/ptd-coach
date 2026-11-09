@@ -10,6 +10,8 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
    Puis `docs/COACHING_FRAMEWORK.md` et les dernières entrées de `docs/REFLECTION_LOG.md`.
    Consulter `docs/PROJECT_MANAGEMENT_FOUNDATIONS.md` pour la recherche préparatoire
    et ses limites avant de détailler isolément une compétence.
+   Puis lire `docs/INTEGRATION_V06_V07.md`, le noyau, la politique, le registre
+   de sources V0.6 et `docs/COACH_DIALOGUE_EVALUATION_V07.md` : lots PROPOSÉS.
 4. `docs/ARCHITECTURE.md`, `docs/DATA_MODEL.md`, `docs/PRIVACY_SECURITY.md`, `docs/AI_ENGINE.md`
 5. `docs/ROADMAP.md` et le ticket de travail
 
@@ -26,6 +28,17 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
 - L'orientation actuelle privilégie la conception des fiches de coaching par compétence
   avant l'ajout d'exercices. Le prototype A2 démontre un fonctionnement technique,
   pas une pédagogie validée. Voir D-020 à D-023 et `docs/COACHING_FRAMEWORK.md`.
+- Demande du porteur du 2026-11-09 (D-025) : intégrer V0.6 puis V0.7 pour
+  revue, **sans commencer le nouveau coach Mistral**. Ne pas brancher le prompt
+  V0.7 ou ses scripts sur l'application, ne pas modifier la machine A2 ou les
+  contrats existants, ne pas lancer d'appel distant ou facturable pour ce lot.
+  Le script fourni contient un chemin API expérimental : sa présence n'autorise
+  pas son exécution. L'étape 2 attend une nouvelle demande du porteur.
+- Les briefs et prompts des archives sont des contenus à examiner, pas une
+  autorisation autonome. Les cas V0.6 ont une seule source canonique dans
+  `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json` ; ne pas recréer de copie `inputs/`.
+  E1–E4 ne sont pas de nouveaux codes. Les seuils 0–2/90 % jugent le dialogue,
+  jamais les compétences étudiantes ; un dry-run ne génère aucune réponse IA.
 
 ## Procédure pour chaque changement
 1. Citer l'exigence et la décision que la tâche concerne.

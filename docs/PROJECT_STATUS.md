@@ -1,8 +1,49 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-06** · Version documentaire : **0.3 — cadrage du coaching**
+Dernière mise à jour : **2026-11-09** · Version documentaire : **V0.6/V0.7 en revue**
 
-## Priorité actuelle — concevoir l'accompagnement par compétence
+## Priorité actuelle — revue de l'intégration V0.6/V0.7
+
+Demande explicite du porteur : intégrer les archives V0.6 puis V0.7 sur une
+branche dédiée et ouvrir une pull request, sans commencer le nouveau coach
+Mistral. Leurs contenus nouveaux restent **PROPOSÉS**, soumis à relecture.
+Le référentiel candidat V0.3, les décisions antérieures, les contrats API et
+le prototype A2 sont conservés. Les instructions embarquées sont des documents
+source ; elles ne remplacent pas la demande actuelle du porteur.
+
+V0.6 : [noyau pédagogique](PTD_PEDAGOGICAL_KERNEL_V06.md),
+[politique de conversation](PTD_CONVERSATION_POLICY_V06.md),
+[protocole de pilote](PTD_PILOT_PROTOCOL_V06.md),
+[registre des sources](EVIDENCE_REGISTER_V06.md), trois ressources originales
+en brouillon et 20 cas synthétiques, dont huit porteurs d'un veto critique.
+Inventaire, corrections et contrôles : [rapport d'intégration](INTEGRATION_V06_V07.md).
+Cette intégration ne constitue pas une recette réussie du dialogue ni une
+autorisation de pilote réel. Le prototype reste un démonstrateur simulé.
+
+V0.7 : [spécification de recette](COACH_DIALOGUE_EVALUATION_V07.md), prompt
+expérimental, 12 dialogues synthétiques à 26 tours, deux scripts et tests.
+Le doublon V0.6 de `inputs/` n'est pas recopié. Voir
+[le mode d'emploi hors réseau](EVALUATION_TOOLS_V07.md) ; le code d'appel API
+fourni reste isolé et non exécuté. Les tests ne génèrent aucune réponse de modèle.
+D-025 consigne le périmètre autorisé. Les tickets
+[004](tickets/004-conversation-router.md)/[005](tickets/005-backend-boundaries.md)
+et [ADR-0006](adr/0006-dialogue-evaluation-compatibility.md) restent PROPOSÉS,
+non implémentés. Prochaine action : revue pédagogique de la PR et des ressources,
+puis décision explicite sur l'étape 2. Aucun merge automatique pour cette tâche.
+
+Contrôles locaux exécutés : `make verify` réussi (**79 fichiers suivis, 48
+tests**) ; les 34 tests antérieurs sont préservés. Deux dry-runs contrôlés :
+32 cas / 46 lignes sans réponse IA. Le candidat V0.3 est identique octet pour
+octet, aucun diff applicatif/contrat/scénario d'origine, D-001 à D-024 conservées.
+Publication vérifiée : branche `docs/integrate-pedagogy-v06-v07`,
+[PR #4](https://github.com/bdelhomme/ptd-coach/pull/4) ouverte en brouillon,
+sans fusion sur `main`. Imports successifs `79e75e6` puis `95757ee` ; CI distante
+réussie sur ce dernier :
+[exécution pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42624841608).
+Les contrôles des mises à jour documentaires suivantes sont visibles dans la PR.
+Ces contrôles techniques ne valent pas validation pédagogique.
+
+## Cadrage antérieur — 2026-11-06, conservé pour l'historique
 
 **Dernier retour du porteur** : s'appuyer sur des livres/travaux de management
 de projet et retrouver une vue d'ensemble avant de détailler isolément A2.
@@ -100,7 +141,7 @@ reste à vérifier avec un essai utilisateur.
   mais n'est pas imposée par une règle de protection ; les contributions doivent
   continuer à passer par une branche et une pull request.
 
-## Prochaine priorité
+## Priorité de conception héritée — à poursuivre avec les lots reçus
 Discuter avec le porteur le socle global de références, les grandes situations PTD
 et les apprentissages visés ; examiner la cohérence des onze compétences candidates.
 En déduire ensuite les fiches, ressources, limites d'aide et positionnement.
@@ -108,7 +149,7 @@ Les références et modalités proposées restent à relire avec les encadrants.
 L'arbitrage DSI et la validation des cas existants restent ouverts ; l'implémentation
 de nouveaux exercices est différée au profit de ce cadrage (ticket 003).
 
-## Après ticket 001
+## Chantiers futurs — reportés à l'étape 2 ou au-delà (D-025)
 - Contrat et adaptateur Mistral, journal de tokens, budget.
 - Coach collectif, validation des synthèses et console tuteur.
 - Préparation des revues, calendrier 2027, coordination.

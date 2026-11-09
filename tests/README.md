@@ -1,6 +1,6 @@
 # Tests du dépôt et du prototype A2
 
-`make verify` exécute les contrôles du dépôt et 34 tests sur données synthétiques :
+`make verify` exécute les contrôles du dépôt et 48 tests sur données synthétiques :
 
 - Dix tests du contrôleur documentaire.
 - Dix-sept tests de domaine/contrats : cycle complet, persistance après reprise,
@@ -9,6 +9,19 @@
   révocation, métadonnées d'audit et export propriétaire.
 - Sept tests HTTP : session, cookie, origine/CSRF/hôte, statiques, validation des
   entrées, accès aux cycles/exports, refus d'exposition réseau et configuration.
+- Douze tests des outils V0.7 (six fournis, six supplémentaires) : cas/tours,
+  dry-run sans appel, isolation des historiques et exclusion des rubriques du
+  contexte de test, erreur simulée sans suite inventée, sélection, refus des
+  données non synthétiques, grilles humaines incomplètes, seuil et veto.
+- Deux tests d'intégration : empreinte inchangée du candidat V0.3 et inventaire
+  des 14 fichiers importés sans deuxième copie des cas V0.6.
+
+Les suites pédagogiques JSON contiennent **20 cas à un tour** (huit marqués
+critiques) et **12 cas à plusieurs tours** (26 tours), soit 46 réponses potentielles.
+Ces cas ne sont pas 46 tests de modèle réussis : les dry-runs produisent
+uniquement `response: null` / `status: not_called`. Les doubles de fonction
+utilisés par les tests n'appellent aucun modèle. Voir
+[le mode d'emploi](../docs/EVALUATION_TOOLS_V07.md).
 
 Voir [l'environnement](../docs/DEVELOPMENT.md), [le ticket 001](../docs/tickets/001-a2-local.md)
 et [les critères de recette](../docs/ACCEPTANCE_TESTS.md).
