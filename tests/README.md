@@ -1,8 +1,8 @@
 # Tests du dépôt et du prototype A2
 
-`make verify` exécute les contrôles du dépôt et 72 tests sur données synthétiques :
+`make verify` exécute les contrôles du dépôt et 78 tests sur données synthétiques :
 
-- Dix tests du contrôleur documentaire.
+- Douze tests du contrôleur documentaire, dont liens verbatim et maintien du contrôle des secrets.
 - Dix-sept tests de domaine/contrats : cycle complet, persistance après reprise,
   isolation entre étudiants et rôles, version optimiste, idempotence, sortie IA
   invalide, propositions non exécutées, contexte filtré, partage explicite,
@@ -41,3 +41,10 @@ rejeu des 46 tours V0.6/V0.7 à travers le service avec fournisseur de test).
 export et erreurs de clé. Tous restent hors API externe ; la CI n'a pas de clé.
 Les résultats API réels et la recette navigateur sont séparés dans
 [CONVERSATION_COACH_REPORT.md](../docs/CONVERSATION_COACH_REPORT.md).
+
+## Corpus public de revue — quatre tests de fidélité supplémentaires
+
+`test_published_evaluations.py` vérifie les 27 fichiers et leurs manifestes,
+les 80 réponses et 160 blocs verbatim, les critères/scopes/tokens, les grilles
+vierges et l'empreinte des contextes. Il ne contacte pas Mistral et ne note pas
+le coach. Les deux nouveaux tests du contrôleur restent documentaires.

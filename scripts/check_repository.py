@@ -38,6 +38,22 @@ def tracked_files(root):
     return [Path(p.decode("utf-8")) for p in output.split(b"\0") if p]
 
 
+def markdown_prose(content):
+    """Exclude fenced verbatim from link navigation, never from secret scanning."""
+    fence = None
+    for line in content.splitlines(keepends=True):
+        if fence:
+            if re.fullmatch(r" {0,3}" + re.escape(fence[0]) +
+                            "{" + str(len(fence)) + r",}[ \t]*", line.rstrip("\r\n")):
+                fence = None
+            continue
+        opening = re.match(r" {0,3}(`{3,}|~{3,})", line)
+        if opening:
+            fence = opening.group(1)
+        else:
+            yield line
+
+
 def check_repository(root, paths):
     paths = list(paths)
     errors = []
@@ -70,7 +86,7 @@ def check_repository(root, paths):
             except ValueError:
                 errors.append("Invalid JSON: " + name)
         if relative.suffix.lower() == ".md":
-            for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", content):
+            for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", "".join(markdown_prose(content))):
                 target = target.strip("<>")
                 parts = urlsplit(target)
                 if parts.scheme or parts.netloc or not parts.path:

@@ -4,12 +4,40 @@ Référence D-027, demande du porteur après D-026. Préparation documentaire,
 sans nouvelle fonctionnalité, appel API, notation ni modification du référentiel,
 du moteur ou des prompts. La prochaine évolution attend le retour pédagogique.
 
+## Accès public sur GitHub — D-028
+
+Sur demande explicite du porteur, le corpus est désormais versionné dans
+[pedagogy/evaluations/mistral-small-v07](../pedagogy/evaluations/mistral-small-v07/README.md)
+sur la branche de la PR #6. La visibilité **PUBLIC** du dépôt est vérifiée.
+Le README fournit les liens GitHub et bruts vers les transcriptions principales,
+le JSONL et le contexte. La PR n'est pas supposée fusionnée sur `main`.
+
+Les 25 fichiers du ZIP vérifié sont copiés **octet pour octet**. Un README et
+un manifeste de publication sont ajoutés ; le manifeste d'origine et toutes
+ses empreintes sont conservés. Les 27 fichiers rendent la revue autonome sur
+GitHub. Les observations restent séparées, les 26 lignes de la grille restent
+vierges ; aucun résultat pédagogique n'est déduit de cette publication.
+
+L'outillage documentaire ignore désormais les liens littéraux dans les blocs
+verbatim, tout en continuant à rechercher les secrets dans ces blocs. Deux
+régressions vérifient ce comportement ; quatre tests du corpus contrôlent les
+manifestes, les 160 blocs exacts, les cas/critères/tokens, la grille et le contexte.
+Le moteur et les prompts opérationnels n'ont pas changé.
+
+Contrôles locaux exécutés pour cette publication : `make verify` (78 tests
+réussis), puis `make check` (124 fichiers suivis) et quatre tests du corpus
+rejoués après l'ajout des attributs Git de fidélité. `git diff --cached --check`
+réussi ; CRLF et lignes finales des pièces originales conservés explicitement,
+sans les normaliser. Les contrôles du dernier commit publié sont suivis dans
+la PR #6. La lecture anonyme des liens bruts sera vérifiée après le push.
+
 ## Livrable local
 
 `PTD_COACH_REVUE_PEDAGOGIQUE_V07.zip` : **25 fichiers**, **112 298 octets**.
 SHA-256 : `25f2edb953ce97c70350887c32f185eb7a1fc1248063439b64310a34d7ee738d`.
 Le ZIP et le dossier décompressé sont dans les livrables locaux `outputs/`,
-à côté du checkout applicatif, et ne sont pas versionnés dans le dépôt.
+à côté du checkout applicatif. Le ZIP reste hors Git ; son contenu est désormais
+versionné dans le corpus public indiqué ci-dessus.
 Le porteur dispose du lien de récupération dans la conversation de livraison.
 
 ## Contenu

@@ -1,0 +1,7 @@
+# Evidence snapshots: preserve original bytes across platforms/checkouts.
+pedagogy/evaluations/mistral-small-v07/** -text
+# Retain original CSV CRLF and existing terminal blank lines without rewriting.
+pedagogy/evaluations/mistral-small-v07/*.csv whitespace=cr-at-eol
+pedagogy/evaluations/mistral-small-v07/01_TRANSCRIPTIONS_V1_2.md whitespace=-blank-at-eof
+pedagogy/evaluations/mistral-small-v07/annexes/*.md whitespace=-blank-at-eof
+pedagogy/evaluations/mistral-small-v07/contexte/CRITERES_ET_GRILLE_V07.md whitespace=-blank-at-eof

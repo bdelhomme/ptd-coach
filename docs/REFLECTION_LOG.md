@@ -130,3 +130,20 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Mémoire et livraison** : [PEDAGOGICAL_REVIEW_PACKAGE.md](PEDAGOGICAL_REVIEW_PACKAGE.md).
   Les transcriptions et le ZIP restent hors Git, livrés localement au porteur ;
   leur génération ne constitue pas une revue indépendante ou une notation humaine.
+
+## R-010 — 2026-11-09 — Revue consultable dans le dépôt public
+
+- **Demande du porteur** : publier les transcriptions fictives exactes sur la
+  branche de la PR #6, dans `pedagogy/evaluations/mistral-small-v07/`, avec README
+  immédiatement exploitable par un réviseur, historique, critères et grilles vierges.
+- **Visibilité vérifiée** : GitHub indique PUBLIC ; D-028 autorise précisément
+  ce corpus contrôlé. Aucune modification de visibilité n'est faite par l'assistant.
+- **Choix de fidélité** : copie des 25 fichiers du ZIP sans retouche, ajout
+  d'un README et d'un manifeste distinct ; empreintes d'origine conservées.
+- **Contrôles** : identité des réponses et des anciennes traces, cellules de
+  jugement vides, absence de secrets/coordonnées réelles et de fichiers privés.
+  Les liens pseudo-Markdown inventés dans les réponses restent des citations,
+  pas des cibles de navigation ; le contrôleur de liens est corrigé en ce sens.
+- **Suite** : revue critique indépendante. D-027 maintient le gel du moteur,
+  du référentiel et des prompts jusqu'au retour pédagogique ; aucune note ni
+  nouvelle requête Mistral. Voir le README public et PEDAGOGICAL_REVIEW_PACKAGE.
