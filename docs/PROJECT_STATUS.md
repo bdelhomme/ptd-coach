@@ -2,6 +2,22 @@
 
 Dernière mise à jour : **2026-11-09** · Version applicative : **conversation.v1, expérimentation locale**
 
+## Priorité actuelle — revue pédagogique indépendante (D-027)
+
+Le porteur demande un dossier ZIP pour une revue critique avant la prochaine
+phase. **Aucune nouvelle fonctionnalité ni modification du référentiel, moteur
+ou prompts avant son retour pédagogique.** D-026 et les essais précédents sont
+conservés dans l'historique ; aucune nouvelle requête Mistral pour ce dossier.
+
+Livraison locale : `PTD_COACH_REVUE_PEDAGOGIQUE_V07.zip` (25 fichiers),
+transcriptions v1.2 par scénario avec critères (12 cas/26 réponses), grille
+humaine Markdown/CSV vierge, quatre passages originaux (80 réponses au total),
+observations préexistantes séparées, contextes v1.2 exacts, ressources et tokens.
+Provenance, contrôles et empreinte :
+[PEDAGOGICAL_REVIEW_PACKAGE.md](PEDAGOGICAL_REVIEW_PACKAGE.md).
+Les contrôles de fidélité, d'intégrité et de confidentialité sont réussis ;
+aucune note ou validation pédagogique n'est déduite de cette préparation.
+
 ## État actuel — premier coach conversationnel (D-026)
 
 La nouvelle demande du porteur lance l'étape 2 après le report D-025. Nouveau

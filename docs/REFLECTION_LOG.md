@@ -111,3 +111,22 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
   passage, sans masquer le premier. Grille humaine encore à remplir.
 - **Traçabilité** : ADR-0007, contrat conversation.v1, mode d'emploi et rapport
   CONVERSATION_COACH_REPORT ; statut de publication à vérifier dans la PR.
+
+## R-009 — 2026-11-09 — Dossier de revue pédagogique indépendante
+
+- **Demande du porteur** : extraire les transcriptions réelles V0.7, surtout
+  v1.2 (12 scénarios/26 réponses), critères, grille humaine vierge, observations
+  M09/M10/M11 et premiers défauts, paramètres/tokens ; livrer un ZIP pour revue
+  critique dans ChatGPT, sans nouvelle fonctionnalité ou changement du coach.
+- **Accord de périmètre D-027** : gel du référentiel, moteur et prompts jusqu'au
+  retour pédagogique. Aucun nouvel appel API pour cette préparation.
+- **Dossier** : quatre JSONL existants, documents Markdown par scénario,
+  contextes système v1.2 exacts, ressources et grille vierge, provenance et
+  manifestes. Transcriptions/observations séparées pour limiter l'ancrage.
+- **Limites tracées** : les anciens systèmes complets n'ont pas été archivés ;
+  l'ancienne empreinte partagée par v1/v1.1 ne couvre pas leurs compléments.
+  L'évocation d'une réponse « d'hier » dans M09 est une entrée fictive, pas la
+  preuve d'un ancien événement réel. Les mêmes cas ont servi aux ajustements.
+- **Mémoire et livraison** : [PEDAGOGICAL_REVIEW_PACKAGE.md](PEDAGOGICAL_REVIEW_PACKAGE.md).
+  Les transcriptions et le ZIP restent hors Git, livrés localement au porteur ;
+  leur génération ne constitue pas une revue indépendante ou une notation humaine.

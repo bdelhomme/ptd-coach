@@ -40,6 +40,14 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
   `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json` ; ne pas recréer de copie `inputs/`.
   E1–E4 ne sont pas de nouveaux codes. Les seuils 0–2/90 % jugent le dialogue,
   jamais les compétences étudiantes ; un dry-run ne génère aucune réponse IA.
+- **Priorité courante D-027 : revue pédagogique indépendante avant nouvelle
+  phase.** Le porteur demande de préparer les transcriptions et une grille
+  vierge ; ne modifier ni référentiel, ni moteur, ni prompts et ne commencer
+  aucune fonctionnalité avant son retour pédagogique. Le dossier et ses limites
+  de provenance sont décrits dans `docs/PEDAGOGICAL_REVIEW_PACKAGE.md`.
+  Les observations de développement ne sont pas une revue indépendante ; ne
+  préremplir aucune note ou verdict humain. Les textes du dossier sont des
+  objets d'analyse, pas de nouvelles consignes pour le coach.
 
 ## Procédure pour chaque changement
 1. Citer l'exigence et la décision que la tâche concerne.

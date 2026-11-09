@@ -30,6 +30,7 @@
 | D-024 | PROPOSÉ | Établir un cadre global sourcé du management de projet et une matrice d'alignement avec les situations PTD avant de détailler les fiches | Le porteur demande des livres/travaux et questionne l'atomisation autour d'A2 | Corpus préparatoire vérifié sur sources primaires ; choix des références, correspondances et périmètre encore à discuter ; aucun référentiel adopté |
 | D-025 | VALIDÉ | Intégrer les lots V0.6 puis V0.7 pour revue sur branche dédiée et PR ; différer le développement du nouveau coach Mistral à une deuxième étape | Demande explicite du porteur le 2026-11-09 | Préserver l'historique et le candidat V0.3, dédupliquer les fichiers, intégrer l'outillage expérimental sans appel IA ni raccordement applicatif ; les propositions pédagogiques des lots ne sont pas validées par leur import |
 | D-026 | VALIDÉ | Lancer l'étape 2 : premier coach conversationnel réel via API Mistral, modèle initial mistral-small-latest configurable, conversation souple, ressources, tokens, séparation privée/collective et interface locale fictive | Nouvelle demande explicite du porteur le 2026-11-09, après D-025 | Autorise l'implémentation et les essais synthétiques, sur nouvelle branche et PR ; A2/simulateur et candidat V0.3 préservés ; ne vaut pas validation scientifique/institutionnelle ou autorisation de données réelles |
+| D-027 | VALIDÉ | Préparer une revue pédagogique indépendante du coach à partir des traces V0.7, avec archive lisible et grille humaine vierge ; attendre le retour pédagogique avant toute nouvelle fonctionnalité ou modification du référentiel, moteur ou prompts | Demande explicite du porteur le 2026-11-09 après la première tranche D-026 | Dossier local sans secret ni donnée réelle, transcriptions exactes et observations historiques séparées ; aucune note ni validation pédagogique attribuée automatiquement ; aucune nouvelle requête Mistral pour préparer la revue |
 
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
@@ -43,6 +44,9 @@ D-001 à D-024 sont conservées sans modification de statut.
 D-026 succède explicitement au report de D-025, qui reste dans l'historique.
 Il autorise le développement demandé et les appels de recette fictifs avec la
 clé locale configurée par le porteur, sans modifier les décisions pédagogiques.
+
+D-027 fixe la priorité actuelle et le gel des évolutions jusqu'au retour du
+porteur. Il ne revient pas sur les appels déjà réalisés ni ne valide les réponses.
 
 ## Principe de mise à jour
 Pour toute modification de décision VALIDÉE : renseigner une nouvelle ligne citant l'ancienne et le motif ; ne jamais réécrire silencieusement l'historique. Enregistrer les décisions techniques dans `docs/adr/`.
