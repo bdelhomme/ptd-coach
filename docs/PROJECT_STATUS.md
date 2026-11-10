@@ -1,5 +1,15 @@
 # État du projet — à actualiser à chaque changement
 
+## Priorité courante — candidate 2, D-030 (11/11/2026)
+
+Retour du porteur sur D03/D09 : c1 **non validée pédagogiquement**. C2 prépare
+une correction conceptuelle sourcée, une intervention dominante et une meilleure
+clôture. Branche `feat/v08-candidate2`, base #7 au commit `d01b56a`.
+Rapport courant : [V08_C2_REPORT.md](V08_C2_REPORT.md).
+Aucune ancienne preuve/empreinte modifiée, aucun scénario réservé utilisé.
+Les mentions V0.8 ci-dessous décrivent c1, toujours disponible dans le navigateur.
+C2 est limitée au banc d’essai injectant un nouveau contexte dans le même service.
+
 ## Tranche actuelle — V0.8 expérimentale (D-029, 2026-11-10)
 
 Nouvelle demande du porteur : développer un contexte adaptatif et exigeant,

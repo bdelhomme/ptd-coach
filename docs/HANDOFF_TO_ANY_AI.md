@@ -1,5 +1,13 @@
 # Reprise du projet par un nouvel assistant IA
 
+## Reprise c2 — D-030
+
+Lire [le rapport c2](V08_C2_REPORT.md), le gel `pedagogy/qa/V08_C2_FREEZE.json`
+et la relecture conceptuelle. C1 n’est pas validée ; ne pas ouvrir le réservé
+pour corriger c2. Le contexte c2 est testé via le service existant, sans nouvelle
+fonctionnalité applicative ni modification des anciens fils. Les mesures de
+longueur et ponctuation ne sont pas des verdicts pédagogiques.
+
 ## Reprise courante V0.8 — D-029
 
 Commencer par `AGENTS.md`, [V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md) et

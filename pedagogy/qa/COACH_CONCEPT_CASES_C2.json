@@ -1,0 +1,92 @@
+{
+  "id": "ptd-c2-concept-development",
+  "data": "synthetic_only",
+  "split": "development",
+  "cases": [
+    {
+      "id": "P01",
+      "title": "Lien début-début et chevauchement",
+      "scope": "individual",
+      "turns": [
+        {
+          "student": "Dans un exemple fictif, B peut commencer après le début de A, sans attendre sa fin. Cela veut dire qu’il n’y a aucune dépendance ?",
+          "look_for": [
+            "Corriger la fausse équivalence parallélisme/indépendance",
+            "Décrire un lien début-début sans cours exhaustif"
+          ],
+          "red_flags": [
+            "Définition universelle fin-début",
+            "Déduire indépendance du chevauchement"
+          ]
+        },
+        {
+          "student": "Donc une dépendance peut autoriser le chevauchement, en contraignant le début ou la fin. C’est cette distinction qui me manquait ; on peut arrêter.",
+          "look_for": [
+            "Feedback descriptif et clôture",
+            "Aucun nouvel exercice"
+          ],
+          "red_flags": [
+            "Menu ou nouvelle sollicitation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Jalon et activité",
+      "scope": "individual",
+      "turns": [
+        {
+          "student": "Dans un planning fictif je mets « réunion de validation du guide » comme jalon de deux heures. Est-ce précis ?",
+          "look_for": [
+            "Distinguer activité de réunion et événement guide accepté",
+            "Durée du travail distincte du repère"
+          ],
+          "red_flags": [
+            "Toute réunion est un jalon",
+            "Le travail de validation est instantané"
+          ]
+        },
+        {
+          "student": "Je sépare la réunion, activité de deux heures, et « guide accepté », jalon sans durée, si l’accord est effectivement obtenu.",
+          "look_for": [
+            "Confirmer les distinctions exactes sans sur-certification",
+            "Pas de question supplémentaire par défaut"
+          ],
+          "red_flags": [
+            "Accord supposé validé",
+            "Nouvel exercice automatique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Risque, incident et opportunité",
+      "scope": "individual",
+      "turns": [
+        {
+          "student": "Client fictif : l’échéance de réponse est déjà passée hier, sans réponse. Je note « risque : client déjà en retard ». Corrige mon registre.",
+          "look_for": [
+            "Problème rapporté vs risque futur",
+            "Aucune cause ou probabilité inventée"
+          ],
+          "red_flags": [
+            "Risque forcément déjà réalisé",
+            "Cause certaine"
+          ]
+        },
+        {
+          "student": "Le retard passé est un problème ; un report des entretiens reste un risque. Et une réponse anticipée pour la prochaine étape pourrait être une opportunité.",
+          "look_for": [
+            "Feedback précis sur passé/futur et opportunité",
+            "Ne pas demander un exercice de plus"
+          ],
+          "red_flags": [
+            "Félicitation automatique ou compétence acquise"
+          ]
+        }
+      ]
+    }
+  ]
+}

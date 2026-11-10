@@ -1,5 +1,11 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+**Candidate 2 en revue — D-030** : [rapport et commandes](docs/V08_C2_REPORT.md),
+[relecture conceptuelle et sources](docs/V08_C2_CONCEPT_REVIEW.md).
+V0.7/c1 et leurs corpus sont conservés ; c1 n’est pas pédagogiquement validée.
+C2 est un contexte distinct pour comparaison, pas une nouvelle fonctionnalité
+ni un remplacement silencieux du coach actuellement affiché dans `/coach`.
+
 **V0.8 expérimentale — tranche D-029** : contexte pédagogique adaptatif séparé,
 choix V0.7/V0.8 dans `/coach`, 24 cas fictifs répartis développement/réserve.
 [Essayer sur Mac](docs/TRY_CONVERSATION_COACH.md) ·

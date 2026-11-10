@@ -165,3 +165,17 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Limites** : les grilles restent vierges, les auteurs artificiels peuvent
   partager des biais, une comparaison courte n’établit ni gain causal ni transfert.
   Voir [le bilan](V08_IMPLEMENTATION.md) et le protocole source V0.8.
+
+## R-012 — 11/11/2026 — C2 après revue qualitative D03/D09
+
+Le porteur refuse de considérer c1 comme validée : allongement sans gain démontré,
+WBS parfois confondue avec activités, vérifications multiples. D-030 autorise c2,
+un comparatif limité puis corrections/tests autonomes dans le cadre existant.
+La vérification formative est appréciée à l’échelle du dialogue ; une reformulation
+correcte peut suffire pour conclure. L’intervention dominante n’est pas un quota
+syntaxique ni une nouvelle machine à états. Les cinq natures restent souples.
+Sources professionnelles ciblées et exemples originaux relus par l’assistant,
+avec limites de validation humaine explicites. Le moteur gelé n’est pas modifié :
+injection existante du contexte, bases temporaires, pas de nouvelle interface.
+Réservé fermé à la conception ; aucune nouvelle délégation. Voir le rapport c2
+pour les essais, budgets, constats et la prochaine étape transmissible à une IA.
