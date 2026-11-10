@@ -10,6 +10,10 @@ Aucune ancienne preuve/empreinte modifiée, aucun scénario réservé utilisé.
 Les mentions V0.8 ci-dessous décrivent c1, toujours disponible dans le navigateur.
 C2 est limitée au banc d’essai injectant un nouveau contexte dans le même service.
 
+**Contrôles c2** : 111 tests techniques et CI réussis, corpus de 25 fichiers
+publics vérifiés ; PR #8 en brouillon, pas d’auto-merge. Voir le rapport pour
+les liens de CI et le journal de passation.
+
 **Résultat c2** : [PR #8](https://github.com/bdelhomme/ptd-coach/pull/8),
 54 réponses réelles / 132 977 tokens. Aucun gain convaincant sur le critère
 complet ; erreurs WBS, relance après reformulation et régressions sur cas

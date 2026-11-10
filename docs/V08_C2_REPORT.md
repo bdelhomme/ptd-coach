@@ -133,7 +133,7 @@ reformulation et les réponses sensibles, sur développement seulement. Aucun
 nouveau prompt n’est ajouté pour masquer l’échec de la candidate demandée.
 Les 54 tentatives épuisent le budget annoncé ; aucune dépense supplémentaire.
 
-Vérification finale : `make verify` réussi : **111 tests**, 181 fichiers suivis
+Vérification finale : `make verify` réussi : **111 tests**, 182 fichiers suivis
 contrôlés ; fidélité des nouveaux corpus et des 54 lignes de grilles vierges,
 diff sans erreur. [Journal d’exécution](V08_C2_RUN_LOG.md) pour les commandes
 complètes, acteurs, empreintes et contrôles. La CI du dernier commit est suivie
@@ -148,3 +148,16 @@ verbatim. Publier l’état et les limites, ne pas promettre un service autonome
 après la fin d’une session. Le dépôt conserve la mémoire transmissible ; aucun
 contenu de raisonnement interne n’est requis, seulement décisions et justifications
 techniques/pédagogiques utiles au repreneur.
+
+## Publication vérifiée
+
+[PR #8](https://github.com/bdelhomme/ptd-coach/pull/8) ouverte **en brouillon**
+vers #7, sans conflit déclaré, sans auto-merge. Code/corpus publié sur `f5e7610` :
+CI réussie [pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42923159605)
+et [push](https://github.com/bdelhomme/ptd-coach/actions/runs/42923152391).
+Les 25 fichiers du corpus sont lisibles anonymement à ce commit, avec identité
+SHA-256 distante/locale vérifiée. Grilles vierges et réponses exactes conservées ;
+aucune clé locale exacte, coordonnée réelle ou chemin privé détecté dans les
+contrôles décrits au journal. Aucun nouveau changement du contexte après gel.
+Les contrôles du présent suivi documentaire sont consultables dans la PR.
+La candidate est documentée pour critique, pas promue à l’application courante.

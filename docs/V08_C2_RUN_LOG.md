@@ -22,7 +22,7 @@ Ce journal expose actions, arbitrages et preuves, pas un raisonnement interne.
    54 réponses et 132 977 tokens. Arrêt des appels à ce budget, aucun essai réservé.
 8. Verbatim/messages exacts publiables, observations séparées, grilles vierges.
    Nouveaux tests de provenance et fidélité : **111 tests réussis**, 181 fichiers
-   suivis contrôlés, diff sans erreur. Clé exacte absente de tous les fichiers
+   suivis contrôlés (puis 182 avec ce journal), diff sans erreur. Clé exacte absente de tous les fichiers
    suivis ; recherche de coordonnées/chemins locaux sans signal dans les changements.
    53 fichiers historiques vérifiés identiques ; ancien réservé/référentiel par
    empreinte seulement, lignes D-001 à D-029 préservées. Pas d'audit exhaustif revendiqué.
