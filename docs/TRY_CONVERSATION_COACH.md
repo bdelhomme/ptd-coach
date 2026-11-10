@@ -1,5 +1,25 @@
 # Essayer le premier coach sur Mac
 
+## Essai V0.8 et comparaison V0.7 — 2026-11-10
+
+Après `make bootstrap`, conserver la clé uniquement dans `.env` ignoré,
+`CHAT_PROVIDER=mistral`, `MISTRAL_MODEL=mistral-small-latest` (configurable).
+Lancer `make run`, puis ouvrir `http://127.0.0.1:8765/coach`.
+Si ce port héberge une ancienne démo : `.venv/bin/python -m ptd_coach --port 8767`,
+puis `http://127.0.0.1:8767/coach`. Pour un essai sans coût :
+`CHAT_PROVIDER=mock .venv/bin/python -m ptd_coach --port 8767` ; les réponses sont
+alors fixes et ne testent pas la pédagogie de Mistral.
+
+Choisir un compte fictif, une **version du coach**, l’espace privé ou collectif,
+confirmer les données fictives puis créer le fil. V0.8 est proposée pour les
+nouveaux essais ; chaque ancien fil reste V0.7. Pour comparer, créer un fil de
+chaque version et saisir les mêmes messages inventés. Les versions sont affichées
+sur les fils, tokens et latence sous les réponses. Exporter séparément chaque fil.
+La version se choisit avant création ; elle ne se change pas au milieu d’un fil.
+
+Protocole, scénarios, commandes de comparaison et résultats réellement exécutés :
+[V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md).
+
 **Prototype local, données fictives uniquement.** Le parcours A2 simulé reste
 disponible. La nouvelle conversation à plusieurs tours utilise Mistral ; elle
 n'impose ni A2, ni jeu de rôle, ni objectif ou questionnaire préalable.

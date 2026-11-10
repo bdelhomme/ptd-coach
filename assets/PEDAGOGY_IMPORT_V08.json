@@ -1,0 +1,36 @@
+{
+  "archive": "PTD_COACH_V08_CADRAGE.zip",
+  "archive_sha256": "964df31595009e30e3c2ee51cc463ba252ab0c227112f37ec91fa009b497163c",
+  "files": [
+    {
+      "source": "ptd-coach-v08/pedagogy/competencies/V08_MATRICE_APPRENTISSAGES.md",
+      "sha256": "4521712c22c34f2dd2e2dcbe2f8185c5bf0c670ef120923d515a2fea82bb0ce6",
+      "target": "pedagogy/competencies/V08_MATRICE_APPRENTISSAGES.md",
+      "disposition": "imported_exact"
+    },
+    {
+      "source": "ptd-coach-v08/README.md",
+      "sha256": "85e1f504ca5f4362e50ae3d9c68b85ea7c5aa8ca8cdcaeebc9599be902f4ae68",
+      "target": null,
+      "disposition": "delivery_readme_read_not_runtime_instruction"
+    },
+    {
+      "source": "ptd-coach-v08/docs/tickets/006-v08-coach-adaptatif.md",
+      "sha256": "247aff420b1e1a99bb290d2ab735dafaf42132d7520a0e12acbdab484c1140d8",
+      "target": "docs/tickets/006-v08-coach-adaptatif.md",
+      "disposition": "imported_exact"
+    },
+    {
+      "source": "ptd-coach-v08/docs/V08_PLAN_DE_RECETTE.md",
+      "sha256": "5aee54760f4f7a4daaa247b53b962455216f10b6ebc3d2db0cb2e7b21023f0b5",
+      "target": "docs/V08_PLAN_DE_RECETTE.md",
+      "disposition": "imported_exact"
+    },
+    {
+      "source": "ptd-coach-v08/docs/PTD_V08_CONTRAT_PEDAGOGIQUE.md",
+      "sha256": "cf82f1fe82d3c7a7b646efce1bbcd956ba7a67a2e5c90cc318bee28f2c0b1d57",
+      "target": "docs/PTD_V08_CONTRAT_PEDAGOGIQUE.md",
+      "disposition": "imported_exact"
+    }
+  ]
+}

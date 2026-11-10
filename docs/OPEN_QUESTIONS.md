@@ -38,3 +38,14 @@ Le modèle initial de la démo est désormais `mistral-small-latest`, configurab
 et le contrat de conversation v1 est implémenté séparément d'A2. Cela ne tranche
 pas le modèle ni le contrat fournisseur pour une exploitation institutionnelle.
 La grille humaine V0.7 et la relecture des ressources restent à effectuer.
+
+## Questions ouvertes V0.8 — D-029
+
+- Le guidage supplémentaire aide-t-il l’appropriation sans rendre les réponses
+  trop longues ? Le passage D03/D09 montre un risque de sur-guidage et troncature.
+- Quelles dimensions/veto et règles de désaccord fixer avant le passage réservé ?
+- Qui réalise la double lecture humaine et la relecture conceptuelle des exemples ?
+- Qui assume la relecture, les droits et les métadonnées de R01–R03 encore brouillons ?
+
+Le lot de comparaison est descriptif et sa grille vierge ; aucun seuil ni verdict
+humain n’est déduit des tests. Voir [le bilan](V08_IMPLEMENTATION.md).

@@ -31,10 +31,11 @@ def evaluate(suite, context, provider=None, selected=None, max_cases=None):
             cases = cases[:max_cases]
         for case in cases:
             conversation = service.create("student_demo_01", str(uuid.uuid4()),
-                {"scope": case["scope"], "synthetic_confirmed": True}) if service else None
+                {"scope": case["scope"], "synthetic_confirmed": True,
+                 "coach_version": getattr(context, "coach_version", "v07")}) if service else None
             for index, turn in enumerate(iter_turns(case), 1):
                 record = {"suite": suite["id"], "case_id": case["id"], "scope": case["scope"],
-                          "turn": index, "student": turn["student"], "prompt_version": PROMPT_VERSION,
+                          "turn": index, "student": turn["student"], "prompt_version": getattr(context, "version", PROMPT_VERSION),
                           "context_sha256": context.digest, "timestamp_utc": datetime.now(timezone.utc).isoformat(),
                           "expected_for_human_review": turn.get("look_for", []),
                           "red_flags_for_human_review": turn.get("red_flags", []),

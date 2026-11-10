@@ -1,0 +1,35 @@
+{
+  "data": "synthetic_only",
+  "api_calls": 12,
+  "human_verdict": null,
+  "files": {
+    "CLE_VARIANTES.json": {
+      "bytes": 31,
+      "sha256": "2e88164f3792a7576f2f25c67ef4f4f2bfb3c4ff791928ef72a95274e6f123ff"
+    },
+    "GRILLE_VIERGE.csv": {
+      "bytes": 505,
+      "sha256": "6c6549658292b064d9a9783bb097bd9cb5d3450d808c6a9e85f32bb06d81d310"
+    },
+    "LECTURE_COMPARATIVE.md": {
+      "bytes": 23280,
+      "sha256": "3263aab3f0acac19d5c4025577da534f31870f2c9ba76c9d9540789a96362547"
+    },
+    "MESURES.json": {
+      "bytes": 1488,
+      "sha256": "fc44f408884afdfc93750a31f56cac9f0dafe10997b38f011ee6f8d2ab0243b8"
+    },
+    "README.md": {
+      "bytes": 3001,
+      "sha256": "75f5c7632efeee548920ae74653740d9efac158b543f6fe082a89820c12ddf44"
+    },
+    "SYSTEM_CONTEXTS.json": {
+      "bytes": 29213,
+      "sha256": "56fa09cb5ed278ac70a92d36e7b2b0f7ebee0be6eb284ce282dbafc62d124d97"
+    },
+    "responses.jsonl": {
+      "bytes": 35394,
+      "sha256": "c9751fed82009c31998f93c73af1c8b940c785439f5553a4c9cc444e704863ab"
+    }
+  }
+}

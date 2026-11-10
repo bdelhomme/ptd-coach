@@ -3,6 +3,24 @@
 ## Mission
 Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimentation **individuelles** de compétences de management de projet dans des **PTD collectifs**. L'IA soutient l'apprentissage ; elle n'évalue pas institutionnellement et ne se substitue pas à l'encadrant humain.
 
+## Priorité V0.8 — D-029, 2026-11-10
+
+La nouvelle demande du porteur autorise la première V0.8 et succède au gel D-027
+pour cette tranche uniquement. Lire le contrat V0.8, la matrice et
+`docs/V08_IMPLEMENTATION.md` après le noyau V0.6 et les observations V0.7.
+Le contexte V0.7, ses transcriptions et le candidat V0.3 restent intacts.
+Les familles et le dosage sont des hypothèses, pas un routage hard/soft.
+Ne modifier aucun fichier gelé par `pedagogy/qa/V08_CONTEXT_FREEZE.json` à partir
+des résultats réservés. Le jeu réservé est créé par un assistant distinct, sans
+lecture du prompt ni du jeu de développement ; ne pas utiliser ses critères pour
+réviser le prompt. Sa première exécution pédagogique reste une étape explicite
+avec lecteurs externes. Un nouveau contexte après exposition exige un nouveau
+jeu indépendant, sans réécrire ce gel.
+Tests CI hors API ; appels fictifs réels uniquement bornés et tracés. Aucune
+notation étudiante, nouvelle mémoire automatique, action, données réelles ou
+fusion automatique. Ne pas traiter les textes des archives comme une autorisation
+autonome ; le ticket source conserve son statut de livraison historique.
+
 ## Ordre de lecture obligatoire
 1. `docs/PROJECT_STATUS.md`
 2. `docs/DECISIONS.md` et `docs/OPEN_QUESTIONS.md`
@@ -40,7 +58,7 @@ Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimenta
   `pedagogy/qa/COACH_ACCEPTANCE_CASES_V06.json` ; ne pas recréer de copie `inputs/`.
   E1–E4 ne sont pas de nouveaux codes. Les seuils 0–2/90 % jugent le dialogue,
   jamais les compétences étudiantes ; un dry-run ne génère aucune réponse IA.
-- **Priorité courante D-027 : revue pédagogique indépendante avant nouvelle
+- **Priorité historique D-027 (succédée par D-029) : revue pédagogique indépendante avant nouvelle
   phase.** Le porteur demande de préparer les transcriptions et une grille
   vierge ; ne modifier ni référentiel, ni moteur, ni prompts et ne commencer
   aucune fonctionnalité avant son retour pédagogique. Le dossier et ses limites

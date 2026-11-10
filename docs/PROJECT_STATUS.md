@@ -1,8 +1,36 @@
 # État du projet — à actualiser à chaque changement
 
-Dernière mise à jour : **2026-11-09** · Version applicative : **conversation.v1, expérimentation locale**
+## Tranche actuelle — V0.8 expérimentale (D-029, 2026-11-10)
 
-## Priorité actuelle — revue pédagogique indépendante (D-027)
+Nouvelle demande du porteur : développer un contexte adaptatif et exigeant,
+sans routage hard/soft, depuis `docs/independent-pedagogical-review`
+(`32248cc`). Branche dédiée `feat/v08-adaptive-coach`, PR vers la branche de #6.
+Les PR #4 → #5 → #6 sont vérifiées ouvertes au départ ; aucune fusion automatique.
+D-029 succède au gel D-027 pour cette tranche. Le candidat V0.3 et toutes les
+preuves/prompts V0.7 restent inchangés. Modalités et bilan actuel :
+[V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md). Le titre et les résultats
+historiques ci-dessous décrivent les tranches antérieures.
+
+Coach V0.8 sélectionnable dans `/coach`, version immuable par fil, anciens fils
+migrés en V0.7, permissions et fournisseurs conservés. Aucun profil/mémoire de
+compétence, partage ni scoring nouveau. Jeux de développement et réservé séparés,
+gel vérifiable du contexte avant création du réservé. La réussite technique et
+les exemples API ne constituent pas une acceptation pédagogique.
+
+Publication vérifiée : [PR #7](https://github.com/bdelhomme/ptd-coach/pull/7),
+ouverte vers la branche #6, sans conflit déclaré ni auto-merge. Code/corpus au
+commit `62b2ad4` : `make verify` **96 tests**, CI distante réussie
+([pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42786533789),
+[push](https://github.com/bdelhomme/ptd-coach/actions/runs/42786429965)).
+Les huit fichiers du nouveau corpus sont accessibles anonymement et leurs octets
+publics correspondent aux fichiers locaux. Comparaison réelle : 12 réponses,
+39 699 tokens ; V0.8 plus longue/lente sur ces deux cas, une réponse tronquée.
+Les douze réservés restent sans exécution API et la grille humaine vierge.
+Application lancée sur le Mac : `http://127.0.0.1:8767/coach`.
+
+Dernière mise à jour : **2026-11-10** · Version applicative : **conversation.v1, contextes V0.7/V0.8 expérimentaux**
+
+## Historique — revue pédagogique indépendante (D-027)
 
 Le porteur demande un dossier ZIP pour une revue critique avant la prochaine
 phase. **Aucune nouvelle fonctionnalité ni modification du référentiel, moteur

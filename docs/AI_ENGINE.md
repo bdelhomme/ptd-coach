@@ -1,5 +1,13 @@
 # Moteur conversationnel IA — contrat conceptuel
 
+## Contexte expérimental V0.8 — D-029
+
+Le même service propose désormais V0.7 figée et V0.8 candidate, sans nouvelle
+machine à états ni classificateur de compétences. Version fixée par fil ;
+contexte assemblé après autorisation, une fiche locale au plus par tour V0.8.
+Voir [V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md). Les mentions « aucun
+raccordement » ci-dessous se rapportent aux imports historiques D-025.
+
 ## Mise à jour applicative — étape 2, D-026
 
 Le premier coach Mistral local est désormais développé dans un service séparé

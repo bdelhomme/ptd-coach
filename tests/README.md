@@ -1,5 +1,10 @@
 # Tests du dépôt et du prototype A2
 
+V0.8 (D-029) : `make verify` exécuté avec **96 tests réussis**, sans API payante.
+Le lot couvre également migration/version par fil, isolation V0.8, gel et
+provenance des corpus. Recette réelle distincte : 12 réponses sur deux cas de
+développement ; réservé non exécuté. Voir [le bilan V0.8](../docs/V08_IMPLEMENTATION.md).
+
 `make verify` exécute les contrôles du dépôt et 78 tests sur données synthétiques :
 
 - Douze tests du contrôleur documentaire, dont liens verbatim et maintien du contrôle des secrets.

@@ -1,5 +1,15 @@
 # Architecture cible — proposition
 
+## Évolution expérimentale V0.8 — D-029
+
+Le porteur autorise désormais un contexte pédagogique adaptatif séparé, avec
+enseignement explicite, correction précise et vérification dosée. Familles F1–F5
+combinables, sans routage hard/soft ni profil étudiant. V0.7, A2 et le candidat
+V0.3 sont conservés. Les modalités et l’efficacité restent à éprouver :
+[contrat V0.8](PTD_V08_CONTRAT_PEDAGOGIQUE.md) et
+[bilan de mise en œuvre](V08_IMPLEMENTATION.md). Les sections suivantes gardent
+l’historique des tranches et propositions antérieures.
+
 ## Principe
 Application web **auto-hébergeable**. Le code pédagogique, les données et les permissions ne dépendent pas d'une plateforme de modèle ou d'hébergement.
 

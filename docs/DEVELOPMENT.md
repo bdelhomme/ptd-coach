@@ -1,5 +1,10 @@
 # Développement — prototype A2 local
 
+V0.8 (D-029) : `make verify` exécuté avec **96 tests réussis**, sans API payante.
+Le lot couvre également migration/version par fil, isolation V0.8, gel et
+provenance des corpus. Recette réelle distincte : 12 réponses sur deux cas de
+développement ; réservé non exécuté. Voir [le bilan V0.8](V08_IMPLEMENTATION.md).
+
 Références : D-001, D-009, D-010, D-011, D-012, D-018 et D-019.
 La pile institutionnelle D-015 reste **PROPOSÉE** ; voir
 [ADR-0005](adr/0005-local-a2-prototype.md) pour le choix provisoire de démonstration.

@@ -1,5 +1,13 @@
 # Reprise du projet par un nouvel assistant IA
 
+## Reprise courante V0.8 — D-029
+
+Commencer par `AGENTS.md`, [V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md) et
+le contrat V0.8. Le gel D-027 est historique ; la demande D-029 autorise cette
+tranche minimale. Ne pas réutiliser le jeu réservé pour ajuster le prompt.
+Le contexte V0.8 c1 est figé par manifeste, les anciennes preuves restent exactes.
+La première lecture réservée et l’acceptation pédagogique restent humaines.
+
 Mise à jour : **2026-11-09**. Le dépôt fait autorité ; les anciennes réflexions
 restent dans REFLECTION_LOG, les décisions D-001 à D-024 sont préservées.
 
