@@ -1,5 +1,17 @@
 # Feuille de route priorisée — tâches et livrables
 
+## Tranche c2 — D-030
+
+- [x] Consigner le retour qualitatif du porteur, sans inventer de grille notée.
+- [x] Vérifier les sources et relire les exemples avant utilisation.
+- [x] Contexte c2 séparé et gelé, sans toucher au moteur ni à c1.
+- [x] Comparateur à trois variantes, réservé refusé avant ouverture.
+- [x] Exécuter les 54 essais Mistral bornés et préparer leurs preuves/limites pour publication.
+- [ ] Revue humaine de c2 ; aucun pilote ni acceptation automatique.
+
+Le rapport c2 suit les résultats réellement obtenus. Les sections suivantes
+conservent l’historique c1 et les cadrages antérieurs.
+
 ## Première tranche V0.8 — D-029
 
 - [x] Intégrer le cadrage, distinguer principes du porteur et hypothèses.

@@ -1,0 +1,17 @@
+{
+  "id": "v08-c2-frozen-before-api",
+  "timestamp_utc": "2026-11-10T23:15:53.323502+00:00",
+  "base_commit": "d01b56a2bba42c375edde422a38f617e84fe65da",
+  "reserved_policy": "No semantic reading or use of reserved messages/criteria; no held-out API evaluation in this tranche. Format-only legacy CI checks are not prompt authoring context.",
+  "human_acceptance": null,
+  "files": {
+    "ptd_coach/chat_context_v08_c2.py": "45f963edb248e2062a0c2de19efa34bac08907c7a705043789fb4546cb48078a",
+    "pedagogy/prompts/COACH_SYSTEM_V08_C2.md": "1433dd8af06f420ae87720808e34ffb945edbee2c0f5cffdfb4fa44e8e1588eb",
+    "pedagogy/resources/R04-concepts-projet-c2.md": "3fb02cd8fe010e6846b0ae861d5cf2d9e03765c6e9319ad02f3ee2f3ce6c5698",
+    "docs/V08_C2_CONCEPT_REVIEW.md": "4a9fc878d9ae976c19339473f9f04e9f3182c23984e8de8a6b9caca2eafafb08",
+    "pedagogy/qa/COACH_CONCEPT_CASES_C2.json": "2d51319f7110dcfee4e92136b79a665cfbd4cc57b2611dfaad99345834494b26",
+    "pedagogy/qa/COACH_DEV_CASES_V08.json": "0e9d7fa39bca54c05918a3213fb4bacc178e0aaab6466a64138fe0e51d894692",
+    "pedagogy/qa/V08_CONTEXT_FREEZE.json": "33a0f1220c1a3f0f72f1f6cfbb197120accd681928209cbfe76c475af438c6c0",
+    "scripts/compare_conversation_c2.py": "6b164849b391488b53623d62b75e0711cceed371ba75f2924a2e12a0a40731a4"
+  }
+}

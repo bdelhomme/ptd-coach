@@ -1,0 +1,102 @@
+{
+  "data": "synthetic_only",
+  "responses": 54,
+  "files": {
+    "01-first/CLE_VARIANTES.json": {
+      "bytes": 43,
+      "sha256": "348b0af8663942716a6b3f69401925921a3f5959a7663c1658520860aca27211"
+    },
+    "01-first/GRILLE_VIERGE.csv": {
+      "bytes": 596,
+      "sha256": "f5dbcd2c47bf3ad193f32f395a490ce68e43861c86d8ad739d7e566227073c23"
+    },
+    "01-first/LECTURE_COMPARATIVE.md": {
+      "bytes": 33867,
+      "sha256": "d996d5fa46908cce3b163c0194ce4c581ffc1d6a2a6b0871de5f4478c089281b"
+    },
+    "01-first/MESURES.json": {
+      "bytes": 2142,
+      "sha256": "0f8d2c0eed7cdd54685fd40cb2111d77ae8ef874000114cc01ee61aa66a6b1d9"
+    },
+    "01-first/responses.jsonl": {
+      "bytes": 257242,
+      "sha256": "cb3f5974ffbb024e706d21cc238da5ab52f034ecfaa38d81399fe99251d0caff"
+    },
+    "02-concepts/CLE_VARIANTES.json": {
+      "bytes": 43,
+      "sha256": "739649da106ed32816b07f6052b4d004162418d5a8a3a39d6efcc67646e1e1cf"
+    },
+    "02-concepts/GRILLE_VIERGE.csv": {
+      "bytes": 596,
+      "sha256": "ff3d0b8cc43b21336c46ef2e49b8b6ca157e2421a984d571b7afadbcd7f34978"
+    },
+    "02-concepts/LECTURE_COMPARATIVE.md": {
+      "bytes": 24606,
+      "sha256": "d5517c315a77c5cb4b7e043a75f0a6fda26f86bb032cc54248a9a72eecf0d2f8"
+    },
+    "02-concepts/MESURES.json": {
+      "bytes": 2140,
+      "sha256": "fdd9a1a6a137d4bd7b1fc045a0431aa934bc28404c9052ca0decb3837a533c90"
+    },
+    "02-concepts/responses.jsonl": {
+      "bytes": 242559,
+      "sha256": "e1ba7b52aeceb199a07b52474b48e393a9064bb06c9de90434a57e8b89a31c34"
+    },
+    "03-safety/CLE_VARIANTES.json": {
+      "bytes": 16,
+      "sha256": "966dc6df871c84a58a69cd95efb0ce2db2fe62cfb09d7e89f0683b543daa32d0"
+    },
+    "03-safety/GRILLE_VIERGE.csv": {
+      "bytes": 470,
+      "sha256": "f1ada2474a285474568f57be4d7dd9c067c73039619407c2822f72fb3687acf7"
+    },
+    "03-safety/LECTURE_COMPARATIVE.md": {
+      "bytes": 11241,
+      "sha256": "49b0f6a5ee94d9462150050c60f8ffaad5f3d898224a01554d426fd008977fa9"
+    },
+    "03-safety/MESURES.json": {
+      "bytes": 1259,
+      "sha256": "934bf89cfc390a56b470366e26263b9fe00c3edf26c0d2cb9689cdc0d22cf889"
+    },
+    "03-safety/responses.jsonl": {
+      "bytes": 93749,
+      "sha256": "9f3893a7b0f29531a3c46ee88c9d2cf69479f3bba24d6520a0a0b9a1620a60d3"
+    },
+    "04-repeat/CLE_VARIANTES.json": {
+      "bytes": 16,
+      "sha256": "966dc6df871c84a58a69cd95efb0ce2db2fe62cfb09d7e89f0683b543daa32d0"
+    },
+    "04-repeat/GRILLE_VIERGE.csv": {
+      "bytes": 344,
+      "sha256": "cc6a1f5ece996107c5da0a5e4b52e01feead6962ac50fd943f14e06eb518cc53"
+    },
+    "04-repeat/LECTURE_COMPARATIVE.md": {
+      "bytes": 7656,
+      "sha256": "14f51dd3b2f7f37bec83d460ad755f13fbf08da90e129b3c0d70e9fa2238cc50"
+    },
+    "04-repeat/MESURES.json": {
+      "bytes": 1255,
+      "sha256": "3c06afd1e3b9882bf6726f3001fd5f1a95d75a6d7c85649ec412b86b880ae763"
+    },
+    "04-repeat/responses.jsonl": {
+      "bytes": 61735,
+      "sha256": "15ca737497d0130fc3a42ddb6d0f3b1d724608c86bca8b9e97184bdf40f21d3d"
+    },
+    "MESURES_AGREGEES.json": {
+      "bytes": 8326,
+      "sha256": "e85c93d56fa8aaec1cbcf23e728638b3d496aa568890d718e6ea45c5b0eefdc0"
+    },
+    "OBSERVATIONS.md": {
+      "bytes": 5555,
+      "sha256": "3f0aefcd7a02c5a7ecf79df4c77ea455f0dd590275ac135fad0778ff2144f5f8"
+    },
+    "README.md": {
+      "bytes": 2977,
+      "sha256": "116123439aa1682d0fab2214e112bd8298f91b2b7ba0205bb3f2038dae973339"
+    },
+    "SOLLICITATIONS_DEVELOPPEMENT.csv": {
+      "bytes": 4336,
+      "sha256": "a7fc017c73e8df09687c9443334f49cf2758efd767332207e0217c4dbce04589"
+    }
+  }
+}

@@ -1,5 +1,28 @@
 # État du projet — à actualiser à chaque changement
 
+## Priorité courante — candidate 2, D-030 (11/11/2026)
+
+Retour du porteur sur D03/D09 : c1 **non validée pédagogiquement**. C2 prépare
+une correction conceptuelle sourcée, une intervention dominante et une meilleure
+clôture. Branche `feat/v08-candidate2`, base #7 au commit `d01b56a`.
+Rapport courant : [V08_C2_REPORT.md](V08_C2_REPORT.md).
+Aucune ancienne preuve/empreinte modifiée, aucun scénario réservé utilisé.
+Les mentions V0.8 ci-dessous décrivent c1, toujours disponible dans le navigateur.
+C2 est limitée au banc d’essai injectant un nouveau contexte dans le même service.
+
+**Contrôles c2** : 111 tests techniques et CI réussis, corpus de 25 fichiers
+publics vérifiés ; PR #8 en brouillon, pas d’auto-merge. Voir le rapport pour
+les liens de CI et le journal de passation.
+
+**Résultat c2** : [PR #8](https://github.com/bdelhomme/ptd-coach/pull/8),
+54 réponses réelles / 132 977 tokens. Aucun gain convaincant sur le critère
+complet ; erreurs WBS, relance après reformulation et régressions sur cas
+sensibles. C2 non retenue pour adoption, aucune bascule dans le navigateur.
+[Corpus exact et grilles vierges](../pedagogy/evaluations/v08-c2-comparison/README.md).
+Gels et anciennes preuves conservés ; réservé non utilisé. L’autonomie demandée
+a servi à étendre le diagnostic (sondes, garde-fous, répétition), sans ajouter
+de fonction ni nouvelle candidate pour dissimuler cet échec.
+
 ## Tranche actuelle — V0.8 expérimentale (D-029, 2026-11-10)
 
 Nouvelle demande du porteur : développer un contexte adaptatif et exigeant,

@@ -1,0 +1,13 @@
+case_id,turn,label,exactitude_conceptuelle,utilite,intervention_dominante,verification_utile,feedback,arret,autonomie,confidentialite,nombre_sollicitations_principales,citations_sollicitations,veto,commentaire,lecteur
+M06,1,A,,,,,,,,,,,,,
+M06,2,A,,,,,,,,,,,,,
+M07,1,A,,,,,,,,,,,,,
+M07,2,A,,,,,,,,,,,,,
+M08,1,A,,,,,,,,,,,,,
+M08,2,A,,,,,,,,,,,,,
+M09,1,A,,,,,,,,,,,,,
+M09,2,A,,,,,,,,,,,,,
+M10,1,A,,,,,,,,,,,,,
+M10,2,A,,,,,,,,,,,,,
+M11,1,A,,,,,,,,,,,,,
+M11,2,A,,,,,,,,,,,,,

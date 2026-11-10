@@ -165,3 +165,29 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Limites** : les grilles restent vierges, les auteurs artificiels peuvent
   partager des biais, une comparaison courte n’établit ni gain causal ni transfert.
   Voir [le bilan](V08_IMPLEMENTATION.md) et le protocole source V0.8.
+
+## R-012 — 11/11/2026 — C2 après revue qualitative D03/D09
+
+Le porteur refuse de considérer c1 comme validée : allongement sans gain démontré,
+WBS parfois confondue avec activités, vérifications multiples. D-030 autorise c2,
+un comparatif limité puis corrections/tests autonomes dans le cadre existant.
+La vérification formative est appréciée à l’échelle du dialogue ; une reformulation
+correcte peut suffire pour conclure. L’intervention dominante n’est pas un quota
+syntaxique ni une nouvelle machine à états. Les cinq natures restent souples.
+Sources professionnelles ciblées et exemples originaux relus par l’assistant,
+avec limites de validation humaine explicites. Le moteur gelé n’est pas modifié :
+injection existante du contexte, bases temporaires, pas de nouvelle interface.
+Réservé fermé à la conception ; aucune nouvelle délégation. Voir le rapport c2
+pour les essais, budgets, constats et la prochaine étape transmissible à une IA.
+
+### Résultat autonome de R-012
+
+Après les 18 comparatifs initiaux, diagnostic étendu sans toucher au gel :
+18 réponses sur sondes conceptuelles, 12 sur garde-fous et 6 en répétition c2.
+Total 54, aucune erreur API, 132 977 tokens. La moindre verbosité relative à c1
+ne s’accompagne pas d’un gain convaincant complet ; nouvelles erreurs textuelles
+sur M08/M09/M11. Décision de développement : ne pas promouvoir c2, conserver le
+navigateur inchangé et publier les échecs. Les autorisations backend restent
+intactes. Aucun réservé, nouvelle délégation ou suite payante automatique.
+Prochain travail utile : revue externe des exemples et des réponses sensibles,
+puis éventuelle candidate distincte, pas fusion ou essai institutionnel.

@@ -1,5 +1,26 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Priorité c2 — D-030, 11 novembre 2026
+
+Le porteur transmet une revue qualitative : **c1 n’est pas pédagogiquement validée**.
+Lire `docs/V08_C2_REPORT.md` et `docs/V08_C2_CONCEPT_REVIEW.md`.
+C2 est un contexte séparé injecté dans le service existant pour le banc d’essai ;
+aucun changement du moteur, schéma, interface ou choix par défaut de l’application.
+Ne pas annoncer que le navigateur affiche c2 : `/coach` conserve V0.7/c1.
+Ne lire ni utiliser les messages/attendus des 12 réservés, ni solliciter l’agent
+qui les connaît pour améliorer le prompt. Les anciens tests CI contrôlent leurs
+formats/empreintes sans afficher leur contenu ; ce contrôle technique n’est pas
+un contexte de conception. Le nouvel exécuteur refuse le réservé avant ouverture.
+Conserver tous les fichiers des gels c1/c2 à l’identique. Une correction après
+gel impose une autre version/empreinte, pas une réécriture de la candidate testée.
+L’autonomie demandée concerne corrections et tests justifiés dans ce périmètre,
+pas de nouvelles fonctionnalités, déploiement, données réelles ou merge.
+Tracer décisions, commandes, essais réellement exécutés, défauts et limites dans
+le rapport et le journal ; distinguer constat assistant et jugement humain.
+Aucun nouveau sous-agent pour c2 à ce stade ; l’ancien auteur réservé n’intervient
+pas dans sa conception. Budget de cette tranche : au plus 54 tentatives API,
+max_tokens=700, sans retry automatique ; arrêter en cas d’erreur ou quota.
+
 ## Mission
 Développer PTD Coach, outil pédagogique visant l'acquisition et l'expérimentation **individuelles** de compétences de management de projet dans des **PTD collectifs**. L'IA soutient l'apprentissage ; elle n'évalue pas institutionnellement et ne se substitue pas à l'encadrant humain.
 

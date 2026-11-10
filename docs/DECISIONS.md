@@ -35,6 +35,8 @@
 
 | D-029 | VALIDÉ | Lancer une première V0.8 expérimentale depuis la branche de la PR #6, avec enseignement explicite, vérification formative dosée, correction précise, bienveillance exigeante et adaptation à la nature de l’apprentissage sans routage hard/soft | Nouvelle demande explicite du porteur et archive de cadrage du 2026-11-10, après la revue V0.7 ; succède au gel D-027 pour cette tranche | Conserver candidat V0.3, contexte et corpus V0.7, A2, permissions et fournisseur configurable ; 12 cas de développement et 12 réservés séparés, contexte gelé avant jeu réservé, tests sans API puis comparaison bornée fictive ; aucune mémoire longitudinale automatique, notation, RAG complexe, donnée réelle, déploiement ou fusion automatique ; familles F1–F5, dosage et heuristique restent PROPOSÉS |
 
+| D-030 | VALIDÉ | Préparer c2 après revue qualitative D03/D09 : c1 non validée, concepts professionnels vérifiés, intervention dominante, vérification ciblée, feedback et arrêt après reformulation correcte | Retour explicite du porteur le 2026-11-11 | Nouvelle branche/PR sur #7, contexte c2 séparé, comparaison V0.7/c1/c2 bornée, gel avant API/réservé ; anciennes versions/empreintes conservées, aucun usage des réservés pour conception, aucune nouvelle fonctionnalité/mémoire/notation/donnée réelle/fusion ; autonomie pour corrections et tests justifiés, passation GitHub documentée |
+
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
 consensus des encadrants, validation scientifique, accord DSI/DPO ou approbation
