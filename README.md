@@ -1,5 +1,13 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+**V0.8 expérimentale — tranche D-029** : contexte pédagogique adaptatif séparé,
+choix V0.7/V0.8 dans `/coach`, 24 cas fictifs répartis développement/réserve.
+[Essayer sur Mac](docs/TRY_CONVERSATION_COACH.md) ·
+[Arbitrages et résultats](docs/V08_IMPLEMENTATION.md) ·
+[Contrat pédagogique](docs/PTD_V08_CONTRAT_PEDAGOGIQUE.md).
+Le candidat V0.3 et la revue V0.7 sont conservés. Aucune efficacité pédagogique
+n’est déduite des tests techniques.
+
 **Statut : premier coach conversationnel Mistral local ; A2 simulé conservé.**
 **Date de référence : 9 novembre 2026.**
 **Pilote envisagé : Chimie ParisTech – PSL, PTD 2027.**

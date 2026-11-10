@@ -33,6 +33,8 @@
 | D-027 | VALIDÉ | Préparer une revue pédagogique indépendante du coach à partir des traces V0.7, avec archive lisible et grille humaine vierge ; attendre le retour pédagogique avant toute nouvelle fonctionnalité ou modification du référentiel, moteur ou prompts | Demande explicite du porteur le 2026-11-09 après la première tranche D-026 | Dossier local sans secret ni donnée réelle, transcriptions exactes et observations historiques séparées ; aucune note ni validation pédagogique attribuée automatiquement ; aucune nouvelle requête Mistral pour préparer la revue |
 | D-028 | VALIDÉ | Publier le dossier fictif de revue V0.7 directement dans pedagogy/evaluations/mistral-small-v07/ sur la branche de la PR #6, en tenant compte du dépôt désormais public | Demande explicite du porteur le 2026-11-09 ; visibilité PUBLIC vérifiée sur GitHub | Réponses exactes, anciens passages, critères, contexte, tokens, empreintes et grilles vierges consultables ; aucun secret/donnée réelle, aucune modification du moteur ou des prompts ; D-027 reste applicable |
 
+| D-029 | VALIDÉ | Lancer une première V0.8 expérimentale depuis la branche de la PR #6, avec enseignement explicite, vérification formative dosée, correction précise, bienveillance exigeante et adaptation à la nature de l’apprentissage sans routage hard/soft | Nouvelle demande explicite du porteur et archive de cadrage du 2026-11-10, après la revue V0.7 ; succède au gel D-027 pour cette tranche | Conserver candidat V0.3, contexte et corpus V0.7, A2, permissions et fournisseur configurable ; 12 cas de développement et 12 réservés séparés, contexte gelé avant jeu réservé, tests sans API puis comparaison bornée fictive ; aucune mémoire longitudinale automatique, notation, RAG complexe, donnée réelle, déploiement ou fusion automatique ; familles F1–F5, dosage et heuristique restent PROPOSÉS |
+
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
 consensus des encadrants, validation scientifique, accord DSI/DPO ou approbation
@@ -46,8 +48,14 @@ D-026 succède explicitement au report de D-025, qui reste dans l'historique.
 Il autorise le développement demandé et les appels de recette fictifs avec la
 clé locale configurée par le porteur, sans modifier les décisions pédagogiques.
 
-D-027 fixe la priorité actuelle et le gel des évolutions jusqu'au retour du
+D-027 fixait la priorité et le gel des évolutions jusqu'au retour du
 porteur. Il ne revient pas sur les appels déjà réalisés ni ne valide les réponses.
 
 ## Principe de mise à jour
 Pour toute modification de décision VALIDÉE : renseigner une nouvelle ligne citant l'ancienne et le motif ; ne jamais réécrire silencieusement l'historique. Enregistrer les décisions techniques dans `docs/adr/`.
+
+D-029 autorise désormais la tranche V0.8 demandée par le porteur. Elle ne vaut
+ni validation pédagogique des réponses, ni adoption institutionnelle. Le cadrage
+validé et les modalités expérimentales sont distingués dans
+[V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md). Les versions antérieures restent
+des preuves historiques, sans réécriture de leurs décisions.

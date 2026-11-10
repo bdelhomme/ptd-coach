@@ -1,0 +1,19 @@
+{
+  "id": "v08-c1-frozen-before-reserved",
+  "timestamp_utc": "2026-11-10T08:44:34.223487+00:00",
+  "base_commit": "32248cc2202145eb1cfa3a64b58f52221f368137",
+  "status": "experimental_not_pedagogically_accepted",
+  "policy": "Create reserved scenarios only after this freeze. Do not tune on reserved results; any later candidate requires a fresh independent set.",
+  "files": {
+    "ptd_coach/chat_context.py": "e791ab87cb9c55824328379cdf82434b603c18d1ffa9e808e7dc8495377b9531",
+    "ptd_coach/chat_context_v08.py": "cfe48eba2dac5ee8e10d58a637a85832d2822f6c3876fc492bd08b51120e6c7e",
+    "ptd_coach/chat_provider.py": "6a01f6e2f2f7391eaad7e5997980a66c3f5df3cb51002c762bfbd01f0fbc902f",
+    "ptd_coach/chat_service.py": "9f3abf2361d739fbe9e0ff36c0ca2c7fd457b97fd1ab1bcc7205cf1cc5b40e83",
+    "pedagogy/prompts/COACH_SYSTEM_DRAFT_V07.md": "ff9d6c7f195399c384350f34ce0f77a39810af6ef5f2951749f3b1c1c93988a8",
+    "pedagogy/prompts/COACH_SYSTEM_EXPERIMENTAL_V08.md": "b99c828ca362a49bf1aff36d3e4a80a05c94369ced88cfa8508583b3e0600c00",
+    "pedagogy/qa/COACH_DEV_CASES_V08.json": "0e9d7fa39bca54c05918a3213fb4bacc178e0aaab6466a64138fe0e51d894692",
+    "pedagogy/resources/R01-coordination-et-engagements.md": "a778ecc84c782684f220d086e683e84a9d681a0f68bd38156318d50ee8dea509",
+    "pedagogy/resources/R02-debrief-factuel.md": "39bab6fd525aa99d5683f55d6cb3a187c0246a70c09a467061e6bae9b21d3b2d",
+    "pedagogy/resources/R03-cadrage-et-planification.md": "7dec31be655e6ae2946062805206ed7b8f424ebeeebcd2cf00fb5df987c1c211"
+  }
+}

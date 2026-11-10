@@ -1,0 +1,64 @@
+{
+  "id": "ptd-coach-v08-reserved-c1-provenance",
+  "timestamp_utc": "2026-11-10T08:48:29.821921+00:00",
+  "suite_path": "pedagogy/qa/COACH_RESERVED_CASES_V08.json",
+  "suite_sha256": "c98e282f40ac71119daa9908e827965fdac9a834e131c1881bbae4f4645b0ee5",
+  "context_freeze_path": "pedagogy/qa/V08_CONTEXT_FREEZE.json",
+  "context_freeze_sha256": "33a0f1220c1a3f0f72f1f6cfbb197120accd681928209cbfe76c475af438c6c0",
+  "context_freeze_id": "v08-c1-frozen-before-reserved",
+  "counts": {
+    "cases": 12,
+    "student_turns": 34,
+    "axes": {
+      "questions_urgence": 2,
+      "outils_methodes": 2,
+      "choix_incertitude": 2,
+      "interactions": 2,
+      "metacognition_correction": 2,
+      "reflexivite_arret": 2
+    },
+    "scopes": {
+      "individual": 6,
+      "collective": 6
+    },
+    "experience_fictive": {
+      "debutant": 6,
+      "experimente": 6
+    },
+    "families_nonexclusive": {
+      "F1": 5,
+      "F2": 6,
+      "F3": 7,
+      "F4": 6,
+      "F5": 5
+    }
+  },
+  "procedure": {
+    "authoring": "Assistant distinct après lecture de l’engagement de gel ; création séparée sur cadrage pédagogique seulement.",
+    "framing_read": [
+      "AGENTS.md",
+      "docs/PTD_V08_CONTRAT_PEDAGOGIQUE.md",
+      "docs/V08_PLAN_DE_RECETTE.md",
+      "pedagogy/competencies/V08_MATRICE_APPRENTISSAGES.md",
+      "pedagogy/qa/V08_CONTEXT_FREEZE.json"
+    ],
+    "excluded_reads": [
+      "Prompt V0.8",
+      "ptd_coach/chat_context_v08.py",
+      "Jeu de développement V0.8",
+      "Transcriptions de développement"
+    ],
+    "separation": "Les fichiers listés dans le freeze n’ont pas été ouverts pour leur contenu. Aucun résultat réservé n’a été utilisé pour modifier le prompt. Ne communiquer que la provenance et les comptes à l’agent chargé du développement ; attentes destinées à une lecture externe future.",
+    "validation": "Python standard : relecture JSON, identifiants, schéma minimal, comptes, axes et couverture ; aucun appel API, aucune génération de réponse coach.",
+    "execution_status": "not_executed_on_api",
+    "evaluation_status": "unscored_no_human_verdict"
+  },
+  "limitations": [
+    "L’auteur est un assistant distinct, mais appartient à la même famille de modèles que l’assistant de développement ; indépendance procédurale limitée, pas indépendance humaine ni garantie contre un biais commun.",
+    "Cas synthétiques préécrits ; les tours suivants sont fixes et peuvent nécessiter une appréciation humaine si la réponse du coach diverge.",
+    "Le contenu du prompt et du jeu de développement n’a pas été lu ; la nouveauté est procédurale, sans vérification exhaustive des ressemblances avec le corpus exclu.",
+    "Les attentes sont proposées et non étalonnées ; aucun verdict pédagogique, aucune note d’étudiant, aucune preuve d’apprentissage autonome ou de transfert.",
+    "Jeu non exécuté sur API ; aucune conclusion comparative V0.7/V0.8 ni validation de confidentialité backend.",
+    "Aucune donnée réelle ; aucun outil d’action, partage, mémoire ou scoring ajouté. Toute évolution du candidat après utilisation du réservé appelle un nouveau jeu indépendant."
+  ]
+}

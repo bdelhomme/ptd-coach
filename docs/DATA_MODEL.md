@@ -1,5 +1,15 @@
 # Modèle de données conceptuel — v0.1
 
+## Migration locale V0.8 — D-029
+
+La base de conversation passe de `user_version=1` à `2` : ajout de
+`conversations.coach_version`, contraint à `v07|v08`, valeur des anciens fils
+`v07`. Messages, scopes, clés, ledger et appels pending sont préservés. Le SQL
+v1 d’origine est conservé pour initialiser la base, puis la même migration est
+appliquée. Aucune migration A2. Un ancien exécutable V0.7 refuse la version 2 :
+pour tester l’ancien code, utiliser une copie antérieure de la base, pas un
+abaissement manuel de version. Le nouveau code peut utiliser les deux contextes.
+
 **Statut : conceptuel ; ne présume ni schéma SQL validé, ni décisions RGPD finales.**
 
 ## Entités

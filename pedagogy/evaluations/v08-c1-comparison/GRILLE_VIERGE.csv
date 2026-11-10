@@ -1,0 +1,13 @@
+case_id,turn,label,exactitude,utilite,adequation,intervention,feedback_correctif,verification,dosage,sources_limites,autonomie,confidentialite,veto,satisfaction_probable,effort_demande,alternative,commentaire,lecteur
+D03,1,A,,,,,,,,,,,,,,,,
+D03,1,B,,,,,,,,,,,,,,,,
+D03,2,A,,,,,,,,,,,,,,,,
+D03,2,B,,,,,,,,,,,,,,,,
+D03,3,A,,,,,,,,,,,,,,,,
+D03,3,B,,,,,,,,,,,,,,,,
+D09,1,A,,,,,,,,,,,,,,,,
+D09,1,B,,,,,,,,,,,,,,,,
+D09,2,A,,,,,,,,,,,,,,,,
+D09,2,B,,,,,,,,,,,,,,,,
+D09,3,A,,,,,,,,,,,,,,,,
+D09,3,B,,,,,,,,,,,,,,,,

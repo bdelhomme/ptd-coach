@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-11-10T08:50:09.034197+00:00",
+  "provider": "mistral",
+  "planned_calls": 12,
+  "attempt_ceiling": 12,
+  "freeze_sha256": "33a0f1220c1a3f0f72f1f6cfbb197120accd681928209cbfe76c475af438c6c0",
+  "model_requested": "mistral-small-latest",
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 45,
+    "stream": false,
+    "tool_choice": "none"
+  },
+  "split": "development",
+  "summary": {
+    "v07": {
+      "records": 6,
+      "api_errors": 0,
+      "usage": {
+        "prompt_tokens": 21383,
+        "completion_tokens": 1566,
+        "total_tokens": 22949
+      },
+      "unmeasured_records": 0,
+      "median_latency_ms": 2295.0,
+      "max_latency_ms": 2723,
+      "returned_models": [
+        "mistral-small-latest"
+      ],
+      "truncated_responses": 0,
+      "response_characters": 5694,
+      "question_marks": 17
+    },
+    "v08": {
+      "records": 6,
+      "api_errors": 0,
+      "usage": {
+        "prompt_tokens": 13479,
+        "completion_tokens": 3271,
+        "total_tokens": 16750
+      },
+      "unmeasured_records": 0,
+      "median_latency_ms": 3896.5,
+      "max_latency_ms": 5203,
+      "returned_models": [
+        "mistral-small-latest"
+      ],
+      "truncated_responses": 1,
+      "response_characters": 12221,
+      "question_marks": 22
+    }
+  },
+  "currency_cost": null,
+  "cost_note": "No verified tariff supplied; tokens are measured, not a billing statement.",
+  "pedagogical_verdict": null
+}

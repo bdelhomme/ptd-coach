@@ -147,3 +147,21 @@ révision ultérieure doit conserver la possibilité de comprendre l'évolution.
 - **Suite** : revue critique indépendante. D-027 maintient le gel du moteur,
   du référentiel et des prompts jusqu'au retour pédagogique ; aucune note ni
   nouvelle requête Mistral. Voir le README public et PEDAGOGICAL_REVIEW_PACKAGE.
+
+## R-011 — 2026-11-10 — Enseigner et vérifier sans sur-guider
+
+- **Retour du porteur** : première V0.8 selon le nouveau cadrage validé,
+  accompagnement différencié par nature d’apprentissage ; bienveillance exigeante,
+  correction précise, explications et vérification régulière sans lassitude.
+- **Accord D-029** : tranche minimale sur la base #6, V0.7 et candidat V0.3
+  préservés. Les cinq familles, leur choix, le seuil « une sollicitation » et
+  l’heuristique de ressources restent des propositions testables.
+- **Arbitrages** : pas de quota syntaxique de questions ; réponse directe et
+  arrêt possibles ; feedback avant nouvelle vérification. Une version immuable
+  par fil évite de mélanger les contextes et garde la comparaison possible.
+- **Indépendance** : autorisation explicite du porteur pour confier les 12 cas
+  réservés à un assistant distinct, sans lecture du prompt ni du jeu de développement.
+  Contexte gelé avant leur création ; aucun ajustement sur les résultats réservés.
+- **Limites** : les grilles restent vierges, les auteurs artificiels peuvent
+  partager des biais, une comparaison courte n’établit ni gain causal ni transfert.
+  Voir [le bilan](V08_IMPLEMENTATION.md) et le protocole source V0.8.

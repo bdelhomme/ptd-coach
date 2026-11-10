@@ -1,5 +1,17 @@
 # Feuille de route priorisée — tâches et livrables
 
+## Première tranche V0.8 — D-029
+
+- [x] Intégrer le cadrage, distinguer principes du porteur et hypothèses.
+- [x] Ajouter un contexte séparé, sélection V0.7/V0.8 par nouveau fil.
+- [x] Préserver A2, candidat V0.3, corpus historique et permissions backend.
+- [x] Préparer 12 scénarios de développement et 12 réservés séparés, avec gel et provenance.
+- [ ] Lecture humaine comparative puis évaluation indépendante des 12 réservés.
+- [ ] Gouvernance et relecture des ressources avant élargissement du corpus.
+
+Voir [le bilan V0.8](V08_IMPLEMENTATION.md) pour les vérifications réellement
+exécutées, les arbitrages et les bornes. Les sections suivantes sont historiques.
+
 ## Tranche D-026 — coach local sur données fictives
 
 - [x] Conserver A2 et ajouter conversation/Mistral configurables séparément.

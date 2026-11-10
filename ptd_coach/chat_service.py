@@ -9,6 +9,7 @@ import threading
 import uuid
 
 from .chat_context import ChatContext, PROMPT_VERSION
+from .chat_context_v08 import ChatContextV08
 from .identities import USERS
 from .service import DomainError, exact_fields, now, require, text
 
@@ -19,6 +20,8 @@ class ChatService:
     def __init__(self, database, provider, max_calls=100, context=None):
         self.database, self.provider, self.max_calls = str(database), provider, max_calls
         self.context = context or ChatContext()
+        self.contexts = ({getattr(context, "coach_version", "v07"): context} if context else
+                         {"v07": self.context, "v08": ChatContextV08()})
         self.slots = threading.BoundedSemaphore(3)
         path = Path(database)
         path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
@@ -26,7 +29,12 @@ class ChatService:
             version = db.execute("PRAGMA user_version").fetchone()[0]
             if version == 0:
                 db.executescript((Path(__file__).parent / "chat_schema.sql").read_text())
-            elif version != 1:
+            if version in (0, 1):
+                # Historical threads keep their V0.7 context, including pending calls.
+                db.execute("ALTER TABLE conversations ADD COLUMN coach_version TEXT NOT NULL DEFAULT 'v07' "
+                           "CHECK (coach_version IN ('v07', 'v08'))")
+                db.execute("PRAGMA user_version = 2")
+            elif version != 2:
                 raise ValueError("Unsupported conversation database")
         path.chmod(0o600)
 
@@ -63,14 +71,17 @@ class ChatService:
     def public_config(self):
         return {"provider": self.provider.name, "model": self.provider.model,
                 "configured": self.provider.configured, "max_output_tokens": self.provider.max_tokens,
-                "max_calls": self.max_calls, "max_turns": 24, "prompt_version": PROMPT_VERSION,
-                "context_sha256": self.context.digest, "synthetic_only": True}
+                "max_calls": self.max_calls, "max_turns": 24, "prompt_version": getattr(self.context, "version", PROMPT_VERSION),
+                "context_sha256": self.context.digest, "synthetic_only": True,
+                "coach_versions": list(self.contexts),
+                "prompt_versions": {k: getattr(v, "version", PROMPT_VERSION) for k, v in self.contexts.items()},
+                "default_coach_version": "v08" if "v08" in self.contexts else next(iter(self.contexts))}
 
     def listing(self, actor):
         self.student(actor)
         with self.connect() as db:
             return [dict(row) for row in db.execute(
-                "SELECT id, scope, version, pending, created_at FROM conversations WHERE "
+                "SELECT id, scope, version, pending, created_at, coach_version FROM conversations WHERE "
                 "(scope = 'individual' AND owner_id = ?) OR (scope = 'collective' AND team_id = ?) "
                 "ORDER BY created_at DESC", (actor, USERS[actor]["team"]))]
 
@@ -83,6 +94,7 @@ class ChatService:
         sums = {k: sum(r["usage"].get(k) or 0 for r in requests)
                 for k in ("prompt_tokens", "completion_tokens", "total_tokens")}
         return {"format": self.format_version, "id": cid, "scope": row["scope"],
+                "coach_version": row["coach_version"],
                 "version": row["version"], "pending": bool(row["pending"]),
                 "messages": messages, "invocations": requests,
                 "usage": {"known_tokens": sums, "unmeasured_calls": sum(
@@ -96,18 +108,24 @@ class ChatService:
     def create(self, actor, key, payload):
         self.student(actor)
         self.key(key)
-        exact_fields(payload, {"scope", "synthetic_confirmed"})
+        require(type(payload) is dict)
+        fields = {"scope", "synthetic_confirmed"}
+        exact_fields(payload, fields | ({"coach_version"} if "coach_version" in payload else set()))
+        coach_version = payload.get("coach_version", "v07")
+        require(type(coach_version) is str and coach_version in self.contexts,
+                message="Version de coach indisponible.")
         require(payload["scope"] in ("individual", "collective") and payload["synthetic_confirmed"] is True,
                 message="Confirmez l'usage de données fictives et choisissez un espace.")
         with self.connect() as db:
             db.execute("BEGIN IMMEDIATE")
-            prior = db.execute("SELECT id, scope FROM conversations WHERE owner_id = ? AND creation_key = ?", (actor, key)).fetchone()
+            prior = db.execute("SELECT id, scope, coach_version FROM conversations WHERE owner_id = ? AND creation_key = ?", (actor, key)).fetchone()
             if prior:
-                require(prior["scope"] == payload["scope"], 409, "idempotency_conflict", "Clé déjà utilisée pour un autre espace.")
+                require(prior["scope"] == payload["scope"] and prior["coach_version"] == coach_version,
+                        409, "idempotency_conflict", "Clé déjà utilisée pour un autre espace ou coach.")
                 return self.snapshot(db, actor, prior["id"])
             cid = str(uuid.uuid4())
-            db.execute("INSERT INTO conversations (id,scope,owner_id,team_id,creation_key,created_at) VALUES (?,?,?,?,?,?)",
-                       (cid, payload["scope"], actor, USERS[actor]["team"], key, now()))
+            db.execute("INSERT INTO conversations (id,scope,owner_id,team_id,creation_key,created_at,coach_version) VALUES (?,?,?,?,?,?,?)",
+                       (cid, payload["scope"], actor, USERS[actor]["team"], key, now(), coach_version))
             return self.snapshot(db, actor, cid)
 
     def _reserve(self, actor, cid, key, payload):
@@ -137,14 +155,21 @@ class ChatService:
                     409, "conversation_limit", "Ouvrez une nouvelle conversation : limite de contexte atteinte, sans suppression de l'historique.")
             require(db.execute("SELECT COUNT(*) FROM chat_requests").fetchone()[0] < self.max_calls,
                     429, "call_limit", "Plafond local d'appels atteint. Ajustez CHAT_MAX_CALLS manuellement si nécessaire.")
+            require(row["coach_version"] in self.contexts, 409, "context_unavailable", "Contexte historique indisponible.")
+            context = self.contexts[row["coach_version"]]
+            resources = context.select_resources(message, history) if hasattr(context, "select_resources") else context.resources
+            system = context.system(row["scope"], resources) if hasattr(context, "select_resources") else context.system(row["scope"])
+            messages = [{"role": "system", "content": system}] + history + [{"role": "user", "content": message}]
             metadata = {"provider": self.provider.name, "model_requested": self.provider.model,
-                        "model_returned": None, "prompt_version": PROMPT_VERSION,
-                        "context_sha256": self.context.digest, "max_tokens": self.provider.max_tokens,
+                        "model_returned": None, "prompt_version": getattr(context, "version", PROMPT_VERSION),
+                        "coach_version": row["coach_version"], "context_sha256": context.digest,
+                        "system_sha256": hashlib.sha256(system.encode()).hexdigest(),
+                        "messages_sha256": hashlib.sha256(json.dumps(messages, ensure_ascii=False, sort_keys=True).encode()).hexdigest(),
+                        "resource_ids": [r["id"] for r in resources], "max_tokens": self.provider.max_tokens,
                         "temperature": 0.2, "usage": {}, "latency_ms": None, "finish_reason": None}
             db.execute("INSERT INTO chat_requests VALUES (?,?,?,?,?,?,?,?)",
                        (actor, key, cid, fingerprint, "pending", json.dumps(metadata), None, now()))
             db.execute("UPDATE conversations SET pending = 1 WHERE id = ?", (cid,))
-            messages = [{"role": "system", "content": self.context.system(row["scope"])}] + history + [{"role": "user", "content": message}]
         return (messages, message, metadata), None
 
     def send(self, actor, cid, key, payload):

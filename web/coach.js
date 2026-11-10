@@ -56,7 +56,7 @@ function scopeHelp() {
 async function refreshList() {
   const list = await api('/api/coach/conversations');
   $('#conversations').replaceChildren(...list.map((item, index) => {
-    const name = (item.scope === 'individual' ? 'Privée' : 'Équipe') + ' · ' + new Date(item.created_at).toLocaleString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    const name = item.coach_version.toUpperCase().replace('V0', 'V0.') + ' · ' + (item.scope === 'individual' ? 'Privée' : 'Équipe') + ' · ' + new Date(item.created_at).toLocaleString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
     const button = node('button', name + (item.pending ? ' · en attente' : ''));
     button.type = 'button';
     if (state.conversation?.id === item.id) { button.className = 'active'; button.setAttribute('aria-current', 'true'); }
@@ -74,7 +74,7 @@ function renderConversation() {
   $('#visibility').textContent = !conversation ? 'Choisissez votre espace' : collective ? 'Collectif · équipe uniquement' : 'Privé · ce compte uniquement';
   $('#visibility').className = 'badge' + (collective ? ' collective' : '');
   $('#conversation-title').textContent = collective ? 'Réfléchir ensemble.' : 'De quoi avez-vous besoin ?';
-  $('#provider').textContent = (state.config.provider === 'mistral' ? 'API Mistral' : 'Simulation hors réseau') + ' · ' + state.config.model +
+  $('#provider').textContent = (conversation ? conversation.coach_version.toUpperCase().replace('V0', 'V0.') + ' · ' : '') + (state.config.provider === 'mistral' ? 'API Mistral' : 'Simulation hors réseau') + ' · ' + state.config.model +
     (state.config.configured ? '' : ' · Clé absente : ajoutez MISTRAL_API_KEY dans .env, puis redémarrez le serveur.');
   $('#starters').hidden = !!conversation?.messages.length;
   const messages = conversation?.messages || [];
@@ -90,7 +90,7 @@ function renderConversation() {
     bubble.append(content);
     if (message.role === 'assistant') {
       const invocation = conversation.invocations.filter(item => item.status === 'succeeded')[Math.floor(index / 2)];
-      if (invocation) bubble.append(node('small', invocation.model_returned + ' · ' + (invocation.usage.total_tokens ?? 'non mesuré') + ' tokens' + (invocation.finish_reason === 'length' ? ' · réponse limitée en longueur' : '')));
+      if (invocation) bubble.append(node('small', invocation.model_returned + ' · ' + (invocation.usage.total_tokens ?? 'non mesuré') + ' tokens · ' + (invocation.latency_ms ?? '?') + ' ms' + (invocation.finish_reason === 'length' ? ' · réponse limitée en longueur' : '')));
     }
     return bubble;
   }));
@@ -106,6 +106,7 @@ function renderConversation() {
 }
 async function load() {
   state.config = await api('/api/coach/config');
+  $('#coach-version').value = state.config.default_coach_version;
   const resources = await api('/api/coach/resources');
   $('#resources').replaceChildren(...resources.map(resource => {
     const details = node('details');
@@ -131,7 +132,7 @@ $('#logout').addEventListener('click', () => action(async () => {
 $('#scope').addEventListener('change', scopeHelp);
 $('#new').addEventListener('click', () => action(async () => {
   if (!$('#synthetic').checked) throw new Error('Confirmez l’utilisation de données fictives avant de créer une conversation.');
-  state.conversation = await api('/api/coach/conversations', 'POST', { scope: $('#scope').value, synthetic_confirmed: true });
+  state.conversation = await api('/api/coach/conversations', 'POST', { scope: $('#scope').value, synthetic_confirmed: true, coach_version: $('#coach-version').value });
   $('#message').value = ''; renderConversation(); await refreshList(); $('#message').focus();
 }));
 $('#compose').addEventListener('submit', event => {

@@ -1,5 +1,21 @@
 # Contrat conversation.v1 — démo locale
 
+## Extension additive V0.8 — D-029
+
+`POST /api/coach/conversations` accepte le champ facultatif `coach_version`
+(`v07` ou `v08`). L’absence garde `v07` pour les appelants existants ; l’interface
+propose explicitement `v08`. Scope et version du coach sont immuables. Réutiliser
+une clé de création avec un autre coach produit 409. Aucun champ de version du
+coach n’est accepté lors de l’envoi des messages. Liste, snapshot et export
+incluent `coach_version`. Le format `conversation.v1` reste additif.
+
+Config expose `coach_versions`, `prompt_versions` et `default_coach_version`.
+Chaque appel conserve version, empreinte du bundle, `system_sha256` du système
+réel, `messages_sha256` des messages sérialisés (`ensure_ascii=False, sort_keys=True`),
+identifiants des fiches, modèle, tokens et latence. Ces empreintes ne remplacent
+pas une archive des textes fictifs pour la recette ; aucun message privé ne
+rejoint le corpus commun. Anciennes métadonnées conservées sans réécriture.
+
 Le contrat s'ajoute aux contrats A2 sans les modifier. Référence :
 [ADR-0007](adr/0007-local-conversation-mistral.md), D-026.
 
