@@ -1,0 +1,85 @@
+{
+  "timestamp_utc": "2026-11-10T23:20:03.449666+00:00",
+  "provider": "mistral",
+  "planned_calls": 18,
+  "mistral_attempt_ceiling": 18,
+  "variants": [
+    "v07",
+    "c1",
+    "c2"
+  ],
+  "model_requested": "mistral-small-latest",
+  "c2_freeze_sha256": "1fdd717ec1af511f4171313f547ae8a2604d82c8c2e348e7eb8915457d715012",
+  "parameters": {
+    "max_tokens": 700,
+    "temperature": 0.2,
+    "stream": false,
+    "tool_choice": "none",
+    "timeout_seconds": 45
+  },
+  "summary": {
+    "v07": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 20290,
+        "completion_tokens": 995,
+        "total_tokens": 21285
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 1642.5,
+      "characters": 3935,
+      "question_marks_not_solicitations": 2,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    },
+    "c1": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 12837,
+        "completion_tokens": 2548,
+        "total_tokens": 15385
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 3515.5,
+      "characters": 9810,
+      "question_marks_not_solicitations": 21,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    },
+    "c2": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 11941,
+        "completion_tokens": 661,
+        "total_tokens": 12602
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 1164.5,
+      "characters": 2548,
+      "question_marks_not_solicitations": 0,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "currency_cost": null,
+  "limitations": [
+    "Development only; no held-out evaluation",
+    "Moving model alias",
+    "Fixed student continuations with different assistant histories",
+    "Question marks are not counts of pedagogical requests",
+    "Technical and descriptive measurements are not student scores"
+  ]
+}

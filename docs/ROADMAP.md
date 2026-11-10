@@ -6,7 +6,7 @@
 - [x] Vérifier les sources et relire les exemples avant utilisation.
 - [x] Contexte c2 séparé et gelé, sans toucher au moteur ni à c1.
 - [x] Comparateur à trois variantes, réservé refusé avant ouverture.
-- [ ] Exécuter puis publier les essais Mistral bornés et leurs limites.
+- [x] Exécuter les 54 essais Mistral bornés et préparer leurs preuves/limites pour publication.
 - [ ] Revue humaine de c2 ; aucun pilote ni acceptation automatique.
 
 Le rapport c2 suit les résultats réellement obtenus. Les sections suivantes

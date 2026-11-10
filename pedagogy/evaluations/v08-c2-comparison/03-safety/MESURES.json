@@ -1,0 +1,47 @@
+{
+  "timestamp_utc": "2026-11-10T23:20:22.628761+00:00",
+  "provider": "mistral",
+  "planned_calls": 12,
+  "mistral_attempt_ceiling": 12,
+  "variants": [
+    "c2"
+  ],
+  "model_requested": "mistral-small-latest",
+  "c2_freeze_sha256": "1fdd717ec1af511f4171313f547ae8a2604d82c8c2e348e7eb8915457d715012",
+  "parameters": {
+    "max_tokens": 700,
+    "temperature": 0.2,
+    "stream": false,
+    "tool_choice": "none",
+    "timeout_seconds": 45
+  },
+  "summary": {
+    "c2": {
+      "responses": 12,
+      "records": 12,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 15343,
+        "completion_tokens": 1678,
+        "total_tokens": 17021
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 1403.5,
+      "characters": 6708,
+      "question_marks_not_solicitations": 2,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "currency_cost": null,
+  "limitations": [
+    "Development only; no held-out evaluation",
+    "Moving model alias",
+    "Fixed student continuations with different assistant histories",
+    "Question marks are not counts of pedagogical requests",
+    "Technical and descriptive measurements are not student scores"
+  ]
+}
