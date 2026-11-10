@@ -120,7 +120,7 @@ de développement, six tours chacun pour les deux versions, douze appels** :
 ```
 
 Même instance fournisseur et réglages pour les deux contextes, conversations
-isolées, ordre alterné par cas ; pas de retry. Le plafond est vérifié avant le
+isolées, ordre alterné entre les cas sélectionnés ; pas de retry. Le plafond est vérifié avant le
 premier appel. Les erreurs stoppent tout le passage et restent tracées. Un dossier
 existant n'est jamais écrasé. La facturation d'un échec réseau peut rester inconnue.
 Les sorties comprennent JSONL exact, mesures JSON, lecture A/B, clé séparée et
@@ -238,3 +238,15 @@ autorisé, sans nouveau secret ni changement de permissions du dépôt.
 Cette dernière mise à jour documentaire consigne les contrôles du commit
 applicatif ; les contrôles de son propre commit sont visibles dans la PR.
 Aucune fusion ni modification de la visibilité du dépôt n’a été effectuée.
+
+## Ajustement technique du comparateur après premier passage
+
+Le contrôle final révèle que la première implémentation choisissait l’ordre
+selon l’indice dans la suite complète. D03 et D09 ayant la même parité, **V0.7
+précède V0.8 dans chacun des deux cas réellement enregistrés** : biais d’ordre
+possible, à ajouter aux limites. Aucun résultat API n’est relancé ou réécrit.
+Le comparateur alterne désormais après filtrage de la sélection ; le test mock
+D03/D09 vérifie explicitement cet ordre. Ce correctif de protocole ne change ni
+le prompt, ni le service, ni le gel, ni le jeu réservé. Les contrôles CI du dernier
+commit, visibles dans la PR, couvrent ce correctif ; les liens précédents restent
+la trace des étapes antérieures.

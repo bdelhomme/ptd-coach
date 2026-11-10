@@ -31,8 +31,9 @@ les fichiers gelés et leur empreinte vérifiée contre chaque appel.
 Même fournisseur, alias `mistral-small-latest`, température 0,2, plafond 700,
 non streaming, aucun outil. Modèle retourné identique à l’alias demandé ; révision
 immuable non résolue. Les cas sont D03 (WBS) et D09 (appropriation sans IA), trois
-tours chacun. Les variantes ont leurs propres historiques et alternent leur
-ordre par cas. Pas de répétition ni estimation fiable de coût monétaire.
+tours chacun. Les variantes ont leurs propres historiques. Dans ce passage, V0.7 précède
+V0.8 pour chacun des deux cas : un biais d’ordre reste possible. Le comparateur
+a été corrigé ensuite pour alterner après filtrage, sans rejouer ces réponses. Pas de répétition ni estimation fiable de coût monétaire.
 
 Observations de développement, **pas revue indépendante** : moins de tokens
 d’entrée grâce au contexte différent, mais davantage de sortie, de latence et

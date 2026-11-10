@@ -155,6 +155,8 @@ class VersionedChatTest(unittest.TestCase):
         rows = list(collect(suite, self.provider, {"D03", "D09"}))
         self.assertEqual(len(rows), 12)
         self.assertEqual({r["variant"] for r in rows}, {"v07", "v08"})
+        self.assertEqual([(r["case_id"], r["variant"]) for r in rows if r["turn"] == 1],
+                         [("D03", "v07"), ("D03", "v08"), ("D09", "v08"), ("D09", "v07")])
         self.assertEqual(summary(rows)["v08"]["usage"]["total_tokens"], 720)
         self.assertEqual(sum(len(call) == 2 for call in self.provider.calls), 4)
         folder = Path(self.temp.name)

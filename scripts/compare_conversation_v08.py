@@ -36,9 +36,8 @@ def verify_freeze():
 def collect(suite, provider=None, selected=None):
     """Interleave complete conversations; histories remain isolated per variant/case."""
     contexts = {"v07": ChatContext(), "v08": ChatContextV08()}
-    for index, case in enumerate(suite["cases"]):
-        if selected and case["id"] not in selected:
-            continue
+    cases = [case for case in suite["cases"] if not selected or case["id"] in selected]
+    for index, case in enumerate(cases):
         order = ("v07", "v08") if index % 2 == 0 else ("v08", "v07")
         for version in order:
             one_case = dict(suite, cases=[case])
