@@ -17,6 +17,17 @@ compétence, partage ni scoring nouveau. Jeux de développement et réservé sé
 gel vérifiable du contexte avant création du réservé. La réussite technique et
 les exemples API ne constituent pas une acceptation pédagogique.
 
+Publication vérifiée : [PR #7](https://github.com/bdelhomme/ptd-coach/pull/7),
+ouverte vers la branche #6, sans conflit déclaré ni auto-merge. Code/corpus au
+commit `62b2ad4` : `make verify` **96 tests**, CI distante réussie
+([pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42786533789),
+[push](https://github.com/bdelhomme/ptd-coach/actions/runs/42786429965)).
+Les huit fichiers du nouveau corpus sont accessibles anonymement et leurs octets
+publics correspondent aux fichiers locaux. Comparaison réelle : 12 réponses,
+39 699 tokens ; V0.8 plus longue/lente sur ces deux cas, une réponse tronquée.
+Les douze réservés restent sans exécution API et la grille humaine vierge.
+Application lancée sur le Mac : `http://127.0.0.1:8767/coach`.
+
 Dernière mise à jour : **2026-11-10** · Version applicative : **conversation.v1, contextes V0.7/V0.8 expérimentaux**
 
 ## Historique — revue pédagogique indépendante (D-027)

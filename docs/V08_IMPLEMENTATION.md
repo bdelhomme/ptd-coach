@@ -218,3 +218,23 @@ import exact des quatre documents, gel antérieur à la création réservée, re
 après modification d’un contexte, fidélité des douze réponses/contextes/empreintes,
 grille non notée et absence de confusion entre versions. Aucun conflit Git
 rencontré ; la PR dédiée conserve les dépendances et ne sera pas fusionnée.
+
+## Publication vérifiée
+
+[PR #7](https://github.com/bdelhomme/ptd-coach/pull/7), ouverte vers la branche
+de #6, sans conflit déclaré et sans auto-merge. Commit code/corpus `62b2ad4` :
+CI réussie sur [pull_request](https://github.com/bdelhomme/ptd-coach/actions/runs/42786533789)
+et [push](https://github.com/bdelhomme/ptd-coach/actions/runs/42786429965).
+Les huit fichiers du corpus comparatif sont lisibles sans authentification, avec
+identité SHA-256 des octets publics/locaux vérifiée. La clé locale exacte est
+absente de tous les fichiers suivis ; contrôles de formats courants de secrets,
+coordonnées et chemins locaux sans signal dans les changements. Cela ne constitue
+pas un audit exhaustif. Les 42 fichiers historiques contrôlés (dont candidat,
+V0.7, ressources, contrats et A2) et lignes de décisions D-001 à D-028 sont préservés.
+
+Le connecteur GitHub permet la lecture mais refuse la création de PR (403,
+`Resource not accessible by integration`) ; création réussie avec GitHub CLI déjà
+autorisé, sans nouveau secret ni changement de permissions du dépôt.
+Cette dernière mise à jour documentaire consigne les contrôles du commit
+applicatif ; les contrôles de son propre commit sont visibles dans la PR.
+Aucune fusion ni modification de la visibilité du dépôt n’a été effectuée.
