@@ -1,0 +1,14 @@
+{
+  "description": "Empreintes SHA-256 du premier passage fictif et de ses entrées bibliothèque ; sans lecture du jeu réservé.",
+  "files": {
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/LECTURE_COMPARATIVE.md": "ebf7315d3ee1a145be5ffc559583eea674b5a8c8b3d95e1c756c7320013e8967",
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/GRILLE_VIERGE.csv": "d1719f356addaeea97d38b03e9165e9c213e7fd1f94d05bb38d1914b2649c899",
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/MESURES.json": "669839770ddf9ba36f1370e02434e41fb8a1e3020d26b2c73a03bb8eb67245c1",
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/responses.jsonl": "b5944f84ebfc60d2e850af50ed98674e9cd1e25f75fd76113ae14cc57fb17e78",
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/CLE_VARIANTES.json": "8ca392117fc05abc6b3b74663722d124d96c69061fde975fe0c88bc8c7b32d60",
+    "pedagogy/library/methodes-v0.1.json": "e2ecd57529cd67f6696f0f1a774ebfc81b793ca730c018668d06a2a93ef02e4d",
+    "ptd_coach/library.py": "1f4405621155908e86db408d0410e9bfc4e855a15f2c5ac425416021887719c3",
+    "ptd_coach/chat_context_library.py": "f6dda90b296cfee3d3000365e40e5eed7f7eeb133fd6c2332a99cfe1e69de17e",
+    "scripts/compare_library.py": "3a7ecbfda4f1873ad2df09bb93f206ec441246f140126d7e6697d7228815d78c"
+  }
+}

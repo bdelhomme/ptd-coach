@@ -1,5 +1,15 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Bibliothèque expérimentale · D-032
+
+Lire `docs/BIBLIOTHEQUE_METHODES.md`. La demande du porteur autorise cette
+fonctionnalité sur une branche issue de #9, avec une base de conversations
+distincte. Les dix fiches sont des brouillons sans validation enseignante.
+Les essais TX05/TX07 montrent des inventions malgré les ressources : ne pas
+revendiquer un gain pédagogique. Préserver les gels, corpus et référentiel ;
+ne pas lire les scénarios réservés pour développer. Pas de données réelles ni
+de fusion automatique.
+
 ## Campagne transversale · D-031
 
 Commencer par [le rapport de campagne](docs/CAMPAGNE_TRANSVERSALE.md) et la

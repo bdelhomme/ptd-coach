@@ -29,6 +29,7 @@ def configuration(root):
 def main():
     parser = argparse.ArgumentParser(description="PTD Coach — démo locale, données fictives uniquement")
     parser.add_argument("--port", type=int, default=8765)
+    parser.add_argument("--bibliotheque-experimentale", action="store_true", help="Coach bibliothèque isolé, base locale distincte")
     args = parser.parse_args()
     if not 1024 <= args.port <= 65535:
         parser.error("Choose a port between 1024 and 65535")
@@ -38,8 +39,15 @@ def main():
     local.mkdir(mode=0o700, exist_ok=True)
     service = Service(local / "a2-demo.sqlite3")
     chat_settings = settings(root)
-    chat = ChatService(local / "coach-demo.sqlite3", provider_from_settings(chat_settings),
-                       max_calls=chat_settings["CHAT_MAX_CALLS"])
+    context = None
+    database = local / "coach-demo.sqlite3"
+    if args.bibliotheque_experimentale:
+        from .chat_context_library import LibraryContext
+        context = LibraryContext()
+        database = local / "coach-library-experimental.sqlite3"
+        print("Coach bibliothèque expérimental : base et conversations séparées.", flush=True)
+    chat = ChatService(database, provider_from_settings(chat_settings),
+                       max_calls=chat_settings["CHAT_MAX_CALLS"], context=context)
     with DemoServer(("127.0.0.1", args.port), service, chat) as server:
         print("PTD Coach — conversation fictive : http://127.0.0.1:{}/coach".format(args.port), flush=True)
         print("Fournisseur conversation : {} ; modèle : {} ; clé configurée : {}".format(

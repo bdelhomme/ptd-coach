@@ -1,0 +1,436 @@
+{
+  "version": "0.1",
+  "statut": "experimental",
+  "methodes": [
+    {
+      "id": "M01",
+      "nom": "Préparer un entretien de découverte",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A1",
+        "D1"
+      ],
+      "mots_cles": [
+        "client",
+        "commanditaire",
+        "entretien",
+        "rencontrer",
+        "comprendre",
+        "demande",
+        "parler",
+        "besoin"
+      ],
+      "resume": "Comprendre une situation avant de choisir une solution.",
+      "etapes": "Préparez le contexte et les inconnues ; posez une question ouverte ; reformulez ; distinguez ce qui a été dit de vos hypothèses ; convenez de ce qui reste à confirmer.",
+      "exemple": "Projet fictif de prêt de matériel : le commanditaire évoque des pertes. Demander où elles apparaissent et reformuler le problème sans supposer qu’une application est nécessaire.",
+      "modele": "Situation observée : … ; question ouverte : … ; reformulation : … ; à confirmer : …",
+      "limites": "Des réponses du commanditaire ne représentent pas automatiquement tous les utilisateurs.",
+      "erreurs": "Faire affirmer que la reformulation est déjà validée ; présumer la solution.",
+      "apprentissage": "Reformuler une demande en distinguant propos et hypothèses.",
+      "tuteur": "Vérifier la fidélité de la reformulation et les personnes absentes.",
+      "coach": "Proposer une question ou une reformulation ; ne pas inventer la réponse du client.",
+      "source": {
+        "organisation": "GOV.UK",
+        "titre": "Learning about users and their needs",
+        "url": "https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Recherche des besoins et distinction avec les solutions ; guide des services publics."
+      },
+      "liens": [
+        "M02",
+        "M03"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : client, commanditaire, entretien, rencontrer, comprendre, demande, parler, besoin."
+    },
+    {
+      "id": "M02",
+      "nom": "Distinguer besoin, solution et contrainte",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A1",
+        "D1",
+        "C1"
+      ],
+      "mots_cles": [
+        "besoin",
+        "solution",
+        "contrainte",
+        "probleme",
+        "demande",
+        "usage",
+        "application"
+      ],
+      "resume": "Un besoin décrit un résultat recherché ; une solution est une manière possible de l’obtenir ; une contrainte borne les options.",
+      "etapes": "Recueillez la demande ; identifiez le problème et la raison ; séparez les moyens suggérés et les limites attestées ; faites confirmer les incertitudes.",
+      "exemple": "Fictif : « retrouver plus facilement le matériel » exprime un besoin ; « créer une application » propose une solution ; un budget chiffré n’est une contrainte que s’il a été communiqué.",
+      "modele": "Propos : … ; besoin interprété : … ; solution suggérée : … ; contrainte et source : … ; à confirmer : …",
+      "limites": "Les frontières peuvent se discuter ; l’origine et le statut de chaque affirmation restent essentiels.",
+      "erreurs": "Transformer une solution proposée en besoin confirmé.",
+      "apprentissage": "Expliquer la distinction avec un exemple.",
+      "tuteur": "Demander quelle preuve étaye chaque contrainte.",
+      "coach": "Illustrer sans inventer de contrainte ni affirmer un accord.",
+      "source": {
+        "organisation": "GOV.UK",
+        "titre": "Learning about users and their needs",
+        "url": "https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Recherche des besoins et distinction avec les solutions ; guide des services publics."
+      },
+      "liens": [
+        "M01",
+        "M03"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : besoin, solution, contrainte, probleme, demande, usage, application."
+    },
+    {
+      "id": "M03",
+      "nom": "Construire progressivement le cahier des charges",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A1",
+        "D1",
+        "C1"
+      ],
+      "mots_cles": [
+        "cahier",
+        "charges",
+        "rediger",
+        "document",
+        "specification",
+        "besoin",
+        "exigence"
+      ],
+      "resume": "Un document évolutif rassemble le besoin, le périmètre et des exigences dont le statut est visible.",
+      "etapes": "Partez des faits recueillis ; formulez le besoin ; listez périmètre et contraintes sourcées ; ajoutez des exigences vérifiables ; marquez les inconnues ; discutez et faites confirmer les points concernés.",
+      "exemple": "Fictif : le client souhaite retrouver les objets empruntés. La fréquence de mise à jour est inconnue : inscrire « à discuter » plutôt que décider un délai.",
+      "modele": "Objectif : … ; périmètre : … ; besoin/source : … ; exigence : … ; vérification : … ; statut : … ; validation par : …",
+      "limites": "Une trame est un support à adapter, pas une norme ni une preuve d’accord.",
+      "erreurs": "Ajouter des seuils ou fonctionnalités non communiqués ; écrire « validé » sans confirmation.",
+      "apprentissage": "Relier chaque exigence à une source, une vérification et un statut.",
+      "tuteur": "Rechercher les seuils inventés et les points non confirmés.",
+      "coach": "Fournir une trame et un exemple fictif ; conserver les inconnues et les arbitrages.",
+      "source": {
+        "organisation": "NASA",
+        "titre": "Appendix C: How to Write a Good Requirement",
+        "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Qualités de formulation des exigences en ingénierie systèmes."
+      },
+      "liens": [
+        "M02",
+        "M04",
+        "M05"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : cahier, charges, rediger, document, specification, besoin, exigence."
+    },
+    {
+      "id": "M04",
+      "nom": "Rédiger une exigence vérifiable",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A1",
+        "C1"
+      ],
+      "mots_cles": [
+        "exigence",
+        "verifiable",
+        "critere",
+        "acceptation",
+        "mesure",
+        "performance",
+        "seuil"
+      ],
+      "resume": "Une exigence claire énonce une propriété attendue qui pourra être vérifiée dans des conditions définies.",
+      "etapes": "Identifiez l’objet et la propriété ; évitez les mots vagues ; associez un critère et une méthode de vérification ; laissez ouvert tout seuil non convenu.",
+      "exemple": "Fictif : « le relevé indique le nom de chaque objet emprunté » peut être vérifié par inspection ; le délai de mise à jour reste à convenir.",
+      "modele": "ID : … ; formulation : … ; origine : … ; critère : … ; méthode : … ; statut : …",
+      "limites": "Un énoncé testable ne garantit pas que l’exigence répond au bon besoin.",
+      "erreurs": "Remplacer « rapide » par un délai inventé ; confondre vérification et validation du besoin.",
+      "apprentissage": "Repérer une formulation ambiguë et proposer son contrôle.",
+      "tuteur": "Contrôler la source des critères et les conditions de mesure.",
+      "coach": "Corriger un exemple en indiquant les valeurs à confirmer.",
+      "source": {
+        "organisation": "NASA",
+        "titre": "Appendix C: How to Write a Good Requirement",
+        "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Qualités de formulation des exigences en ingénierie systèmes."
+      },
+      "liens": [
+        "M03",
+        "M05"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : exigence, verifiable, critere, acceptation, mesure, performance, seuil."
+    },
+    {
+      "id": "M05",
+      "nom": "Tracer et vérifier les exigences",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A1",
+        "A3",
+        "D1"
+      ],
+      "mots_cles": [
+        "tracabilite",
+        "verifier",
+        "valider",
+        "exigence",
+        "origine",
+        "preuve",
+        "test"
+      ],
+      "resume": "Une trace relie un besoin à une exigence puis à une vérification et à son état.",
+      "etapes": "Donnez un identifiant à chaque exigence ; consignez sa source et son statut ; reliez une méthode de contrôle ; actualisez après discussion des changements.",
+      "exemple": "Fictif : B1 retrouver les objets → E1 afficher leur nom → inspection du relevé ; résultat et accord restent à renseigner.",
+      "modele": "ID besoin : … ; ID exigence : … ; source : … ; vérification : … ; résultat : … ; statut : …",
+      "limites": "Une feuille suffit au petit projet ; ne pas reproduire un processus spatial complet.",
+      "erreurs": "Cocher validé avant contrôle ou accord ; confondre test et pertinence du besoin.",
+      "apprentissage": "Remonter d’une exigence à sa raison et à sa vérification.",
+      "tuteur": "Vérifier les liens manquants et le sens de validation.",
+      "coach": "Montrer une ligne fictive sans déclarer un test exécuté.",
+      "source": {
+        "organisation": "NASA",
+        "titre": "6.2 Requirements Management",
+        "url": "https://www.nasa.gov/reference/6-2-requirements-management/",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Traçabilité et gestion des exigences en ingénierie systèmes."
+      },
+      "liens": [
+        "M03",
+        "M04"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : tracabilite, verifier, valider, exigence, origine, preuve, test."
+    },
+    {
+      "id": "M06",
+      "nom": "Examiner une demande de changement",
+      "categorie": "Commanditaire",
+      "competences": [
+        "A3",
+        "D1",
+        "C2"
+      ],
+      "mots_cles": [
+        "client",
+        "change",
+        "changer",
+        "changement",
+        "avis",
+        "demande",
+        "perimetre",
+        "negocier"
+      ],
+      "resume": "Avant d’accepter un changement, comprendre son intérêt et ses effets sur le projet.",
+      "etapes": "Notez la demande et sa source ; comparez les options et leurs impacts possibles ; identifiez ce qui manque pour estimer ; demandez un arbitrage aux personnes légitimes ; tracez la décision.",
+      "exemple": "Fictif : le commanditaire propose un nouveau type de matériel. L’équipe examine le travail supplémentaire et les alternatives avant tout accord.",
+      "modele": "Demande : … ; intérêt : … ; options : … ; impacts à estimer : … ; décision et auteur : …",
+      "limites": "Le contrôle des changements suppose un repère convenu ; si aucun accord n’existe, commencer par clarifier la demande.",
+      "erreurs": "Dire que le changement est accepté ou refuser automatiquement.",
+      "apprentissage": "Distinguer demande, impact supposé et décision.",
+      "tuteur": "Vérifier qui peut décider et quelles informations manquent.",
+      "coach": "Aider à formuler les options ; ne pas négocier ni promettre pour l’équipe.",
+      "source": {
+        "organisation": "APM",
+        "titre": "What is change control?",
+        "url": "https://www.apm.org.uk/resources/what-is-project-management/what-is-change-control/",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Enregistrement et analyse des changements de référence approuvée."
+      },
+      "liens": [
+        "M03",
+        "M07"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : client, change, changer, changement, avis, demande, perimetre, negocier."
+    },
+    {
+      "id": "M07",
+      "nom": "Décomposer les livrables en WBS",
+      "categorie": "Pilotage",
+      "competences": [
+        "A2",
+        "A3"
+      ],
+      "mots_cles": [
+        "wbs",
+        "livrable",
+        "structurer",
+        "decouper",
+        "planning",
+        "organiser",
+        "lots"
+      ],
+      "resume": "La WBS orientée livrables décompose le périmètre en résultats et lots de travail ; ce n’est pas un calendrier.",
+      "etapes": "Listez les résultats convenus ; décomposez-les en composants vérifiables ; vérifiez la couverture et les recouvrements ; identifiez ensuite les activités nécessaires séparément.",
+      "exemple": "Fragment fictif : dossier de besoins → guide d’entretien, notes, synthèse. « Rédiger le guide » est une activité ; « jeudi » une date.",
+      "modele": "Livrable : … → composants : … ; activité associée hors WBS : … ; responsable à discuter : …",
+      "limites": "Ce fragment ne représente pas le projet complet ; un simple projet peut se contenter d’une décomposition légère.",
+      "erreurs": "Mélanger activités, personnes et dates dans l’arbre des livrables.",
+      "apprentissage": "Distinguer livrable, activité, responsable et calendrier.",
+      "tuteur": "Contrôler que chaque composant est un résultat et que le périmètre est couvert.",
+      "coach": "Expliquer sur un fragment fictif sans décider du périmètre réel.",
+      "source": {
+        "organisation": "PMI",
+        "titre": "Applying work breakdown structure to project lifecycle",
+        "url": "https://www.pmi.org/learning/library/applying-work-breakdown-structure-project-lifecycle-6979",
+        "consultation": "article public consulté, 2026-11-11",
+        "portee": "Décomposition orientée livrables, puis activités et calendrier."
+      },
+      "liens": [
+        "M08"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : wbs, livrable, structurer, decouper, planning, organiser, lots."
+    },
+    {
+      "id": "M08",
+      "nom": "Planifier activités, dépendances et jalons",
+      "categorie": "Pilotage",
+      "competences": [
+        "A2",
+        "A3"
+      ],
+      "mots_cles": [
+        "retard",
+        "planning",
+        "date",
+        "delai",
+        "dependance",
+        "jalon",
+        "gantt",
+        "calendrier"
+      ],
+      "resume": "Un planning relie des activités dans le temps ; un jalon est un événement repère et une dépendance un lien logique.",
+      "etapes": "Associez les activités aux livrables ; repérez les liens et les dates externes ; estimez des durées avec les personnes concernées ; prévoyez des revues et ajustez.",
+      "exemple": "Fictif : valider le guide avant les entretiens ; « guide accepté » est un jalon, la relecture est une activité.",
+      "modele": "Activité : … ; précède/dépend de : … ; durée estimée : … ; jalon : … ; incertitude : …",
+      "limites": "Les estimations sont incertaines ; ne pas créer un diagramme complexe si une liste suffit.",
+      "erreurs": "Traiter le jalon comme une activité ou inventer une date client.",
+      "apprentissage": "Expliquer le lien entre activité, dépendance et jalon.",
+      "tuteur": "Demander quelles activités peuvent se dérouler en parallèle.",
+      "coach": "Aider à vérifier la logique sans garantir les délais.",
+      "source": {
+        "organisation": "PMI",
+        "titre": "Applying work breakdown structure to project lifecycle",
+        "url": "https://www.pmi.org/learning/library/applying-work-breakdown-structure-project-lifecycle-6979",
+        "consultation": "article public consulté, 2026-11-11",
+        "portee": "Décomposition orientée livrables, puis activités et calendrier."
+      },
+      "liens": [
+        "M07",
+        "M06"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : retard, planning, date, delai, dependance, jalon, gantt, calendrier."
+    },
+    {
+      "id": "M09",
+      "nom": "Débriefer un travail collectif",
+      "categorie": "Équipe",
+      "competences": [
+        "B1",
+        "B2",
+        "B3",
+        "D2"
+      ],
+      "mots_cles": [
+        "equipe",
+        "contribue",
+        "participation",
+        "reunion",
+        "debrief",
+        "travail",
+        "personne",
+        "cooperation"
+      ],
+      "resume": "Un débrief court relie des faits observés à une piste pour la prochaine action, sans attribuer de faute.",
+      "etapes": "Choisissez un événement ; décrivez des faits ; distinguez interprétations et autres explications ; convenez d’une action adaptée et d’un retour ultérieur si utile.",
+      "exemple": "Fictif : quatre personnes n’ont pas parlé pendant une réunion ; cela ne prouve pas un manque de motivation. Le groupe peut essayer un tour de parole volontaire.",
+      "modele": "Événement : … ; faits : … ; interprétations : … ; piste à discuter : …",
+      "limites": "Ce support ne traite pas à lui seul harcèlement, violence ou conflit grave : solliciter un interlocuteur humain adapté.",
+      "erreurs": "Déduire les intentions d’une personne à partir du silence.",
+      "apprentissage": "Distinguer un fait d’une interprétation et proposer une action proportionnée.",
+      "tuteur": "Vérifier la sécurité de l’échange et éviter les jugements individuels.",
+      "coach": "Aider à préparer un échange ; ne pas diagnostiquer les personnes.",
+      "source": {
+        "organisation": "AHRQ",
+        "titre": "Reviewing the Team’s Performance: Debrief",
+        "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/debrief.html",
+        "consultation": "page publique consultée, 2026-11-11",
+        "portee": "Débrief en contexte de soins, adaptation PTD à discuter."
+      },
+      "liens": [
+        "M06"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : equipe, contribue, participation, reunion, debrief, travail, personne, cooperation."
+    },
+    {
+      "id": "M10",
+      "nom": "Explorer des causes possibles avec Ishikawa",
+      "categorie": "Analyse",
+      "competences": [
+        "C1",
+        "C2",
+        "D3"
+      ],
+      "mots_cles": [
+        "probleme",
+        "cause",
+        "pourquoi",
+        "resultat",
+        "hypothese",
+        "analyse",
+        "incertitude"
+      ],
+      "resume": "Un diagramme causes-effet organise des hypothèses de causes autour d’un problème défini.",
+      "etapes": "Décrivez précisément le résultat observé ; regroupez les causes possibles ; choisissez celles à examiner ; cherchez des observations ou essais capables de les départager.",
+      "exemple": "Fictif : un capteur donne des mesures variables ; emplacement, procédure et environnement sont des hypothèses, pas des causes établies.",
+      "modele": "Problème observé : … ; hypothèses : … ; indice attendu : … ; essai possible : … ; limite : …",
+      "limites": "Le diagramme ne démontre pas la causalité et ne remplace pas une enquête adaptée aux risques.",
+      "erreurs": "Présenter les branches comme des causes prouvées.",
+      "apprentissage": "Formuler une hypothèse et identifier ce qui pourrait la mettre à l’épreuve.",
+      "tuteur": "Distinguer observations, hypothèses et conclusion.",
+      "coach": "Proposer une comparaison simple sans inventer de résultats.",
+      "source": {
+        "organisation": "ASQ",
+        "titre": "What is a Fishbone Diagram?",
+        "url": "https://asq.org/quality-resources/fishbone",
+        "consultation": "présentation publique consultée, 2026-11-11",
+        "portee": "Organisation de causes possibles ; elle ne démontre pas la causalité."
+      },
+      "liens": [
+        "M09",
+        "M04"
+      ],
+      "statut": "Brouillon — relecture enseignante et documentaire indépendante nécessaire",
+      "version": "0.1",
+      "pertinence": "Cette démarche aide à rendre explicites les informations et les choix ; son intérêt dépend de la situation.",
+      "situations": "Difficultés associées : probleme, cause, pourquoi, resultat, hypothese, analyse, incertitude."
+    }
+  ]
+}

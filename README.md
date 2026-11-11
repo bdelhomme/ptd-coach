@@ -1,5 +1,7 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+> Nouveau : [bibliothèque expérimentale de méthodes](docs/BIBLIOTHEQUE_METHODES.md), consultable localement sans API. Fiches à relire ; l’essai Mistral révèle encore des inventions.
+
 **Campagne transversale D-031** · 24 cas fictifs couvrant les onze compétences
 candidates. Le rapport donne accès à la cartographie, aux ressources proposées,
 à la grille et aux résultats comparatifs. [Rapport de campagne](docs/CAMPAGNE_TRANSVERSALE.md).

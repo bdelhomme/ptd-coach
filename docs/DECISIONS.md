@@ -63,3 +63,8 @@ ni validation pédagogique des réponses, ni adoption institutionnelle. Le cadra
 validé et les modalités expérimentales sont distingués dans
 [V08_IMPLEMENTATION.md](V08_IMPLEMENTATION.md). Les versions antérieures restent
 des preuves historiques, sans réécriture de leurs décisions.
+
+
+## D-032 — Bibliothèque expérimentale de méthodes
+
+Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées brouillon, recherche sans API et contexte de coach séparé utilisant une base distincte. Les protections et gels restent inchangés ; aucun usage réel ni validation enseignante implicite. Le premier essai met en évidence des inventions persistantes ; poursuivre seulement avec une revue critique et une nouvelle évaluation adaptée. Voir `docs/BIBLIOTHEQUE_METHODES.md`.
