@@ -26,10 +26,21 @@ def configuration(root):
     return config
 
 
+def apply_test_output_policy(provider, uncapped, reliability):
+    if uncapped:
+        from .chat_provider_reasoning import MistralReasoningProvider
+        if not reliability or not isinstance(provider, MistralReasoningProvider):
+            raise ValueError("Sans plafond réservé au cadrage de fiabilité et à Mistral Large 4")
+        provider.max_tokens = None
+    return provider
+
+
 def main():
     parser = argparse.ArgumentParser(description="PTD Coach — démo locale, données fictives uniquement")
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--bibliotheque-experimentale", action="store_true", help="Coach bibliothèque isolé, base locale distincte")
+    parser.add_argument("--cadrage-fiabilite", action="store_true", help="Coach de fiabilité expérimental, base séparée")
+    parser.add_argument("--sans-plafond-test", action="store_true", help="Ne demande pas de plafond de sortie pour ce test expérimental Large 4")
     args = parser.parse_args()
     if not 1024 <= args.port <= 65535:
         parser.error("Choose a port between 1024 and 65535")
@@ -41,12 +52,23 @@ def main():
     chat_settings = settings(root)
     context = None
     database = local / "coach-demo.sqlite3"
-    if args.bibliotheque_experimentale:
+    if args.bibliotheque_experimentale and args.cadrage_fiabilite:
+        parser.error("Choisissez un seul contexte expérimental")
+    if args.cadrage_fiabilite:
+        from .chat_context_reliable import ReliableContext
+        context = ReliableContext()
+        database = local / "coach-reliability-experimental.sqlite3"
+        print("Coach de fiabilité expérimental : base et conversations séparées.", flush=True)
+    elif args.bibliotheque_experimentale:
         from .chat_context_library import LibraryContext
         context = LibraryContext()
         database = local / "coach-library-experimental.sqlite3"
         print("Coach bibliothèque expérimental : base et conversations séparées.", flush=True)
-    chat = ChatService(database, provider_from_settings(chat_settings),
+    try:
+        provider = apply_test_output_policy(provider_from_settings(chat_settings), args.sans_plafond_test, args.cadrage_fiabilite)
+    except ValueError as error:
+        parser.error(str(error))
+    chat = ChatService(database, provider,
                        max_calls=chat_settings["CHAT_MAX_CALLS"], context=context)
     with DemoServer(("127.0.0.1", args.port), service, chat) as server:
         print("PTD Coach — conversation fictive : http://127.0.0.1:{}/coach".format(args.port), flush=True)

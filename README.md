@@ -1,5 +1,7 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+> [Cadrage de fiabilité expérimental](docs/CADRAGE_FIABILITE_V01.md) : essais comparatifs et limites, sans validation pédagogique.
+
 > Expérimentation [Mistral Large 4](docs/MISTRAL_LARGE4.md) : cause de l’échec, lancement local, comparaison et limites pédagogiques.
 
 > Nouveau : [bibliothèque expérimentale de méthodes](docs/BIBLIOTHEQUE_METHODES.md), consultable localement sans API. Fiches à relire ; l’essai Mistral révèle encore des inventions.

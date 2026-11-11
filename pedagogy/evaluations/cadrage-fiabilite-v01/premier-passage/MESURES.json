@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-11-11T13:45:49.678185+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "planned_calls": 12,
+  "freeze_sha256": "f10c2b036cb85a6038bbb7186ab7d61952f17f9d62f9e9431ba4e30deefc83bf",
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": "omitted",
+    "reasoning_effort": "medium",
+    "timeout_seconds": 90
+  },
+  "summary": {
+    "bibliotheque": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 8635,
+        "completion_tokens": 4324,
+        "total_tokens": 12959
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 8300.5,
+      "characters": 4070,
+      "question_marks_not_solicitations": 1,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    },
+    "fiabilite": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 12911,
+        "completion_tokens": 4197,
+        "total_tokens": 17108
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 10388.5,
+      "characters": 3977,
+      "question_marks_not_solicitations": 5,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Trois cas de développement ; aucune validation indépendante.",
+    "Les réponses différentes modifient les historiques au second tour.",
+    "L’omission de max_tokens ne supprime pas les limites du fournisseur et du connecteur.",
+    "Les blocs de raisonnement ne sont pas conservés dans l’historique.",
+    "L’identité des variantes peut être reconnaissable malgré les labels."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "fiabilite-v01-gel-avant-essai",
+  "statut": "hypothese_experimentale_non_validee",
+  "portee": "Ces fichiers ne doivent pas être modifiés pendant cet essai ; aucun accès aux scénarios réservés.",
+  "files": {
+    "pedagogy/prompts/COACH_CADRAGE_FIABILITE_V01.md": "e3a0b63752328950fec5a1ab56f128f5bd6857e8d24676b039532af871279ac0",
+    "ptd_coach/chat_context_reliable.py": "74104287511781ec1aec8469649ab06572425afb358ab87687e3150872cf6837",
+    "ptd_coach/chat_context_library.py": "f6dda90b296cfee3d3000365e40e5eed7f7eeb133fd6c2332a99cfe1e69de17e",
+    "ptd_coach/library.py": "1f4405621155908e86db408d0410e9bfc4e855a15f2c5ac425416021887719c3",
+    "pedagogy/library/methodes-v0.1.json": "e2ecd57529cd67f6696f0f1a774ebfc81b793ca730c018668d06a2a93ef02e4d",
+    "pedagogy/qa/COACH_TRANSVERSAL_DEV_CASES.json": "bb96aecf3ba7030d06e09686f04617c52ff5f2c165f4ead8f38efbc00773eca8"
+  }
+}
