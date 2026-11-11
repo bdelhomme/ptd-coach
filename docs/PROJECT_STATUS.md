@@ -1,5 +1,15 @@
 # État du projet — à actualiser à chaque changement
 
+## Priorité courante · campagne transversale D-031
+
+Le porteur demande une évaluation de l’aide méthodologique sur les onze
+compétences, avec priorité au commanditaire et au cahier des charges.
+Branche `eval/campagne-transversale` depuis #8 au commit `df80557`.
+[Rapport de campagne et état des passages](CAMPAGNE_TRANSVERSALE.md).
+Le banc compare les trois contextes figés sur un jeu fictif de développement.
+Les propositions de ressources restent soumises à relecture humaine.
+Les travaux c2 ci-dessous décrivent la tranche précédente.
+
 ## Priorité courante — candidate 2, D-030 (11/11/2026)
 
 Retour du porteur sur D03/D09 : c1 **non validée pédagogiquement**. C2 prépare

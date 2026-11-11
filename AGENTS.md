@@ -1,5 +1,17 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Campagne transversale · D-031
+
+Commencer par [le rapport de campagne](docs/CAMPAGNE_TRANSVERSALE.md) et la
+cartographie des traces antérieures. Comparer V0.7, c1 et c2 sur le jeu de
+développement canonique. Préserver les contextes, gels, corpus et le référentiel
+candidat V0.3. Le jeu réservé reste fermé à l’équipe de développement.
+Cette tranche autorise la documentation et le banc hors application.
+Le premier passage est borné à 36 tentatives Mistral, après contrôles sans API.
+Les grilles restent vierges. Publier le résultat dans une PR dédiée sur #8,
+avec les constats de développement et les arbitrages restant à valider.
+La candidate suivante reste une proposition à discuter.
+
 ## Priorité c2 — D-030, 11 novembre 2026
 
 Le porteur transmet une revue qualitative : **c1 n’est pas pédagogiquement validée**.

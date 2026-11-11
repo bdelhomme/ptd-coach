@@ -37,6 +37,8 @@
 
 | D-030 | VALIDÉ | Préparer c2 après revue qualitative D03/D09 : c1 non validée, concepts professionnels vérifiés, intervention dominante, vérification ciblée, feedback et arrêt après reformulation correcte | Retour explicite du porteur le 2026-11-11 | Nouvelle branche/PR sur #7, contexte c2 séparé, comparaison V0.7/c1/c2 bornée, gel avant API/réservé ; anciennes versions/empreintes conservées, aucun usage des réservés pour conception, aucune nouvelle fonctionnalité/mémoire/notation/donnée réelle/fusion ; autonomie pour corrections et tests justifiés, passation GitHub documentée |
 
+| D-031 | VALIDÉ | Étudier la prescription méthodologique contextualisée et l’autonomie accompagnée sur les onze compétences candidates | Demande du porteur du 2026-11-11 après les essais c2 | Cartographie, 24 cas fictifs, grille qualitative, audit et propositions de fiches, comparatif V0.7/c1/c2 borné à 36 tentatives après tests hors API. Réserve fermée, contextes et V0.3 préservés. PR documentaire et expérimentale, future candidate à arbitrer |
+
 Pour D-020 à D-023, **VALIDÉ désigne un accord de conception du porteur dans les
 échanges du 2026-11-06**. Il ne vaut pas validation du référentiel par l'école,
 consensus des encadrants, validation scientifique, accord DSI/DPO ou approbation

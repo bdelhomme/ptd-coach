@@ -191,3 +191,15 @@ navigateur inchangé et publier les échecs. Les autorisations backend restent
 intactes. Aucun réservé, nouvelle délégation ou suite payante automatique.
 Prochain travail utile : revue externe des exemples et des réponses sensibles,
 puis éventuelle candidate distincte, pas fusion ou essai institutionnel.
+
+## R-013 — 11/11/2026 — Prescription contextualisée et autonomie accompagnée
+
+Le porteur demande d’élargir la comparaison au-delà d’A2. L’évaluation examine
+ce que le coach propose spontanément quand l’étudiant ignore la méthode, quand
+une formulation suffit et quand un exemple ou un brouillon rend l’activité
+accessible. Le cas indique le raisonnement, la preuve ou la décision à laisser
+à l’étudiant. Commanditaire et cahier des charges ont chacun six situations
+sur 24. Le premier échantillon est fixé avant réponse et couvre les cinq
+domaines, avec trois cas client/exigences. Le travail reste au niveau du
+banc d’essai, des ressources proposées et de la documentation. Voir
+[la campagne et ses résultats](CAMPAGNE_TRANSVERSALE.md).
