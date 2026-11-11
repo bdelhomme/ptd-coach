@@ -218,3 +218,8 @@ les citations sont disponibles avec les grilles vierges. Priorité proposée
 ## R-014 — Ressources et autonomie accompagnée
 
 La bibliothèque répond au souhait de trouver une méthode depuis une difficulté vécue. Les sources professionnelles éclairent les pratiques, mais ne valident pas automatiquement leurs adaptations PTD. L’essai TX05/TX07 montre que fournir une fiche ne suffit pas à empêcher des chiffres ou contraintes inventés. Le résultat est un constat de développement, non une évaluation humaine. Voir `docs/BIBLIOTHEQUE_METHODES.md`.
+
+
+## R-015 — Comparer les modèles ne suffit pas
+
+Sur deux cas de développement, Medium 3.5 évite certaines inventions lorsque la fiche est imposée mais en produit sans fiche ; la recherche manque encore TX05. Pas de conclusion générale. Large 4 échoue techniquement avec la configuration existante ; diagnostic séparé à poursuivre sans modifier les gels. Voir `docs/COMPARAISON_MODELES_MISTRAL.md`.

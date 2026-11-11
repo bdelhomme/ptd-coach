@@ -1,0 +1,14 @@
+{
+  "description": "Empreintes des données de développement ; aucun scénario réservé.",
+  "files": {
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/responses.jsonl": "b5944f84ebfc60d2e850af50ed98674e9cd1e25f75fd76113ae14cc57fb17e78",
+    "pedagogy/evaluations/comparaison-mistral-large4/premier-passage/responses.jsonl": "ed34d352b7ef8e093d5a88ec17c5e5460a36b4e828713552f861fb225f977408",
+    "pedagogy/evaluations/comparaison-mistral-medium35/COMPARAISON.md": "f8367255af704cf1bd3f9894ff04c5db9c595ea279790286b9f1b5240875888f",
+    "pedagogy/evaluations/comparaison-mistral-medium35/GRILLE_COMPARATIVE_VIERGE.csv": "eb58e5c185a3522b512eb1950fe5d7440ff81cee5ad198ff82e31fdab145c67b",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/LECTURE_COMPARATIVE.md": "d5758c679a3b012182c8157fa005f88765e807f73f8bf051a6d2dadc0933a19b",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/GRILLE_VIERGE.csv": "d1719f356addaeea97d38b03e9165e9c213e7fd1f94d05bb38d1914b2649c899",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/MESURES.json": "bcefe9303bb2c7a348454420fd4564ce75aded8c873c1ee348c6df9a49b234d0",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/responses.jsonl": "e02f09135133c4ff64cebe4c36f71d08824fa915770bfb1b907e697355354044",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/CLE_VARIANTES.json": "822e5ad253ff8169241a7b1c32c570ba98ef265a1239392b499461f3cb056d77"
+  }
+}

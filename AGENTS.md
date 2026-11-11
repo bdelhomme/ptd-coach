@@ -1,5 +1,12 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Comparaison des modèles · D-033
+
+Lire `docs/COMPARAISON_MODELES_MISTRAL.md`. Résultats exploratoires, pas de
+validation pédagogique ; Medium 3.5 est déprécié. Préserver les verbatim,
+les contextes et le jeu réservé ; ne pas changer le modèle par défaut sur
+la seule base de ce passage.
+
 ## Bibliothèque expérimentale · D-032
 
 Lire `docs/BIBLIOTHEQUE_METHODES.md`. La demande du porteur autorise cette
