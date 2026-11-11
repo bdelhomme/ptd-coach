@@ -52,3 +52,12 @@ class ReasoningTest(unittest.TestCase):
         with patch('ptd_coach.chat_provider_reasoning.build_opener', return_value=FakeOpener(data)):
             with self.assertRaises(DomainError) as error: self.provider().complete([])
         self.assertEqual(error.exception.code,'mistral_invalid_response')
+
+    def test_experimental_none_omits_max_tokens(self):
+        opener = FakeOpener(raw([{'type':'text','text':'Bonjour.'}]))
+        provider = MistralReasoningProvider('test-key','mistral-large-4',None,45,'high')
+        with patch('ptd_coach.chat_provider_reasoning.build_opener', return_value=opener):
+            provider.complete([{'role':'user','content':'bonjour'}])
+        payload = json.loads(opener.request.data)
+        self.assertNotIn('max_tokens', payload)
+        self.assertEqual(payload['reasoning_effort'],'high')

@@ -1,5 +1,13 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Essais sans plafond demandé et mémoire · D-035
+
+Lire `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`. La demande du porteur autorise
+l’omission du plafond de tokens dans le banc de test, pas une modification du
+mode ordinaire. Essais partiels, échecs et coûts inconnus sont tracés ; aucune
+validation pédagogique. La mémoire de semestre est une proposition, pas une
+fonctionnalité existante. Préserver les espaces et le jeu réservé.
+
 ## Correction Large 4 · D-034
 
 Lire `docs/MISTRAL_LARGE4.md` : fournisseur distinct, raisonnement low

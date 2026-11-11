@@ -1,5 +1,7 @@
 # État du projet — à actualiser à chaque changement
 
+> D-035 : essais Large sans plafond demandé, huit réponses et deux appels sans résultat ; mémoire de semestre à concevoir. Voir [rapport](ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md).
+
 > Large 4 : correction expérimentale et comparaison de prix / réponses dans [le rapport](MISTRAL_LARGE4.md). Le raisonnement low a permis 12 réponses ; des inventions persistent.
 
 > Comparaison exploratoire Small / Medium 3.5 : voir [rapport](COMPARAISON_MODELES_MISTRAL.md). Progrès ponctuels avec fiche imposée, inventions persistantes sans fiche ; pas de validation. Large 4 : échec technique initial.

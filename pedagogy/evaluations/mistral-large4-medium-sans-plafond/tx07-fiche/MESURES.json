@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-11-11T12:46:20.606806+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "planned_calls": 2,
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": "omitted",
+    "reasoning_effort": "medium",
+    "timeout_seconds": 90
+  },
+  "summary": {
+    "resource_forced": {
+      "responses": 2,
+      "records": 2,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 3670,
+        "completion_tokens": 1524,
+        "total_tokens": 5194
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 8213.0,
+      "characters": 1589,
+      "question_marks_not_solicitations": 1,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Deux scénarios fictifs de développement, 12 appels maximum.",
+    "Les limites du fournisseur et le délai réseau subsistent ; aucune limite de tokens n’est fixée dans la requête.",
+    "Les blocs thinking ne sont pas conservés dans l’historique ; Mistral avertit d’une possible perte de qualité multitour.",
+    "Limite de taille technique du connecteur et taille maximale de réponse affichable : 30 000 caractères.",
+    "Une seule répétition ; conditions et historiques diffèrent des comparaisons historiques."
+  ]
+}

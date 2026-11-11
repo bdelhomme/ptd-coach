@@ -1,0 +1,19 @@
+{
+  "files": {
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/responses.jsonl": "b5944f84ebfc60d2e850af50ed98674e9cd1e25f75fd76113ae14cc57fb17e78",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/responses.jsonl": "e02f09135133c4ff64cebe4c36f71d08824fa915770bfb1b907e697355354044",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/responses.jsonl": "9cd44c7ea5884abfbd61eb3e86841cca9ed5bd92a44facfb86d4a592006b128f",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/COMPARAISON.md": "fac85e1cf173868b3381e9f2d51e3516740e99433162331a26bdf5da5b581a11",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/GRILLE_VIERGE_COMPARATIVE.csv": "c186e5abcf27798f97012171b1860d3783eb6cc3cf91a8ba8e430b88d306a53d",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/tx07-fiche/LECTURE_COMPARATIVE.md": "b6db4c273881195b5434a48a1bee65bac2f62c017609efdc7a1335cc8e250ebb",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/tx07-fiche/GRILLE_VIERGE.csv": "82e43f33a9bfe7a6abc10a3f01f6772ca1f3110258a287327cdc5c54ab44cbaa",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/tx07-fiche/MESURES.json": "eed552524a353576d34a0ccb897e46765864dc10f0f5154125ca89bf58086abf",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/tx07-fiche/responses.jsonl": "c2b0f90b1ac3d4f693554424539a560ca4436fff3f430c44bbb2d8f690202c08",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/tx07-fiche/CLE_VARIANTES.json": "65fb2e1d81b818dbb2049db47f51393c5a20f8d9866f73e1cafd653fbaabcb09",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/premier-passage/LECTURE_COMPARATIVE.md": "c695c2360ba448f27aad1b3ef2f644e8167a612b0159ae0945857019b6443b66",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/premier-passage/GRILLE_VIERGE.csv": "ad3b26391ea686198e070a1464b7d66e8aef700dcbb6cac2ce629e6e852d42ee",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/premier-passage/responses.jsonl": "d9534bdf39fe755f44f6fc2eb9a7616bbabb479659676a3bcf82b78399fdd1f2",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/premier-passage/CLE_VARIANTES.json": "82771e8790e5b4a30f72e0dec448291ba91cb2bab4eb4e543fd23331f6ecef57",
+    "pedagogy/evaluations/mistral-large4-medium-sans-plafond/premier-passage/MESURES_PARTIELLES.json": "2fbee630e70a9693961f597e52ca252fa4189334920043cb4950e7f0ab275c01"
+  }
+}

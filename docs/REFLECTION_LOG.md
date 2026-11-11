@@ -228,3 +228,8 @@ Sur deux cas de développement, Medium 3.5 évite certaines inventions lorsque l
 ## R-016 — Budget de raisonnement et qualité pédagogique
 
 La reproduction de TX05 confirme qu’un plafond commun de 700 tokens peut être entièrement consommé en raisonnement avant toute réponse finale. Large 4 low répond dans ce plafond, mais conserve des défauts pédagogiques. Ne pas confondre correction technique et validation pédagogique. Les traces et les hypothèses de prix sont dans `docs/MISTRAL_LARGE4.md`.
+
+
+## R-017 — Ressources de calcul et mémoire ne garantissent pas la qualité
+
+Le porteur privilégie la recherche de pertinence, quitte à dépenser davantage en tests, et souligne la continuité sur un semestre. Sans plafond demandé, Large medium produit encore des décisions attribuées à tort au commanditaire. La mémoire doit rester corrigeable, sourcée et séparée par périmètre ; elle reste à concevoir. Voir `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`.

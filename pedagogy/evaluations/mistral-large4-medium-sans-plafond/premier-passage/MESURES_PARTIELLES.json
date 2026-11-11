@@ -1,0 +1,12 @@
+{
+  "model_requested": "mistral-large-4",
+  "effort": "medium",
+  "max_tokens_requested": "omitted",
+  "planned_calls": 12,
+  "successful_calls": 6,
+  "failed_calls": 1,
+  "unattempted_calls": 5,
+  "error": "mistral_network_error",
+  "usage_of_failed_call": null,
+  "retry": "none"
+}

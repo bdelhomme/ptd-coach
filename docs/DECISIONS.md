@@ -78,3 +78,8 @@ Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées br
 ## D-034 — Fournisseur Large 4 séparé
 
 À la demande du porteur, prise en charge expérimentale de Large 4 par un fournisseur distinct à raisonnement configurable low par défaut. Les blocs de raisonnement ne sont pas conservés ; cette décision a un coût possible sur la qualité multitour selon Mistral. Préserver tous les gels et le modèle par défaut. Comparaison exploratoire et limites : `docs/MISTRAL_LARGE4.md`.
+
+
+## D-035 — Essais sans plafond demandé, mémoire de semestre
+
+À la demande du porteur, omettre max_tokens dans un banc de développement dédié tout en mesurant usage et limites effectives ; les réglages usuels restent inchangés. Un essai high a été interrompu, le passage medium est partiel. La mémoire de semestre devient un besoin à instruire, sans implémentation automatique ni modification des droits. Voir `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`.
