@@ -4,7 +4,8 @@
 
 Le porteur demande une évaluation de l’aide méthodologique sur les onze
 compétences, avec priorité au commanditaire et au cahier des charges.
-Branche `eval/campagne-transversale` depuis #8 au commit `df80557`.
+La [PR #9](https://github.com/bdelhomme/ptd-coach/pull/9) est ouverte pour
+revue sur la branche de #8 au commit de base `df80557`.
 [Rapport de campagne et état des passages](CAMPAGNE_TRANSVERSALE.md).
 Le jeu contient 24 cas fictifs. Le premier passage est terminé avec 36
 réponses Mistral et 89 777 tokens. La grille reste vierge pour les lecteurs.

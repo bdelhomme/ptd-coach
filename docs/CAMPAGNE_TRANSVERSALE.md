@@ -167,3 +167,16 @@ et permissions du service historiques sont conservés. Le premier passage
 est terminé. La suite utile consiste à faire relire les verbatim à l’aide
 de la grille, puis à arbitrer les fiches et les hypothèses avant de changer
 un contexte. La PR est dédiée à l’évaluation et à la documentation.
+
+## Publication vérifiée
+
+La [PR #9](https://github.com/bdelhomme/ptd-coach/pull/9) cible la branche de #8.
+Le commit du corpus `eb99ecff6ac34774c769cda8b13fa5781348d8ac` a passé
+le contrôle standard GitHub sur 197 fichiers et 116 tests.
+[CI de la PR](https://github.com/bdelhomme/ptd-coach/actions/runs/43002484422)
+et [CI du push](https://github.com/bdelhomme/ptd-coach/actions/runs/43002377772).
+Les neuf fichiers du dossier de revue et le jeu de développement sont
+accessibles anonymement à ce commit. Leurs octets correspondent aux fichiers
+locaux. Les vérifications de la mise à jour documentaire finale sont
+consultables dans la PR. La revue humaine et les arbitrages sur la future
+candidate restent ouverts.
