@@ -20,8 +20,10 @@ class MistralReasoningProvider(MistralChatProvider):
         if not self.configured:
             raise DomainError(503, 'missing_key', 'Ajoutez MISTRAL_API_KEY dans .env local.')
         payload = {'model': self.model, 'messages': messages, 'temperature': 0.2,
-                   'max_tokens': self.max_tokens, 'stream': False, 'tool_choice': 'none',
-                   'reasoning_effort': self.effort}
+                   'stream': False, 'tool_choice': 'none', 'reasoning_effort': self.effort}
+        # None is reserved for explicitly authorized experiments: omit the parameter.
+        if self.max_tokens is not None:
+            payload['max_tokens'] = self.max_tokens
         request = Request(ENDPOINT, data=json.dumps(payload, ensure_ascii=False).encode(),
                           headers={'Authorization': 'Bearer ' + self._api_key,
                                    'Content-Type': 'application/json'}, method='POST')
