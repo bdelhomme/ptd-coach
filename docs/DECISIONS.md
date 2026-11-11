@@ -68,3 +68,8 @@ des preuves historiques, sans réécriture de leurs décisions.
 ## D-032 — Bibliothèque expérimentale de méthodes
 
 Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées brouillon, recherche sans API et contexte de coach séparé utilisant une base distincte. Les protections et gels restent inchangés ; aucun usage réel ni validation enseignante implicite. Le premier essai met en évidence des inventions persistantes ; poursuivre seulement avec une revue critique et une nouvelle évaluation adaptée. Voir `docs/BIBLIOTHEQUE_METHODES.md`.
+
+
+## D-033 — Comparaison exploratoire de modèles
+
+À la demande du porteur, comparer Small et Medium 3.5 sur TX05/TX07, sans modifier le contexte ni accéder aux réservés. Conserver verbatim et grille vierge. Medium est déprécié et les observations ponctuelles ne constituent pas une validation. Le premier essai Large 4 a échoué ; voir `docs/COMPARAISON_MODELES_MISTRAL.md`. Aucun changement automatique du modèle par défaut.

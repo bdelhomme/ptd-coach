@@ -1,5 +1,7 @@
 # État du projet — à actualiser à chaque changement
 
+> Comparaison exploratoire Small / Medium 3.5 : voir [rapport](COMPARAISON_MODELES_MISTRAL.md). Progrès ponctuels avec fiche imposée, inventions persistantes sans fiche ; pas de validation. Large 4 : échec technique initial.
+
 > Bibliothèque expérimentale D-032 : voir [rapport](BIBLIOTHEQUE_METHODES.md). Dix fiches brouillon, consultation locale et coach isolé ; l’essai réel montre encore des inventions, aucune validation pédagogique. Branche dédiée issue de #9.
 
 ## Priorité courante · campagne transversale D-031
