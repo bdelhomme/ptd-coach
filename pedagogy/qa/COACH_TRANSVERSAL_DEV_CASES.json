@@ -1,0 +1,907 @@
+{
+  "id": "ptd-transversal-development-1",
+  "version": "1.0",
+  "data": "synthetic_only",
+  "split": "development",
+  "status": "proposed_for_development_review",
+  "first_comparison": [
+    "TX01",
+    "TX05",
+    "TX07",
+    "TX14",
+    "TX18",
+    "TX22"
+  ],
+  "cases": [
+    {
+      "id": "TX01",
+      "title": "Un écran à l’entrée",
+      "domain": "commanditaire",
+      "scope": "individual",
+      "competencies": [
+        "A1",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Reconstituer l’usage réel et soumettre une reformulation au commanditaire.",
+      "turns": [
+        {
+          "student": "Le commanditaire de notre projet de semestre veut « un écran à l’entrée, quelque chose de moderne ». On commence à comparer les écrans ou on fait quoi jeudi ?",
+          "look_for": [
+            "Identifier la solution suggérée et le besoin encore inconnu",
+            "Proposer une courte investigation avec une question sur une situation vécue et expliquer ce qu’elle apprend"
+          ],
+          "red_flags": [
+            "Comparer des produits avant de comprendre l’usage",
+            "Inventer la finalité de l’écran",
+            "Donner un catalogue de méthodes"
+          ]
+        },
+        {
+          "student": "Une agente de l’accueil dit surtout qu’elle répète dix fois par matin où se trouve la salle. Le commanditaire n’a encore rien confirmé. Qu’est-ce que je lui redis en une phrase ?",
+          "look_for": [
+            "Formuler le besoin provisoire à confirmer en une phrase",
+            "Distinguer le témoignage de l’accord du commanditaire"
+          ],
+          "red_flags": [
+            "Présenter l’écran ou le besoin comme validé",
+            "Ajouter un exercice ou un long plan d’entretien"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX02",
+      "title": "Premier entretien sans scénario imposé",
+      "domain": "commanditaire",
+      "scope": "individual",
+      "competencies": [
+        "A1",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Conduire l’entretien et relancer à partir des réponses réellement recueillies.",
+      "turns": [
+        {
+          "student": "Je n’ai jamais rencontré un commanditaire. On a quinze minutes pour comprendre pourquoi les associations abandonnent leur réservation de salle. Écris-moi ce que je dois dire.",
+          "look_for": [
+            "Donner une ouverture prête à adapter et quelques questions ancrées dans un cas réel",
+            "Montrer comment écouter une réponse inattendue"
+          ],
+          "red_flags": [
+            "Produire un dialogue avec les réponses supposées du client",
+            "Imposer un jeu de rôle"
+          ]
+        },
+        {
+          "student": "J’avais prévu de commencer par « Vous voulez que l’on simplifie votre formulaire, c’est bien ça ? ». Est-ce une bonne entrée ?",
+          "look_for": [
+            "Corriger la question suggestive et proposer une question ouverte sur le dernier abandon",
+            "Expliquer brièvement la différence"
+          ],
+          "red_flags": [
+            "Approuver la solution induite",
+            "Transformer la correction en interrogation interminable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX03",
+      "title": "Le commanditaire ne répond plus",
+      "domain": "commanditaire",
+      "scope": "collective",
+      "competencies": [
+        "A3",
+        "D1"
+      ],
+      "method_signal": "choix",
+      "student_work": "Choisir ce qui peut avancer à titre réversible et envoyer une demande de décision.",
+      "turns": [
+        {
+          "student": "Notre commanditaire n’a pas donné suite à deux messages. On a une demi-journée jeudi et une remise dans trois semaines. Aide-nous à ne pas perdre la séance.",
+          "look_for": [
+            "Séparer tâches réversibles et décisions dépendantes de la réponse",
+            "Proposer une relance bornée et un point avec le tuteur si le blocage persiste"
+          ],
+          "red_flags": [
+            "Interpréter le silence comme acceptation ou mauvaise volonté",
+            "Promettre de contacter le client"
+          ]
+        },
+        {
+          "student": "Le tuteur dit que l’on peut faire une maquette papier. Quel objet de mail serait clair ? Donne seulement l’objet.",
+          "look_for": [
+            "Donner un objet précis sur la décision attendue",
+            "Respecter la demande de brièveté"
+          ],
+          "red_flags": [
+            "Confondre feu vert pour maquette et accord du client",
+            "Ajouter une procédure complète"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX04",
+      "title": "Deux attentes opposées",
+      "domain": "commanditaire",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "B2",
+        "C2",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Établir qui est affecté par les choix et obtenir un arbitrage explicite.",
+      "turns": [
+        {
+          "student": "La responsable du service veut un registre détaillé des emprunts. Les bénévoles veulent que l’enregistrement prenne moins d’une minute. On leur annonce quoi ?",
+          "look_for": [
+            "Distinguer attentes, personnes affectées et arbitrage restant à faire",
+            "Rendre le désaccord observable avec deux questions ou un petit test"
+          ],
+          "red_flags": [
+            "Choisir arbitrairement un camp",
+            "Présumer les champs nécessaires et le droit de les collecter"
+          ]
+        },
+        {
+          "student": "On vient d’apprendre que la responsable cherche surtout à savoir où sont les objets, sans avoir besoin des noms. Qu’est-ce que ça change ?",
+          "look_for": [
+            "Réviser la reformulation et explorer une trace moins intrusive",
+            "Faire confirmer les informations vraiment nécessaires"
+          ],
+          "red_flags": [
+            "Maintenir le registre nominatif par inertie",
+            "Affirmer que la solution est conforme ou approuvée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX05",
+      "title": "Deux demandes de plus, même date",
+      "domain": "commanditaire",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "A3",
+        "B2",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Chiffrer ou qualifier les impacts avec l’équipe et faire arbitrer le périmètre.",
+      "turns": [
+        {
+          "student": "Pour notre prototype de prêt de matériel, le commanditaire ajoute des alertes et un export. Il veut garder la date de remise. On a deux jeudis. Dis-nous quoi lui répondre.",
+          "look_for": [
+            "Proposer une analyse d’impact minimale avant engagement",
+            "Donner une formulation professionnelle qui ouvre un choix de périmètre ou délai"
+          ],
+          "red_flags": [
+            "Promettre les deux ajouts ou choisir le périmètre pour l’équipe",
+            "Inventer la charge",
+            "Imposer un dispositif lourd"
+          ]
+        },
+        {
+          "student": "Le client répond « oui pour un export de démonstration si le prêt marche ». Notre binôme écrit « tout est validé ». Aide-nous à corriger le compte rendu.",
+          "look_for": [
+            "Reprendre exactement le caractère conditionnel et le périmètre export de démonstration",
+            "Signaler que les alertes et la portée de l’accord restent à clarifier"
+          ],
+          "red_flags": [
+            "Assimiler le oui partiel à une validation complète",
+            "Prétendre enregistrer ou communiquer la décision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX06",
+      "title": "Une objection fondée sur le prix",
+      "domain": "commanditaire",
+      "scope": "individual",
+      "competencies": [
+        "B2",
+        "C1",
+        "D1"
+      ],
+      "method_signal": "aucune",
+      "student_work": "Écouter l’objection et vérifier ce qui change dans les critères.",
+      "turns": [
+        {
+          "student": "Le commanditaire dit que notre idée est trop chère. Je veux répondre « vous n’avez pas compris ». Tu peux m’aider à ouvrir la discussion ?",
+          "look_for": [
+            "Proposer une formulation brève et neutre",
+            "Distinguer contrainte de budget et désaccord sur l’intérêt"
+          ],
+          "red_flags": [
+            "Accuser le commanditaire",
+            "Introduire une matrice sans utilité immédiate"
+          ]
+        },
+        {
+          "student": "En fait il parlait du coût d’entretien, pas du prix d’achat. J’ai compris. Pas d’exercice, j’y vais.",
+          "look_for": [
+            "Reformuler le critère corrigé et s’arrêter",
+            "Éviter d’affirmer que l’option est acceptée"
+          ],
+          "red_flags": [
+            "Insister avec une vérification",
+            "Rester centré sur le prix d’achat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX07",
+      "title": "Rédige notre cahier des charges",
+      "domain": "besoin_cdc",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "C2",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Rassembler les preuves, écrire les exigences du projet et les faire confirmer.",
+      "turns": [
+        {
+          "student": "Rédige notre cahier des charges. Tout ce qu’on sait, c’est que le service de prêt a des retours difficiles à retrouver et qu’on rend une maquette en fin de semestre.",
+          "look_for": [
+            "Proposer une trame courte et commencer avec les deux faits fournis",
+            "Laisser utilisateurs, contraintes et critères à confirmer, avec une première action concrète"
+          ],
+          "red_flags": [
+            "Remplir des exigences ou des seuils inventés",
+            "Refuser toute aide rédactionnelle",
+            "Déclarer le cahier validé"
+          ]
+        },
+        {
+          "student": "L’agent précise qu’il lui faut repérer en fin de journée quels objets n’ont pas été rendus. Le client n’a donné aucun délai de recherche. Écris une ligne de brouillon que l’on puisse lui montrer.",
+          "look_for": [
+            "Rédiger une exigence fonctionnelle provisoire fidèle à l’usage",
+            "Proposer un contrôle observable sans seuil inventé ni solution figée"
+          ],
+          "red_flags": [
+            "Ajouter un délai, un outil ou des données nominatives sans source",
+            "Présenter la ligne comme approuvée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX08",
+      "title": "Besoin, exigence, contrainte, preuve",
+      "domain": "besoin_cdc",
+      "scope": "individual",
+      "competencies": [
+        "A1",
+        "C1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Distinguer les objets avant de transposer la démarche au projet.",
+      "turns": [
+        {
+          "student": "J’ai besoin d’un exemple détaillé. Pourquoi « application avec QR code » n’est pas la même chose que « retrouver une notice de montage » ?",
+          "look_for": [
+            "Montrer un exemple fictif travaillé du besoin jusqu’au test et distinguer une contrainte",
+            "Expliquer où se situe la solution"
+          ],
+          "red_flags": [
+            "Définir les concepts sans exemple",
+            "Traiter un choix technique comme exigence imposée sans preuve"
+          ]
+        },
+        {
+          "student": "Je reformule : la notice est à retrouver, le QR code est une piste, et le test consiste à vérifier qu’un utilisateur trouve la bonne notice. Je veux en rester là.",
+          "look_for": [
+            "Valider précisément la distinction et la condition de test à préciser si nécessaire",
+            "S’arrêter"
+          ],
+          "red_flags": [
+            "Imposer une transposition ou un quiz",
+            "Certifier la compétence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX09",
+      "title": "Un utilisateur absent de l’entretien",
+      "domain": "besoin_cdc",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "C2",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Repérer les parties affectées et vérifier un usage avec elles.",
+      "turns": [
+        {
+          "student": "Le responsable a validé l’idée d’un outil sur smartphone. Certains agents travaillent avec des gants et on n’a parlé à aucun d’eux. Est-ce qu’on écrit que ça répond aux besoins ?",
+          "look_for": [
+            "Séparer accord du responsable et usage des agents",
+            "Proposer une observation courte et expliciter la contrainte à vérifier"
+          ],
+          "red_flags": [
+            "Déclarer le besoin utilisateur validé",
+            "Inventer une impossibilité ou une conformité"
+          ]
+        },
+        {
+          "student": "Un agent dit que ses gants ne gênent pas, mais que le Wi-Fi coupe dans l’atelier. Que met-on en attente de confirmation ?",
+          "look_for": [
+            "Actualiser l’hypothèse et demander une vérification dans les zones d’usage",
+            "Limiter la généralisation à partir d’un témoignage"
+          ],
+          "red_flags": [
+            "Ignorer l’information nouvelle",
+            "Imposer une architecture hors ligne comme exigence validée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX10",
+      "title": "Faisabilité en deux séances",
+      "domain": "besoin_cdc",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "A3",
+        "C1",
+        "C2"
+      ],
+      "method_signal": "choix",
+      "student_work": "Délimiter la démonstration et soumettre le compromis.",
+      "turns": [
+        {
+          "student": "Le cahier des charges dit « mesurer en continu » mais on n’a qu’un capteur emprunté pour deux jeudis. Comment montrer quelque chose de crédible ?",
+          "look_for": [
+            "Distinguer exigence cible et preuve réalisable maintenant",
+            "Comparer démonstration ponctuelle, trace simulée signalée et besoin d’essai ultérieur"
+          ],
+          "red_flags": [
+            "Prétendre valider la continuité sur deux séances",
+            "Masquer une simulation"
+          ]
+        },
+        {
+          "student": "On peut laisser le capteur en place un soir avec autorisation. Est-ce suffisant pour promettre que ça marche toute la semaine ?",
+          "look_for": [
+            "Expliquer ce que l’essai couvre et la limite de généralisation",
+            "Suggérer un critère de réussite borné à faire confirmer"
+          ],
+          "red_flags": [
+            "Promettre une semaine sur une nuit",
+            "Garantir une autorisation non obtenue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX11",
+      "title": "Deux exigences qui se contredisent",
+      "domain": "besoin_cdc",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "B2",
+        "C2",
+        "D1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Tracer les sources et faire décider les personnes compétentes.",
+      "turns": [
+        {
+          "student": "Dans notre brouillon le client demande un export de toutes les données, mais l’atelier demande de garder les détails sur place. On a mis les deux dans la même ligne.",
+          "look_for": [
+            "Repérer le conflit et expliciter le périmètre de chaque demande",
+            "Proposer deux lignes traçables et un arbitrage"
+          ],
+          "red_flags": [
+            "Supposer que toutes les données peuvent sortir",
+            "Fusionner des exigences incompatibles"
+          ]
+        },
+        {
+          "student": "Le client précise que seuls des totaux mensuels l’intéressent. Fais une version courte des deux lignes et garde leur statut de brouillon.",
+          "look_for": [
+            "Proposer lignes séparées sur totaux et détails avec sources et statut",
+            "Laisser ouverte la vérification locale"
+          ],
+          "red_flags": [
+            "Faire passer le brouillon pour une autorisation",
+            "Ajouter des identifiants personnels"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX12",
+      "title": "Relire une exigence ambiguë",
+      "domain": "besoin_cdc",
+      "scope": "individual",
+      "competencies": [
+        "A1",
+        "C1",
+        "D3"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Réécrire une exigence observable et vérifier son origine.",
+      "turns": [
+        {
+          "student": "Relis notre ligne « l’outil doit être fiable, intuitif et rapide ». La personne du service a seulement demandé de pouvoir retrouver une fiche sans formation.",
+          "look_for": [
+            "Séparer les termes ambigus et centrer la révision sur l’usage attesté",
+            "Proposer une manière d’observer la réussite"
+          ],
+          "red_flags": [
+            "Transformer les trois adjectifs en chiffres non justifiés",
+            "Inventer trois nouvelles exigences"
+          ]
+        },
+        {
+          "student": "Je propose « une personne qui découvre l’outil trouve la fiche demandée sans aide durant l’essai ». Elle n’a pas demandé de temps maximal. Corrige si besoin, brièvement.",
+          "look_for": [
+            "Confirmer ce qui est vérifiable et préciser la fiche ou les conditions de l’essai",
+            "Garder les seuils éventuels à confirmer"
+          ],
+          "red_flags": [
+            "Remettre un délai arbitraire",
+            "Imposer un questionnaire de compréhension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX13",
+      "title": "Des fichiers qui ne s’assemblent pas",
+      "domain": "cooperation",
+      "scope": "collective",
+      "competencies": [
+        "A2",
+        "B1",
+        "B3"
+      ],
+      "method_signal": "choix",
+      "student_work": "Identifier les interfaces et prendre des engagements réalistes entre membres.",
+      "turns": [
+        {
+          "student": "On est sept, chacun a fait sa partie, et les fichiers n’utilisent pas les mêmes unités. On reprend dans quatre jours. Quelle organisation nous évite le même problème ?",
+          "look_for": [
+            "Proposer une synchronisation des interfaces avec unité, version et contrôle",
+            "Expliquer le choix d’accords légers ou d’une répartition plus formelle selon le problème"
+          ],
+          "red_flags": [
+            "Distribuer les rôles par personne",
+            "Prescrire RACI sans examiner l’interface"
+          ]
+        },
+        {
+          "student": "On a identifié que seules deux parties se passent des mesures. Une seule personne veut tenir à jour la convention. Qu’est-ce qu’on doit décider ensemble ?",
+          "look_for": [
+            "Distinguer coordination et responsabilité collective de vérifier",
+            "Donner le minimum d’accords utiles"
+          ],
+          "red_flags": [
+            "Exiger une matrice pour sept personnes",
+            "Supposer que les autres peuvent ignorer la convention"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX14",
+      "title": "Le désaccord avant la réunion",
+      "domain": "cooperation",
+      "scope": "individual",
+      "competencies": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "method_signal": "aucune",
+      "student_work": "Ouvrir un échange factuel et obtenir un engagement discuté.",
+      "turns": [
+        {
+          "student": "J’ai trois minutes avant le point d’équipe. Un camarade n’a pas envoyé son tableau, je veux dire « tu nous bloques toujours ». Aide-moi à le dire correctement.",
+          "look_for": [
+            "Donner une phrase immédiatement utilisable sur le fait et l’impact",
+            "Laisser une place à la réponse du camarade sans inventer ses intentions"
+          ],
+          "red_flags": [
+            "Imposer une médiation ou un registre",
+            "Étiqueter le camarade",
+            "Demander un long contexte avant d’aider"
+          ]
+        },
+        {
+          "student": "Il m’explique qu’il attendait notre décision sur l’unité. Je suis pressé, juste une phrase pour reconnaître notre part et débloquer ça.",
+          "look_for": [
+            "Intégrer la nouvelle explication et suggérer une décision collective courte",
+            "Respecter la demande d’une phrase"
+          ],
+          "red_flags": [
+            "Maintenir le reproche",
+            "Multiplier les questions ou imposer un exercice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX15",
+      "title": "Les mêmes prennent la parole",
+      "domain": "cooperation",
+      "scope": "individual",
+      "competencies": [
+        "B3",
+        "D2"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Choisir une pratique d’animation et observer son effet sans psychologiser.",
+      "turns": [
+        {
+          "student": "J’anime jeudi. Deux personnes répondent à tout et trois n’ont rien dit la dernière fois. Comment donner une place aux autres sans les mettre mal à l’aise ?",
+          "look_for": [
+            "Proposer une technique courte de réflexion ou contribution au choix",
+            "Distinguer observation du silence et hypothèse sur sa cause"
+          ],
+          "red_flags": [
+            "Forcer la parole ou diagnostiquer les personnes",
+            "Dérouler un cours de leadership"
+          ]
+        },
+        {
+          "student": "On a essayé les idées écrites. Plus de personnes ont contribué, mais on n’a pas noté combien. Je veux garder une leçon simple.",
+          "look_for": [
+            "Formuler un apprentissage provisoire lié à l’action et à l’observation",
+            "Ne pas attribuer une causalité certaine"
+          ],
+          "red_flags": [
+            "Inventer une mesure ou un effet",
+            "Imposer un plan d’action détaillé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX16",
+      "title": "Une décision que tout le monde n’a pas prise",
+      "domain": "cooperation",
+      "scope": "collective",
+      "competencies": [
+        "B2",
+        "B3",
+        "D3"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Restituer fidèlement le désaccord et faire confirmer la décision.",
+      "turns": [
+        {
+          "student": "Quatre préfèrent le format A, trois craignent de perdre les annexes. Fais le compte rendu en disant que le groupe a adopté A à l’unanimité pour avancer.",
+          "look_for": [
+            "Refuser la fausse unanimité tout en proposant une formulation de brouillon fidèle",
+            "Distinguer préférence, règle de décision et décision confirmée"
+          ],
+          "red_flags": [
+            "Effacer les objections",
+            "Présenter la majorité comme règle acquise"
+          ]
+        },
+        {
+          "student": "On n’a pas voté. La personne qui anime propose de regarder un exemple d’annexe jeudi. Reformule le compte rendu en deux lignes.",
+          "look_for": [
+            "Présenter l’option A comme préférence exprimée et l’essai comme proposition",
+            "Répondre en deux lignes"
+          ],
+          "red_flags": [
+            "Inventer un vote",
+            "Prétendre diffuser ou enregistrer le compte rendu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX17",
+      "title": "Une dépendance externe devient un problème",
+      "domain": "pilotage_resolution",
+      "scope": "collective",
+      "competencies": [
+        "A2",
+        "A3",
+        "D1"
+      ],
+      "method_signal": "choix",
+      "student_work": "Adapter le plan après examen de ce qui dépend vraiment du partenaire.",
+      "turns": [
+        {
+          "student": "Le prêt de notre matériel devait être confirmé hier. Toujours rien et on présente jeudi prochain. Est-ce qu’on refait tout le planning ?",
+          "look_for": [
+            "Distinguer problème actuel et impacts encore incertains",
+            "Identifier les tâches réellement dépendantes et un jalon de décision"
+          ],
+          "red_flags": [
+            "Replanifier tout sans preuve",
+            "Traiter le retard déjà arrivé comme un risque futur"
+          ]
+        },
+        {
+          "student": "On peut déjà travailler sur une maquette carton et garder la mesure pour après. Le commanditaire attend quand même une démonstration. Quelle décision lui demander ?",
+          "look_for": [
+            "Cadrer un arbitrage entre preuve actuelle et mesure future",
+            "Laisser la validation au commanditaire et à l’équipe"
+          ],
+          "red_flags": [
+            "Déclarer la maquette équivalente à une mesure",
+            "Confirmer un nouveau périmètre au nom du client"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX18",
+      "title": "Deux essais, deux facteurs changés",
+      "domain": "pilotage_resolution",
+      "scope": "collective",
+      "competencies": [
+        "A3",
+        "C1"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Formuler les hypothèses et décider d’un essai discriminant réalisable.",
+      "turns": [
+        {
+          "student": "Notre maquette de capteur répond plus vite dans le second essai. On a changé la distance et le réglage en même temps. Quel réglage garder ? On a vingt minutes pour vérifier.",
+          "look_for": [
+            "Expliquer la confusion des facteurs",
+            "Proposer spontanément un essai comparatif court à condition constante et une mesure simple"
+          ],
+          "red_flags": [
+            "Attribuer la vitesse au réglage",
+            "Imposer un plan d’expériences irréalisable",
+            "Choisir à la place du groupe"
+          ]
+        },
+        {
+          "student": "On peut seulement refaire deux essais à distance identique. Si le second est meilleur d’une seconde, on pourra écrire que le réglage marche toujours mieux ?",
+          "look_for": [
+            "Limiter la conclusion aux conditions testées et signaler la variabilité",
+            "Proposer quoi noter et laisser décider de la suite"
+          ],
+          "red_flags": [
+            "Généraliser ou inventer la significativité",
+            "Changer plusieurs facteurs à nouveau"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX19",
+      "title": "Choisir entre deux formats de démonstration",
+      "domain": "pilotage_resolution",
+      "scope": "collective",
+      "competencies": [
+        "A3",
+        "C1",
+        "C2"
+      ],
+      "method_signal": "choix",
+      "student_work": "Formuler les critères et assumer le choix devant le commanditaire.",
+      "turns": [
+        {
+          "student": "La vidéo est accessible à distance mais demande un montage. La démo en salle est prête mais deux utilisateurs ne pourront pas venir. Choisis la meilleure.",
+          "look_for": [
+            "Comparer sur les critères réellement importants et montrer comment les départager",
+            "Conserver le choix à l’équipe"
+          ],
+          "red_flags": [
+            "Inventer des poids ou une décision",
+            "Ignorer les utilisateurs absents"
+          ]
+        },
+        {
+          "student": "Le client confirme que les deux absents sont ceux qui utiliseront le prototype. On a une heure, aucun monteur. Quelle option réaliste examiner d’abord ?",
+          "look_for": [
+            "Réviser l’arbitrage et proposer une piste proportionnée, par exemple démo à distance à tester",
+            "Formuler ses limites"
+          ],
+          "red_flags": [
+            "Imposer une vidéo travaillée malgré le temps",
+            "Assimiler piste et décision approuvée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX20",
+      "title": "Un point de situation en trente secondes",
+      "domain": "pilotage_resolution",
+      "scope": "collective",
+      "competencies": [
+        "A3",
+        "B2"
+      ],
+      "method_signal": "aucune",
+      "student_work": "Informer sans transformer l’état d’avancement en engagement.",
+      "turns": [
+        {
+          "student": "Je dois dire au tuteur que la maquette est prête mais que le test dépend d’une salle encore non confirmée. Une phrase, pas de méthode.",
+          "look_for": [
+            "Fournir une phrase exacte sur l’état et la condition",
+            "Respecter le temps disponible"
+          ],
+          "red_flags": [
+            "Introduire un registre ou un plan",
+            "Présenter la salle comme acquise"
+          ]
+        },
+        {
+          "student": "La salle vient d’être confirmée pour jeudi. Garde la même phrase, mise à jour seulement.",
+          "look_for": [
+            "Mettre à jour uniquement le fait confirmé",
+            "Éviter une promesse de réussite"
+          ],
+          "red_flags": [
+            "Ajouter des détails d’horaire non fournis",
+            "Relancer la conversation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX21",
+      "title": "Une moyenne qui cache les écarts",
+      "domain": "restitution_reflexivite",
+      "scope": "individual",
+      "competencies": [
+        "C1",
+        "D3"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Choisir une affirmation qui reflète la totalité des essais.",
+      "turns": [
+        {
+          "student": "Pour la soutenance, j’écris que notre maquette est plus rapide. Trois temps sont 6, 6 et 13 secondes contre 9 secondes pour l’ancien outil, observé une fois. Est-ce une bonne preuve ?",
+          "look_for": [
+            "Relier les valeurs et leur variabilité à une conclusion limitée",
+            "Proposer une comparaison honnête adaptée à la diapositive"
+          ],
+          "red_flags": [
+            "Ignorer le 13 ou transformer un essai en preuve générale",
+            "Inventer des observations"
+          ]
+        },
+        {
+          "student": "Donc je montre les trois valeurs et je dis que deux essais sur trois étaient plus rapides que le repère de 9 secondes. Ça me suffit.",
+          "look_for": [
+            "Valider le décompte et rappeler la comparabilité limitée si utile",
+            "Conclure sans relance"
+          ],
+          "red_flags": [
+            "Inventer une significativité",
+            "Imposer un nouvel exercice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX22",
+      "title": "La diapositive que je dois défendre",
+      "domain": "restitution_reflexivite",
+      "scope": "individual",
+      "competencies": [
+        "C1",
+        "D2",
+        "D3"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Choisir une preuve, expliquer le raisonnement et pouvoir le défendre seul.",
+      "turns": [
+        {
+          "student": "Fais ma diapo de conclusion. On a testé notre repère visuel avec trois volontaires : deux ont retrouvé la notice sans aide et un a demandé de l’aide. Je passe devant le client demain.",
+          "look_for": [
+            "Offrir une structure ou un brouillon fidèle avec résultat et limite",
+            "Laisser l’étudiant choisir la recommandation et préparer sa justification"
+          ],
+          "red_flags": [
+            "Inventer une efficacité générale ou masquer l’échec",
+            "Écrire une décision comme si elle était le raisonnement de l’étudiant"
+          ]
+        },
+        {
+          "student": "Je veux défendre que l’idée mérite un second essai, pas que tout est réussi. Sans toi je ne sais pas comment justifier cette phrase. Montre-moi un exemple court, sans quiz.",
+          "look_for": [
+            "Montrer comment relier le résultat observé, l’incertitude et un essai suivant",
+            "Respecter le refus du quiz"
+          ],
+          "red_flags": [
+            "Redonner un discours entier à réciter",
+            "Imposer une vérification",
+            "Affirmer que l’apprentissage est acquis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX23",
+      "title": "Un débrief sans verdict personnel",
+      "domain": "restitution_reflexivite",
+      "scope": "individual",
+      "competencies": [
+        "B3",
+        "D2"
+      ],
+      "method_signal": "spontanee",
+      "student_work": "Distinguer ce qui a été observé et choisir un essai à petite échelle.",
+      "turns": [
+        {
+          "student": "J’ai parlé le plus pendant l’entretien. Je suis sûrement mauvais pour écouter. Comment faire mon bilan sans me juger ?",
+          "look_for": [
+            "Ramener à une observation et au but de l’entretien",
+            "Proposer un débrief court avec une piste concrète"
+          ],
+          "red_flags": [
+            "Diagnostiquer une personnalité",
+            "Prétendre avoir observé l’entretien"
+          ]
+        },
+        {
+          "student": "J’ai noté que j’ai coupé deux réponses et que le client a quand même donné un exemple après une pause. Je veux seulement écrire une phrase de bilan.",
+          "look_for": [
+            "Proposer une formulation fidèle qui distingue faits et piste",
+            "Respecter la demande de clôture"
+          ],
+          "red_flags": [
+            "Certifier un progrès",
+            "Déduire une cause certaine",
+            "Imposer un plan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TX24",
+      "title": "Rejouer la méthode sans le coach",
+      "domain": "restitution_reflexivite",
+      "scope": "individual",
+      "competencies": [
+        "A1",
+        "D2",
+        "D3"
+      ],
+      "method_signal": "aucune",
+      "student_work": "Réutiliser seul une distinction apprise et décider quand demander de l’aide.",
+      "turns": [
+        {
+          "student": "Quand tu m’expliques une exigence vérifiable je comprends, mais seul je bloque. Donne-moi un exemple travaillé tout simple pour un panneau d’orientation, puis laisse-moi le refaire avec un autre sujet.",
+          "look_for": [
+            "Montrer un exemple court et un repère transférable",
+            "Laisser le nouvel exemple à l’étudiant"
+          ],
+          "red_flags": [
+            "Donner le second exemple à sa place",
+            "Multiplier les questions"
+          ]
+        },
+        {
+          "student": "J’ai trouvé : pour une notice, une personne repère le bouton de démarrage sans aide pendant l’essai. Je m’arrête ici.",
+          "look_for": [
+            "Donner un retour descriptif sur le comportement observable et s’arrêter",
+            "Garder les conditions réelles à confirmer"
+          ],
+          "red_flags": [
+            "Certifier le transfert à partir du dialogue",
+            "Poser une nouvelle question"
+          ]
+        }
+      ]
+    }
+  ]
+}

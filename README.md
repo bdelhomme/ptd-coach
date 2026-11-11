@@ -1,5 +1,9 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+**Campagne transversale D-031** · 24 cas fictifs couvrant les onze compétences
+candidates. Le rapport donne accès à la cartographie, aux ressources proposées,
+à la grille et aux résultats comparatifs. [Rapport de campagne](docs/CAMPAGNE_TRANSVERSALE.md).
+
 **Candidate 2 en revue — D-030** : [rapport et commandes](docs/V08_C2_REPORT.md),
 [relecture conceptuelle et sources](docs/V08_C2_CONCEPT_REVIEW.md).
 V0.7/c1 et leurs corpus sont conservés ; c1 n’est pas pédagogiquement validée.

@@ -1,0 +1,83 @@
+{
+  "timestamp_utc": "2026-11-11T10:14:03.303567+00:00",
+  "provider": "mistral",
+  "selected_cases": [
+    "TX01",
+    "TX05",
+    "TX07",
+    "TX14",
+    "TX18",
+    "TX22"
+  ],
+  "planned_records": 36,
+  "mistral_attempt_ceiling": 36,
+  "mistral_attempts_recorded": 36,
+  "model_requested": "mistral-small-latest",
+  "parameters": {
+    "max_tokens": 700,
+    "temperature": 0.2,
+    "stream": false,
+    "tool_choice": "none",
+    "timeout_seconds": 45
+  },
+  "c2_freeze_sha256": "1fdd717ec1af511f4171313f547ae8a2604d82c8c2e348e7eb8915457d715012",
+  "suite_sha256": "bb96aecf3ba7030d06e09686f04617c52ff5f2c165f4ead8f38efbc00773eca8",
+  "summary": {
+    "v07": {
+      "responses": 12,
+      "records": 12,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 41596,
+        "completion_tokens": 3123,
+        "total_tokens": 44719
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 2294.0,
+      "characters": 12569,
+      "question_marks_not_solicitations": 20,
+      "truncated": 1,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    },
+    "c1": {
+      "responses": 12,
+      "records": 12,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 20698,
+        "completion_tokens": 5746,
+        "total_tokens": 26444
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 4394.0,
+      "characters": 22657,
+      "question_marks_not_solicitations": 33,
+      "truncated": 6,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    },
+    "c2": {
+      "responses": 12,
+      "records": 12,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 16388,
+        "completion_tokens": 2226,
+        "total_tokens": 18614
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 1377.0,
+      "characters": 8793,
+      "question_marks_not_solicitations": 9,
+      "truncated": 1,
+      "models_returned": [
+        "mistral-small-latest"
+      ]
+    }
+  },
+  "complete": true,
+  "human_verdict": null
+}

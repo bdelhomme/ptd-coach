@@ -1,5 +1,20 @@
 # État du projet — à actualiser à chaque changement
 
+## Priorité courante · campagne transversale D-031
+
+Le porteur demande une évaluation de l’aide méthodologique sur les onze
+compétences, avec priorité au commanditaire et au cahier des charges.
+La [PR #9](https://github.com/bdelhomme/ptd-coach/pull/9) est ouverte pour
+revue sur la branche de #8 au commit de base `df80557`.
+[Rapport de campagne et état des passages](CAMPAGNE_TRANSVERSALE.md).
+Le jeu contient 24 cas fictifs. Le premier passage est terminé avec 36
+réponses Mistral et 89 777 tokens. La grille reste vierge pour les lecteurs.
+Les trois variantes ajoutent des exigences non établies dans TX07.
+[Corpus et observations](../pedagogy/evaluations/transversale/README.md).
+Le banc réutilise les trois contextes figés.
+Les propositions de ressources restent soumises à relecture humaine.
+Les travaux c2 ci-dessous décrivent la tranche précédente.
+
 ## Priorité courante — candidate 2, D-030 (11/11/2026)
 
 Retour du porteur sur D03/D09 : c1 **non validée pédagogiquement**. C2 prépare
