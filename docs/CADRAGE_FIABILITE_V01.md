@@ -107,7 +107,7 @@ Tests dédiés : séparation des contextes, empreinte, sélection des ressources
 isolation d'un fil privé, comparaison mock et grille vierge, et limitation du
 mode sans plafond explicite au contexte de fiabilité Large 4. Vérification HTTP
 en mode simulé puis configuration HTTP du serveur Mistral sans envoi de message.
-Voir `docs/PROJECT_STATUS.md` pour les résultats des tests globaux et la PR.
+Tests globaux : 130 réussis hors lecture du jeu réservé. Branche publiée dans la [PR #14](https://github.com/bdelhomme/ptd-coach/pull/14), issue de la PR #13 ; aucune fusion automatique.
 Suite proposée : revue humaine des cas, nouveau jeu indépendant sans accès au
 jeu réservé historique ; traiter la sélection des fiches et une représentation
 fiable des statuts comme hypothèses séparées, avant toute mémoire longitudinale.

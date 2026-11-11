@@ -1,6 +1,6 @@
 # État du projet — à actualiser à chaque changement
 
-> D-036 : branche `feat/cadrage-fiabilite-coach`, issue de la PR #13. [Cadrage de fiabilité](CADRAGE_FIABILITE_V01.md) gelé et testé : 12 réponses réelles, amélioration ponctuelle, extrapolations persistantes ; 130 tests locaux réussis hors lecture du jeu réservé. Contexte expérimental isolé, revue indépendante nécessaire.
+> D-036 : branche `feat/cadrage-fiabilite-coach`, [PR #14](https://github.com/bdelhomme/ptd-coach/pull/14) issue de la PR #13. [Cadrage de fiabilité](CADRAGE_FIABILITE_V01.md) gelé et testé : 12 réponses réelles, amélioration ponctuelle, extrapolations persistantes ; 130 tests locaux réussis hors lecture du jeu réservé. Contexte expérimental isolé, revue indépendante nécessaire.
 
 > D-035 : essais Large sans plafond demandé, huit réponses et deux appels sans résultat ; mémoire de semestre à concevoir. Voir [rapport](ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md).
 
