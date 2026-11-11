@@ -223,3 +223,8 @@ La bibliothèque répond au souhait de trouver une méthode depuis une difficult
 ## R-015 — Comparer les modèles ne suffit pas
 
 Sur deux cas de développement, Medium 3.5 évite certaines inventions lorsque la fiche est imposée mais en produit sans fiche ; la recherche manque encore TX05. Pas de conclusion générale. Large 4 échoue techniquement avec la configuration existante ; diagnostic séparé à poursuivre sans modifier les gels. Voir `docs/COMPARAISON_MODELES_MISTRAL.md`.
+
+
+## R-016 — Budget de raisonnement et qualité pédagogique
+
+La reproduction de TX05 confirme qu’un plafond commun de 700 tokens peut être entièrement consommé en raisonnement avant toute réponse finale. Large 4 low répond dans ce plafond, mais conserve des défauts pédagogiques. Ne pas confondre correction technique et validation pédagogique. Les traces et les hypothèses de prix sont dans `docs/MISTRAL_LARGE4.md`.

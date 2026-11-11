@@ -1,0 +1,10 @@
+{
+  "model": "mistral-large-4",
+  "reasoning_effort": "low",
+  "max_tokens": 700,
+  "temperature": 0.2,
+  "reasoning_storage": "discarded",
+  "api_response_history": "final_text_only",
+  "cached_token_accounting": "not recorded per request; estimate assumes all input uncached",
+  "human_verdict": null
+}

@@ -1,5 +1,7 @@
 # État du projet — à actualiser à chaque changement
 
+> Large 4 : correction expérimentale et comparaison de prix / réponses dans [le rapport](MISTRAL_LARGE4.md). Le raisonnement low a permis 12 réponses ; des inventions persistent.
+
 > Comparaison exploratoire Small / Medium 3.5 : voir [rapport](COMPARAISON_MODELES_MISTRAL.md). Progrès ponctuels avec fiche imposée, inventions persistantes sans fiche ; pas de validation. Large 4 : échec technique initial.
 
 > Bibliothèque expérimentale D-032 : voir [rapport](BIBLIOTHEQUE_METHODES.md). Dix fiches brouillon, consultation locale et coach isolé ; l’essai réel montre encore des inventions, aucune validation pédagogique. Branche dédiée issue de #9.
