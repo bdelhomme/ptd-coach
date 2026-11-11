@@ -82,9 +82,88 @@ Le script ouvre uniquement le jeu canonique de la campagne et vérifie le gel
 c2 et le gel c1. La clé reste en environnement serveur. Les appels passent par
 le service de conversation existant, qui conserve les contrôles de périmètre.
 
-## Résultats et décisions
+## Résultats du premier passage
 
-La campagne rend les réponses exactes disponibles pour une revue qualitative.
-Le rapport de résultats et les observations de développement seront ajoutés
-après le passage réel. Les recommandations restent des hypothèses de travail
-pour une prochaine décision du porteur.
+Le passage du 11 novembre 2026 a produit **36 réponses réelles** sur les six
+cas annoncés, sans erreur API. Les trois variantes ont demandé et reçu
+l’alias `mistral-small-latest`. Le plafond est resté à 700 tokens.
+
+| Contexte | Réponses | Entrée | Sortie | Total tokens | Caractères | Latence médiane | Tronquées |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| V0.7 | 12 | 41 596 | 3 123 | 44 719 | 12 569 | 2 294 ms | 1 |
+| c1 | 12 | 20 698 | 5 746 | 26 444 | 22 657 | 4 394 ms | 6 |
+| c2 | 12 | 16 388 | 2 226 | 18 614 | 8 793 | 1 |
+
+Total **89 777 tokens**. Le [dossier de revue](../pedagogy/evaluations/transversale/README.md)
+donne les sorties, les messages exacts, les mesures, la clé des variantes
+et les grilles vierges. La [lecture de développement](../pedagogy/evaluations/transversale/OBSERVATIONS.md)
+cite les tours à examiner. L’échantillon sollicite dix codes. Les tâches A2
+directes restent dans le jeu de 24 cas et dans les anciennes traces. Ce choix
+d’échantillonnage répond au déséquilibre initial.
+
+Le cahier des charges est le défaut commun le plus net. Les trois réponses
+du premier tour de TX07 ajoutent des fonctionnalités, contraintes ou seuils
+que l’étudiant n’a pas établis. Les trois atteignent le plafond de sortie.
+Les deux versions c1/c2 ajoutent encore l’identité de l’emprunteur au second
+tour. TX05 montre aussi que préserver un accord conditionnel et chiffrer la
+faisabilité sont deux tâches différentes. TX18 contient un exemple de
+prescription spontanée utile lorsque les versions proposent une comparaison
+à distance fixe. Les trois variantes généralisent dans TX22 au-delà des trois
+volontaires. Le comparatif éclaire des priorités de conception. Le verdict
+pédagogique indépendant reste ouvert.
+
+## Recommandations pour une éventuelle prochaine candidate
+
+1. **Rendre les statuts du cahier des charges explicites.** Partir d’un fait
+   rapporté, montrer une seule exigence provisoire et son contrôle. Faire
+   valider les seuils, la collecte et les engagements. TX07 montre que
+   la mention « brouillon » ne suffit pas à empêcher une invention.
+2. **Aider d’abord sur la décision concrète.** En TX05, reformuler les
+   deux options et la condition de confirmation avant de détailler les
+   fonctionnalités. En TX14, donner une formulation immédiatement utile
+   et préserver l’accord du groupe sur l’unité.
+3. **Enseigner une démarche à la taille du problème.** En TX18, proposer
+   un essai court avec une mesure comparable et dire ce qu’il permet
+   d’observer. En TX22, relier les observations à une affirmation de portée
+   limitée et à la prochaine question, que l’étudiant doit pouvoir expliquer.
+4. **Éprouver le choix des ressources.** Prioriser les fiches commanditaire,
+   exigences et changement pour une relecture par des encadrants. Comparer
+   ensuite leur apport sur des formulations naturelles et des tours
+   suivants. L’audit montre 24 tours client/exigences sans fiche sélectionnée
+   par c1/c2. Une intervention directe reste une option utile.
+5. **Arbitrer sur des cas divergents.** Faire lire les mêmes réponses à deux
+   lecteurs, relever les incidents séparément et discuter les désaccords.
+   Les 18 autres cas de développement fournissent des situations de
+   confirmation et de mise en difficulté. Réserver la mesure de transfert
+   à une activité distincte, avec des preuves produites sans aide.
+
+Ces recommandations restent à arbitrer avec le porteur. Les choix de
+formulation, seuils, ressources et critères de passage vers une future
+candidate demandent une décision fondée sur les exemples et la revue.
+Aucune candidate nouvelle n’a été développée dans cette tranche.
+
+## Passation
+
+L’assistant intégrateur a produit cette tranche sans nouvelle délégation.
+Le jeu, le rapport de plan et le banc ont été engagés localement dans
+`a61c5d5` avant le premier appel réel. Le banc a réutilisé le service et les
+contextes figés. La phase locale initiale a passé 113 tests hors API avant
+le passage réel. Deux anciens tests qui ouvrent la réserve ont été filtrés
+pour cette exécution locale, ainsi que ce fichier au contrôle documentaire.
+Les tests HTTP ont été exécutés sur localhost avec la permission réseau
+de la session. Les contrôles automatiques de CI préexistants gardent leur
+portée de syntaxe et d’intégrité, sans afficher les scénarios réservés.
+
+Après archivage, **114 tests locaux** ont réussi dans le même périmètre,
+dont le contrôle des empreintes, des 36 requêtes et réponses exactes et
+des grilles vierges. Le contrôle documentaire porte sur 196 fichiers
+hors jeu réservé. Les cinq artefacts produits par le passage ont été
+comparés octet pour octet aux copies publiées. La différence Git des
+contextes, gels, corpus antérieurs, ressources, référentiel et code
+applicatif est vide par rapport à la base.
+
+La clé est restée dans la configuration locale ignorée. Les jeux, artefacts
+et permissions du service historiques sont conservés. Le premier passage
+est terminé. La suite utile consiste à faire relire les verbatim à l’aide
+de la grille, puis à arbitrer les fiches et les hypothèses avant de changer
+un contexte. La PR est dédiée à l’évaluation et à la documentation.

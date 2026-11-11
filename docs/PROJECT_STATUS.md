@@ -6,7 +6,11 @@ Le porteur demande une évaluation de l’aide méthodologique sur les onze
 compétences, avec priorité au commanditaire et au cahier des charges.
 Branche `eval/campagne-transversale` depuis #8 au commit `df80557`.
 [Rapport de campagne et état des passages](CAMPAGNE_TRANSVERSALE.md).
-Le banc compare les trois contextes figés sur un jeu fictif de développement.
+Le jeu contient 24 cas fictifs. Le premier passage est terminé avec 36
+réponses Mistral et 89 777 tokens. La grille reste vierge pour les lecteurs.
+Les trois variantes ajoutent des exigences non établies dans TX07.
+[Corpus et observations](../pedagogy/evaluations/transversale/README.md).
+Le banc réutilise les trois contextes figés.
 Les propositions de ressources restent soumises à relecture humaine.
 Les travaux c2 ci-dessous décrivent la tranche précédente.
 

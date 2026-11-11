@@ -84,3 +84,44 @@ class TransversalEvalTest(unittest.TestCase):
             self.assertTrue(report["complete"])
             self.assertEqual(report["planned_records"], 144)
             self.assertEqual(sum(s["responses"] for s in report["summary"].values()), 0)
+
+    def test_published_corpus_keeps_exact_requests_responses_and_blank_review(self):
+        root = ROOT / "pedagogy/evaluations/transversale"
+        manifest = json.loads((root / "MANIFESTE.json").read_text())
+        self.assertEqual(set(manifest["files"]), {
+            path.relative_to(root).as_posix() for path in root.rglob("*")
+            if path.is_file() and path.name != "MANIFESTE.json"
+        })
+        for name, expected in manifest["files"].items():
+            data = (root / name).read_bytes()
+            self.assertEqual(len(data), expected["bytes"])
+            self.assertEqual(hashlib.sha256(data).hexdigest(), expected["sha256"])
+
+        folder = root / "premier-passage"
+        rows = [json.loads(line) for line in (folder / "responses.jsonl").read_text().splitlines()]
+        report = json.loads((folder / "MESURES.json").read_text())
+        suite = campaign.cases_from_file(campaign.SUITE)
+        planned = {(c["id"], variant, i): t["student"] for c in suite["cases"]
+                   if c["id"] in suite["first_comparison"] for variant in campaign.VARIANTS
+                   for i, t in enumerate(c["turns"], 1)}
+        self.assertEqual(len(rows), campaign.CALL_CEILING)
+        self.assertEqual({(r["case_id"], r["variant"], r["turn"]): r["student"] for r in rows}, planned)
+        self.assertEqual(report["summary"], campaign.summarize(rows))
+        self.assertEqual(report["mistral_attempts_recorded"], len(rows))
+        self.assertTrue(report["complete"])
+        self.assertIsNone(report["human_verdict"])
+        self.assertEqual(sum(r["usage"]["total_tokens"] for r in rows), 89777)
+        markdown = (folder / "LECTURE_COMPARATIVE.md").read_text()
+        for row in rows:
+            self.assertEqual(row["status"], "model_called")
+            self.assertEqual(row["c2_freeze_sha256"], report["c2_freeze_sha256"])
+            self.assertEqual(row["suite_sha256"], campaign.digest(campaign.SUITE.read_bytes()))
+            self.assertEqual(campaign.digest(json.dumps(row["messages_exact"], sort_keys=True,
+                ensure_ascii=False).encode()), row["messages_sha256"])
+            self.assertEqual(campaign.digest(row["messages_exact"][0]["content"].encode()),
+                             row["system_sha256"])
+            self.assertIn(campaign.verbatim(row["response"]), markdown)
+        with (folder / "GRILLE_VIERGE.csv").open() as stream:
+            grid = list(csv.DictReader(stream))
+        self.assertEqual(len(grid), len(rows))
+        self.assertTrue(all(not line[k] for line in grid for k in campaign.REVIEW_FIELDS))

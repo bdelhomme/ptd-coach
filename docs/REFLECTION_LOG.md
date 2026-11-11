@@ -203,3 +203,13 @@ sur 24. Le premier échantillon est fixé avant réponse et couvre les cinq
 domaines, avec trois cas client/exigences. Le travail reste au niveau du
 banc d’essai, des ressources proposées et de la documentation. Voir
 [la campagne et ses résultats](CAMPAGNE_TRANSVERSALE.md).
+
+### Résultat de R-013
+
+Les 36 appels annoncés ont réussi et produit 89 777 tokens. La lecture
+de développement repère des aides concrètes en enquête, coopération et
+essai comparatif. Elle relève aussi des exigences inventées, une confusion
+sur la date de remise et des généralisations à partir de trois volontaires.
+La baisse de longueur de c2 ne résout pas ces défauts. Les observations et
+les citations sont disponibles avec les grilles vierges. Priorité proposée
+à la traçabilité des faits, critères et accords dans le cahier des charges.
