@@ -18,7 +18,9 @@ WEB = Path(__file__).resolve().parents[1] / "web"
 ASSETS = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"),
           "/style.css": ("style.css", "text/css"),
           "/coach": ("coach.html", "text/html"), "/coach.js": ("coach.js", "text/javascript"),
-          "/coach.css": ("coach.css", "text/css")}
+          "/coach.css": ("coach.css", "text/css"),
+          "/bibliotheque": ("library.html", "text/html"), "/library.js": ("library.js", "text/javascript"),
+          "/library.css": ("library.css", "text/css")}
 COOKIE = "ptd_demo"
 
 
@@ -115,6 +117,9 @@ class Handler(BaseHTTPRequestHandler):
             if method == "GET" and path in ASSETS:
                 name, mime = ASSETS[path]
                 return self.reply(200, (WEB / name).read_bytes(), mime)
+            if method == "GET" and path == "/api/library":
+                from .library import catalogue
+                return self.reply(200, catalogue())
             if method == "GET" and path == "/api/health":
                 return self.reply(200, {"status": "ok", "provider": "mock", "demo": True})
             if method == "GET" and path == "/api/demo-users":

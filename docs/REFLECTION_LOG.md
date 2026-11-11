@@ -213,3 +213,8 @@ sur la date de remise et des généralisations à partir de trois volontaires.
 La baisse de longueur de c2 ne résout pas ces défauts. Les observations et
 les citations sont disponibles avec les grilles vierges. Priorité proposée
 à la traçabilité des faits, critères et accords dans le cahier des charges.
+
+
+## R-014 — Ressources et autonomie accompagnée
+
+La bibliothèque répond au souhait de trouver une méthode depuis une difficulté vécue. Les sources professionnelles éclairent les pratiques, mais ne valident pas automatiquement leurs adaptations PTD. L’essai TX05/TX07 montre que fournir une fiche ne suffit pas à empêcher des chiffres ou contraintes inventés. Le résultat est un constat de développement, non une évaluation humaine. Voir `docs/BIBLIOTHEQUE_METHODES.md`.

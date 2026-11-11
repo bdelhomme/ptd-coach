@@ -106,6 +106,8 @@ function renderConversation() {
 }
 async function load() {
   state.config = await api('/api/coach/config');
+  [...$('#coach-version').options].forEach(option => { option.hidden = !state.config.coach_versions.includes(option.value); });
+  if (state.config.prompt_version.includes('library')) $('#coach-version').querySelector('[value=v08]').textContent = 'V0.8 c2 + bibliothèque · expérimental';
   $('#coach-version').value = state.config.default_coach_version;
   const resources = await api('/api/coach/resources');
   $('#resources').replaceChildren(...resources.map(resource => {

@@ -1,5 +1,7 @@
 # État du projet — à actualiser à chaque changement
 
+> Bibliothèque expérimentale D-032 : voir [rapport](BIBLIOTHEQUE_METHODES.md). Dix fiches brouillon, consultation locale et coach isolé ; l’essai réel montre encore des inventions, aucune validation pédagogique. Branche dédiée issue de #9.
+
 ## Priorité courante · campagne transversale D-031
 
 Le porteur demande une évaluation de l’aide méthodologique sur les onze
