@@ -233,3 +233,8 @@ La reproduction de TX05 confirme qu’un plafond commun de 700 tokens peut être
 ## R-017 — Ressources de calcul et mémoire ne garantissent pas la qualité
 
 Le porteur privilégie la recherche de pertinence, quitte à dépenser davantage en tests, et souligne la continuité sur un semestre. Sans plafond demandé, Large medium produit encore des décisions attribuées à tort au commanditaire. La mémoire doit rester corrigeable, sourcée et séparée par périmètre ; elle reste à concevoir. Voir `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`.
+
+
+## R-018 — Cadrage déjà existant et fidélité aux statuts
+
+Le porteur rappelle que les versions antérieures constituaient déjà du cadrage ; l’enjeu est de comprendre ses limites plutôt que de repartir de zéro. Sur trois scénarios de développement, la variante conserve mieux une condition dans un exemple, mais infère encore des compromis et généralisations. Les exemples sont proches de deux défauts connus ; revue indépendante et transfert restent à démontrer. Voir `docs/CADRAGE_FIABILITE_V01.md`.

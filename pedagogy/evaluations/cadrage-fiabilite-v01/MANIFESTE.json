@@ -1,0 +1,11 @@
+{
+  "files": {
+    "pedagogy/qa/RELIABILITY_CONTEXT_FREEZE.json": "f10c2b036cb85a6038bbb7186ab7d61952f17f9d62f9e9431ba4e30deefc83bf",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/COMPARAISON.md": "745be6c54318d2b603f415dca97674588f9e7c2c851e75c0fb20954cd139b9db",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/premier-passage/LECTURE_COMPARATIVE.md": "09cd341ada2cf57bf26d439444eb6b9ecb1317982bdcc64f7ba8edb996afd557",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/premier-passage/GRILLE_VIERGE.csv": "b0a5ddd4498dd2f0fe688a6e65516c3d8bdd65de2d6972c48e84722aa135b529",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/premier-passage/MESURES.json": "f80ef253a45bec7ade28b1cfc35dff2ac7861094936f0238e978de50295a548e",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/premier-passage/responses.jsonl": "f6a2ab75c158bb258a1918ea0c3403bff11e6563c74b50e263c400c706fc47be",
+    "pedagogy/evaluations/cadrage-fiabilite-v01/premier-passage/CLE_VARIANTES.json": "ea76ff345b6aa10fae649310005befbbf55b68212e83b543426b48a2157154b9"
+  }
+}

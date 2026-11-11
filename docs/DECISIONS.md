@@ -83,3 +83,8 @@ Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées br
 ## D-035 — Essais sans plafond demandé, mémoire de semestre
 
 À la demande du porteur, omettre max_tokens dans un banc de développement dédié tout en mesurant usage et limites effectives ; les réglages usuels restent inchangés. Un essai high a été interrompu, le passage medium est partiel. La mémoire de semestre devient un besoin à instruire, sans implémentation automatique ni modification des droits. Voir `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`.
+
+
+## D-036 — Variante expérimentale de fidélité aux faits
+
+À la demande du porteur, tester séparément un cadrage qui explicite les statuts de faits et d’accords, sans remplacer les contextes précédents ni le référentiel. Gel avant essai ; résultats de développement uniquement, amélioration générale non établie et jeu réservé inchangé. L’interface de test utilise une base distincte et ne supprime le plafond demandé que sur option explicite. Voir `docs/CADRAGE_FIABILITE_V01.md`.

@@ -1,5 +1,13 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Cadrage de fiabilité v0.1 · D-036
+
+Lire `docs/CADRAGE_FIABILITE_V01.md` et les traces associées. La variante est
+une hypothèse gelée avant essai, pas une validation pédagogique. Préserver les
+versions existantes et les réservés ; les exemples sont inspirés des cas de
+développement et un transfert indépendant reste à démontrer. Ne pas affirmer
+que le modèle distingue toujours fait, hypothèse et décision.
+
 ## Essais sans plafond demandé et mémoire · D-035
 
 Lire `docs/ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md`. La demande du porteur autorise
