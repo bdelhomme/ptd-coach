@@ -1,0 +1,15 @@
+{
+  "files": {
+    "pedagogy/evaluations/bibliotheque-v01/premier-passage/responses.jsonl": "b5944f84ebfc60d2e850af50ed98674e9cd1e25f75fd76113ae14cc57fb17e78",
+    "pedagogy/evaluations/comparaison-mistral-medium35/premier-passage/responses.jsonl": "e02f09135133c4ff64cebe4c36f71d08824fa915770bfb1b907e697355354044",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/responses.jsonl": "9cd44c7ea5884abfbd61eb3e86841cca9ed5bd92a44facfb86d4a592006b128f",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/COMPARAISON_3_MODELES.md": "353540a73db1668f64554a24270c37d2ed7e3df5f37be98b22d62392d7f306ec",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/CONTEXTE.json": "1ad15997e687b3fe7f8548871fdf26db95fbd5cf0488e0d1fd8857279b4eea14",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/DIAGNOSTIC.json": "bc9b8582ecbccfff4eb798ba2a3dd246251276b599044026ba732bb52d489de7",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/GRILLE_VIERGE_3_MODELES.csv": "19b0f0f8761b39f8ddad54e4dd9a84c6f0c750b758964934b408692454e1a016",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/LECTURE_COMPARATIVE.md": "b4988ce7222d996362a390f4a494be46ba470d6f66e0ba51a87006c0ce65e950",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/GRILLE_VIERGE.csv": "d1719f356addaeea97d38b03e9165e9c213e7fd1f94d05bb38d1914b2649c899",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/MESURES.json": "00d8fe7e68fac236c19bbe986dba0d079b75793f5fe087980dbe7dfdeb47a0f5",
+    "pedagogy/evaluations/comparaison-mistral-large4-low/premier-passage/CLE_VARIANTES.json": "c01837d5ef92db95450b8c02f4d7b62f6f3730ff5f384fa8862b8a0b4b58334f"
+  }
+}

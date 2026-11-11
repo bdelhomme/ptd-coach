@@ -1,5 +1,12 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Correction Large 4 · D-034
+
+Lire `docs/MISTRAL_LARGE4.md` : fournisseur distinct, raisonnement low
+configurable, pas de blocs thinking conservés, limite multitour explicitée.
+L’essai Large est exploratoire et révèle encore des inventions. Préserver les
+gels, corpus et scénarios réservés ; pas de modèle validé automatiquement.
+
 ## Comparaison des modèles · D-033
 
 Lire `docs/COMPARAISON_MODELES_MISTRAL.md`. Résultats exploratoires, pas de

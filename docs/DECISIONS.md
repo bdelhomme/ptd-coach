@@ -73,3 +73,8 @@ Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées br
 ## D-033 — Comparaison exploratoire de modèles
 
 À la demande du porteur, comparer Small et Medium 3.5 sur TX05/TX07, sans modifier le contexte ni accéder aux réservés. Conserver verbatim et grille vierge. Medium est déprécié et les observations ponctuelles ne constituent pas une validation. Le premier essai Large 4 a échoué ; voir `docs/COMPARAISON_MODELES_MISTRAL.md`. Aucun changement automatique du modèle par défaut.
+
+
+## D-034 — Fournisseur Large 4 séparé
+
+À la demande du porteur, prise en charge expérimentale de Large 4 par un fournisseur distinct à raisonnement configurable low par défaut. Les blocs de raisonnement ne sont pas conservés ; cette décision a un coût possible sur la qualité multitour selon Mistral. Préserver tous les gels et le modèle par défaut. Comparaison exploratoire et limites : `docs/MISTRAL_LARGE4.md`.

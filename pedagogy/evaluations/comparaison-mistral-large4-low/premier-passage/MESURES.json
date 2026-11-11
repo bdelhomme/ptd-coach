@@ -1,0 +1,72 @@
+{
+  "timestamp_utc": "2026-11-11T11:21:39.324498+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "planned_calls": 12,
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": 700
+  },
+  "summary": {
+    "c2": {
+      "responses": 4,
+      "records": 4,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 4675,
+        "completion_tokens": 1087,
+        "total_tokens": 5762
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 3817.0,
+      "characters": 1910,
+      "question_marks_not_solicitations": 4,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    },
+    "resource_forced": {
+      "responses": 4,
+      "records": 4,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 7133,
+        "completion_tokens": 965,
+        "total_tokens": 8098
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 3304.5,
+      "characters": 2167,
+      "question_marks_not_solicitations": 1,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    },
+    "library_contextual": {
+      "responses": 4,
+      "records": 4,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 5654,
+        "completion_tokens": 1469,
+        "total_tokens": 7123
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 5245.0,
+      "characters": 2624,
+      "question_marks_not_solicitations": 2,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Développement uniquement ; deux scénarios, continuations fixées.",
+    "Alias de modèle évolutif ; la version forcée diffère aussi du contexte c2 de base.",
+    "La qualité et la substitution exigent une revue humaine ; longueur et fluidité ne démontrent pas un progrès."
+  ]
+}
