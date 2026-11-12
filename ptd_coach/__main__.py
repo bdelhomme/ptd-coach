@@ -41,6 +41,7 @@ def main():
     parser.add_argument("--bibliotheque-experimentale", action="store_true", help="Coach bibliothèque isolé, base locale distincte")
     parser.add_argument("--cadrage-fiabilite", action="store_true", help="Coach de fiabilité expérimental, base séparée")
     parser.add_argument("--coach-historique", action="store_true", help="Comparaison historique V0.7/V0.8")
+    parser.add_argument("--ptd-v1", action="store_true", help="Démonstration intégrée de la PR #16")
     parser.add_argument("--data-dir", type=Path, help="Dossier de données fictives pour une recette isolée")
     parser.add_argument("--sans-plafond-test", action="store_true", help="Ne demande pas de plafond de sortie pour ce test expérimental Large 4")
     args = parser.parse_args()
@@ -55,8 +56,9 @@ def main():
     context = None
     database = local / "coach-demo.sqlite3"
     project = None
+    workbench = None
     chat_class = ChatService
-    alternate_modes = sum((args.bibliotheque_experimentale, args.cadrage_fiabilite, args.coach_historique))
+    alternate_modes = sum((args.bibliotheque_experimentale, args.cadrage_fiabilite, args.coach_historique, args.ptd_v1))
     if alternate_modes > 1:
         parser.error("Choisissez un seul mode de comparaison")
     if args.cadrage_fiabilite:
@@ -72,20 +74,33 @@ def main():
     elif not args.coach_historique:
         from .chat_integrated import ProjectChatService, ProjectContext
         from .project import ProjectService
-        project = ProjectService(local / "project-demo.sqlite3")
-        context = ProjectContext(project)
-        database = local / "coach-integrated-demo.sqlite3"
-        chat_class = ProjectChatService
+        if args.ptd_v1:
+            project = ProjectService(local / "project-demo.sqlite3")
+            context = ProjectContext(project)
+            database = local / "coach-integrated-demo.sqlite3"
+        else:
+            from .demo_v2 import DEMOS, PROJECTS_V2
+            from .library_v2 import WorkshopChatService, WorkshopContext
+            from .workbench import Workbench
+            project = ProjectService(local / "project-v2-demo.sqlite3", PROJECTS_V2)
+            workbench = Workbench(project, DEMOS)
+            context = WorkshopContext(project)
+            database = local / "coach-v2-demo.sqlite3"
+        chat_class = WorkshopChatService if workbench is not None else ProjectChatService
     try:
         provider = apply_test_output_policy(provider_from_settings(chat_settings), args.sans_plafond_test, args.cadrage_fiabilite)
     except ValueError as error:
         parser.error(str(error))
     if project is not None and chat_settings["CHAT_PROVIDER"] == "mock":
         from .chat_integrated import ProjectMockProvider
-        provider = ProjectMockProvider()
+        if workbench is not None:
+            from .library_v2 import WorkshopMockProvider
+            provider = WorkshopMockProvider()
+        else:
+            provider = ProjectMockProvider()
     chat = chat_class(database, provider,
                        max_calls=chat_settings["CHAT_MAX_CALLS"], context=context)
-    with DemoServer(("127.0.0.1", args.port), service, chat, project) as server:
+    with DemoServer(("127.0.0.1", args.port), service, chat, project, workbench) as server:
         if project is not None:
             print(f"PTD Coach intégré : http://127.0.0.1:{args.port}/", flush=True)
         print("PTD Coach — conversation fictive : http://127.0.0.1:{}/coach".format(args.port), flush=True)

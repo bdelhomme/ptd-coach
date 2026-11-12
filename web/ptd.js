@@ -1,3 +1,5 @@
+import '/gantt-v2.js';
+
 const $ = selector => document.querySelector(selector);
 const panes = [...document.querySelectorAll('.pane')];
 const kindLabels = {
@@ -14,6 +16,15 @@ const kindLabels = {
   note: 'Note'
 };
 const scopeLabels = { individual: 'Privé', collective: 'Équipe' };
+const tools = {
+  gantt: ['Diagramme de Gantt', 'Visualiser les dépendances et examiner un décalage.', 'M08'],
+  specification: ['Cahier des charges', 'Rédiger la mission et garder une référence sourcée.', 'M03'],
+  raci: ['Matrice RACI', 'Discuter de la répartition des rôles.', 'M11'],
+  risks: ['Registre des risques', 'Anticiper un événement et traiter un problème constaté.', 'M12'],
+  decisions: ['Registre des décisions', 'Conserver le statut et les raisons d’un arbitrage.', 'M15'],
+  'decision-matrix': ['Analyse multicritère', 'Comparer les options et éprouver les pondérations.', 'M13'],
+  calendar: ['Calendrier de mission', 'Choisir la période et les rendez-vous utiles.', 'M08']
+};
 const state = {
   pane: 'home',
   requestedPane: window.location.pathname === '/coach' ? 'coach' : 'home',
@@ -23,9 +34,16 @@ const state = {
   threads: [],
   thread: null,
   project: null,
+  calendar: null,
   editing: null,
   editorPane: 'project',
   methods: [],
+  v2: false,
+  examples: null,
+  reviewThreadId: null,
+  toolViews: new Map(),
+  activeTool: null,
+  toolOrigin: null,
   methodReturn: null,
   busy: false,
   answering: false,
@@ -75,6 +93,8 @@ function syncControls() {
   $('#new-thread').disabled = state.busy || !state.config;
   $('#refresh-thread').disabled = state.busy || !state.config;
   $('#send-message').disabled = state.busy || !state.config?.configured || !state.thread || state.thread.pending;
+  $('#review-send').disabled = $('#send-message').disabled;
+  $('#review-text').readOnly = state.answering;
   $('#chat-message').readOnly = state.answering;
   $('#chat-waiting').hidden = !state.answering;
   $('#save-item').disabled = state.busy;
@@ -149,14 +169,14 @@ async function api(path, method = 'GET', payload) {
 }
 
 function showPane(name, { focus = true } = {}) {
-  if (['coach', 'project', 'checkpoint'].includes(name) && !state.session) {
+  if (['coach', 'project', 'checkpoint', 'tools'].includes(name) && !state.session) {
     state.requestedPane = name;
     showPane('home', { focus: false });
     announce('Choisissez un profil fictif pour ouvrir cet espace.');
     $('#profile').focus();
     return;
   }
-  if (['coach', 'checkpoint'].includes(name) && !isStudent()) name = 'project';
+  if (['coach', 'checkpoint', 'tools'].includes(name) && !isStudent()) name = 'project';
   state.pane = name;
   for (const pane of panes) pane.hidden = pane.id !== 'pane-' + name;
   for (const item of document.querySelectorAll('.navigation [data-pane]')) {
@@ -212,6 +232,12 @@ function appendSafeEmphasis(target, value) {
 function renderCoach() {
   const thread = state.thread;
   const collective = thread?.scope === 'collective';
+  if (state.reviewThreadId !== (thread?.id || null)) {
+    state.reviewThreadId = thread?.id || null;
+    $('#review-consent').checked = false;
+  }
+  $('#review-scope').textContent = thread ? (collective ? 'Destination : fil d’équipe.' : 'Destination : fil privé.')
+    : 'Ouvrez un fil privé ou d’équipe pour soumettre un extrait.';
   $('#thread-visibility').textContent = thread ? (collective ? 'Fil de l’équipe' : 'Fil privé') : 'Aucun fil ouvert';
   const config = state.config;
   $('#provider').textContent = config ? (config.provider === 'mistral' ? 'Mistral' : 'Simulation hors réseau')
@@ -226,7 +252,8 @@ function renderCoach() {
     const author = state.profiles.find(profile => profile.id === message.author_id);
     const authorLabel = assistant ? 'PTD Coach' : (collective && author ? author.label : 'Vous');
     const paragraph = element('p');
-    appendSafeEmphasis(paragraph, message.content);
+    if (assistant) appendSafeEmphasis(paragraph, message.content);
+    else paragraph.textContent = message.content;
     article.append(element('p', authorLabel, 'speaker'), paragraph);
     if (!assistant) return article;
 
@@ -319,9 +346,107 @@ function closeMethod() {
   $('#library-search').hidden = false;
   $('#method-list').hidden = false;
   state.methodReturn = null;
-  if (origin?.pane === 'coach') showPane('coach', { focus: !origin.trigger?.isConnected });
+  if (['coach', 'tools'].includes(origin?.pane)) showPane(origin.pane, { focus: !origin.trigger?.isConnected });
   if (origin?.trigger?.isConnected) origin.trigger.focus();
-  else if (origin?.pane !== 'coach') $('#library-title').focus();
+  else if (!['coach', 'tools'].includes(origin?.pane)) $('#library-title').focus();
+}
+
+function methodTable(data, title) {
+  const frame = element('div', null, 'method-table');
+  frame.tabIndex = 0;
+  frame.setAttribute('role', 'region');
+  frame.setAttribute('aria-label', title);
+  const table = element('table');
+  const head = element('thead');
+  const row = element('tr');
+  for (const column of data.colonnes) {
+    const cell = element('th', column);
+    cell.scope = 'col';
+    row.append(cell);
+  }
+  head.append(row);
+  const body = element('tbody');
+  for (const line of data.lignes) {
+    const record = element('tr');
+    record.append(...line.map(value => element('td', value || '')));
+    body.append(record);
+  }
+  table.append(head, body);
+  frame.append(table);
+  return frame;
+}
+
+function downloadTemplate(method) {
+  const rows = [method.modele.colonnes, ...method.modele.lignes];
+  const csv = rows.map(row => row.map(cell => '"' + cell.replaceAll('"', '""') + '"').join(';')).join('\r\n');
+  const url = URL.createObjectURL(new Blob(['\uFEFF', csv], { type: 'text/csv;charset=utf-8' }));
+  const link = element('a');
+  link.href = url;
+  link.download = 'ptd-' + method.id.toLowerCase() + '-modele.csv';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function renderMethodV2(detail, method, back) {
+  const header = element('header', null, 'method-hero');
+  const facts = element('div', null, 'actions');
+  facts.append(element('span', method.statut, 'tag draft'), element('span', 'Version ' + method.version, 'tag'));
+  header.append(element('p', method.categorie + ' · ' + method.id, 'eyebrow'), element('h2', method.nom),
+    element('p', method.resume, 'method-lead'), facts);
+  if (method.outil && isStudent()) header.append(button('Ouvrir ' + tools[method.outil][0], () => openTool(method.outil, 'library')));
+  const nav = element('div', null, 'method-sections actions');
+  nav.setAttribute('aria-label', 'Sections de la méthode');
+  const body = element('div', null, 'method-body');
+  body.id = 'method-body';
+  const overview = () => {
+    const steps = element('ol', null, 'method-steps');
+    for (const [label, guidance] of method.etapes) {
+      const item = element('li');
+      item.append(element('strong', label), element('p', guidance));
+      steps.append(item);
+    }
+    body.append(element('h3', 'Comprendre la méthode'), element('p', method.definition),
+      element('h3', 'Quand l’utiliser'), element('p', method.situations), element('p', method.conditions),
+      element('h3', 'Mettre en pratique'), steps, element('h3', 'À savoir refaire'), element('p', method.apprentissage));
+  };
+  const example = () => body.append(element('h3', method.exemple.mission), element('p', method.exemple.contexte),
+    methodTable(method.exemple, 'Exemple travaillé'), element('p', method.exemple.lecture, 'method-reading'));
+  const template = () => body.append(element('h3', 'Modèle vierge'), methodTable(method.modele, 'Modèle vierge'),
+    button('Télécharger le modèle CSV', () => downloadTemplate(method)));
+  const further = () => {
+    const pitfalls = element('ul');
+    pitfalls.append(...method.erreurs.map(value => element('li', value)));
+    body.append(element('h3', 'Erreurs fréquentes'), pitfalls, element('h3', 'Limites'), element('p', method.limites),
+      element('h3', 'Repères pour les tuteurs'), element('p', method.tuteur),
+      element('h3', 'Sources et provenance'));
+    for (const source of method.references) {
+      const reference = element('div', null, 'method-reference');
+      const link = element('a', source.titre);
+      const url = new URL(source.url);
+      if (url.protocol === 'https:') link.href = url.href;
+      reference.append(link, element('p', source.organisation + ' · ' + source.nature + ' · Consulté le ' + source.consultation, 'small muted'),
+        element('p', source.portee));
+      body.append(reference);
+    }
+    body.append(element('p', 'Les exemples et outils sont des adaptations PTD fictives. Les références documentent les pratiques citées.', 'small muted'));
+  };
+  for (const [label, render] of [['Méthode', overview], ['Exemple travaillé', example], ['Modèle', template], ['Approfondir', further]]) {
+    const control = button(label, () => {
+      for (const other of nav.children) other.setAttribute('aria-pressed', String(other === control));
+      body.replaceChildren();
+      render();
+    }, 'secondary');
+    control.setAttribute('aria-controls', body.id);
+    control.setAttribute('aria-pressed', String(nav.children.length === 0));
+    nav.append(control);
+  }
+  overview();
+  const related = element('div', null, 'actions');
+  for (const id of method.liens) {
+    const other = state.methods.find(item => item.id === id);
+    if (other) related.append(button(other.nom, () => openMethod(other), 'secondary'));
+  }
+  detail.replaceChildren(back, header, nav, body, element('h3', 'Méthodes complémentaires'), related);
 }
 
 function openMethod(method, origin) {
@@ -330,7 +455,14 @@ function openMethod(method, origin) {
   $('#library-search').hidden = true;
   $('#method-list').hidden = true;
   const detail = $('#method-detail');
-  const back = button(state.methodReturn?.pane === 'coach' ? 'Retour à la conversation' : 'Retour aux méthodes', closeMethod);
+  const returnLabels = { coach: 'Retour à la conversation', tools: 'Retour à l’outil' };
+  const back = button(returnLabels[state.methodReturn?.pane] || 'Retour aux méthodes', closeMethod);
+  if (state.v2) {
+    renderMethodV2(detail, method, back);
+    detail.hidden = false;
+    detail.focus();
+    return;
+  }
   detail.replaceChildren(back, element('h2', method.nom), element('p', method.statut, 'tag draft'));
   const fields = [
     ['En 30 secondes', 'resume'], ['Quand l’utiliser', 'situations'], ['Pourquoi', 'pertinence'],
@@ -370,12 +502,106 @@ function openMethod(method, origin) {
 }
 
 async function loadLibrary() {
-  state.methods = await api('/api/library');
+  try {
+    state.methods = (await api('/api/library-v2')).methodes;
+    state.v2 = true;
+    document.body.classList.add('ptd-v2');
+  } catch (failure) {
+    if (failure.status !== 404) throw failure;
+    state.methods = await api('/api/library');
+  }
   const categories = [...new Set(state.methods.map(method => method.categorie))];
   const competences = [...new Set(state.methods.flatMap(method => method.competences))].sort();
   addOptions($('#method-category'), categories.map(value => [value, value]));
   addOptions($('#method-competence'), competences.map(value => [value, value]));
   renderMethods();
+  renderToolIndex();
+  renderSession();
+  if (state.v2 && isStudent()) await refreshCalendar();
+}
+
+function renderCalendar() {
+  const line = $('#project-calendar-summary');
+  const calendar = state.calendar;
+  line.hidden = !calendar || (!calendar.start && !calendar.sessions);
+  const period = calendar?.start ? 'Du ' + dateLabel(calendar.start + 'T12:00:00') + ' au ' + dateLabel(calendar.end + 'T12:00:00') : '';
+  line.textContent = [period, calendar?.sessions].filter(Boolean).join(' · ');
+}
+
+async function refreshCalendar() {
+  state.calendar = (await api('/api/workbench/calendar')).data;
+  renderCalendar();
+}
+
+function renderToolIndex() {
+  $('#tool-index').replaceChildren(...Object.entries(tools).map(([key, [title, description]]) => {
+    const card = element('article', null, 'tool-card');
+    const open = button('Ouvrir l’outil', () => openTool(key));
+    open.setAttribute('aria-label', 'Ouvrir ' + title);
+    card.append(element('h2', title), element('p', description), open);
+    return card;
+  }));
+}
+
+async function loadExamples() {
+  if (!state.examples) state.examples = await api('/api/workbench/examples');
+  return state.examples;
+}
+
+function showToolIndex() {
+  $('#tool-views').hidden = true;
+  $('#tool-index').hidden = false;
+  showPane('tools');
+}
+
+function openTool(kind, origin = null, forceReload = false) {
+  if (!isStudent() || !state.v2 || !tools[kind]) return;
+  perform(async () => {
+    const path = '/api/workbench/' + kind;
+    const [stored, examples] = await Promise.all([api(path), loadExamples()]);
+    let view = state.toolViews.get(kind);
+    const remoteChanged = view && stored.version !== view.version;
+    if (!view || forceReload || (remoteChanged && !view.editor.dirty())) {
+      const identity = state.identityVersion;
+      const mount = kind === 'gantt' ? window.PTDGantt.mount : (await import('/workbench-v2.js')).mountTool;
+      if (identity !== state.identityVersion || !isStudent()) return;
+      view?.node.remove();
+      view = { node: element('div'), version: stored.version };
+      const method = state.methods.find(item => item.id === tools[kind][2]);
+      const options = {
+        ...stored, example: examples[kind],
+        save: async (data, version) => {
+          try {
+            const result = await api(path, 'POST', { data, version });
+            view.version = result.version;
+            if (kind === 'calendar') {
+              state.calendar = result.data;
+              renderCalendar();
+            }
+            if (state.activeTool === kind) $('#tool-conflict').hidden = true;
+            return result;
+          } catch (failure) {
+            if (failure.code === 'stale_version' && state.activeTool === kind) $('#tool-conflict').hidden = false;
+            throw failure;
+          }
+        },
+        openMethod: () => openMethod(method, { pane: 'tools' })
+      };
+      view.editor = kind === 'gantt' ? mount(view.node, options) : mount(view.node, kind, options);
+      $('#tool-content').append(view.node);
+      state.toolViews.set(kind, view);
+    }
+    for (const pane of state.toolViews.values()) pane.node.hidden = pane !== view;
+    state.activeTool = kind;
+    $('#tool-conflict').hidden = stored.version === view.version;
+    state.toolOrigin = origin;
+    $('#tool-back').textContent = origin === 'library' ? 'Retour à la fiche' : 'Tous les outils';
+    $('#tool-views').hidden = false;
+    $('#tool-index').hidden = true;
+    $('#active-tool-title').textContent = tools[kind][0];
+    showPane('tools', { focus: false });
+    $('#active-tool-title').focus();
+  });
 }
 
 function closeEditor() {
@@ -563,6 +789,10 @@ function renderSession() {
     ? 'Les éléments ci-dessous ont été confirmés et partagés par l’équipe.'
     : 'Consignez le besoin, les exigences, les questions et les décisions. Choisissez ce qui reste privé.';
   $('#project-controls').hidden = !isStudent();
+  $('#tool-nav').hidden = !state.v2 || !isStudent();
+  $('#project-tools').hidden = !state.v2 || !isStudent();
+  $('#review-panel').hidden = !state.v2 || !isStudent();
+  $('#next-week').textContent = state.v2 ? 'Situation fictive suivante' : 'Simuler le jeudi suivant';
 }
 
 function clearSession() {
@@ -572,9 +802,21 @@ function clearSession() {
   state.threads = [];
   state.thread = null;
   state.project = null;
+  state.calendar = null;
+  renderCalendar();
+  state.examples = null;
+  state.toolViews.clear();
+  state.activeTool = null;
+  state.toolOrigin = null;
+  $('#tool-content').replaceChildren();
+  $('#tool-views').hidden = true;
+  $('#tool-conflict').hidden = true;
+  $('#tool-index').hidden = false;
   state.keys.clear();
   state.createKeySignature = null;
   $('#chat-message').value = '';
+  $('#review-form').reset();
+  $('#review-panel').open = false;
   $('#demo-consent').checked = false;
   $('#thread-scope').value = 'individual';
   $('#project-filter').value = 'collective';
@@ -597,6 +839,7 @@ async function loadSession() {
   renderSession();
   const operations = [refreshProject()];
   if (isStudent()) {
+    if (state.v2) operations.push(refreshCalendar());
     operations.push((async () => {
       state.config = await api('/api/coach/config');
       await refreshThreads();
@@ -608,7 +851,20 @@ async function loadSession() {
   if (failure) error(failure.reason.message);
 }
 
-document.querySelectorAll('[data-pane]').forEach(control => control.addEventListener('click', () => showPane(control.dataset.pane)));
+document.querySelectorAll('[data-pane]').forEach(control => control.addEventListener('click', () => {
+  if (control.dataset.pane === 'tools') showToolIndex();
+  else showPane(control.dataset.pane);
+}));
+$('#tool-back').addEventListener('click', () => {
+  if (state.toolOrigin === 'library' && !$('#method-detail').hidden) showPane('library', { focus: false });
+  else showToolIndex();
+});
+$('#tool-reload').addEventListener('click', () => {
+  const kind = state.activeTool;
+  if (!kind) return;
+  if (state.toolViews.get(kind).editor.dirty() && !window.confirm('Abandonner les modifications locales de cet outil ?')) return;
+  openTool(kind, state.toolOrigin, true);
+});
 document.querySelectorAll('[data-new-kind]').forEach(control => control.addEventListener('click', () => {
   if (!state.busy) openEditor({ scope: 'collective', kind: control.dataset.newKind, fixedScope: true }, 'checkpoint');
 }));
@@ -658,10 +914,41 @@ $('#chat-form').addEventListener('submit', event => {
   const message = $('#chat-message').value.trim();
   if (!message) return;
   perform(async () => {
-    state.thread = await api('/api/coach/conversations/' + encodeURIComponent(state.thread.id) + '/messages', 'POST', { message, version: state.thread.version });
+    await sendToCoach(message);
     $('#chat-message').value = '';
-    renderCoach();
     if (state.pane === 'coach') $('#chat-message').focus();
+  }, { answering: true });
+});
+
+async function sendToCoach(message) {
+  const { id, version } = state.thread;
+  state.thread = await api('/api/coach/conversations/' + encodeURIComponent(id) + '/messages', 'POST', { message, version });
+  renderCoach();
+}
+
+$('#review-example').addEventListener('click', () => perform(async () => {
+  const example = await loadExamples();
+  $('#review-text').value = example.excerpt;
+  $('#review-kind').value = state.session.user.team === 'team_demo_01' ? 'Méthode d’enquête' : 'Analyse multicritère';
+  $('#review-consent').checked = false;
+  $('#review-text').focus();
+}));
+
+$('#review-text').addEventListener('input', () => { $('#review-consent').checked = false; });
+$('#review-form').addEventListener('submit', event => {
+  event.preventDefault();
+  if (!state.v2 || !isStudent() || !state.thread || !state.config?.configured || state.thread.pending || !$('#review-consent').checked) return;
+  const excerpt = $('#review-text').value.trim();
+  if (!excerpt) return;
+  perform(async () => {
+    const { id, version } = state.thread;
+    state.thread = await api('/api/coach/conversations/' + encodeURIComponent(id) + '/review', 'POST', {
+      kind: $('#review-kind').value, excerpt, synthetic_confirmed: true, version
+    });
+    renderCoach();
+    $('#review-form').reset();
+    $('#review-panel').open = false;
+    announce('Revue ajoutée au fil.');
   }, { answering: true });
 });
 

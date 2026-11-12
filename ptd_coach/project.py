@@ -68,7 +68,8 @@ PUBLIC_ITEM_FIELDS = (
 class ProjectService:
     """Persist facts, drafts and confirmations without any model write path."""
 
-    def __init__(self, database):
+    def __init__(self, database, fixtures=None):
+        self.fixtures = PROJECTS if fixtures is None else fixtures
         path = Path(database)
         self.database = str(path)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -93,7 +94,7 @@ class ProjectService:
             elif version != 3:
                 raise RuntimeError("Unsupported semester project database version")
             db.executemany("INSERT OR IGNORE INTO semester_projects(team_id) VALUES (?)",
-                           ((team,) for team in PROJECTS))
+                           ((team,) for team in self.fixtures))
 
     @contextmanager
     def connect(self):
@@ -107,18 +108,16 @@ class ProjectService:
         finally:
             db.close()
 
-    @staticmethod
-    def identity(actor, write=False):
+    def identity(self, actor, write=False):
         user = USERS.get(actor)
         roles = ("student",) if write else ("student", "tutor")
-        require(user is not None and user["role"] in roles and user["team"] in PROJECTS,
+        require(user is not None and user["role"] in roles and user["team"] in self.fixtures,
                 403, "forbidden", "Accès à ce projet refusé.")
         return user
 
-    @staticmethod
-    def project(db, team, include_situation):
+    def project(self, db, team, include_situation):
         row = db.execute("SELECT current_week, version FROM semester_projects WHERE team_id = ?", (team,)).fetchone()
-        fixture = PROJECTS[team]
+        fixture = self.fixtures[team]
         project = {"id": team, "title": fixture["title"], "sponsor": fixture["sponsor"],
                    "brief": fixture["brief"], "slot": SLOT, "current_week": row["current_week"],
                    "version": row["version"], "max_week": len(fixture["weeks"])}

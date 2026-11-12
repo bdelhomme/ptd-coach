@@ -1,0 +1,1817 @@
+{
+  "version": "2.0.0",
+  "statut": "Brouillon pédagogique · relecture indépendante requise",
+  "note": "Les sources documentent des pratiques. Les exemples, exercices et outils sont des adaptations PTD fictives ; aucune efficacité pédagogique n’est établie ici.",
+  "sources": {
+    "nasa-design": {
+      "organisation": "NASA",
+      "titre": "Systems Engineering Handbook — §4.0 System Design Processes",
+      "url": "https://www.nasa.gov/reference/4-0-system-design-processes/",
+      "portee": "§4.1, attentes et scénarios d’usage ; §4.2, exigences techniques ; §4.4.1.2.3, comparaison et documentation des options.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "nasa-vv": {
+      "organisation": "NASA",
+      "titre": "Systems Engineering Handbook — annexes C à E",
+      "url": "https://www.nasa.gov/reference/system-engineering-handbook-appendix/",
+      "portee": "Rédaction d’une exigence, matrice de vérification et distinction entre vérification et validation de l’usage.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "nasa-cross": {
+      "organisation": "NASA",
+      "titre": "Systems Engineering Handbook — §6.0 Crosscutting Technical Management",
+      "url": "https://www.nasa.gov/reference/6-0-crosscutting-technical-management/",
+      "portee": "§6.3, exigences ; §6.4, risques ; §6.8, analyse des décisions.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "pmi": {
+      "organisation": "PMI",
+      "titre": "Applying Work Breakdown Structure to the Project Lifecycle",
+      "url": "https://www.pmi.org/learning/library/applying-work-breakdown-structure-project-lifecycle-6979",
+      "portee": "Communication PMI sur l’orientation livrables, la règle des 100 % et la transition vers l’échéancier.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "gao": {
+      "organisation": "U.S. GAO",
+      "titre": "Schedule Assessment Guide, GAO-16-89G",
+      "url": "https://www.gao.gov/products/gao-16-89g",
+      "portee": "Pratiques 1–3, couverture, séquence, ressources ; pratiques 9–10, mise à jour et référence du planning.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "crossrail": {
+      "organisation": "Crossrail Learning Legacy",
+      "titre": "Works Information — Volume 2B",
+      "url": "https://learninglegacy.crossrail.co.uk/wp-content/uploads/2018/07/2A-005-Works-Information-Vol-2B.pdf",
+      "portee": "Exemple de documentation contractuelle d’un programme d’infrastructure. Les exigences de planification du chantier illustrent un usage professionnel ; elles ne sont pas transposées au PTD.",
+      "nature": "Document de projet",
+      "consultation": "12 novembre 2026"
+    },
+    "apm-change": {
+      "organisation": "APM",
+      "titre": "What is change control?",
+      "url": "https://www.apm.org.uk/resources/what-is-project-management/what-is-change-control/",
+      "portee": "Journal, évaluation, décision et actualisation d’une référence approuvée.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "apm-raci": {
+      "organisation": "APM",
+      "titre": "Stakeholder engagement — Take responsibility",
+      "url": "https://www.apm.org.uk/resources/find-a-resource/stakeholder-engagement/key-principles/take-responsibility/",
+      "portee": "Propose RACI pour clarifier l’exécution de la stratégie de dialogue. La convention d’un seul A par ligne est une adaptation PTD.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "apm-risk": {
+      "organisation": "APM",
+      "titre": "What is risk management?",
+      "url": "https://www.apm.org.uk/resources/what-is-project-management/what-is-risk-management/",
+      "portee": "Identifier, évaluer et traiter l’incertitude affectant les objectifs.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "ahrq": {
+      "organisation": "AHRQ",
+      "titre": "TeamSTEPPS — Reviewing the Team’s Performance: Debrief",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/debrief.html",
+      "portee": "Pratique du débriefing en santé ; transfert au PTD proposé à titre pédagogique.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "asq": {
+      "organisation": "ASQ",
+      "titre": "Fishbone Diagram",
+      "url": "https://asq.org/quality-resources/fishbone",
+      "portee": "Représenter et organiser les causes possibles. Les branches sont des hypothèses à examiner.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "mcda": {
+      "organisation": "UK Government Analysis Function",
+      "titre": "An Introductory Guide to Multi-Criteria Decision Analysis",
+      "url": "https://analysisfunction.civilservice.gov.uk/policy-store/an-introductory-guide-to-mcda/",
+      "portee": "Choix des critères, pondération, agrégation et analyse de sensibilité.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    },
+    "aapor": {
+      "organisation": "AAPOR",
+      "titre": "Best Practices for Survey Research",
+      "url": "https://aapor.org/standards-and-ethics/best-practices/",
+      "portee": "Plan, couverture de la population, échantillonnage, prétest, transparence et limites de l’inférence.",
+      "nature": "Référence professionnelle",
+      "consultation": "12 novembre 2026"
+    }
+  },
+  "methodes": [
+    {
+      "id": "M01",
+      "nom": "Préparer un entretien de découverte",
+      "categorie": "Cadrer la mission",
+      "competences": [
+        "A1",
+        "D1",
+        "B2"
+      ],
+      "resume": "Préparez un échange qui transforme une demande floue en questions vérifiables.",
+      "definition": "Un entretien de découverte recueille des situations, des contraintes et le point de vue d’un interlocuteur. La reformulation sert à vérifier ce que vous avez compris.",
+      "situations": "À la première rencontre ou lorsqu’un acteur décrit le problème autrement que le commanditaire.",
+      "signaux": [
+        "premier entretien",
+        "voir le client",
+        "rencontrer le commanditaire",
+        "questions au client",
+        "entretien de cadrage"
+      ],
+      "mots_cles": [
+        "premier entretien",
+        "voir le client",
+        "rencontrer le commanditaire",
+        "questions au client",
+        "entretien de cadrage"
+      ],
+      "conditions": "Identifier qui parle, sur quoi cette personne peut se prononcer et quelles traces l’équipe peut conserver.",
+      "etapes": [
+        [
+          "Ouvrir",
+          "Situez la décision à préparer et convenez de l’usage des notes."
+        ],
+        [
+          "Explorer",
+          "Demandez le dernier cas concret, l’impact et les exceptions. Gardez une place aux questions imprévues."
+        ],
+        [
+          "Reformuler",
+          "Séparez les propos rapportés, vos inférences et les points à confirmer."
+        ],
+        [
+          "Clore",
+          "Vérifiez la reformulation et convenez du prochain échange si nécessaire."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "Le service demande de « moderniser la veille ». L’équipe doit préciser le problème avant de choisir un outil.",
+        "colonnes": [
+          "Question",
+          "Réponse fictive",
+          "Suite"
+        ],
+        "lignes": [
+          [
+            "Quel exemple récent ?",
+            "Une alerte fournisseur a été lue après une revue.",
+            "Demander un deuxième exemple et son impact."
+          ],
+          [
+            "Qui agit à la réception ?",
+            "La personne de permanence, quand elle est identifiée.",
+            "Vérifier le processus avec l’équipe de permanence."
+          ],
+          [
+            "Notre lecture est-elle juste ?",
+            "Le besoin immédiat est de mieux transmettre les alertes.",
+            "Faire confirmer le périmètre par le commanditaire."
+          ]
+        ],
+        "lecture": "La seconde réponse indique une piste organisationnelle. L’équipe n’a encore validé aucune exigence d’automatisation."
+      },
+      "modele": {
+        "colonnes": [
+          "Question",
+          "Réponse fictive",
+          "Suite"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Demander d’emblée « voulez-vous un tableau de bord ? » oriente la réponse.",
+        "Un propos isolé ne décrit pas tous les usages."
+      ],
+      "limites": "Pour mesurer la fréquence d’un problème, compléter par une observation ou une enquête.",
+      "apprentissage": "Élaborer une question ouverte et restituer un propos sans modifier son statut.",
+      "tuteur": "Demander quel propos a conduit l’équipe à réviser une hypothèse et quelle voix manque.",
+      "aide": "Proposer des questions ouvertes et un format de compte rendu. Ne jamais attribuer de réponse à l’interlocuteur.",
+      "sources": [
+        "nasa-design"
+      ],
+      "liens": [
+        "M02",
+        "M03",
+        "M14"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "À la première rencontre ou lorsqu’un acteur décrit le problème autrement que le commanditaire."
+    },
+    {
+      "id": "M02",
+      "nom": "Distinguer besoin, solution et contrainte",
+      "categorie": "Cadrer la mission",
+      "competences": [
+        "A1",
+        "C1",
+        "D1"
+      ],
+      "resume": "Reformulez l’effet recherché avant de comparer les moyens d’y parvenir.",
+      "definition": "Le besoin décrit un résultat utile dans un contexte. Une solution désigne un moyen. Une contrainte borne les moyens ou les conditions acceptables.",
+      "situations": "Lorsqu’une demande nomme déjà un outil, que deux usages semblent contradictoires ou que le périmètre dérive.",
+      "signaux": [
+        "vrai besoin",
+        "besoin ou solution",
+        "distinguer besoin",
+        "besoin du client",
+        "solution imposée",
+        "reformuler la demande"
+      ],
+      "mots_cles": [
+        "vrai besoin",
+        "besoin ou solution",
+        "distinguer besoin",
+        "besoin du client",
+        "solution imposée",
+        "reformuler la demande"
+      ],
+      "conditions": "Disposer d’au moins un usage concret ou indiquer explicitement ce qui reste hypothétique.",
+      "etapes": [
+        [
+          "Citer",
+          "Conservez la demande rapportée et sa source."
+        ],
+        [
+          "Reformuler",
+          "Identifiez qui a besoin de quoi, dans quelle situation et pour quelle décision."
+        ],
+        [
+          "Séparer",
+          "Distinguez les contraintes avérées, les préférences et les hypothèses."
+        ],
+        [
+          "Tester",
+          "Vérifiez que plusieurs solutions peuvent répondre à la reformulation, puis demandez un retour."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "« Installer une nouvelle plateforme de veille » est la demande formulée au démarrage.",
+        "colonnes": [
+          "Statut",
+          "Formulation",
+          "Source ou vérification"
+        ],
+        "lignes": [
+          [
+            "Demande rapportée",
+            "Installer une plateforme.",
+            "Brief fictif de lancement."
+          ],
+          [
+            "Besoin provisoire",
+            "Retrouver les alertes à temps pour la revue technique.",
+            "À comparer à deux incidents documentés."
+          ],
+          [
+            "Contrainte rapportée",
+            "Les alertes d’essai doivent rester dans un environnement isolé.",
+            "Point sécurité fictif à faire préciser."
+          ],
+          [
+            "Option",
+            "Configurer une boîte partagée avant d’évaluer une plateforme.",
+            "Proposition d’équipe."
+          ]
+        ],
+        "lecture": "La comparaison des solutions devient possible une fois l’effet recherché et les contraintes clarifiés."
+      },
+      "modele": {
+        "colonnes": [
+          "Statut",
+          "Formulation",
+          "Source ou vérification"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Prendre une préférence pour une contrainte ferme.",
+        "Transformer le besoin en une liste de fonctionnalités du premier outil envisagé."
+      ],
+      "limites": "Une contrainte réglementaire ou contractuelle exige de vérifier sa source et sa portée auprès de l’acteur compétent.",
+      "apprentissage": "Énoncer un besoin qui permet de comparer plusieurs moyens.",
+      "tuteur": "Demander une autre manière de répondre au même besoin et ce qui l’exclurait.",
+      "aide": "Relever les ambiguïtés et fournir une reformulation illustrative, explicitement provisoire.",
+      "sources": [
+        "nasa-design"
+      ],
+      "liens": [
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Lorsqu’une demande nomme déjà un outil, que deux usages semblent contradictoires ou que le périmètre dérive."
+    },
+    {
+      "id": "M03",
+      "nom": "Construire le cahier des charges",
+      "categorie": "Cadrer la mission",
+      "competences": [
+        "A1",
+        "A2",
+        "C2",
+        "D1"
+      ],
+      "resume": "Cadrez ce que l’équipe s’engage à étudier ou à livrer et comment les résultats seront examinés.",
+      "definition": "Un cahier des charges explicite la mission, le périmètre et les résultats attendus. La description fonctionnelle précise l’effet recherché. Une exigence technique s’appuie sur une justification et une source identifiables.",
+      "situations": "Pour passer d’une demande ouverte à une mission qui peut être discutée et vérifiée.",
+      "signaux": [
+        "cahier des charges",
+        "document de besoins",
+        "rédiger les spécifications",
+        "périmètre de la mission"
+      ],
+      "mots_cles": [
+        "cahier des charges",
+        "document de besoins",
+        "rédiger les spécifications",
+        "périmètre de la mission"
+      ],
+      "conditions": "Identifier le destinataire, les décideurs et les éléments encore négociables.",
+      "etapes": [
+        [
+          "Cadrer",
+          "Décrivez la décision que l’étude doit éclairer et ce qui est hors périmètre."
+        ],
+        [
+          "Structurer",
+          "Reliez livrables, exigences, contraintes et critères, avec leurs sources."
+        ],
+        [
+          "Faire relire",
+          "Distinguez une relecture interne d’un accord du commanditaire et conservez les preuves."
+        ],
+        [
+          "Versionner",
+          "Conservez la version de référence. Examinez ensuite les changements avec leurs impacts."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Un fabricant fictif veut savoir s’il vaut la peine d’explorer un service de reprise auprès de petits ateliers.",
+        "colonnes": [
+          "Section",
+          "Exemple rédigé",
+          "Statut et vérification"
+        ],
+        "lignes": [
+          [
+            "Problématique",
+            "Quelles conditions rendraient un pilote de reprise acceptable pour des ateliers d’une région test ?",
+            "Proposition soumise à l’entretien."
+          ],
+          [
+            "Périmètre",
+            "Étude des usages et obstacles dans la région test ; aucun lancement commercial dans le PTD.",
+            "Exclusion à faire confirmer."
+          ],
+          [
+            "Livrable",
+            "Note d’aide à la décision avec profils rencontrés, limites et recommandation conditionnelle.",
+            "Critère proposé : chaque recommandation est reliée à une observation ou une hypothèse."
+          ],
+          [
+            "Point ouvert",
+            "Qui peut transmettre une liste d’ateliers, et avec quelle autorisation ?",
+            "Dépendance à vérifier avant toute collecte."
+          ]
+        ],
+        "lecture": "Une recommandation de tester un pilote pourra être défendable sans prétendre mesurer une demande nationale."
+      },
+      "modele": {
+        "colonnes": [
+          "Section",
+          "Exemple rédigé",
+          "Statut et vérification"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Ajouter un objectif chiffré non communiqué.",
+        "Confondre la confirmation de l’équipe et l’accord du commanditaire."
+      ],
+      "limites": "Le document évolue avec les faits. Une première version ne remplace pas une discussion de cadrage.",
+      "apprentissage": "Savoir justifier le périmètre et écrire des conditions de vérification adaptées au livrable.",
+      "tuteur": "Choisir une exigence et faire remonter jusqu’au besoin ; demander qui a confirmé les exclusions.",
+      "aide": "Critiquer un extrait, proposer un modèle et une reformulation courte. N’inventer ni seuil, ni décision, ni accord.",
+      "sources": [
+        "nasa-design",
+        "nasa-vv",
+        "apm-change"
+      ],
+      "liens": [
+        "M02",
+        "M04",
+        "M05",
+        "M06"
+      ],
+      "outil": "specification",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Pour passer d’une demande ouverte à une mission qui peut être discutée et vérifiée."
+    },
+    {
+      "id": "M04",
+      "nom": "Rédiger une exigence vérifiable",
+      "categorie": "Cadrer la mission",
+      "competences": [
+        "A1",
+        "C1",
+        "D1"
+      ],
+      "resume": "Passez d’une intention vague à une formulation que quelqu’un pourra examiner.",
+      "definition": "Une exigence décrit une condition à satisfaire, dans un contexte défini. Le critère et la méthode de vérification indiquent comment examiner sa satisfaction.",
+      "situations": "Lorsqu’on vous demande un livrable simple, fiable, rapide ou complet sans préciser ce que ces mots recouvrent.",
+      "signaux": [
+        "exigence vérifiable",
+        "exigence mesurable",
+        "critère acceptation",
+        "critère d’acceptation",
+        "trop vague",
+        "non vérifiable"
+      ],
+      "mots_cles": [
+        "exigence vérifiable",
+        "exigence mesurable",
+        "critère acceptation",
+        "critère d’acceptation",
+        "trop vague",
+        "non vérifiable"
+      ],
+      "conditions": "Connaître la source du besoin. Si un seuil manque, le laisser à confirmer au lieu de lui donner une valeur arbitraire.",
+      "etapes": [
+        [
+          "Isoler",
+          "Gardez une condition par exigence et donnez-lui un identifiant."
+        ],
+        [
+          "Préciser",
+          "Décrivez l’objet, la condition et l’unité lorsque nécessaire."
+        ],
+        [
+          "Vérifier",
+          "Choisissez une inspection, une analyse, une démonstration ou un essai."
+        ],
+        [
+          "Revoir",
+          "Faites confirmer la pertinence et le seuil par l’acteur compétent."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "La note doit permettre au service de décider si un essai technique vaut la peine.",
+        "colonnes": [
+          "ID",
+          "Exigence proposée",
+          "Critère et mode de vérification"
+        ],
+        "lignes": [
+          [
+            "E-04",
+            "Chaque option présentée dans la note comporte une source et une limite de faisabilité.",
+            "Inspection : repérer source et limite pour chacune des options listées."
+          ],
+          [
+            "E-05",
+            "L’essai d’intégration s’exécute dans les conditions de test convenues avec le service.",
+            "Démonstration ; conditions exactes à faire confirmer avant essai."
+          ]
+        ],
+        "lecture": "L’équipe peut vérifier E-04 sur le document et préparer la vérification de E-05 sans inventer les conditions."
+      },
+      "modele": {
+        "colonnes": [
+          "ID",
+          "Exigence proposée",
+          "Critère et mode de vérification"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Écrire « facile à utiliser » sans préciser dans quel usage.",
+        "Présenter la cible de performance comme une mesure déjà réalisée."
+      ],
+      "limites": "Un critère d’acceptation peut relever d’un accord avec le destinataire. Une mesure seule ne décide pas de cette acceptation.",
+      "apprentissage": "Transformer une phrase vague en exigence inspectable et justifier une méthode.",
+      "tuteur": "Demander ce qui ferait conclure que l’exigence n’est pas satisfaite.",
+      "aide": "Signaler une ambiguïté et proposer une formulation conditionnelle avec un champ à confirmer.",
+      "sources": [
+        "nasa-vv"
+      ],
+      "liens": [
+        "M02",
+        "M03",
+        "M05"
+      ],
+      "outil": "specification",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Lorsqu’on vous demande un livrable simple, fiable, rapide ou complet sans préciser ce que ces mots recouvrent."
+    },
+    {
+      "id": "M05",
+      "nom": "Tracer et vérifier les exigences",
+      "categorie": "Cadrer la mission",
+      "competences": [
+        "A3",
+        "C1",
+        "C2",
+        "D3"
+      ],
+      "resume": "Gardez une chaîne lisible entre le besoin, l’exigence, la preuve et la décision.",
+      "definition": "La traçabilité relie les exigences à leurs sources, aux livrables et aux méthodes de vérification. Vérifier concerne la conformité ; valider examine l’adéquation à l’usage.",
+      "situations": "Pour préparer une revue, comprendre pourquoi un seuil existe ou retrouver les effets d’un changement.",
+      "signaux": [
+        "tracer les exigences",
+        "origine des exigences",
+        "vérifier les exigences",
+        "matrice de traçabilité",
+        "preuve de conformité"
+      ],
+      "mots_cles": [
+        "tracer les exigences",
+        "origine des exigences",
+        "vérifier les exigences",
+        "matrice de traçabilité",
+        "preuve de conformité"
+      ],
+      "conditions": "Disposer d’identifiants stables et de sources que l’équipe est autorisée à consulter.",
+      "etapes": [
+        [
+          "Identifier",
+          "Attribuez un identifiant aux besoins, exigences et preuves utiles."
+        ],
+        [
+          "Relier",
+          "Associez chaque exigence au besoin et au livrable concernés."
+        ],
+        [
+          "Préparer",
+          "Indiquez méthode et responsable de la vérification. Séparez le prévu du réalisé."
+        ],
+        [
+          "Examiner",
+          "Vérifiez les liens manquants et faites relire la conclusion par le bon acteur."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "La note doit permettre au lecteur de retrouver d’où vient une comparaison.",
+        "colonnes": [
+          "Besoin / source",
+          "Exigence",
+          "Vérification",
+          "Statut"
+        ],
+        "lignes": [
+          [
+            "B-01 · brief fictif",
+            "E-01 · sources des critères repérables",
+            "Inspection des renvois dans la note",
+            "Prévue ; note en cours."
+          ],
+          [
+            "B-01 · brief fictif",
+            "E-02 · limites par option",
+            "Lecture contradictoire du tableau d’options",
+            "Effectuée sur brouillon ; deux limites à préciser."
+          ],
+          [
+            "Usage en revue",
+            "Le destinataire peut expliquer l’arbitrage après lecture",
+            "Échange de validation avec le service",
+            "À convenir."
+          ]
+        ],
+        "lecture": "La troisième ligne vise l’usage en situation. Une note conforme peut encore être peu utile en réunion."
+      },
+      "modele": {
+        "colonnes": [
+          "Besoin / source",
+          "Exigence",
+          "Vérification",
+          "Statut"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Marquer un essai « passé » à partir d’un protocole seul.",
+        "Garder des exigences orphelines après retrait d’un besoin."
+      ],
+      "limites": "Pour un petit projet, un seul tableau suffit. Les liens doivent servir une revue ou une décision.",
+      "apprentissage": "Remonter d’une conclusion à sa preuve et repérer une vérification manquante.",
+      "tuteur": "Partir d’une preuve concrète et demander quelle exigence elle couvre et avec quelles limites.",
+      "aide": "Indiquer les liens manquants et suggérer une preuve appropriée, sans déclarer l’essai réussi.",
+      "sources": [
+        "nasa-vv",
+        "nasa-cross"
+      ],
+      "liens": [
+        "M03",
+        "M04",
+        "M06"
+      ],
+      "outil": "specification",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Pour préparer une revue, comprendre pourquoi un seuil existe ou retrouver les effets d’un changement."
+    },
+    {
+      "id": "M06",
+      "nom": "Analyser une demande de changement",
+      "categorie": "Piloter le projet",
+      "competences": [
+        "A3",
+        "B2",
+        "C2",
+        "D1"
+      ],
+      "resume": "Évaluez une demande nouvelle avant de modifier un engagement existant.",
+      "definition": "Le contrôle des changements enregistre, analyse et soumet à décision une modification d’une référence approuvée. Pendant le cadrage, les itérations restent des propositions de construction de cette référence.",
+      "situations": "Après un accord documenté, si le commanditaire demande un nouveau livrable, modifie une date ou élargit le terrain.",
+      "signaux": [
+        "nouvelle demande",
+        "modifier le périmètre",
+        "change d’avis",
+        "analyse d’impact",
+        "demande de changement",
+        "change tout le temps"
+      ],
+      "mots_cles": [
+        "nouvelle demande",
+        "modifier le périmètre",
+        "change d’avis",
+        "analyse d’impact",
+        "demande de changement",
+        "change tout le temps"
+      ],
+      "conditions": "Retrouver l’accord de départ ou signaler qu’il n’existe pas encore.",
+      "etapes": [
+        [
+          "Décrire",
+          "Consignez la demande, sa source et la version concernée."
+        ],
+        [
+          "Estimer",
+          "Examinez charge, dates, qualité, périmètre et dépendances."
+        ],
+        [
+          "Comparer",
+          "Préparez des options avec leurs conséquences, y compris différer."
+        ],
+        [
+          "Décider",
+          "La personne habilitée tranche. Tracez l’accord puis actualisez les documents affectés."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Le commanditaire demande d’ajouter un autre secteur après l’accord sur la région test.",
+        "colonnes": [
+          "Option",
+          "Effet attendu",
+          "Incertitude ou décision"
+        ],
+        "lignes": [
+          [
+            "Ajouter le secteur",
+            "Comparaison plus large ; nouveau recrutement et analyse séparée.",
+            "Accès aux contacts non confirmé."
+          ],
+          [
+            "Déplacer une partie du terrain",
+            "Préserve la date cible mais réduit la profondeur régionale.",
+            "Vérifier l’impact sur l’objectif de départ."
+          ],
+          [
+            "Reporter à une étude ultérieure",
+            "Garde le périmètre convenu et trace la demande.",
+            "Soumettre ces options au commanditaire."
+          ]
+        ],
+        "lecture": "Le nouveau secteur n’entre pas au planning de référence avant arbitrage. On peut préparer un scénario comparatif."
+      },
+      "modele": {
+        "colonnes": [
+          "Option",
+          "Effet attendu",
+          "Incertitude ou décision"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Écraser la version de référence.",
+        "Traiter une demande entendue comme un engagement acquis."
+      ],
+      "limites": "Une simple correction rédactionnelle sans effet sur les engagements n’exige pas le même formalisme.",
+      "apprentissage": "Comparer deux options avec leurs effets et retrouver la décision.",
+      "tuteur": "Demander quelle conséquence a été sous-estimée et qui avait mandat pour trancher.",
+      "aide": "Aider à préparer une analyse d’impact et un message. Ne pas accepter le changement au nom du groupe.",
+      "sources": [
+        "apm-change",
+        "gao"
+      ],
+      "liens": [
+        "M03",
+        "M08",
+        "M15"
+      ],
+      "outil": "decisions",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Après un accord documenté, si le commanditaire demande un nouveau livrable, modifie une date ou élargit le terrain."
+    },
+    {
+      "id": "M07",
+      "nom": "Décomposer les livrables en WBS",
+      "categorie": "Piloter le projet",
+      "competences": [
+        "A2",
+        "B1",
+        "C1"
+      ],
+      "resume": "Organisez le périmètre en résultats et lots de travail avant de dater les activités.",
+      "definition": "Une WBS est une décomposition hiérarchique du travail total, orientée vers les livrables. Chaque niveau couvre son parent sans doublon ni travail hors périmètre.",
+      "situations": "Pour vérifier ce que l’équipe doit produire ou choisir des lots dont les résultats sont vérifiables.",
+      "signaux": [
+        "wbs",
+        "décomposer les livrables",
+        "découper les livrables",
+        "work breakdown",
+        "lot de travail"
+      ],
+      "mots_cles": [
+        "wbs",
+        "décomposer les livrables",
+        "découper les livrables",
+        "work breakdown",
+        "lot de travail"
+      ],
+      "conditions": "Énoncer le périmètre, les exclusions et les résultats attendus. Un logiciel peut être un livrable convenu.",
+      "etapes": [
+        [
+          "Partir du tout",
+          "Nommez le résultat de la mission."
+        ],
+        [
+          "Décomposer",
+          "Construisez un premier niveau par résultat. Précisez les lots utiles et leur condition d’achèvement."
+        ],
+        [
+          "Contrôler",
+          "Vérifiez que les enfants couvrent 100 % du parent et évitez de compter un travail deux fois."
+        ],
+        [
+          "Planifier ensuite",
+          "Dérivez les activités et leurs liens dans le Gantt. Affectez les rôles dans l’outil adapté."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Une étude régionale vise une décision de pilote. La WBS décrit les résultats à remettre et le travail de pilotage associé.",
+        "colonnes": [
+          "Code",
+          "Résultat ou lot",
+          "Achèvement observable"
+        ],
+        "lignes": [
+          [
+            "1",
+            "Dossier d’aide à la décision",
+            "Note, annexes de méthode et limites rassemblées."
+          ],
+          [
+            "1.1",
+            "Protocole d’enquête",
+            "Population, recrutement et guide relus."
+          ],
+          [
+            "1.2",
+            "Dossier de résultats",
+            "Synthèse anonymisée et limites par profil."
+          ],
+          [
+            "1.3",
+            "Recommandation argumentée",
+            "Options, conditions et preuves reliées."
+          ],
+          [
+            "2",
+            "Pilotage du projet",
+            "Références du planning, décisions et changements conservées."
+          ]
+        ],
+        "lecture": "« Tester le questionnaire » est une activité qui contribue au protocole. Elle appartient au calendrier ; la WBS rend visible le résultat à obtenir."
+      },
+      "modele": {
+        "colonnes": [
+          "Code",
+          "Résultat ou lot",
+          "Achèvement observable"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Mettre les dates en haut de la hiérarchie.",
+        "Omettre le pilotage ou exclure un livrable logiciel par principe."
+      ],
+      "limites": "Arrêter la décomposition au niveau auquel le groupe peut estimer, expliquer et gérer le lot.",
+      "apprentissage": "Classer et relier résultat, activité, personne responsable et date sans les confondre.",
+      "tuteur": "Demander de rattacher une activité à un résultat et chercher ce qui manque dans la couverture du périmètre.",
+      "aide": "Illustrer un niveau de décomposition puis faire vérifier la couverture par l’équipe.",
+      "sources": [
+        "pmi",
+        "nasa-cross"
+      ],
+      "liens": [
+        "M03",
+        "M08",
+        "M11"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Pour vérifier ce que l’équipe doit produire ou choisir des lots dont les résultats sont vérifiables."
+    },
+    {
+      "id": "M08",
+      "nom": "Construire et ajuster un diagramme de Gantt",
+      "categorie": "Piloter le projet",
+      "competences": [
+        "A2",
+        "A3",
+        "B1",
+        "C1"
+      ],
+      "resume": "Visualisez les activités dans le temps, leurs dépendances et les jalons, puis examinez les effets d’un retard.",
+      "definition": "Le Gantt place les activités sur un axe de dates. Une activité a une durée ; un jalon représente un événement sans durée. Une dépendance fin-début fixe le premier début possible du successeur. La charge est l’effort de travail, distinct de la durée écoulée.",
+      "situations": "Quand une livraison ou un accès conditionne le travail suivant, ou quand le calendrier doit être discuté.",
+      "signaux": [
+        "gantt",
+        "faire un planning",
+        "prend du retard",
+        "date limite",
+        "jalon",
+        "dépendance entre",
+        "ajuster le planning",
+        "retard"
+      ],
+      "mots_cles": [
+        "gantt",
+        "faire un planning",
+        "prend du retard",
+        "date limite",
+        "jalon",
+        "dépendance entre",
+        "ajuster le planning",
+        "retard"
+      ],
+      "conditions": "Disposer d’activités dérivées des résultats attendus et d’hypothèses explicites sur les disponibilités. L’outil compte en jours calendaires.",
+      "etapes": [
+        [
+          "Dériver les activités",
+          "À partir des livrables, listez les actions réellement nécessaires."
+        ],
+        [
+          "Estimer",
+          "Estimez durée écoulée et effort séparément. Placez les activités aux dates crédibles."
+        ],
+        [
+          "Relier",
+          "Indiquez les dépendances logiques et marquez les rendez-vous utiles par des jalons."
+        ],
+        [
+          "Comparer",
+          "Conservez la référence et décalez les activités touchées. Comparez les conséquences et discutez l’ajustement avec l’équipe."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Le recrutement prend quatre jours de plus que prévu. L’enquête ne peut démarrer avant la fin du recrutement.",
+        "colonnes": [
+          "Activité ou jalon",
+          "Référence",
+          "Révision",
+          "Prédécesseur"
+        ],
+        "lignes": [
+          [
+            "Recruter les ateliers",
+            "15–21 octobre",
+            "15–25 octobre",
+            "Protocole relu"
+          ],
+          [
+            "Réaliser les entretiens",
+            "22–28 octobre",
+            "26 octobre–1er novembre",
+            "Recruter les ateliers"
+          ],
+          [
+            "Analyser les entretiens",
+            "29 octobre–4 novembre",
+            "2–8 novembre",
+            "Réaliser les entretiens"
+          ],
+          [
+            "Restituer · jalon",
+            "5 novembre",
+            "9 novembre",
+            "Analyser les entretiens"
+          ]
+        ],
+        "lecture": "Une activité de sept jours occupe sept dates. Le successeur commence au plus tôt le lendemain de la dernière date occupée. Le déplacement d’un jalon reste une proposition tant que le rendez-vous n’est pas confirmé."
+      },
+      "modele": {
+        "colonnes": [
+          "Activité ou jalon",
+          "Référence",
+          "Révision",
+          "Prédécesseur"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Confondre trois heures de charge avec trois jours calendaires.",
+        "Faire partir les entretiens avant le recrutement sans changer l’hypothèse d’enchaînement.",
+        "Dessiner une boucle de dépendances ou traiter le jalon comme une activité d’une journée."
+      ],
+      "limites": "Un calendrier à jours ouvrés, des contraintes de ressources et le calcul de chemin critique demandent un outil plus spécialisé. Le document contractuel Crossrail illustre un usage professionnel beaucoup plus détaillé de la planification.",
+      "apprentissage": "Expliquer l’effet d’un retard en distinguant dépendance, marge supposée et engagement.",
+      "tuteur": "Demander pourquoi deux activités sont reliées, puis quelles alternatives l’équipe a examinées avant de décaler la restitution.",
+      "aide": "Signaler une incohérence de séquence et expliquer ses effets. Ne pas déplacer les dates à la place du groupe.",
+      "sources": [
+        "gao",
+        "crossrail"
+      ],
+      "liens": [
+        "M07",
+        "M06",
+        "M11"
+      ],
+      "outil": "gantt",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Quand une livraison ou un accès conditionne le travail suivant, ou quand le calendrier doit être discuté."
+    },
+    {
+      "id": "M09",
+      "nom": "Débriefer le travail d’équipe",
+      "categorie": "Travailler en équipe",
+      "competences": [
+        "B2",
+        "B3",
+        "D2"
+      ],
+      "resume": "Transformez une difficulté vécue en une observation et un essai pour le prochain jeudi.",
+      "definition": "Un débriefing est une courte analyse collective d’une expérience : faits observables, effets, interprétations à discuter et piste d’amélioration.",
+      "situations": "Après une séance, un désaccord ordinaire ou un essai dont l’équipe veut apprendre.",
+      "signaux": [
+        "faire un bilan",
+        "retour expérience",
+        "débriefing",
+        "personne ne parle",
+        "ne participe pas",
+        "fatigue d’équipe"
+      ],
+      "mots_cles": [
+        "faire un bilan",
+        "retour expérience",
+        "débriefing",
+        "personne ne parle",
+        "ne participe pas",
+        "fatigue d’équipe"
+      ],
+      "conditions": "Choisir un moment propice, partir d’un événement et laisser chacun décider de ce qu’il souhaite partager.",
+      "etapes": [
+        [
+          "Décrire",
+          "Que s’est-il passé, pour qui, et avec quel effet observable ?"
+        ],
+        [
+          "Écouter",
+          "Recueillez plusieurs lectures et repérez les conditions de travail."
+        ],
+        [
+          "Choisir",
+          "Convenez d’un seul ajustement réaliste et de ce qui aidera à savoir s’il fonctionne."
+        ],
+        [
+          "Relire",
+          "Revenez sur l’ajustement et décidez de le conserver ou de le modifier."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Deux entretiens ont été préparés en double et un autre n’a pas trouvé de binôme.",
+        "colonnes": [
+          "Fait",
+          "Interprétation à examiner",
+          "Essai choisi"
+        ],
+        "lignes": [
+          [
+            "Deux invitations ont été préparées pour le même contact.",
+            "L’attribution des invitations n’était pas visible.",
+            "Au prochain jeudi, nommer un binôme par invitation avant de se séparer."
+          ],
+          [
+            "Un contact n’avait pas de binôme.",
+            "Le nombre de sollicitations dépasse peut-être le temps disponible.",
+            "Vérifier la couverture du tableau avant la fin de séance."
+          ]
+        ],
+        "lecture": "L’équipe réexamine le fonctionnement, sans attribuer la difficulté à la motivation d’un membre."
+      },
+      "modele": {
+        "colonnes": [
+          "Fait",
+          "Interprétation à examiner",
+          "Essai choisi"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Étiqueter une personne comme « peu impliquée ».",
+        "Accumuler des décisions sans convenir de ce qui pourra être essayé."
+      ],
+      "limites": "En cas de menace, harcèlement ou souffrance, le débriefing ordinaire ne suffit pas. Chercher un relais humain approprié.",
+      "apprentissage": "Différencier observation et interprétation, puis tester une modification réversible.",
+      "tuteur": "Faire préciser quel effet observer et protéger le droit de ne pas exposer une situation privée.",
+      "aide": "Proposer une structure ou reformuler un fait. S’abstenir de diagnostiquer les personnes.",
+      "sources": [
+        "ahrq"
+      ],
+      "liens": [
+        "M11",
+        "M12",
+        "M15"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Après une séance, un désaccord ordinaire ou un essai dont l’équipe veut apprendre."
+    },
+    {
+      "id": "M10",
+      "nom": "Explorer des causes avec Ishikawa",
+      "categorie": "Analyser et décider",
+      "competences": [
+        "C1",
+        "C2",
+        "D2"
+      ],
+      "resume": "Organisez les explications plausibles d’un problème avant de chercher des preuves.",
+      "definition": "Le diagramme causes-effet regroupe les hypothèses autour d’un effet observable. Les branches aident à explorer le problème ; elles ne prouvent pas ses causes.",
+      "situations": "Quand un même effet réapparaît et que plusieurs mécanismes pourraient l’expliquer.",
+      "signaux": [
+        "ishikawa",
+        "plusieurs causes",
+        "résultats variables",
+        "mesures varient",
+        "chercher les causes",
+        "comprendre pourquoi"
+      ],
+      "mots_cles": [
+        "ishikawa",
+        "plusieurs causes",
+        "résultats variables",
+        "mesures varient",
+        "chercher les causes",
+        "comprendre pourquoi"
+      ],
+      "conditions": "Décrire l’effet, les conditions d’observation et les éventuels écarts de mesure.",
+      "etapes": [
+        [
+          "Délimiter",
+          "Écrivez un effet vérifiable, daté et localisé."
+        ],
+        [
+          "Explorer",
+          "Choisissez des catégories utiles au cas et ajoutez les hypothèses de chaque branche."
+        ],
+        [
+          "Examiner",
+          "Précisez pour chaque hypothèse une observation qui pourrait la renforcer ou l’affaiblir."
+        ],
+        [
+          "Tester",
+          "Sélectionnez une vérification discriminante avant de recommander une action."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "Les alertes prioritaires arrivent parfois trop tard pour la revue.",
+        "colonnes": [
+          "Branche",
+          "Hypothèse",
+          "Vérification"
+        ],
+        "lignes": [
+          [
+            "Sources",
+            "Les fournisseurs ne publient pas tous au même rythme.",
+            "Comparer date de publication et date de collecte sur les cas observés."
+          ],
+          [
+            "Processus",
+            "Les alertes entrent à temps mais la revue n’a pas de destinataire défini.",
+            "Comparer heure de réception et heure de première lecture."
+          ],
+          [
+            "Mesure",
+            "Le champ « date d’alerte » désigne deux événements différents.",
+            "Vérifier sa définition sur un extrait anonymisé."
+          ]
+        ],
+        "lecture": "Si l’écart vient du champ mesuré, corriger la mesure avant de tirer une conclusion sur le processus."
+      },
+      "modele": {
+        "colonnes": [
+          "Branche",
+          "Hypothèse",
+          "Vérification"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Confondre fréquence des idées et probabilité des causes.",
+        "Reprendre mécaniquement les catégories industrielles sans lien avec l’effet."
+      ],
+      "limites": "Un problème urgent connu appelle parfois une action immédiate. Ce diagramme aide à enquêter sur les causes incertaines.",
+      "apprentissage": "Relier une hypothèse à une vérification qui peut l’infirmer.",
+      "tuteur": "Demander quelle branche est la plus facile à vérifier et laquelle aurait le plus d’effet sur la décision.",
+      "aide": "Suggérer des pistes et tests. Ne jamais transformer une cause plausible en cause prouvée.",
+      "sources": [
+        "asq"
+      ],
+      "liens": [
+        "M12",
+        "M13"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Quand un même effet réapparaît et que plusieurs mécanismes pourraient l’expliquer."
+    },
+    {
+      "id": "M11",
+      "nom": "Clarifier les rôles avec RACI",
+      "categorie": "Travailler en équipe",
+      "competences": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "resume": "Rendez explicite qui réalise, qui répond du résultat, qui est consulté et qui doit être informé.",
+      "definition": "Une matrice RACI croise activités ou lots et rôles : R réalise, A porte la responsabilité du résultat, C est consulté, I est informé.",
+      "situations": "Quand un livrable est préparé en double, qu’une décision ne trouve pas de responsable ou qu’un acteur doit être consulté.",
+      "signaux": [
+        "raci",
+        "qui fait quoi",
+        "répartir les rôles",
+        "responsabilités ambiguës",
+        "répartition du travail"
+      ],
+      "mots_cles": [
+        "raci",
+        "qui fait quoi",
+        "répartir les rôles",
+        "responsabilités ambiguës",
+        "répartition du travail"
+      ],
+      "conditions": "Utiliser des lots concrets et des rôles compris. La règle d’un A par ligne est une convention pédagogique de cette fiche.",
+      "etapes": [
+        [
+          "Lister",
+          "Choisissez les activités ou lots qui posent un problème de coordination."
+        ],
+        [
+          "Attribuer",
+          "Proposez au moins un R et un A par ligne. Les rôles C et I répondent à un besoin concret."
+        ],
+        [
+          "Discuter",
+          "Vérifiez disponibilité, mandat et accord des personnes."
+        ],
+        [
+          "Essayer",
+          "Relisez la matrice au changement de périmètre ou après un conflit de responsabilité."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "Trois fonctions préparent la collecte. Les rôles sont fictifs et l’accord reste à discuter.",
+        "colonnes": [
+          "Activité",
+          "Référent terrain",
+          "Binôme enquête",
+          "Référent analyse",
+          "Commanditaire"
+        ],
+        "lignes": [
+          [
+            "Préparer le guide",
+            "A",
+            "R",
+            "C",
+            "I"
+          ],
+          [
+            "Valider l’accès au terrain",
+            "R",
+            "I",
+            "—",
+            "A"
+          ],
+          [
+            "Synthétiser les entretiens",
+            "C",
+            "R",
+            "A",
+            "I"
+          ]
+        ],
+        "lecture": "Sur l’accès au terrain, le mandat du commanditaire doit être vérifié. La lettre A n’attribue pas à elle seule un pouvoir d’autoriser."
+      },
+      "modele": {
+        "colonnes": [
+          "Activité",
+          "Référent terrain",
+          "Binôme enquête",
+          "Référent analyse",
+          "Commanditaire"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Mettre tout le monde en C.",
+        "Confondre A, responsabilité du résultat, et R, réalisation du travail."
+      ],
+      "limites": "Un échange court peut suffire pour une équipe qui connaît déjà ses responsabilités.",
+      "apprentissage": "Identifier un conflit de rôles et en discuter sans décréter les responsabilités.",
+      "tuteur": "Vérifier qu’une ligne correspond à un travail réel et que les personnes acceptent les rôles proposés.",
+      "aide": "Aider à repérer une ligne sans R ou avec plusieurs A. Laisser les attributions à l’équipe.",
+      "sources": [
+        "apm-raci"
+      ],
+      "liens": [
+        "M07",
+        "M09",
+        "M08"
+      ],
+      "outil": "raci",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Quand un livrable est préparé en double, qu’une décision ne trouve pas de responsable ou qu’un acteur doit être consulté."
+    },
+    {
+      "id": "M12",
+      "nom": "Tenir un registre des risques et des problèmes",
+      "categorie": "Piloter le projet",
+      "competences": [
+        "A3",
+        "B1",
+        "C2"
+      ],
+      "resume": "Anticipez les incertitudes utiles et traitez séparément les difficultés déjà survenues.",
+      "definition": "Un risque est un événement incertain susceptible d’affecter un objectif. Un problème s’est déjà manifesté. Une réponse au risque indique une action, un signal et un responsable proposé.",
+      "situations": "Pour préparer le terrain, protéger un jalon ou anticiper une dépendance externe.",
+      "signaux": [
+        "risque",
+        "registre des risques",
+        "imprévu",
+        "anticiper un problème",
+        "risque de retard",
+        "accès aux répondants"
+      ],
+      "mots_cles": [
+        "risque",
+        "registre des risques",
+        "imprévu",
+        "anticiper un problème",
+        "risque de retard",
+        "accès aux répondants"
+      ],
+      "conditions": "Nommer l’objectif affecté et préciser les observations qui distinguent possibilité et événement survenu.",
+      "etapes": [
+        [
+          "Formuler",
+          "Décrivez cause, événement et conséquence possible."
+        ],
+        [
+          "Apprécier",
+          "Évaluez impact et vraisemblance avec des repères définis par l’équipe."
+        ],
+        [
+          "Préparer",
+          "Choisissez une réponse proportionnée et un signal de déclenchement."
+        ],
+        [
+          "Revoir",
+          "Actualisez le statut. Si l’événement se produit, traitez le problème et conservez le lien au risque."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "La liste de contacts peut arriver tard et réduire la diversité des ateliers rencontrés.",
+        "colonnes": [
+          "Type",
+          "Signal ou observation",
+          "Effet",
+          "Réponse proposée"
+        ],
+        "lignes": [
+          [
+            "Risque",
+            "Liste absente jeudi prochain.",
+            "Recrutement plus court et profils moins variés.",
+            "Préparer un deuxième canal autorisé et revoir l’échantillonnage."
+          ],
+          [
+            "Problème",
+            "Le délai annoncé est dépassé et la liste n’est pas reçue.",
+            "Démarrage reporté.",
+            "Contacter le relais désigné et réviser le Gantt."
+          ],
+          [
+            "Risque résiduel",
+            "Le deuxième canal recrute surtout des volontaires déjà engagés.",
+            "Biais de sélection.",
+            "Documenter les profils absents et limiter les inférences."
+          ]
+        ],
+        "lecture": "Le problème appelle une action présente ; le risque résiduel reste à surveiller."
+      },
+      "modele": {
+        "colonnes": [
+          "Type",
+          "Signal ou observation",
+          "Effet",
+          "Réponse proposée"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Noter « retard » sans préciser la conséquence.",
+        "Transformer une échelle qualitative en probabilité chiffrée inventée."
+      ],
+      "limites": "Concentrez le registre sur les risques qui changent une décision. Les situations sensibles exigent l’acteur humain compétent.",
+      "apprentissage": "Relier un risque à l’objectif, au signal et à une réponse réaliste.",
+      "tuteur": "Demander quel risque change vraiment la prochaine décision et ce qui déclenche la réponse.",
+      "aide": "Aider à formuler le risque et à préparer des options. Éviter les probabilités sans base.",
+      "sources": [
+        "apm-risk",
+        "nasa-cross"
+      ],
+      "liens": [
+        "M06",
+        "M08",
+        "M14"
+      ],
+      "outil": "risks",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Pour préparer le terrain, protéger un jalon ou anticiper une dépendance externe."
+    },
+    {
+      "id": "M13",
+      "nom": "Comparer des options par critères",
+      "categorie": "Analyser et décider",
+      "competences": [
+        "B2",
+        "C1",
+        "C2",
+        "D3"
+      ],
+      "resume": "Rendez visibles les critères, les preuves et les préférences qui font varier une recommandation.",
+      "definition": "L’analyse multicritère compare des options selon des critères définis. Une somme pondérée est un modèle de préférence conditionnel aux échelles et aux poids retenus.",
+      "situations": "Quand les options présentent plusieurs avantages incompatibles et que l’arbitrage doit être expliqué.",
+      "signaux": [
+        "matrice de décision",
+        "multicritère",
+        "comparer les options",
+        "pondération",
+        "critères de décision",
+        "arbitrer entre"
+      ],
+      "mots_cles": [
+        "matrice de décision",
+        "multicritère",
+        "comparer les options",
+        "pondération",
+        "critères de décision",
+        "arbitrer entre"
+      ],
+      "conditions": "Écarter explicitement les options qui ne respectent pas une contrainte éliminatoire. Préciser le sens des notes et les preuves.",
+      "etapes": [
+        [
+          "Établir les options",
+          "Décrivez les options comparables, avec une option de référence si pertinente."
+        ],
+        [
+          "Définir",
+          "Choisissez des critères distincts, des échelles justifiées et des poids à discuter."
+        ],
+        [
+          "Renseigner",
+          "Documentez chaque note et laissez les valeurs inconnues visibles."
+        ],
+        [
+          "Tester",
+          "Variez une pondération plausible, examinez les inversions et formulez une recommandation conditionnelle."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "Une option A est plus simple à intégrer, l’option B couvre davantage de sources. Notes fictives de 0 à 5.",
+        "colonnes": [
+          "Option",
+          "Intégration",
+          "Couverture",
+          "Résultat à 60 % / 40 %",
+          "Résultat à 40 % / 60 %"
+        ],
+        "lignes": [
+          [
+            "A",
+            "5 · test sur environnement fictif",
+            "2 · cartographie des sources",
+            "3,8",
+            "3,2"
+          ],
+          [
+            "B",
+            "2 · test sur environnement fictif",
+            "5 · cartographie des sources",
+            "3,2",
+            "3,8"
+          ]
+        ],
+        "lecture": "L’ordre change avec les poids. L’équipe doit expliquer le compromis et vérifier les notes qui pèsent le plus."
+      },
+      "modele": {
+        "colonnes": [
+          "Option",
+          "Intégration",
+          "Couverture",
+          "Résultat à 60 % / 40 %",
+          "Résultat à 40 % / 60 %"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Compter deux fois le même avantage.",
+        "Convertir « inconnu » en zéro sans justification.",
+        "Compenser une incompatibilité ferme par une note élevée ailleurs."
+      ],
+      "limites": "La sensibilité testée dépend des scénarios examinés. Un score élevé ne valide ni la faisabilité ni la décision.",
+      "apprentissage": "Expliquer une inversion de préférence et défendre les critères utilisés.",
+      "tuteur": "Demander quels changements de poids ou de preuves feraient modifier la recommandation.",
+      "aide": "Expliquer le calcul et analyser la robustesse. L’équipe établit les poids, les notes et la recommandation.",
+      "sources": [
+        "mcda",
+        "nasa-design"
+      ],
+      "liens": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "outil": "decision-matrix",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Quand les options présentent plusieurs avantages incompatibles et que l’arbitrage doit être expliqué."
+    },
+    {
+      "id": "M14",
+      "nom": "Concevoir et interpréter une enquête",
+      "categorie": "Analyser et décider",
+      "competences": [
+        "A1",
+        "C1",
+        "C2",
+        "D1",
+        "D3"
+      ],
+      "resume": "Choisissez une méthode de collecte selon la question et justifiez ce que vos résultats permettent d’affirmer.",
+      "definition": "Une étude qualitative explore des mécanismes et des usages. Une enquête quantitative décrit ou estime des distributions sous des hypothèses de couverture, recrutement et mesure.",
+      "situations": "Pour étudier des usages, concevoir un questionnaire ou interpréter un terrain de convenance.",
+      "signaux": [
+        "enquête",
+        "questionnaire",
+        "échantillon",
+        "représentativité",
+        "biais de sélection",
+        "répondants",
+        "étude de marché"
+      ],
+      "mots_cles": [
+        "enquête",
+        "questionnaire",
+        "échantillon",
+        "représentativité",
+        "biais de sélection",
+        "répondants",
+        "étude de marché"
+      ],
+      "conditions": "Définir population cible, base de recrutement, unité d’observation et règles de collecte approuvées.",
+      "etapes": [
+        [
+          "Formuler",
+          "Associez la question à une décision et vérifiez si des données existent déjà."
+        ],
+        [
+          "Explorer",
+          "Utilisez des entretiens pour préciser les pratiques et tester vos catégories."
+        ],
+        [
+          "Prétester",
+          "Essayez le questionnaire et contrôlez compréhension, recrutement et non-réponse."
+        ],
+        [
+          "Interpréter",
+          "Décrivez qui a répondu, les groupes manquants et la portée des résultats."
+        ]
+      ],
+      "exemple": {
+        "mission": "Étude de marché fictive",
+        "contexte": "L’équipe obtient 12 réponses volontaires via deux réseaux professionnels fictifs.",
+        "colonnes": [
+          "Question",
+          "Résultat fictif",
+          "Conclusion défendable"
+        ],
+        "lignes": [
+          [
+            "Quelles conditions encouragent la reprise ?",
+            "8 sur 12 répondants citent la simplicité de dépôt.",
+            "Simplicité fréquemment citée dans ce groupe."
+          ],
+          [
+            "Combien d’ateliers adopteraient le service ?",
+            "Pas de tirage probabiliste ni de base complète.",
+            "Aucune estimation de l’adoption régionale à partir de ces seules réponses."
+          ],
+          [
+            "Quelle suite ?",
+            "Aucun atelier rural parmi les répondants.",
+            "Explorer les contraintes rurales avec un recrutement ciblé, à titre exploratoire."
+          ]
+        ],
+        "lecture": "Le ratio 8/12 décrit les réponses reçues. Il ne démontre ni la représentativité ni une intention d’achat."
+      },
+      "modele": {
+        "colonnes": [
+          "Question",
+          "Résultat fictif",
+          "Conclusion défendable"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Revendiquer une marge d’erreur à partir de volontaires comme s’ils étaient tirés au hasard.",
+        "Poser deux questions en une ou conduire vers la réponse attendue."
+      ],
+      "limites": "La méthode doit rester proportionnée. Préparer les règles de collecte, de consentement et de conservation avec les acteurs compétents.",
+      "apprentissage": "Distinguer description d’un échantillon, inférence et recommandation conditionnelle.",
+      "tuteur": "Demander à quels publics les résultats s’appliquent, et quel résultat pourrait contredire la recommandation.",
+      "aide": "Critiquer une question, un plan d’échantillonnage ou une conclusion. Ne pas inventer de réponses, ni garantir la représentativité.",
+      "sources": [
+        "aapor"
+      ],
+      "liens": [
+        "M01",
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "outil": null,
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Pour étudier des usages, concevoir un questionnaire ou interpréter un terrain de convenance."
+    },
+    {
+      "id": "M15",
+      "nom": "Tracer une décision et défendre une recommandation",
+      "categorie": "Travailler en équipe",
+      "competences": [
+        "A3",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "D2",
+        "D3"
+      ],
+      "resume": "Gardez une trace de l’arbitrage, des preuves, des réserves et de la prochaine vérification.",
+      "definition": "Une recommandation argumente une option. Une décision est l’arbitrage d’un acteur habilité. Un registre conserve le statut, l’auteur de l’accord, la justification et les suites.",
+      "situations": "Avant une réunion d’arbitrage, après un accord ou pour préparer la restitution au commanditaire.",
+      "signaux": [
+        "registre des décisions",
+        "décision collective",
+        "justifier une recommandation",
+        "restitution",
+        "avis des experts",
+        "argumentation"
+      ],
+      "mots_cles": [
+        "registre des décisions",
+        "décision collective",
+        "justifier une recommandation",
+        "restitution",
+        "avis des experts",
+        "argumentation"
+      ],
+      "conditions": "Identifier qui décide et quelles preuves ou limites sont connues à cette date.",
+      "etapes": [
+        [
+          "Préparer",
+          "Formulez la décision attendue et les options considérées."
+        ],
+        [
+          "Argumenter",
+          "Reliez chaque raison à une preuve et rendez visibles les objections."
+        ],
+        [
+          "Tracer",
+          "Séparez proposition et accord. Si l’accord est donné, consignez sa source et sa date."
+        ],
+        [
+          "Suivre",
+          "Notez la prochaine action ou la condition de réexamen et présentez les limites en restitution."
+        ]
+      ],
+      "exemple": {
+        "mission": "Conseil technologique fictif",
+        "contexte": "L’équipe compare un essai en environnement isolé et un déploiement direct.",
+        "colonnes": [
+          "Statut",
+          "Formulation",
+          "Justification et suite"
+        ],
+        "lignes": [
+          [
+            "Proposition",
+            "Commencer par un essai isolé.",
+            "L’intégration réelle est incertaine ; l’essai teste une hypothèse à moindre engagement."
+          ],
+          [
+            "Décision d’équipe",
+            "Soumettre l’option d’essai à la prochaine revue.",
+            "Compte rendu fictif relu par le groupe ; aucune autorisation de déploiement."
+          ],
+          [
+            "Accord commanditaire",
+            "Non documenté.",
+            "Demander le mandat et les conditions d’essai avant de lancer."
+          ]
+        ],
+        "lecture": "La restitution indique quelle décision reste attendue et quelle preuve manque pour envisager un déploiement."
+      },
+      "modele": {
+        "colonnes": [
+          "Statut",
+          "Formulation",
+          "Justification et suite"
+        ],
+        "lignes": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "erreurs": [
+        "Attribuer une décision au commanditaire à partir d’une suggestion.",
+        "Cacher une objection parce qu’elle affaiblit la présentation."
+      ],
+      "limites": "Un registre succinct suffit pour les arbitrages qui modifient périmètre, effort, risque ou décision finale.",
+      "apprentissage": "Construire une justification avec une preuve, une limite et une condition de réexamen.",
+      "tuteur": "Demander quelle preuve ferait changer d’avis et qui pouvait effectivement arbitrer.",
+      "aide": "Structurer une recommandation et demander sa preuve. Laisser l’analyse et la décision à leurs auteurs.",
+      "sources": [
+        "nasa-cross",
+        "apm-change"
+      ],
+      "liens": [
+        "M06",
+        "M09",
+        "M13",
+        "M14"
+      ],
+      "outil": "decisions",
+      "statut": "Brouillon pédagogique · relecture indépendante requise",
+      "version": "2.0.0",
+      "pertinence": "Avant une réunion d’arbitrage, après un accord ou pour préparer la restitution au commanditaire."
+    }
+  ]
+}

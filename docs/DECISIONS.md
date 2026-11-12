@@ -118,3 +118,13 @@ antérieurs et leurs gels restent consultables. La mémoire est manuelle,
 corrigeable, séparée par périmètre. Les brouillons, confirmations et partages
 sont des actions distinctes. Les comptes et autorisations de la démo ne valent
 pas pour un pilote institutionnel. Voir [rapport](RAPPORT_PTD_INTEGRE.md).
+
+## D-040 — Bibliothèque canonique et atelier V2
+
+La mission du porteur autorise une nouvelle tranche applicative depuis la
+PR #16. L’atelier conserve des brouillons d’équipe distincts de la mémoire
+confirmée. Une revue d’extrait explicitement soumise passe par le fil
+autorisé. Le Gantt signale les incohérences fin-début et laisse l’arbitrage
+des dates à l’équipe. Le catalogue commun alimente la fiche riche et une
+projection bornée pour le coach. Les exemples et fiches restent en relecture.
+Les modes antérieurs et le candidat V0.3 sont préservés. [Guide V2](PTD_V2.md).
