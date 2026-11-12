@@ -1,13 +1,17 @@
 # Essayer le premier coach sur Mac
 
+Ce guide concerne le mode historique. Le lancement standard ouvre
+[le PTD intégré](DEMO_PTD_INTEGREE.md). Ajoutez `--coach-historique` pour
+retrouver les fils et le sélecteur de versions décrits ci-dessous.
+
 ## Essai V0.8 et comparaison V0.7 — 2026-11-10
 
 Après `make bootstrap`, conserver la clé uniquement dans `.env` ignoré,
 `CHAT_PROVIDER=mistral`, `MISTRAL_MODEL=mistral-small-latest` (configurable).
-Lancer `make run`, puis ouvrir `http://127.0.0.1:8765/coach`.
-Si ce port héberge une ancienne démo : `.venv/bin/python -m ptd_coach --port 8767`,
+Lancer `.venv/bin/python -m ptd_coach --coach-historique`, puis ouvrir `http://127.0.0.1:8765/coach`.
+Si ce port héberge une ancienne démo : `.venv/bin/python -m ptd_coach --coach-historique --port 8767`,
 puis `http://127.0.0.1:8767/coach`. Pour un essai sans coût :
-`CHAT_PROVIDER=mock .venv/bin/python -m ptd_coach --port 8767` ; les réponses sont
+`CHAT_PROVIDER=mock .venv/bin/python -m ptd_coach --coach-historique --port 8767` ; les réponses sont
 alors fixes et ne testent pas la pédagogie de Mistral.
 
 Choisir un compte fictif, une **version du coach**, l’espace privé ou collectif,
@@ -31,7 +35,7 @@ Depuis le dossier du dépôt :
 ```sh
 make bootstrap
 make verify
-make run
+.venv/bin/python -m ptd_coach --coach-historique
 ```
 
 Dans le fichier `.env` local (caché dans le Finder, exclu de Git), renseigner :
@@ -57,7 +61,7 @@ il affiche explicitement une réponse fixe de simulation.
 Ouvrir **http://127.0.0.1:8765/coach**. Si le port est occupé :
 
 ```sh
-.venv/bin/python -m ptd_coach --port 8766
+.venv/bin/python -m ptd_coach --coach-historique --port 8766
 ```
 
 Puis **http://127.0.0.1:8766/coach**. Le serveur écoute seulement sur ce Mac.

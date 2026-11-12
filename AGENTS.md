@@ -1,5 +1,21 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Application intégrée · D-039
+
+Partir de `docs/DEMO_PTD_INTEGREE.md` pour la recette et de
+`docs/RAPPORT_PTD_INTEGRE.md` pour la passation. À la racine, les quatre
+espaces couvrent le PTD du démarrage à la restitution. A2 reste une démo
+simulée sur `/historique-a2`. Les modes de comparaison conservent leurs
+bases et leurs contextes. Ne pas modifier les gels, le référentiel candidat
+V0.3 ni le jeu réservé. Tout essai utilise des données fictives.
+
+Faire appliquer les droits par le serveur, y compris dans le contexte envoyé
+au modèle. Aucun transfert automatique entre espaces, aucun accès tuteur aux
+fils et aucune confirmation par IA. Une correction nécessite une nouvelle
+confirmation et un nouveau partage. La démo locale et la préparation du
+pilote sont deux jalons distincts. Tracer résultats, revues, corrections et
+limites. Ne pas fusionner automatiquement.
+
 ## Audit global et créneau PTD · D-037 / D-038
 
 Lire `docs/AUDIT_GLOBAL_PTD_2026_11_12.md`. Le porteur précise que le PTD a un

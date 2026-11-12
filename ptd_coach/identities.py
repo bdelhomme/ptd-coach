@@ -4,7 +4,13 @@ USERS = {
     "student_demo_01": {"label": "Étudiant démo A", "role": "student", "team": "team_demo_01"},
     "student_demo_02": {"label": "Étudiant démo B", "role": "student", "team": "team_demo_01"},
     "student_demo_03": {"label": "Étudiant démo C", "role": "student", "team": "team_demo_02"},
+    "student_demo_04": {"label": "Étudiant démo D", "role": "student", "team": "team_demo_01"},
+    "student_demo_05": {"label": "Étudiant démo E", "role": "student", "team": "team_demo_01"},
+    "student_demo_06": {"label": "Étudiant démo F", "role": "student", "team": "team_demo_01"},
+    "student_demo_07": {"label": "Étudiant démo G", "role": "student", "team": "team_demo_01"},
+    "student_demo_08": {"label": "Étudiant démo H", "role": "student", "team": "team_demo_01"},
     "tutor_demo_01": {"label": "Tuteur démo", "role": "tutor", "team": "team_demo_01"},
+    "tutor_demo_02": {"label": "Tuteur démo · autre équipe", "role": "tutor", "team": "team_demo_02"},
     "coordination_demo_01": {"label": "Coordination démo", "role": "coordination", "team": None},
     "admin_demo_01": {"label": "Administration démo", "role": "admin", "team": None},
 }

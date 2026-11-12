@@ -8,14 +8,13 @@ d’équipe, la motivation et la restitution. Ils mettent en jeu les onze
 compétences candidates et servent à repérer les défauts du coach.
 [Audit global du PTD — 12 novembre 2026](docs/AUDIT_GLOBAL_PTD_2026_11_12.md).
 
-- **À la racine `/`**, le premier prototype simulé illustre A2, la compétence
-  candidate « Structurer et planifier le projet ». Ce parcours historique reste
-  disponible pour la démonstration et les tests techniques.
-- **Sur `/coach`**, le coach conversationnel accueille des questions sur
-  l’ensemble du PTD. Le lancement standard et la configuration expérimentale
-  utilisée dans l’audit ont chacun leur mode d’emploi.
-  [Lancement standard](docs/TRY_CONVERSATION_COACH.md) ·
-  [Configuration de l’audit](docs/CADRAGE_FIABILITE_V01.md).
+- **À la racine `/`**, l’application intégrée réunit le coach, la bibliothèque,
+  l’atelier de projet et le point d’étape. Suivez une équipe fictive sur six
+  jeudis et essayez les vues étudiant et tuteur. [Guide de démonstration](docs/DEMO_PTD_INTEGREE.md).
+- **Sur `/historique-a2`**, le premier prototype simulé illustre A2, la
+  compétence candidate « Structurer et planifier le projet ».
+- **Sur `/coach` avec `--coach-historique`**, l’interface historique permet
+  de comparer V0.7 et V0.8. [Modes de comparaison](docs/TRY_CONVERSATION_COACH.md).
 
 ## Essais et versions
 
@@ -57,22 +56,19 @@ et ne modifie pas le coach. Le corpus a été préparé pour une revue indépend
 
 ## Commencer ici
 
-### Essayer une vraie conversation
+### Essayer le PTD intégré
 
-Voir [le guide Mac](docs/TRY_CONVERSATION_COACH.md) : `make bootstrap`, renseigner
-`MISTRAL_API_KEY` dans `.env` ignoré, puis `make run`. Ouvrir
-**http://127.0.0.1:8765/coach** et choisir un compte étudiant fictif.
-Le modèle initial est `mistral-small-latest`, configurable avec `MISTRAL_MODEL`.
-Conserver `AI_PROVIDER=mock` pour A2 ; le dialogue indépendant utilise
-`CHAT_PROVIDER=mistral` (ou `mock` hors réseau).
+Après `make bootstrap`, lancez `CHAT_PROVIDER=mock make run` et ouvrez
+[PTD Coach](http://127.0.0.1:8765/) avec un compte étudiant fictif. Pour une
+conversation Mistral, renseignez `MISTRAL_API_KEY` dans `.env` ignoré et lancez
+`CHAT_PROVIDER=mistral make run`. Le modèle est configurable avec
+`MISTRAL_MODEL` et A2 conserve `AI_PROVIDER=mock`.
 
-La conversation peut expliquer, aider à préparer une action et examiner une
-expérience sans parcours imposé. Elle utilise R01–R03 (brouillons), affiche les
-tokens API et distingue privé et collectif par permissions backend. Les identités
-restent fictives et librement sélectionnables : aucune donnée réelle.
-Lire [le rapport de recette](docs/CONVERSATION_COACH_REPORT.md), les limites
-et [le contrat versionné](docs/CONVERSATION_API_V1.md). Les tests n'établissent
-pas une validation scientifique ou institutionnelle du coaching.
+La conversation libre s’appuie sur les méthodes expérimentales et les repères
+confirmés du périmètre du fil. Le tuteur consulte uniquement les repères
+collectifs confirmés et partagés avec son compte. Les identités sont fictives
+et librement sélectionnables. [Recette et limites](docs/RAPPORT_PTD_INTEGRE.md) ·
+[Préparation d’un pilote](docs/CHECKLIST_PILOTE_PTD.md).
 
 Les lots V0.6/V0.7 restent proposés pour relecture ; leur
 [inventaire d'intégration](docs/INTEGRATION_V06_V07.md) conserve la provenance.
@@ -103,7 +99,7 @@ make verify
 make run
 ```
 
-Ouvrir **http://127.0.0.1:8765**, puis choisir un compte fictif. Le parcours A2
+Ouvrir [la démo A2](http://127.0.0.1:8765/historique-a2), puis choisir un compte fictif. Le parcours A2
 va de l'objectif au bilan privé, avec sélection d'une preuve à partager au tuteur.
 Le serveur écoute uniquement sur ce Mac et le parcours A2 utilise le simulateur local.
 Les comptes sont librement sélectionnables pour vérifier les rôles : n'utiliser

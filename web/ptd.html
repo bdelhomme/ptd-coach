@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PTD Coach · Espace de projet</title>
+  <link rel="stylesheet" href="/ptd.css">
+  <script type="module" src="/ptd.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <button type="button" data-pane="home" class="brand" aria-label="PTD Coach, accueil"><span class="brand-mark" aria-hidden="true">PTD</span><span>PTD <strong>Coach</strong></span></button>
+      <div class="account">
+        <span id="identity" class="small muted" hidden></span>
+        <button type="button" id="sign-out" class="secondary" hidden>Changer de profil</button>
+      </div>
+    </div>
+    <nav class="wrap navigation" aria-label="Navigation principale">
+      <button type="button" data-pane="home" aria-current="page">Accueil</button>
+      <button type="button" data-pane="coach" data-student>Coach</button>
+      <button type="button" data-pane="library">Bibliothèque</button>
+      <button type="button" data-pane="project" id="project-nav">Notre projet</button>
+      <button type="button" data-pane="checkpoint" data-student>Faire le point</button>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <p id="app-error" role="alert" class="notice error" hidden></p>
+    <p id="app-status" role="status" class="sr-only"></p>
+    <section id="pane-home" class="pane" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Chimie ParisTech – PSL · Démonstration fictive</p>
+          <h1 id="home-title" tabindex="-1">Votre espace de projet PTD</h1>
+          <p>Clarifiez une difficulté avec le coach, explorez les méthodes et retrouvez les décisions de votre équipe au fil du semestre.</p>
+        </div>
+        <div class="hero-profile">
+          <form id="sign-in-form">
+            <h2>Choisir un profil fictif</h2>
+            <label for="profile">Profil de démonstration</label>
+            <select id="profile" required><option value="">Chargement des profils…</option></select>
+            <label class="check"><input type="checkbox" id="demo-consent" required> Je saisis uniquement des données fictives. En mode Mistral, les messages du coach et son contexte autorisé sont transmis à l’API.</label>
+            <button id="sign-in" type="submit">Ouvrir mon espace</button>
+          </form>
+          <div id="home-project" hidden>
+            <p id="home-week" class="eyebrow"></p>
+            <h2 id="home-project-title"></h2>
+            <p id="home-project-slot"></p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <button type="button" data-pane="coach" data-student class="feature"><strong>Parler au coach</strong><span>Une question libre sur le besoin, l’équipe ou votre prochaine décision.</span><span aria-hidden="true" class="feature-arrow">→</span></button>
+        <button type="button" data-pane="library" class="feature"><strong>Explorer la bibliothèque</strong><span>Des méthodes, des exemples et des modèles à adapter.</span><span aria-hidden="true" class="feature-arrow">→</span></button>
+        <button type="button" data-pane="project" class="feature"><strong id="project-card-title">Notre projet</strong><span id="project-card-description">Formuler le besoin, préciser le cahier des charges et confirmer les décisions.</span><span aria-hidden="true" class="feature-arrow">→</span></button>
+        <button type="button" data-pane="checkpoint" data-student class="feature"><strong>Faire le point</strong><span>Retrouver les éléments confirmés et préparer la prochaine séance.</span><span aria-hidden="true" class="feature-arrow">→</span></button>
+      </div>
+    </section>
+    <section id="pane-coach" class="pane" aria-labelledby="coach-title" hidden>
+      <div class="page-heading"><h1 id="coach-title" tabindex="-1">Parler au coach</h1><p>Posez votre question librement. Les décisions restent à l’équipe.</p></div>
+      <div class="workspace-grid">
+        <aside class="card thread-sidebar">
+          <h2>Conversations</h2>
+          <label for="thread-scope">Espace du nouveau fil</label>
+          <select id="thread-scope"><option value="individual">Privé</option><option value="collective">Équipe</option></select>
+          <p class="small muted" id="scope-description"></p>
+          <button type="button" id="new-thread">Nouveau fil</button>
+          <div id="thread-list" class="thread-list"></div>
+        </aside>
+        <div class="card conversation">
+          <div class="row"><div><span class="tag" id="thread-visibility">Aucun fil ouvert</span><p class="small muted" id="provider"></p></div><button type="button" id="refresh-thread" class="secondary">Actualiser</button></div>
+          <div id="chat-log" role="log" aria-label="Messages du fil" aria-live="polite"></div>
+          <div id="chat-examples" class="flow">
+            <p class="small muted">Quelques idées pour commencer</p>
+            <div class="actions">
+              <button type="button" class="secondary" data-example="Le besoin du commanditaire reste flou. Comment le reformuler pour lui demander de confirmer ?">Clarifier le besoin</button>
+              <button type="button" class="secondary" data-example="Nous hésitons entre deux propositions et l’équipe se démobilise. Comment préparer notre jeudi ?">Mobiliser l’équipe</button>
+              <button type="button" class="secondary" data-example="Comment vérifier une exigence et présenter le résultat au commanditaire ?">Vérifier une exigence</button>
+            </div>
+          </div>
+          <p id="chat-waiting" class="small muted" role="status" hidden>Le coach prépare une réponse…</p>
+          <form id="chat-form">
+            <label for="chat-message">Votre message</label>
+            <textarea id="chat-message" rows="3" maxlength="4000" required placeholder="Décrivez la situation et ce que vous voulez éclaircir."></textarea>
+            <div class="row"><p class="small muted" id="chat-usage"></p><button id="send-message" type="submit">Envoyer au coach</button></div>
+          </form>
+          <p class="small muted">Sur ce Mac, seuls les comptes fictifs autorisés accèdent au fil. En mode Mistral, le message, l’historique du fil et les éléments de contexte autorisés sont envoyés à l’API.</p>
+        </div>
+      </div>
+    </section>
+    <section id="pane-library" class="pane" aria-labelledby="library-title" hidden>
+      <div class="page-heading"><h1 id="library-title" tabindex="-1">Bibliothèque</h1><p>Consultez les méthodes, leurs exemples et leurs sources sans appel au coach.</p></div>
+      <div id="library-search" class="card">
+        <label for="method-search">Rechercher une méthode ou une difficulté</label>
+        <input type="search" id="method-search" placeholder="Ex. cahier des charges, retard, entretien…">
+        <div class="field-grid">
+          <div><label for="method-category">Situation</label><select id="method-category"><option value="">Toutes les situations</option></select></div>
+          <div><label for="method-competence">Compétence candidate</label><select id="method-competence"><option value="">Toutes les compétences</option></select></div>
+        </div>
+        <p id="method-count" class="small muted" role="status"></p>
+      </div>
+      <div id="method-list" class="method-grid"></div>
+      <article id="method-detail" class="card method-detail" tabindex="-1" hidden></article>
+    </section>
+    <section id="pane-project" class="pane" aria-labelledby="project-title" hidden>
+      <div class="page-heading"><div class="row"><h1 id="project-title" tabindex="-1">Notre projet</h1><button type="button" id="refresh-project" class="secondary">Actualiser le projet</button></div><p id="project-intro"></p></div>
+      <div id="project-summary" class="card project-summary"></div>
+      <div id="project-controls" class="row section-bar">
+        <div><label for="project-filter">Éléments à afficher</label><select id="project-filter"><option value="collective">Équipe</option><option value="individual">Mes notes privées</option></select></div>
+        <button type="button" id="add-item">Ajouter un élément</button>
+      </div>
+      <div id="project-editor-slot">
+      <form id="project-form" class="card editor" hidden>
+        <h2 id="editor-title" tabindex="-1">Ajouter un élément</h2>
+        <div class="field-grid">
+          <div><label for="item-scope">Espace</label><select id="item-scope"><option value="collective">Équipe</option><option value="individual">Privé</option></select></div>
+          <div><label for="item-kind">Nature de l’élément</label><select id="item-kind"></select></div>
+          <div><label for="item-origin">Origine de la formulation</label><select id="item-origin"><option value="human">Étudiant ou équipe</option><option value="ai">Proposition du coach</option></select></div>
+        </div>
+        <label for="item-text">Texte</label>
+        <textarea id="item-text" rows="3" maxlength="2000" required></textarea>
+        <label for="item-source">Source</label>
+        <input type="text" id="item-source" maxlength="300" required placeholder="Ex. entretien fictif, séance 2">
+        <p id="editor-help" class="small muted">L’élément est enregistré comme brouillon. La confirmation et le partage sont des actions distinctes.</p>
+        <div class="actions"><button id="save-item" type="submit">Enregistrer le brouillon</button><button id="cancel-item" type="button" class="secondary">Annuler</button></div>
+      </form>
+      </div>
+      <div id="project-items" class="item-list"></div>
+    </section>
+    <section id="pane-checkpoint" class="pane" aria-labelledby="checkpoint-title" hidden>
+      <div class="page-heading"><div class="row"><h1 id="checkpoint-title" tabindex="-1">Faire le point</h1><button type="button" id="refresh-checkpoint" class="secondary">Actualiser le projet</button></div><p>Reprenez les éléments confirmés, notez un obstacle ou convenez d’une action pour la prochaine séance.</p></div>
+      <div class="card">
+        <div class="row"><h2 id="checkpoint-week"></h2><button type="button" id="next-week" class="secondary">Simuler le jeudi suivant</button></div>
+        <p id="checkpoint-description" class="muted"></p>
+        <div class="actions">
+          <button type="button" class="secondary" data-new-kind="review">Préparer un bilan</button>
+          <button type="button" class="secondary" data-new-kind="obstacle">Noter un obstacle</button>
+          <button type="button" class="secondary" data-new-kind="action">Proposer une action</button>
+        </div>
+      </div>
+      <div id="checkpoint-editor-slot"></div>
+      <div id="checkpoint-items" class="checkpoint-grid"></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>Prototype local · Données fictives uniquement</span><a href="/historique-a2">Démo historique A2</a></footer>
+</body>
+</html>

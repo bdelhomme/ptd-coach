@@ -106,3 +106,15 @@ temps chaque jeudi matin, obligatoire en théorie. Il ne s'agit pas d'une
 attestation de présence effective ni d'une obligation entre séances. Le coach
 ne reçoit pas encore automatiquement cette information ; l'intégration au
 contexte de projet et ses modalités sont à concevoir et éprouver.
+
+## D-039 — Application intégrée de démonstration
+
+La mission du porteur autorise une première tranche transversale sur la PR #15.
+Le parcours principal relie coach, bibliothèque, atelier et point d’étape.
+Les six jeudis du projet fictif donnent un cadre d’essai à D-038. Le contexte
+`conversation-v08-ptd-integrated-experimental-0.1` réutilise le cadrage de
+fiabilité et ajoute les repères confirmés autorisés par le backend. Les modes
+antérieurs et leurs gels restent consultables. La mémoire est manuelle,
+corrigeable, séparée par périmètre. Les brouillons, confirmations et partages
+sont des actions distinctes. Les comptes et autorisations de la démo ne valent
+pas pour un pilote institutionnel. Voir [rapport](RAPPORT_PTD_INTEGRE.md).
