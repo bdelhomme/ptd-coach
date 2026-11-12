@@ -2,6 +2,15 @@
 
 ## Chantier en cours · ensemble du PTD
 
+La branche `feat/ptd-integrated` part de la PR #15 au commit `5d18364`.
+Le lancement standard ouvre le coach, la bibliothèque, l’atelier et le point
+d’étape. L’équipe fictive confirme ses repères, simule le jeudi suivant et
+choisit ce qu’elle partage au tuteur. A2 reste disponible sur `/historique-a2`.
+[Démo](DEMO_PTD_INTEGREE.md) · [Rapport de passation](RAPPORT_PTD_INTEGRE.md) ·
+[Checklist pilote](CHECKLIST_PILOTE_PTD.md).
+
+## Historique · audit du 12 novembre
+
 L’audit du 12 novembre examine le coach conversationnel sur l’ensemble du
 semestre. Le prototype A2 désigne le premier parcours simulé de planification,
 accessible à la racine du serveur local. Le coach conversationnel se trouve sur

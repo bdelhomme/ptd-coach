@@ -255,3 +255,12 @@ A2 désigne la compétence candidate « Structurer et planifier le projet » et 
 premier prototype simulé qui l’illustre. La page d’accueil du dépôt et les
 documents de reprise identifient ce prototype historique et le chantier sur
 l’ensemble du PTD.
+
+## R-020 — Du coach isolé à un parcours d’équipe
+
+Le porteur demande de réunir les composants et d’éprouver le trajet complet
+sur plusieurs jeudis. Une ressource s’ouvre depuis un tour et le fil reste
+accessible. L’équipe décide des repères à confirmer, le tuteur prépare son
+échange à partir des éléments partagés. La revue indépendante a fait revoir
+le découpage des extraits et la traçabilité du partage. Le rapport consigne
+les corrections, preuves de recette et limites pédagogiques. [Rapport](RAPPORT_PTD_INTEGRE.md).

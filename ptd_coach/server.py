@@ -16,25 +16,32 @@ from .service import CASES, DomainError, exact_fields, require
 
 WEB = Path(__file__).resolve().parents[1] / "web"
 ASSETS = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"),
+          "/historique-a2": ("index.html", "text/html"),
           "/style.css": ("style.css", "text/css"),
           "/coach": ("coach.html", "text/html"), "/coach.js": ("coach.js", "text/javascript"),
           "/coach.css": ("coach.css", "text/css"),
           "/bibliotheque": ("library.html", "text/html"), "/library.js": ("library.js", "text/javascript"),
           "/library.css": ("library.css", "text/css")}
+PROJECT_ASSETS = {"/": ("ptd.html", "text/html"), "/coach": ("ptd.html", "text/html"),
+                  "/ptd.js": ("ptd.js", "text/javascript"), "/ptd.css": ("ptd.css", "text/css")}
 COOKIE = "ptd_demo"
 
 
 class DemoServer(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, address, service, chat=None):
+    def __init__(self, address, service, chat=None, project=None):
         if address[0] != "127.0.0.1":
             raise ValueError("The fictitious demo must bind to 127.0.0.1")
         self.service = service
         self.chat = chat
+        self.project = project
         self.sessions = {}
         self.session_lock = threading.Lock()
         super().__init__(address, Handler)
+        # Browser cookies ignore ports. Keep the integrated demo and comparison
+        # sessions independent when the user opens several local instances.
+        self.cookie_name = f"{COOKIE}_{self.server_port}" if project is not None else COOKIE
 
     def new_session(self, user_id, old_token):
         token, csrf = secrets.token_urlsafe(32), secrets.token_urlsafe(32)
@@ -73,7 +80,8 @@ class Handler(BaseHTTPRequestHandler):
     def cookie_token(self):
         try:
             cookie = SimpleCookie(self.headers.get("Cookie", ""))
-            return cookie[COOKIE].value if COOKIE in cookie else None
+            session = cookie.get(self.server.cookie_name)
+            return session.value if session else None
         except CookieError:
             return None
 
@@ -106,6 +114,25 @@ class Handler(BaseHTTPRequestHandler):
     def do_DELETE(self):
         self.dispatch("DELETE")
 
+    def project_request(self, method, path, actor):
+        project = self.server.project
+        require(project is not None, 404, "not_found", "Atelier de projet indisponible.")
+        if path == "/api/project":
+            if method == "GET":
+                return self.reply(200, project.snapshot(actor))
+            if method == "POST":
+                return self.reply(201, project.create(actor, self.body(), self.headers.get("Idempotency-Key")))
+        if method == "POST":
+            if path == "/api/project/next-week":
+                return self.reply(200, project.next_week(actor, self.body()))
+            parts = path.split("/")
+            if len(parts) == 6 and parts[:4] == ["", "api", "project", "items"]:
+                actions = {"update": project.update, "delete": project.delete, "confirm": project.confirm,
+                           "share": project.share, "revoke": project.revoke}
+                if parts[5] in actions:
+                    return self.reply(200, actions[parts[5]](actor, parts[4], self.body()))
+        raise DomainError(404, "not_found", "Page introuvable.")
+
     def dispatch(self, method):
         try:
             port = self.server.server_address[1]
@@ -114,6 +141,9 @@ class Handler(BaseHTTPRequestHandler):
             parsed = urlsplit(self.path)
             require(not parsed.scheme and not parsed.netloc and not parsed.query)
             path = parsed.path
+            if method == "GET" and self.server.project is not None and path in PROJECT_ASSETS:
+                name, mime = PROJECT_ASSETS[path]
+                return self.reply(200, (WEB / name).read_bytes(), mime)
             if method == "GET" and path in ASSETS:
                 name, mime = ASSETS[path]
                 return self.reply(200, (WEB / name).read_bytes(), mime)
@@ -134,20 +164,24 @@ class Handler(BaseHTTPRequestHandler):
                 require(type(uid) is str and uid in USERS)
                 token, csrf = self.server.new_session(uid, self.cookie_token())
                 return self.reply(200, {"user": public_user(uid), "csrf": csrf},
-                                  cookie=COOKIE + "=" + token + "; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800")
+                                  cookie=self.server.cookie_name + "=" + token + "; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800")
             session = self.session()
             actor = session["user_id"]
-            if method != "GET":
-                require(hmac.compare_digest(self.headers.get("X-CSRF-Token", ""), session["csrf"]),
+            csrf = self.headers.get("X-CSRF-Token")
+            if method != "GET" or csrf is not None:
+                require(csrf is not None and csrf.isascii() and hmac.compare_digest(csrf, session["csrf"]),
                         403, "csrf_forbidden", "Session à recharger avant cette action.")
             if method == "GET" and path == "/api/me":
                 return self.reply(200, {"user": public_user(actor), "csrf": session["csrf"]})
             if method == "DELETE" and path == "/api/demo-session":
                 with self.server.session_lock:
                     self.server.sessions.pop(self.cookie_token(), None)
-                return self.reply(200, {"logged_out": True}, cookie=COOKIE + "=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0")
+                return self.reply(200, {"logged_out": True},
+                                  cookie=self.server.cookie_name + "=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0")
             service = self.server.service
             key = self.headers.get("Idempotency-Key")
+            if path == "/api/project" or path.startswith("/api/project/"):
+                return self.project_request(method, path, actor)
             if path.startswith("/api/coach/"):
                 chat = self.server.chat
                 require(chat is not None, 503, "chat_unavailable", "Le coach conversationnel n'est pas activé sur ce serveur.")
