@@ -88,3 +88,21 @@ Le porteur autorise un prototype local à partir de #9 : dix fiches sourcées br
 ## D-036 — Variante expérimentale de fidélité aux faits
 
 À la demande du porteur, tester séparément un cadrage qui explicite les statuts de faits et d’accords, sans remplacer les contextes précédents ni le référentiel. Gel avant essai ; résultats de développement uniquement, amélioration générale non établie et jeu réservé inchangé. L’interface de test utilise une base distincte et ne supprime le plafond demandé que sur option explicite. Voir `docs/CADRAGE_FIABILITE_V01.md`.
+
+
+## D-037 — Audit du cycle PTD et propositions de développement
+
+À la demande du porteur, auditer compétences, cycle de projet, motivation,
+confidentialité et prototype avant une phase de développement approfondie.
+Les 58 réponses fictives de développement ont des grilles vierges ; elles
+révèlent des erreurs et ne valident ni les compétences ni le coach. Préserver
+les prompts et les données gelées, le jeu réservé, le référentiel candidat et
+les espaces privés. Voir `docs/AUDIT_GLOBAL_PTD_2026_11_12.md`.
+
+## D-038 — Créneau du jeudi matin
+
+Le porteur précise le 12 novembre 2026 : le PTD a un créneau dans l'emploi du
+temps chaque jeudi matin, obligatoire en théorie. Il ne s'agit pas d'une
+attestation de présence effective ni d'une obligation entre séances. Le coach
+ne reçoit pas encore automatiquement cette information ; l'intégration au
+contexte de projet et ses modalités sont à concevoir et éprouver.

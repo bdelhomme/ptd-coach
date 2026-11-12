@@ -1,5 +1,16 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Audit global et créneau PTD · D-037 / D-038
+
+Lire `docs/AUDIT_GLOBAL_PTD_2026_11_12.md`. Le porteur précise que le PTD a un
+créneau prévu chaque jeudi matin, obligatoire en théorie ; ne pas en déduire la
+présence effective ni une obligation entre les jeudis. 58 réponses fictives
+couvrent des situations associées aux onze compétences candidates, avec des
+incidents conceptuels, factuels et relationnels ; aucune validation pédagogique.
+Les scénarios d'audit sont de développement, les grilles humaines restent vierges.
+Ne pas modifier les corpus, contextes gelés ou le jeu réservé. La suite est une
+phase de développement à partir des priorités et tests de régression du rapport.
+
 ## Cadrage de fiabilité v0.1 · D-036
 
 Lire `docs/CADRAGE_FIABILITE_V01.md` et les traces associées. La variante est

@@ -49,3 +49,15 @@ La grille humaine V0.7 et la relecture des ressources restent à effectuer.
 
 Le lot de comparaison est descriptif et sa grille vierge ; aucun seuil ni verdict
 humain n’est déduit des tests. Voir [le bilan](V08_IMPLEMENTATION.md).
+
+
+## Questions issues de l'audit global — 12 novembre 2026
+
+- Comment intégrer le créneau prévu chaque jeudi matin, obligatoire en théorie,
+  sans inventer les présences ou engagements entre séances ?
+- Quelles interventions courtes aident à traiter la démotivation et la charge
+  sans diagnostic, divulgation intime forcée ou attribution de faute ?
+- Comment vérifier ensemble les statuts « proposé », « testé », « décidé »,
+  « validé » et la provenance des exigences, sans confier la sécurité au prompt ?
+- Qui relit les constats et les ressources, et comment organiser une nouvelle
+  évaluation pédagogique indépendante et des tâches de transfert sans IA ?

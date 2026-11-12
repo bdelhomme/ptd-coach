@@ -1,5 +1,13 @@
 # Spécification produit — PTD Coach v0.2
 
+## Précision sur le créneau PTD — D-038, 12 novembre 2026
+
+Le porteur indique que le PTD dispose d'un créneau prévu **chaque jeudi matin**
+dans l'emploi du temps, **obligatoire en théorie**. Cette précision ne confirme
+ni les présences effectives ni une obligation de travailler hors de ce créneau.
+Le coach expérimental ne reçoit pas encore automatiquement cette information ;
+son intégration au contexte de projet est à concevoir et à éprouver.
+
 ## Évolution expérimentale V0.8 — D-029
 
 Le porteur autorise désormais un contexte pédagogique adaptatif séparé, avec

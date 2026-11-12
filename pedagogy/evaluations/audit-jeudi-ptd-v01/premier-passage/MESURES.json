@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-11-12T09:49:19.358322+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "candidate_freeze_sha256": "f10c2b036cb85a6038bbb7186ab7d61952f17f9d62f9e9431ba4e30deefc83bf",
+  "scenario_freeze_sha256": "8955cf8402bdb58ab5ec83714c91354cde3f2cfd2ee58f5ec1f7bbdecee952cc",
+  "selected_cases": [
+    "PJ01",
+    "PJ02",
+    "PJ03"
+  ],
+  "planned_calls": 6,
+  "attempted_calls": 6,
+  "completed_calls": 6,
+  "stopped_on_error": false,
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": "omitted",
+    "reasoning_effort": "medium",
+    "timeout_seconds": 90
+  },
+  "summary": {
+    "fiabilite": {
+      "responses": 6,
+      "records": 6,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 12220,
+        "completion_tokens": 4759,
+        "total_tokens": 16979
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 11912.0,
+      "characters": 3620,
+      "question_marks_not_solicitations": 8,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Scénarios fictifs de développement écrits après le cadrage ; pas de validation indépendante.",
+    "Une réponse ne prouve ni une compétence ni un transfert ; pas de notation étudiante.",
+    "Raisonnement non conservé ; limites du fournisseur, de taille de réponse et du délai réseau.",
+    "Arrêt au premier échec sans retry automatique ; facturation de l’appel en échec inconnue."
+  ]
+}

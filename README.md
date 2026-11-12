@@ -1,5 +1,7 @@
 # PTD Coach — dossier source et futur dépôt applicatif
 
+> [Audit global du PTD — 12 novembre 2026](docs/AUDIT_GLOBAL_PTD_2026_11_12.md) : compétences, étapes, motivation, jeudi matin, protections et propositions de développement.
+
 > [Cadrage de fiabilité expérimental](docs/CADRAGE_FIABILITE_V01.md) : essais comparatifs et limites, sans validation pédagogique.
 
 > Expérimentation [Mistral Large 4](docs/MISTRAL_LARGE4.md) : cause de l’échec, lancement local, comparaison et limites pédagogiques.

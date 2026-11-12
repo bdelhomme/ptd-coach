@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "2026-11-12T09:47:54.249939+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "candidate_freeze_sha256": "f10c2b036cb85a6038bbb7186ab7d61952f17f9d62f9e9431ba4e30deefc83bf",
+  "scenario_freeze_sha256": "e6857ec444648599df79c4f308e1983b794d6888c73b07aa9edc8c4647e1b98d",
+  "selected_cases": [
+    "PV01",
+    "PV02",
+    "PV03",
+    "PV04",
+    "PV05",
+    "PV06",
+    "PV07",
+    "PV08",
+    "PV09",
+    "PV10",
+    "PV11",
+    "PV12",
+    "PV13",
+    "PV14"
+  ],
+  "planned_calls": 28,
+  "attempted_calls": 28,
+  "completed_calls": 28,
+  "stopped_on_error": false,
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": "omitted",
+    "reasoning_effort": "medium",
+    "timeout_seconds": 90
+  },
+  "summary": {
+    "fiabilite": {
+      "responses": 28,
+      "records": 28,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 57632,
+        "completion_tokens": 18605,
+        "total_tokens": 76237
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 11594.0,
+      "characters": 19110,
+      "question_marks_not_solicitations": 21,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Scénarios fictifs de développement écrits après le cadrage ; pas de validation indépendante.",
+    "Une réponse ne prouve ni une compétence ni un transfert ; pas de notation étudiante.",
+    "Raisonnement non conservé ; limites du fournisseur, de taille de réponse et du délai réseau.",
+    "Arrêt au premier échec sans retry automatique ; facturation de l’appel en échec inconnue."
+  ]
+}

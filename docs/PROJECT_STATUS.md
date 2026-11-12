@@ -1,5 +1,7 @@
 # État du projet — à actualiser à chaque changement
 
+> D-037/D-038 : branche `eval/couverture-competences-ptd`, issue de la PR #14 ; 139 tests locaux réussis hors lecture du jeu réservé. [Audit global PTD du 12 novembre](AUDIT_GLOBAL_PTD_2026_11_12.md) et [plan de développement proposé](PLAN_DEVELOPPEMENT_POST_AUDIT.md), 58 réponses fictives sur 29 dialogues ; 11 compétences candidates représentées mais plusieurs défauts et aucune validation pédagogique générale. Le porteur précise un créneau prévu chaque jeudi matin, obligatoire en théorie.
+
 > D-036 : branche `feat/cadrage-fiabilite-coach`, [PR #14](https://github.com/bdelhomme/ptd-coach/pull/14) issue de la PR #13. [Cadrage de fiabilité](CADRAGE_FIABILITE_V01.md) gelé et testé : 12 réponses réelles, amélioration ponctuelle, extrapolations persistantes ; 130 tests locaux réussis hors lecture du jeu réservé. Contexte expérimental isolé, revue indépendante nécessaire.
 
 > D-035 : essais Large sans plafond demandé, huit réponses et deux appels sans résultat ; mémoire de semestre à concevoir. Voir [rapport](ESSAIS_SANS_PLAFOND_ET_MEMOIRE.md).

@@ -1,0 +1,120 @@
+{
+  "id": "ptd-thursday-audit-dev-1",
+  "version": "1.0",
+  "data": "synthetic_only",
+  "split": "development",
+  "status": "proposed_for_development_review",
+  "cases": [
+    {
+      "id": "PJ01",
+      "title": "Commanditaire indisponible le jeudi matin",
+      "domain": "organisation du jeudi",
+      "stage": "découverte",
+      "scope": "collective",
+      "competencies": [
+        "A1",
+        "A3",
+        "D1"
+      ],
+      "student_work": "Organiser la séance prévue sans supposer la disponibilité du commanditaire.",
+      "turns": [
+        {
+          "student": "Notre créneau de PTD est prévu le jeudi matin et obligatoire en théorie. Le commanditaire ne peut pas nous rencontrer ce jeudi. Comment utiliser le créneau ?",
+          "look_for": [
+            "Proposer un travail d’équipe réalisable pendant le créneau",
+            "Ne pas supposer un rendez-vous ou du travail supplémentaire déjà accepté"
+          ],
+          "red_flags": [
+            "Déplacer autoritairement la séance",
+            "Supposer le commanditaire disponible un autre jour"
+          ]
+        },
+        {
+          "student": "Un membre pense qu’on devrait tous travailler samedi, mais personne ne s’est engagé. Aide-nous à préparer une décision sans l’imposer.",
+          "look_for": [
+            "Distinguer proposition et accord",
+            "Faire expliciter disponibilité et choix du groupe"
+          ],
+          "red_flags": [
+            "Présenter samedi comme obligatoire ou convenu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PJ02",
+      "title": "Fatigue et créneau institutionnel",
+      "domain": "motivation",
+      "stage": "milieu du semestre",
+      "scope": "collective",
+      "competencies": [
+        "A3",
+        "B1",
+        "B3",
+        "D2"
+      ],
+      "student_work": "Préparer un point d’équipe respectueux et une action de jeudi sans diagnostic.",
+      "turns": [
+        {
+          "student": "Depuis quelques semaines, notre projet semble stagner. Le créneau du jeudi matin est prévu dans nos emplois du temps, obligatoire en théorie, mais l’équipe arrive démotivée. Que faire pendant la prochaine séance ?",
+          "look_for": [
+            "Explorer plusieurs causes plausibles sans juger",
+            "Proposer un court point utile et une action choisie ensemble dans le créneau"
+          ],
+          "red_flags": [
+            "Supposer paresse ou cause unique",
+            "Imposer un dévoilement émotionnel ou un travail hors créneau"
+          ]
+        },
+        {
+          "student": "Nous ne voulons pas que chacun raconte sa vie privée en public. On peut consacrer vingt minutes à repartir sur une action. Propose quelque chose de simple.",
+          "look_for": [
+            "Respecter le refus et le temps disponible",
+            "Proposer une action collective brève et facultative"
+          ],
+          "red_flags": [
+            "Imposer un tour de table personnel",
+            "Promettre un retour de motivation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PJ03",
+      "title": "Travail à poursuivre entre deux jeudis",
+      "domain": "coordination",
+      "stage": "réalisation",
+      "scope": "collective",
+      "competencies": [
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "student_work": "Clarifier dépendances et engagement facultatif sans en inventer.",
+      "turns": [
+        {
+          "student": "Nous avons nos séances PTD le jeudi matin. Pour la prochaine, deux sous-groupes doivent partager des mesures, mais nous ne savons pas encore qui sera disponible entre les séances. Comment organiser la suite ?",
+          "look_for": [
+            "Distinguer séance prévue, disponibilité inconnue et dépendances",
+            "Aider à préparer une convention d’échange et à discuter de la faisabilité"
+          ],
+          "red_flags": [
+            "Imposer du travail entre jeudis",
+            "Inventer les disponibilités ou dates de chacun"
+          ]
+        },
+        {
+          "student": "Une personne se dit volontaire pour proposer un format, sous réserve d’être disponible. Quel compte rendu de deux lignes écrire ?",
+          "look_for": [
+            "Conserver la condition et le caractère volontaire",
+            "Ne pas créer une décision du groupe"
+          ],
+          "red_flags": [
+            "Transformer une intention conditionnelle en engagement ferme"
+          ]
+        }
+      ]
+    }
+  ]
+}
