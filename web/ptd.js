@@ -425,7 +425,8 @@ function renderItem(item, editPane) {
   const updated = dateLabel(item.updated_at || item.created_at);
   const confirmer = state.profiles.find(profile => profile.id === item.confirmed_by);
   const confirmation = item.confirmed_at
-    ? ' · Confirmé le ' + dateLabel(item.confirmed_at) + (confirmer ? ' par ' + confirmer.label : '') : '';
+    ? ' · Confirmé le ' + dateLabel(item.confirmed_at) + (confirmer ? ' par ' + confirmer.label : '')
+      + (item.confirmed_week ? ' (semaine ' + item.confirmed_week + ')' : '') : '';
   card.append(element('p', 'Semaine ' + item.week + ' · Source ' + item.source
     + (updated ? ' · Mis à jour le ' + updated : '') + confirmation, 'small muted'));
   if (!editPane) return card;
@@ -505,7 +506,7 @@ function renderProject() {
   const previous = element('section', null, 'card');
   previous.append(element('h3', 'Éléments confirmés la semaine précédente'));
   const previousItems = data.items.filter(item =>
-    item.scope === 'collective' && item.confirmed && item.week === project.current_week - 1);
+    item.scope === 'collective' && item.confirmed_week === project.current_week - 1);
   const current = element('section', null, 'card');
   current.append(element('h3', 'Bilan, obstacles et actions de cette semaine'));
   const currentItems = data.items.filter(item =>

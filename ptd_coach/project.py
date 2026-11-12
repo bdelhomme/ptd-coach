@@ -61,7 +61,7 @@ PROJECTS = {
 }
 PUBLIC_ITEM_FIELDS = (
     "id", "scope", "kind", "text", "source", "origin", "week", "confirmed_at",
-    "confirmed_by", "version", "created_at", "updated_at",
+    "confirmed_by", "confirmed_week", "version", "created_at", "updated_at",
 )
 
 
@@ -82,10 +82,15 @@ class ProjectService:
             os.close(descriptor)
         with self.connect() as db:
             version = db.execute("PRAGMA user_version").fetchone()[0]
-            if version in (0, 1):
+            if version in (0, 1, 2):
                 schema = Path(__file__).with_name("project_schema.sql").read_text(encoding="utf-8")
-                db.executescript("BEGIN IMMEDIATE;\n" + schema + "\nCOMMIT;")
-            elif version != 2:
+                db.executescript("BEGIN IMMEDIATE;\n" + schema)
+                columns = {row["name"] for row in db.execute("PRAGMA table_info(project_items)")}
+                if "confirmed_week" not in columns:
+                    db.execute("ALTER TABLE project_items ADD COLUMN confirmed_week INTEGER "
+                               "CHECK (confirmed_week BETWEEN 1 AND 6)")
+                db.execute("PRAGMA user_version = 3")
+            elif version != 3:
                 raise RuntimeError("Unsupported semester project database version")
             db.executemany("INSERT OR IGNORE INTO semester_projects(team_id) VALUES (?)",
                            ((team,) for team in PROJECTS))
@@ -259,11 +264,14 @@ class ProjectService:
             if action == "update":
                 if row["shared_to"] is not None:
                     self.audit_share(db, row, actor, row["shared_to"], "revoke_on_edit", timestamp)
-                assignment = "kind = ?, text = ?, source = ?, confirmed_at = NULL, confirmed_by = NULL, shared_to = NULL"
+                assignment = ("kind = ?, text = ?, source = ?, confirmed_at = NULL, confirmed_by = NULL, "
+                              "confirmed_week = NULL, shared_to = NULL")
                 values = fields
             elif action == "confirm":
                 require(row["confirmed_at"] is None, 409, "already_confirmed", "Ce repère est déjà confirmé.")
-                assignment, values = "confirmed_at = ?, confirmed_by = ?", (timestamp, actor)
+                week = self.project(db, team, include_situation=False)["current_week"]
+                assignment = "confirmed_at = ?, confirmed_by = ?, confirmed_week = ?"
+                values = timestamp, actor, week
             elif action == "share":
                 require(row["scope"] == "collective" and row["confirmed_at"] is not None,
                         409, "not_shareable", "Seuls les repères collectifs confirmés sont partageables.")
@@ -305,7 +313,7 @@ class ProjectService:
             db.execute("BEGIN")
             project = self.project(db, user["team"], include_situation=False)
             rows = db.execute(
-                "SELECT kind, text, source, origin, week, confirmed_at FROM project_items "
+                "SELECT kind, text, source, origin, week, confirmed_at, confirmed_week FROM project_items "
                 "WHERE team_id = ? AND scope = ? AND (? = 'collective' OR owner_id = ?) "
                 "AND confirmed_at IS NOT NULL ORDER BY confirmed_at DESC, id LIMIT 5",
                 (user["team"], scope, scope, actor),

@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS project_items (
     week INTEGER NOT NULL CHECK (week BETWEEN 1 AND 6),
     confirmed_at TEXT,
     confirmed_by TEXT,
+    confirmed_week INTEGER CHECK (confirmed_week BETWEEN 1 AND 6),
     shared_to TEXT,
     version INTEGER NOT NULL DEFAULT 1 CHECK (version > 0),
     created_at TEXT NOT NULL,
@@ -48,5 +49,3 @@ CREATE TABLE IF NOT EXISTS project_share_audit (
     action TEXT NOT NULL CHECK (action IN ('share', 'revoke', 'revoke_on_edit', 'revoke_on_delete')),
     occurred_at TEXT NOT NULL
 );
-
-PRAGMA user_version = 2;

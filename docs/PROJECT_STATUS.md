@@ -2,7 +2,8 @@
 
 ## Chantier en cours · ensemble du PTD
 
-La branche `feat/ptd-integrated` part de la PR #15 au commit `5d18364`.
+La [PR #16](https://github.com/bdelhomme/ptd-coach/pull/16), branche
+`feat/ptd-integrated`, part de la PR #15 au commit `5d18364`.
 Le lancement standard ouvre le coach, la bibliothèque, l’atelier et le point
 d’étape. L’équipe fictive confirme ses repères, simule le jeudi suivant et
 choisit ce qu’elle partage au tuteur. A2 reste disponible sur `/historique-a2`.

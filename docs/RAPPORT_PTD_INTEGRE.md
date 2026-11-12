@@ -1,6 +1,7 @@
 # Première tranche de PTD Coach intégré
 
-Branche `feat/ptd-integrated`, issue de la [PR #15](https://github.com/bdelhomme/ptd-coach/pull/15)
+Branche `feat/ptd-integrated` ([PR #16](https://github.com/bdelhomme/ptd-coach/pull/16)),
+issue de la [PR #15](https://github.com/bdelhomme/ptd-coach/pull/15)
 au commit `5d18364966074f8915d98762f69f88ca8c816e2b`. Le [guide de recette](DEMO_PTD_INTEGREE.md)
 permet de reprendre le scénario. Les conditions du pilote figurent dans une
 [checklist séparée](CHECKLIST_PILOTE_PTD.md).
@@ -19,8 +20,11 @@ identifie le compte depuis la session, applique le CSRF et vérifie aussi un
 jeton présenté sur un GET. Les instances locales intégrées utilisent des
 cookies nommés par port pour les comparaisons sur le même navigateur. La
 création de brouillon réutilise sa clé d’idempotence lors d’une reprise après
-résultat incertain. Les écritures utilisent une version attendue. Les deux
-bases de la démonstration sont distinctes du coach historique et d’A2.
+résultat incertain. Les écritures utilisent une version attendue. La semaine
+de confirmation est distincte de la semaine de création. Les repères confirmés
+avant l’ajout de ce champ gardent leur date, avec une semaine de confirmation
+inconnue. Les deux bases de la démonstration sont distinctes du coach historique
+et d’A2.
 
 `ptd_coach/chat_integrated.py` ajoute le contexte versionné
 `conversation-v08-ptd-integrated-experimental-0.1` au cadrage de fiabilité.
