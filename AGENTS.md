@@ -1,5 +1,16 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Atelier et bibliothèque V2 · D-040
+
+Lire `docs/PTD_V2.md` avant d’étendre l’atelier. Le catalogue V2 a une
+source canonique, deux représentations et des fiches en brouillon. Les
+outils sont des brouillons d’équipe avec versions, hors du contexte du coach.
+La revue d’extrait exige une affirmation fictive explicite et les droits du
+fil. Le contexte dédié a montré un gain de fidélité sur deux cas, avec une
+formulation encore discutable. Voir `pedagogy/evaluations/ptd-v2-demo/`.
+Préserver le candidat V0.3, les gels et les modes historiques. Ne pas lire le
+jeu réservé pour développer. Pas de données réelles ni de fusion automatique.
+
 ## Application intégrée · D-039
 
 Partir de `docs/DEMO_PTD_INTEGREE.md` pour la recette et de

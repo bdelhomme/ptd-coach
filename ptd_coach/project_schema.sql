@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS semester_projects (
     team_id TEXT PRIMARY KEY,
-    current_week INTEGER NOT NULL DEFAULT 1 CHECK (current_week BETWEEN 1 AND 6),
+    current_week INTEGER NOT NULL DEFAULT 1 CHECK (current_week BETWEEN 1 AND 52),
     version INTEGER NOT NULL DEFAULT 1 CHECK (version > 0)
 );
 
@@ -16,10 +16,10 @@ CREATE TABLE IF NOT EXISTS project_items (
     text TEXT NOT NULL,
     source TEXT NOT NULL,
     origin TEXT NOT NULL CHECK (origin IN ('human', 'ai')),
-    week INTEGER NOT NULL CHECK (week BETWEEN 1 AND 6),
+    week INTEGER NOT NULL CHECK (week BETWEEN 1 AND 52),
     confirmed_at TEXT,
     confirmed_by TEXT,
-    confirmed_week INTEGER CHECK (confirmed_week BETWEEN 1 AND 6),
+    confirmed_week INTEGER CHECK (confirmed_week BETWEEN 1 AND 52),
     shared_to TEXT,
     version INTEGER NOT NULL DEFAULT 1 CHECK (version > 0),
     created_at TEXT NOT NULL,

@@ -1,0 +1,96 @@
+body.ptd-v2 {
+  --ink: #182d3c;
+  --muted: #485d6c;
+  --line: #d8e1e6;
+  --teal: #005b56;
+  --pale: #e4f2ed;
+  --v2-paper: #fff;
+  color: var(--ink);
+  background: #f5f7f8;
+  font-family: Inter, system-ui, sans-serif;
+}
+.ptd-v2 .wrap { width: min(1200px, calc(100% - 3rem)); }
+.ptd-v2 .brand-mark { background: #103849; border-radius: .48rem; }
+.ptd-v2 .navigation { gap: .35rem; }
+.ptd-v2 .navigation button { font-size: .92rem; }
+.ptd-v2 .page-heading { margin-bottom: 1.45rem; }
+.ptd-v2 .page-heading h1 { margin-bottom: .3rem; }
+.ptd-v2 .page-heading p { color: var(--muted); }
+.ptd-v2 .card, .ptd-v2 .tool-card {
+  border-color: var(--line);
+  border-radius: .85rem;
+  box-shadow: 0 2px 7px #193b4810;
+}
+.ptd-v2 .method-grid, .ptd-v2 .tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: .95rem;
+  margin-block: 1rem;
+}
+.ptd-v2 .method-card { padding: 1.15rem; grid-template-rows: auto auto auto 1fr auto; }
+.ptd-v2 .method-card h2 { font-size: 1.25rem; }
+.ptd-v2 .method-card .draft, .ptd-v2 .method-hero .draft { background: #f9ecd4; color: #62451e; }
+.ptd-v2 #library-search { background: #eef4f5; }
+.ptd-v2 #method-detail { max-width: none; padding: clamp(.9rem, 3vw, 1.7rem); gap: 1.1rem; }
+.ptd-v2 #method-detail > button { justify-self: start; }
+.method-hero {
+  display: grid;
+  justify-items: start;
+  gap: .7rem;
+  padding: clamp(1rem, 3vw, 1.8rem);
+  border-radius: .65rem;
+  background: #eaf2f4;
+}
+.method-hero .eyebrow { color: #255d68; }
+.method-hero h2 { font-size: clamp(1.5rem, 4.4vw, 2.65rem); letter-spacing: -.034em; max-width: 27ch; }
+.method-hero .method-lead { max-width: 63ch; font-size: 1.05rem; color: #2b4c5c; }
+.method-sections { padding-block: .4rem; border-bottom: 1px solid var(--line); }
+.method-sections button[aria-pressed="true"] { background: var(--teal); color: white; border-color: var(--teal); }
+.method-body { display: grid; gap: .65rem; min-width: 0; align-content: start; }
+.method-body > p, .method-body > ul { max-width: 80ch; }
+.method-body h3 { margin-top: .35rem; font-size: 1.13rem; }
+.method-steps { display: grid; gap: .75rem; margin: .1rem 0; padding-left: 1.75rem; }
+.method-steps li { padding-left: .2rem; }
+.method-steps li::marker { font-weight: 700; color: var(--teal); }
+.method-steps p { max-width: 75ch; }
+.method-table { overflow: auto; border: 1px solid var(--line); border-radius: .6rem; }
+.method-table table { width: 100%; min-width: 35rem; border-collapse: collapse; }
+.method-table th, .method-table td { text-align: left; vertical-align: top; padding: .75rem .85rem; border-bottom: 1px solid var(--line); }
+.method-table tr:last-child td { border-bottom: 0; }
+.method-table th { background: #eaf2f4; font-size: .87rem; }
+.method-table td { line-height: 1.5; }
+.method-table tr:nth-child(even) td { background: #f7fafb; }
+.method-reading { background: var(--pale); border-left: 4px solid var(--teal); padding: .75rem 1rem; }
+.method-reference { padding: .7rem 0; border-top: 1px solid var(--line); }
+.method-reference a { font-weight: 650; }
+.tool-card {
+  display: grid;
+  gap: .65rem;
+  grid-template-rows: auto 1fr auto;
+  padding: 1.2rem;
+  background: var(--v2-paper);
+  border: 1px solid var(--line);
+}
+.tool-card button { justify-self: start; }
+#tool-back { margin-bottom: 1rem; }
+#active-tool-title { margin-bottom: .85rem; font-size: 1.45rem; }
+#project-tools { margin-block: 1rem; }
+#project-calendar-summary { margin: .55rem .15rem; }
+.review-panel {
+  margin-top: 1rem;
+  padding: .8rem;
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  background: #f4f8f9;
+}
+.review-panel summary { font-weight: 680; cursor: pointer; }
+#review-form { padding-top: .75rem; }
+#review-form button { justify-self: start; }
+@media (max-width: 640px) {
+  .ptd-v2 .wrap { width: calc(100% - 1.5rem); }
+  .ptd-v2 .navigation { gap: .1rem; }
+  .ptd-v2 .navigation button { padding-inline: .55rem; }
+  .method-sections button { font-size: .86rem; }
+  .ptd-gantt-toolbar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ptd-gantt-toolbar button { font-size: .82rem; padding-inline: .35rem; }
+}
