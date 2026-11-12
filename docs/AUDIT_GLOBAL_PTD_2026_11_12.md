@@ -210,3 +210,7 @@ messages, grilles vierges et empreintes. La vérification locale a réussi 139 t
 le jeu réservé. Les contrôles GitHub sont suivis dans `docs/PROJECT_STATUS.md`.
 Le site PMI était en maintenance lors de cette vérification ; le manuel NASA
 accessible cité ci-dessus complète les références PMI consultées auparavant.
+
+## Passation GitHub
+
+Branche `eval/couverture-competences-ptd`, [PR #15](https://github.com/bdelhomme/ptd-coach/pull/15), basée sur la PR #14, sans fusion automatique. Les contrôles distants sont consultables dans la PR. Les scénarios TX, PV et PJ sont des tests de développement ; la prochaine tranche doit créer un contexte distinct si elle modifie les consignes et préserver les jeux et empreintes existants. Le plan priorisé est dans `docs/PLAN_DEVELOPPEMENT_POST_AUDIT.md`.
