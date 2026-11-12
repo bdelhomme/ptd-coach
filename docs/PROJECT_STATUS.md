@@ -1,5 +1,14 @@
 # État du projet — à actualiser à chaque changement
 
+## Chantier en cours · ensemble du PTD
+
+L’audit du 12 novembre examine le coach conversationnel sur l’ensemble du
+semestre. Le prototype A2 désigne le premier parcours simulé de planification,
+accessible à la racine du serveur local. Le coach conversationnel se trouve sur
+`/coach`. Le plan proposé part des difficultés relevées sur plusieurs étapes,
+notamment le cahier des charges, le pilotage et la vie d’équipe.
+[Plan de développement proposé](PLAN_DEVELOPPEMENT_POST_AUDIT.md).
+
 > D-037/D-038 : branche `eval/couverture-competences-ptd`, [PR #15](https://github.com/bdelhomme/ptd-coach/pull/15) issue de la PR #14 ; 139 tests locaux réussis hors lecture du jeu réservé. [Audit global PTD du 12 novembre](AUDIT_GLOBAL_PTD_2026_11_12.md) et [plan de développement proposé](PLAN_DEVELOPPEMENT_POST_AUDIT.md), 58 réponses fictives sur 29 dialogues ; 11 compétences candidates représentées mais plusieurs défauts et aucune validation pédagogique générale. Le porteur précise un créneau prévu chaque jeudi matin, obligatoire en théorie.
 
 > D-036 : branche `feat/cadrage-fiabilite-coach`, [PR #14](https://github.com/bdelhomme/ptd-coach/pull/14) issue de la PR #13. [Cadrage de fiabilité](CADRAGE_FIABILITE_V01.md) gelé et testé : 12 réponses réelles, amélioration ponctuelle, extrapolations persistantes ; 130 tests locaux réussis hors lecture du jeu réservé. Contexte expérimental isolé, revue indépendante nécessaire.
@@ -12,7 +21,7 @@
 
 > Bibliothèque expérimentale D-032 : voir [rapport](BIBLIOTHEQUE_METHODES.md). Dix fiches brouillon, consultation locale et coach isolé ; l’essai réel montre encore des inventions, aucune validation pédagogique. Branche dédiée issue de #9.
 
-## Priorité courante · campagne transversale D-031
+## Historique · campagne transversale D-031
 
 Le porteur demande une évaluation de l’aide méthodologique sur les onze
 compétences, avec priorité au commanditaire et au cahier des charges.
@@ -27,7 +36,7 @@ Le banc réutilise les trois contextes figés.
 Les propositions de ressources restent soumises à relecture humaine.
 Les travaux c2 ci-dessous décrivent la tranche précédente.
 
-## Priorité courante — candidate 2, D-030 (11/11/2026)
+## Historique — candidate 2, D-030 (11/11/2026)
 
 Retour du porteur sur D03/D09 : c1 **non validée pédagogiquement**. C2 prépare
 une correction conceptuelle sourcée, une intervention dominante et une meilleure
@@ -50,7 +59,7 @@ Gels et anciennes preuves conservés ; réservé non utilisé. L’autonomie dem
 a servi à étendre le diagnostic (sondes, garde-fous, répétition), sans ajouter
 de fonction ni nouvelle candidate pour dissimuler cet échec.
 
-## Tranche actuelle — V0.8 expérimentale (D-029, 2026-11-10)
+## Historique — V0.8 expérimentale (D-029, 2026-11-10)
 
 Nouvelle demande du porteur : développer un contexte adaptatif et exigeant,
 sans routage hard/soft, depuis `docs/independent-pedagogical-review`
@@ -78,7 +87,7 @@ publics correspondent aux fichiers locaux. Comparaison réelle : 12 réponses,
 Les douze réservés restent sans exécution API et la grille humaine vierge.
 Application lancée sur le Mac : `http://127.0.0.1:8767/coach`.
 
-Dernière mise à jour : **2026-11-10** · Version applicative : **conversation.v1, contextes V0.7/V0.8 expérimentaux**
+À la livraison du **10 novembre 2026** · Version applicative : **conversation.v1, contextes V0.7/V0.8 expérimentaux**
 
 ## Historique — revue pédagogique indépendante (D-027)
 
@@ -108,7 +117,7 @@ pas des changements de configuration. Grilles toujours vierges, moteur,
 référentiel et prompts opérationnels inchangés ; aucun nouvel appel Mistral.
 Le [suivi du dossier](PEDAGOGICAL_REVIEW_PACKAGE.md) détaille les contrôles.
 
-## État actuel — premier coach conversationnel (D-026)
+## Historique — premier coach conversationnel (D-026)
 
 La nouvelle demande du porteur lance l'étape 2 après le report D-025. Nouveau
 service de conversation Mistral réel à plusieurs tours, modèle configurable

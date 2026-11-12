@@ -1,6 +1,14 @@
 # Feuille de route priorisée — tâches et livrables
 
-## Tranche c2 — D-030
+## Suite proposée après l’audit du 12 novembre
+
+Le chantier couvre l’ensemble du PTD. Les premières tranches proposées portent
+sur la fiabilité des réponses, l’entrée dans le parcours étudiant et les
+difficultés d’équipe. Les critères de recette et les travaux sur le cahier des
+charges et la mémoire figurent dans le
+[plan de développement après l’audit](PLAN_DEVELOPPEMENT_POST_AUDIT.md).
+
+## Historique · tranche c2 — D-030
 
 - [x] Consigner le retour qualitatif du porteur, sans inventer de grille notée.
 - [x] Vérifier les sources et relire les exemples avant utilisation.
@@ -54,9 +62,9 @@ par le porteur ; aucun appel distant ni modification du prototype pour ce lot.
   [ticket 004](tickets/004-conversation-router.md) et
   [ticket 005](tickets/005-backend-boundaries.md), ADR-0006 proposé.
 
-## Chantier de conception — cadrage du coaching (ticket 003)
+## Historique — cadrage du coaching (ticket 003)
 
-Cette priorité précède l'ajout d'exercices ou l'extension du prototype.
+Cette tranche a posé le cadre de conception des exercices et des ressources.
 Principes confirmés : D-020 à D-023 ; voir [COACHING_FRAMEWORK.md](COACHING_FRAMEWORK.md).
 
 - [x] Consigner les orientations confirmées, propositions et questions dans les documents.
@@ -76,11 +84,11 @@ Principes confirmés : D-020 à D-023 ; voir [COACHING_FRAMEWORK.md](COACHING_FR
 - [x] Décrire acteurs, parcours, objets métier, confidentialité, IA et hypothèses de coûts.
 - [ ] Faire relire les décisions aux responsables pédagogiques.
 
-## P1 — Premier parcours individuel A2, sans données réelles
+## Historique · P1 — Premier parcours individuel A2, sans données réelles
 
 Le prototype local décrit par les tickets 001/002 fournit une base technique ;
-ses exercices restent expérimentaux. Les tâches applicatives ci-dessous ne
-doivent pas prendre le pas sur la priorité de conception ci-dessus.
+ses exercices restent expérimentaux. La liste ci-dessous retrace le périmètre
+de ce premier prototype.
 - [ ] Définir les critères de feedback sur 3 cas de planification, validés par un encadrant.
 - [x] Définir écrans et contrats API du prototype A2 local (ticket 001 ; exhaustivité institutionnelle à revoir).
 - [x] Documenter une architecture provisoire pour la démonstration (ADR-0005 ; choix DSI toujours ouvert).

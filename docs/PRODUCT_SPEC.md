@@ -84,7 +84,12 @@ Application d'entraînement, d'expérimentation et de retour réflexif **individ
 | F-13 | Audit | Traçabilité des partages, consultations exceptionnelles et versions |
 | F-14 | Export | Export standard de données autorisées ; procédure documentée |
 
-## Premier scénario de bout en bout — A2 planification
+## Prototype historique — scénario de bout en bout A2 planification
+
+Ce scénario illustre la compétence candidate « Structurer et planifier le
+projet » dans la première démonstration. Pour le périmètre des travaux sur
+l’ensemble du PTD, voir le [plan proposé après l’audit](PLAN_DEVELOPPEMENT_POST_AUDIT.md).
+
 1. Un étudiant fictif s'authentifie dans son équipe PTD fictive.
 2. Il choisit l'objectif « anticiper les dépendances ».
 3. Le coach explique jalons, tâches, dépendances et critères.

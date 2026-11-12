@@ -249,3 +249,9 @@ obligatoire en théorie. L'audit de développement révèle des réponses utiles
 aussi des erreurs de WBS, de statut des faits, d'organisation et de confidentialité
 énoncée. Les propositions et leurs limites sont dans `docs/AUDIT_GLOBAL_PTD_2026_11_12.md`.
 Aucune interprétation de la motivation comme trait individuel n'est validée.
+
+Le porteur relève que les mentions du parcours A2 rendent le périmètre ambigu.
+A2 désigne la compétence candidate « Structurer et planifier le projet » et le
+premier prototype simulé qui l’illustre. La page d’accueil du dépôt et les
+documents de reprise identifient ce prototype historique et le chantier sur
+l’ensemble du PTD.
