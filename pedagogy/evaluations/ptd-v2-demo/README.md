@@ -98,3 +98,38 @@ Pour rejouer, utiliser `MISTRAL_MODEL=mistral-large-4`,
 `MISTRAL_REASONING_EFFORT=low` et `CHAT_MAX_TOKENS=1000` sur une base de démo
 séparée. Small reste le modèle par défaut. Empreinte SHA-256 du JSONL :
 `a04dedf95894e9ede2ce040bfce9c5ecffdb40a6885cd337abd531c4ba9567da`.
+
+## Large 4 · comparaison low et medium
+
+Le 12 novembre 2026, rejoué le premier entretien en `medium` sur les mêmes
+trois messages et comparé les deux efforts sur un désaccord d’équipe et
+sur une revue fictive. [Verbatims et tentatives](large-4-low-medium.jsonl).
+Les trois tours `low` du premier entretien proviennent du passage précédent.
+La première requête a la même empreinte pour les deux efforts et chacun
+poursuit ensuite son propre historique. Les deux cas à un tour ont le même
+texte et les mêmes consignes pour chaque effort. Le coach général utilise
+V2 0.1, la revue dédiée 0.3. Modèle `mistral-large-4`, température 0,2,
+délai de 45 s et plafond de 1 000 tokens pour le premier passage.
+
+| Situation | Low, tokens et latence | Medium, tokens et latence | Observation qualitative |
+| --- | ---: | ---: | --- |
+| Premier entretien, trois tours | 9 413 · 15,17 s | 10 421 · 30,66 s | Les deux envisagent la présence de tous après la relance. Medium explicite que l’avis de l’encadrante est une recommandation et détaille les rôles. Il évoque encore un déséquilibre lié à la présence à sept. |
+| Désaccord d’équipe, un tour | 3 460 · 9,89 s | 3 291 · 8,39 s | Les deux proposent de tester les poids et de garder la compatibilité à confirmer. Medium se concentre sur un test en quinze minutes, mais conclut trop vite à la robustesse si l’ordre ne change pas sur ce seul test. |
+| Revue d’extrait, un tour à 2 000 tokens de sortie | 1 614 · 10,93 s | 2 189 · 15,47 s | Les deux citent l’extrait, relèvent la preuve manquante et proposent une correction. Low relie plus explicitement le résultat de la matrice aux poids et échelles. |
+
+La revue à 1 000 tokens a épuisé le budget avant la réponse finale pour les
+deux efforts. La paire a été rejouée avec 2 000 tokens dans des fils neufs.
+Les neuf nouvelles tentatives donnent sept réponses complètes et deux erreurs
+de plafond. Les compteurs des deux erreurs ne sont pas récupérés par le
+connecteur. Aux [tarifs standard de Large 4](https://docs.mistral.ai/inference/pricing),
+les réponses comparables ci-dessus représentent environ 0,0137 $ en `low`
+et 0,0167 $ en `medium`, hors cache, taxes et tentatives sans usage mesuré.
+
+Le gain de `medium` reste irrégulier sur ces trois cas. `low` est le réglage
+recommandé pour les essais courants, avec `medium` disponible en démonstration
+séparée. La distinction entre lancement collectif et entretien terrain reste
+une correction du cadrage à tester. Ces observations de développement
+reposent sur une seule réponse par réglage et par tour.
+
+Empreinte SHA-256 du JSONL :
+`b1c7ae098d396ee75da4b3f9277e1451ee9faca688379e4492173629eaf49ebc`.
