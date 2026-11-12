@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-11-11T13:58:10.508517+00:00",
+  "provider": "mistral",
+  "model_requested": "mistral-large-4",
+  "freeze_sha256": "f10c2b036cb85a6038bbb7186ab7d61952f17f9d62f9e9431ba4e30deefc83bf",
+  "selected_cases": [
+    "TX02",
+    "TX03",
+    "TX04",
+    "TX08",
+    "TX10",
+    "TX13",
+    "TX15",
+    "TX16",
+    "TX17",
+    "TX18",
+    "TX21",
+    "TX23"
+  ],
+  "planned_calls": 24,
+  "attempted_calls": 24,
+  "completed_calls": 24,
+  "stopped_on_error": false,
+  "parameters": {
+    "temperature": 0.2,
+    "max_tokens": "omitted",
+    "reasoning_effort": "medium",
+    "timeout_seconds": 90
+  },
+  "summary": {
+    "fiabilite": {
+      "responses": 24,
+      "records": 24,
+      "api_errors": 0,
+      "tokens": {
+        "prompt_tokens": 50608,
+        "completion_tokens": 15903,
+        "total_tokens": 66511
+      },
+      "unmeasured_calls": 0,
+      "median_latency_ms": 8655.0,
+      "characters": 14671,
+      "question_marks_not_solicitations": 13,
+      "truncated": 0,
+      "models_returned": [
+        "mistral-large-4"
+      ]
+    }
+  },
+  "human_pedagogical_verdict": null,
+  "limitations": [
+    "Cas fictifs de développement, ni examen indépendant ni test de transfert.",
+    "Correspondances compétences proposées ; une réponse ne démontre pas un apprentissage.",
+    "Plafonds du fournisseur et du connecteur, délai réseau et absence des blocs de raisonnement dans l’historique.",
+    "Arrêt à la première erreur, sans reprise automatique ; facturation de l’appel en erreur inconnue."
+  ]
+}

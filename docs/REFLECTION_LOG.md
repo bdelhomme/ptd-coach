@@ -238,3 +238,20 @@ Le porteur privilégie la recherche de pertinence, quitte à dépenser davantage
 ## R-018 — Cadrage déjà existant et fidélité aux statuts
 
 Le porteur rappelle que les versions antérieures constituaient déjà du cadrage ; l’enjeu est de comprendre ses limites plutôt que de repartir de zéro. Sur trois scénarios de développement, la variante conserve mieux une condition dans un exemple, mais infère encore des compromis et généralisations. Les exemples sont proches de deux défauts connus ; revue indépendante et transfert restent à démontrer. Voir `docs/CADRAGE_FIABILITE_V01.md`.
+
+
+## R-019 — Auditer tout le cycle, tenir compte de la fatigue et du jeudi
+
+Le porteur demande d'étudier les difficultés sur tout le PTD, en particulier le
+cahier des charges, la démotivation dans la durée et la vie de groupe, puis de
+proposer un développement plus poussé. Il précise le créneau du jeudi matin,
+obligatoire en théorie. L'audit de développement révèle des réponses utiles mais
+aussi des erreurs de WBS, de statut des faits, d'organisation et de confidentialité
+énoncée. Les propositions et leurs limites sont dans `docs/AUDIT_GLOBAL_PTD_2026_11_12.md`.
+Aucune interprétation de la motivation comme trait individuel n'est validée.
+
+Le porteur relève que les mentions du parcours A2 rendent le périmètre ambigu.
+A2 désigne la compétence candidate « Structurer et planifier le projet » et le
+premier prototype simulé qui l’illustre. La page d’accueil du dépôt et les
+documents de reprise identifient ce prototype historique et le chantier sur
+l’ensemble du PTD.

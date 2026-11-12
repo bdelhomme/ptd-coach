@@ -1,5 +1,13 @@
 # Spécification produit — PTD Coach v0.2
 
+## Précision sur le créneau PTD — D-038, 12 novembre 2026
+
+Le porteur indique que le PTD dispose d'un créneau prévu **chaque jeudi matin**
+dans l'emploi du temps, **obligatoire en théorie**. Cette précision ne confirme
+ni les présences effectives ni une obligation de travailler hors de ce créneau.
+Le coach expérimental ne reçoit pas encore automatiquement cette information ;
+son intégration au contexte de projet est à concevoir et à éprouver.
+
 ## Évolution expérimentale V0.8 — D-029
 
 Le porteur autorise désormais un contexte pédagogique adaptatif séparé, avec
@@ -76,7 +84,12 @@ Application d'entraînement, d'expérimentation et de retour réflexif **individ
 | F-13 | Audit | Traçabilité des partages, consultations exceptionnelles et versions |
 | F-14 | Export | Export standard de données autorisées ; procédure documentée |
 
-## Premier scénario de bout en bout — A2 planification
+## Prototype historique — scénario de bout en bout A2 planification
+
+Ce scénario illustre la compétence candidate « Structurer et planifier le
+projet » dans la première démonstration. Pour le périmètre des travaux sur
+l’ensemble du PTD, voir le [plan proposé après l’audit](PLAN_DEVELOPPEMENT_POST_AUDIT.md).
+
 1. Un étudiant fictif s'authentifie dans son équipe PTD fictive.
 2. Il choisit l'objectif « anticiper les dépendances ».
 3. Le coach explique jalons, tâches, dépendances et critères.
