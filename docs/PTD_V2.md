@@ -1,7 +1,8 @@
 # PTD Coach V2 · essai et passation
 
-La V2 part de la [PR #16](https://github.com/bdelhomme/ptd-coach/pull/16) au commit
-`629273f`. Les comptes, organismes, documents, dates de projet et dialogues de
+La [PR V2 #17](https://github.com/bdelhomme/ptd-coach/pull/17) part de la
+[PR #16](https://github.com/bdelhomme/ptd-coach/pull/16) au commit `629273f`.
+Les comptes, organismes, documents, dates de projet et dialogues de
 recette sont fictifs. La bibliothèque reste en brouillon pédagogique.
 
 ## Lancer et essayer

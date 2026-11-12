@@ -2,7 +2,8 @@
 
 ## Chantier en cours · ensemble du PTD
 
-**V2 expérimentale, D-040.** Branche `feat/ptd-v2-workbench` issue de la PR #16.
+**V2 expérimentale, D-040.** [PR #17](https://github.com/bdelhomme/ptd-coach/pull/17),
+branche `feat/ptd-v2-workbench` issue de la PR #16.
 Bibliothèque canonique de 15 fiches, Gantt, rédaction structurée, RACI,
 risques, décisions, matrice de comparaison et deux missions fictives. La
 revue d’extrait dispose d’un contexte dédié après deux essais infructueux de
