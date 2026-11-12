@@ -66,3 +66,35 @@ extrait de fiche assemblé dans `ptd_coach/library_v2.py`.
 | Méthode d’enquête inadaptée | Expliquer sa portée et proposer une vérification proportionnée. | |
 | Réutilisation après explication | Aider à choisir une action et décrire ce qu’elle permettrait de vérifier. | |
 | Revue approfondie | Éclairer preuves, hypothèses et limites sans réécrire le travail. | |
+
+## Premier entretien · comparaison Small et Large
+
+Après un retour du porteur sur le conseil de limiter la présence au premier
+rendez-vous, un scénario indépendant a été rédigé avec trois messages
+fictifs. [Six réponses exactes et métadonnées](premier-entretien-modeles.jsonl).
+Le contexte libre V2 0.1, les messages étudiants, le plafond de 1 000 tokens
+et la température de 0,2 sont communs. Large utilise le niveau de raisonnement
+`low`. Chaque modèle poursuit son propre historique. Les trois appels par
+modèle ont abouti sans troncature.
+
+| Modèle | Entrée | Sortie | Total | Latence cumulée | Coût estimé |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `mistral-small-latest` | 9 599 | 890 | 10 489 | 7,76 s | 0,0020 $ |
+| `mistral-large-4` | 8 607 | 806 | 9 413 | 15,17 s | 0,0077 $ |
+
+Estimations aux [tarifs standard Mistral](https://docs.mistral.ai/inference/pricing)
+consultés le 12 novembre 2026, hors cache et taxes. Le calcul Small suppose le
+tarif Small 4, la réponse API donnant l’alias et pas sa version exacte.
+
+Small traite la présence à sept comme une erreur et maintient une délégation
+de deux ou trois malgré le motif apporté par l’équipe. Large reconnaît la
+valeur d’une écoute directe, propose de venir ensemble en répartissant la
+parole et les notes, puis demande la préférence du commanditaire. Large
+exagère néanmoins l’effet de groupe avec l’image d’une « réception » et
+pourrait reprendre plus directement l’intention d’équipe. Le cas discrimine
+les deux comportements observés, avec une seule exécution par modèle.
+
+Pour rejouer, utiliser `MISTRAL_MODEL=mistral-large-4`,
+`MISTRAL_REASONING_EFFORT=low` et `CHAT_MAX_TOKENS=1000` sur une base de démo
+séparée. Small reste le modèle par défaut. Empreinte SHA-256 du JSONL :
+`a04dedf95894e9ede2ce040bfce9c5ecffdb40a6885cd337abd531c4ba9567da`.
