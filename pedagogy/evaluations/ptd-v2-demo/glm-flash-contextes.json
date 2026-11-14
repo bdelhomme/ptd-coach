@@ -1,0 +1,202 @@
+{
+  "principal": {
+    "confirmed_inputs": {
+      "student_demo_01": {
+        "individual": {
+          "project": {
+            "title": "Étudier un service de reprise",
+            "sponsor": "Fabricant des Rives · fictif",
+            "brief": "Évaluer les conditions d’un pilote de reprise d’emballages auprès de petits ateliers. La mission produit une recommandation argumentée et rend visibles les limites du terrain.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "note",
+              "text": "Le marqueur LUNE-PRIVEE désigne ma note individuelle fictive.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:21:58.873735+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        },
+        "collective": {
+          "project": {
+            "title": "Étudier un service de reprise",
+            "sponsor": "Fabricant des Rives · fictif",
+            "brief": "Évaluer les conditions d’un pilote de reprise d’emballages auprès de petits ateliers. La mission produit une recommandation argumentée et rend visibles les limites du terrain.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "hypothesis",
+              "text": "Un second secteur pourrait être étudié ultérieurement. Aucun ajout n’a été approuvé.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:21:58.871405+00:00",
+              "confirmed_week": 1
+            },
+            {
+              "kind": "decision",
+              "text": "Le périmètre approuvé par le commanditaire est une seule région test et les petits ateliers.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:21:58.869954+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        }
+      },
+      "student_demo_03": {
+        "individual": {
+          "project": {
+            "title": "Évaluer une solution de veille technique",
+            "sponsor": "Bureau Horizon R&D · fictif",
+            "brief": "Comparer des solutions de transmission d’alertes techniques. Étudier besoins, sources, compatibilité et faisabilité avant toute recommandation de pilote.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": []
+        },
+        "collective": {
+          "project": {
+            "title": "Évaluer une solution de veille technique",
+            "sponsor": "Bureau Horizon R&D · fictif",
+            "brief": "Comparer des solutions de transmission d’alertes techniques. Étudier besoins, sources, compatibilité et faisabilité avant toute recommandation de pilote.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "obstacle",
+              "text": "L’équipe n’a pas de preuve de compatibilité du prototype A avec cet environnement.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:21:58.876504+00:00",
+              "confirmed_week": 1
+            },
+            {
+              "kind": "requirement",
+              "text": "La comparaison porte sur des essais en environnement isolé. Déploiement hors périmètre.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:21:58.875157+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        }
+      }
+    },
+    "draft_excluded": "Le marqueur FJORD-ORANGE signale un brouillon d’extension au pays entier.",
+    "max_tokens": 2000,
+    "timeout": 45,
+    "temperature": 0.2
+  },
+  "lancement_M01": {
+    "confirmed_inputs": {
+      "student_demo_01": {
+        "individual": {
+          "project": {
+            "title": "Étudier un service de reprise",
+            "sponsor": "Fabricant des Rives · fictif",
+            "brief": "Évaluer les conditions d’un pilote de reprise d’emballages auprès de petits ateliers. La mission produit une recommandation argumentée et rend visibles les limites du terrain.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "note",
+              "text": "Le marqueur LUNE-PRIVEE désigne ma note individuelle fictive.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:22:37.073665+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        },
+        "collective": {
+          "project": {
+            "title": "Étudier un service de reprise",
+            "sponsor": "Fabricant des Rives · fictif",
+            "brief": "Évaluer les conditions d’un pilote de reprise d’emballages auprès de petits ateliers. La mission produit une recommandation argumentée et rend visibles les limites du terrain.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "hypothesis",
+              "text": "Un second secteur pourrait être étudié ultérieurement. Aucun ajout n’a été approuvé.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:22:37.071505+00:00",
+              "confirmed_week": 1
+            },
+            {
+              "kind": "decision",
+              "text": "Le périmètre approuvé par le commanditaire est une seule région test et les petits ateliers.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:22:37.070017+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        }
+      },
+      "student_demo_03": {
+        "individual": {
+          "project": {
+            "title": "Évaluer une solution de veille technique",
+            "sponsor": "Bureau Horizon R&D · fictif",
+            "brief": "Comparer des solutions de transmission d’alertes techniques. Étudier besoins, sources, compatibilité et faisabilité avant toute recommandation de pilote.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": []
+        },
+        "collective": {
+          "project": {
+            "title": "Évaluer une solution de veille technique",
+            "sponsor": "Bureau Horizon R&D · fictif",
+            "brief": "Comparer des solutions de transmission d’alertes techniques. Étudier besoins, sources, compatibilité et faisabilité avant toute recommandation de pilote.",
+            "slot": "Jeudi matin · créneau PTD prévu dans l’emploi du temps, obligatoire en théorie",
+            "current_week": 2
+          },
+          "items": [
+            {
+              "kind": "obstacle",
+              "text": "L’équipe n’a pas de preuve de compatibilité du prototype A avec cet environnement.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:22:37.076543+00:00",
+              "confirmed_week": 1
+            },
+            {
+              "kind": "requirement",
+              "text": "La comparaison porte sur des essais en environnement isolé. Déploiement hors périmètre.",
+              "source": "Compte rendu fictif de séance, V2",
+              "origin": "human",
+              "week": 1,
+              "confirmed_at": "2026-11-14T23:22:37.075084+00:00",
+              "confirmed_week": 1
+            }
+          ]
+        }
+      }
+    },
+    "draft_excluded": "Le marqueur FJORD-ORANGE signale un brouillon d’extension au pays entier.",
+    "max_tokens": 2000,
+    "timeout": 45,
+    "temperature": 0.2
+  }
+}

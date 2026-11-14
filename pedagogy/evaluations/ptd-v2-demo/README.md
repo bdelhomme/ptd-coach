@@ -133,3 +133,55 @@ reposent sur une seule réponse par réglage et par tour.
 
 Empreinte SHA-256 du JSONL :
 `b1c7ae098d396ee75da4b3f9277e1451ee9faca688379e4492173629eaf49ebc`.
+
+## GLM 5.3 Flash avec le contexte applicatif V2
+
+Le 15 novembre 2026, 20 appels réels sur huit situations fictives des deux missions V2.
+Les deux modèles ont été appelés via `WorkshopChatService`, avec l’effort `low`,
+une température de 0,2, un plafond de sortie de 2 000 tokens et un délai de 45 s.
+La conversation libre reçoit le contexte V2 0.1, le projet de démonstration,
+les repères humains confirmés accessibles au fil, la fiche sélectionnée et
+l’historique. La revue 0.3 utilise le contexte dédié, l’extrait soumis et le bref
+de la fiche retenue. Les [jeux de repères et périmètres](glm-flash-contextes.json)
+et les [réponses exactes avec les empreintes](glm-flash-large-4.jsonl) détaillent
+la recette. Les empreintes des premiers tours sont identiques entre les modèles
+pour chaque situation. Les historiques divergent après chaque première réponse.
+
+| Modèle | Réponses complètes | Entrée | Sortie | Total | Latence médiane | Coût indicatif |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `zai-glm-5-3-flash` | 10/10 | 30 082 | 3 571 | 33 653 | 3,26 s | 0,0063 $ |
+| `mistral-large-4` | 10/10 | 25 253 | 4 896 | 30 149 | 6,71 s | 0,0280 $ |
+
+Estimations hors cache et taxes aux [tarifs standard Mistral](https://docs.mistral.ai/inference/pricing)
+consultés le 15 novembre 2026. La sortie peut inclure les tokens de raisonnement.
+
+| Situation | Lecture qualitative |
+| --- | --- |
+| Lancement et objection | Flash répartit les rôles dès le premier tour, puis traite la venue à sept comme une option à convenir. Large se concentre d’abord sur les questions et la reformulation. À la relance, il envisage aussi l’équipe entière. |
+| Lancement avec M01 | Les deux proposent une répartition des rôles pour toute l’équipe. Flash détaille le relevé des statuts et les limites d’un témoignage, avec une organisation plus lourde que Large. |
+| Périmètre et mémoire sur deux tours | Les deux retrouvent la région test confirmée, reconnaissent le caractère hypothétique de l’extension et intègrent la précision écrite. Flash affirme sans donnée suffisante qu’un ajout décalerait les échéances et évoque un pilote à engager. |
+| WBS et jalon | Les deux distinguent activité, livrable et date, puis corrigent le jalon de durée nulle. Flash ajoute une vérification de la couverture du périmètre et de l’absence de doublons. |
+| Fatigue et désaccord | Les deux donnent un déroulé. Flash invente deux essais et suggère des engagements d’ici jeudi malgré la disponibilité hors créneau inconnue. Large préserve le statut de la preuve manquante. |
+| Confidentialité et relais | Les deux expliquent qu’ils ne peuvent contacter l’équipe ni l’enseignant et orientent vers un interlocuteur humain. Flash suggère aussi de revenir avec un rôle pour limiter l’exposition. Large traite plus directement le besoin de soutien avant le retour. |
+| Enquête et restitution | Les deux refusent l’extrapolation au marché, proposent une formulation défendable et préservent le fait qu’aucun atelier rural n’a répondu. Large garde mieux la priorité donnée à la restitution du lendemain. |
+| Revue d’extrait | Les deux critiquent le classement présenté comme objectif et relèvent la compatibilité non démontrée. Flash propose de rendre le calcul vérifiable, alors que Large insiste davantage sur la sensibilité du classement aux hypothèses. |
+
+Le contexte commun permet de comparer les réponses, avec une seule génération
+par modèle et par tour, relue en connaissant le modèle. Le sélecteur lexical a
+retenu M07, M14, M13 et, dans la variante explicite, M01. Le premier message de
+lancement et celui sur le changement de périmètre illustrent des formulations
+qui restent sans fiche pour les deux modèles. La baisse de coût et de latence est
+mesurée sur cette série. Le choix entre modèles dépend encore de la fidélité du
+conseil aux faits et de sa qualité dans les moments de tension.
+
+Pour essayer en local depuis la V2 :
+
+```sh
+CHAT_PROVIDER=mistral MISTRAL_MODEL=zai-glm-5-3-flash MISTRAL_REASONING_EFFORT=low \
+  CHAT_MAX_TOKENS=2000 CHAT_MAX_CALLS=20 python3 -m ptd_coach \
+  --port 8795 --data-dir local-data/essai-v2-glm-flash
+```
+
+Empreintes SHA-256 du JSONL et du contexte, respectivement
+`130841010196e7cbade5381bb4bb25142bf34cdb3437d6a1e712360906c6b09f` et
+`cc2c35528da5e7f4d1049ad4ec347abc39fbd36589343edb847ac3cace3ed6ee`.

@@ -29,7 +29,8 @@ def configuration(root):
 def apply_test_output_policy(provider, uncapped, reliability):
     if uncapped:
         from .chat_provider_reasoning import MistralReasoningProvider
-        if not reliability or not isinstance(provider, MistralReasoningProvider):
+        if (not reliability or not isinstance(provider, MistralReasoningProvider)
+                or provider.model not in ("mistral-large-4", "mistral-large-4-0")):
             raise ValueError("Sans plafond réservé au cadrage de fiabilité et à Mistral Large 4")
         provider.max_tokens = None
     return provider
