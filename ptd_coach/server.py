@@ -23,6 +23,7 @@ ASSETS = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascri
           "/bibliotheque": ("library.html", "text/html"), "/library.js": ("library.js", "text/javascript"),
           "/library.css": ("library.css", "text/css")}
 PROJECT_ASSETS = {"/": ("ptd.html", "text/html"), "/coach": ("ptd.html", "text/html"),
+                  "/bibliotheque-ptd": ("ptd.html", "text/html"),
                   "/ptd.js": ("ptd.js", "text/javascript"), "/ptd.css": ("ptd.css", "text/css"),
                   "/workbench-v2.js": ("workbench-v2.js", "text/javascript"),
                   "/workbench-v2.css": ("workbench-v2.css", "text/css"),
@@ -171,6 +172,12 @@ class Handler(BaseHTTPRequestHandler):
                 require(self.server.workbench is not None, 404, "not_found", "Bibliothèque V2 indisponible.")
                 from .library_v2 import catalogue_v2
                 return self.reply(200, catalogue_v2())
+            if method == "GET" and path == "/api/library-v2/bootcamp":
+                require(self.server.workbench is not None, 404, "not_found", "Bibliothèque V2 indisponible.")
+                library = WEB.parent / "pedagogy"
+                content = json.loads((library / "library/bootcamp-v2.json").read_text(encoding="utf-8"))
+                reference = json.loads((library / "competencies/candidate-v0.3.json").read_text(encoding="utf-8"))
+                return self.reply(200, {**content, "competences": reference["competencies"]})
             if method == "GET" and path == "/api/health":
                 return self.reply(200, {"status": "ok", "provider": "mock", "demo": True})
             if method == "GET" and path == "/api/demo-users":

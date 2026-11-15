@@ -27,7 +27,7 @@ const tools = {
 };
 const state = {
   pane: 'home',
-  requestedPane: window.location.pathname === '/coach' ? 'coach' : 'home',
+  requestedPane: { '/coach': 'coach', '/bibliotheque-ptd': 'library' }[window.location.pathname] || 'home',
   session: null,
   profiles: [],
   config: null,
@@ -38,6 +38,10 @@ const state = {
   editing: null,
   editorPane: 'project',
   methods: [],
+  bootcamp: null,
+  bootMode: 'parcours',
+  bootCompetence: '',
+  bootExpanded: new Set(),
   v2: false,
   examples: null,
   reviewThreadId: null,
@@ -338,13 +342,125 @@ function renderMethods() {
   }));
 }
 
+function renderLibraryView() {
+  const detail = !$('#method-detail').hidden;
+  const practice = Boolean(state.bootcamp && state.bootMode === 'parcours');
+  $('#bootcamp-start').hidden = !state.bootcamp || detail;
+  $('#bootcamp').hidden = !practice;
+  $('#boot-show').setAttribute('aria-pressed', practice);
+  $('#boot-catalogue').setAttribute('aria-pressed', !practice);
+  $('#library-search').hidden = detail || practice;
+  $('#method-list').hidden = detail || practice;
+}
+
+function setBootCompetence(code) {
+  state.bootCompetence = code;
+  $('#method-competence').value = code;
+  for (const option of $('#boot-competences').children) {
+    option.setAttribute('aria-pressed', option.dataset.code === code);
+  }
+  const hint = $('#boot-skill-hint');
+  const evidence = state.bootcamp?.reperes[code];
+  hint.hidden = !evidence;
+  hint.textContent = evidence ? 'À quoi reconnaître un progrès : ' + evidence : '';
+  renderBootModules();
+  renderMethods();
+}
+
+function renderBootModules() {
+  if (!state.bootcamp) return;
+  const chosen = state.bootCompetence;
+  const modules = state.bootcamp.modules.flatMap((module, index) => {
+    const sheets = module.outils.filter(tool => !chosen || tool.competences.includes(chosen));
+    if (!sheets.length) return [];
+    const heading = element('span', module.titre, 'boot-module-title');
+    const intro = element('span', module.moment, 'boot-moment');
+    const label = element('span', null, 'boot-module-copy');
+    label.append(heading, intro, element('span', module.livrable, 'boot-output'));
+    const summary = element('summary');
+    summary.append(element('span', String(index + 1).padStart(2, '0'), 'boot-index'), label);
+    const body = element('div', null, 'boot-module-body');
+    const feedback = element('details', null, 'boot-case');
+    feedback.append(element('summary', 'Voir des repères pour relire votre réponse'), element('p', module.relecture));
+    const exercise = element('section', null, 'boot-exercise');
+    exercise.append(element('h3', 'Mise en pratique'), element('p', module.cas), element('p', module.mission), feedback);
+    body.append(exercise, element('h3', 'Outils à réutiliser sur votre projet'));
+    const list = element('div', null, 'boot-tool-list');
+    for (const tool of sheets) {
+      const card = element('details', null, 'boot-tool');
+      const title = element('summary', tool.titre);
+      title.append(element('span', tool.competences.join(' · '), 'small muted boot-codes'));
+      const example = { colonnes: tool.colonnes, lignes: [tool.exemple] };
+      card.append(title, element('p', tool.usage), element('p', 'À surveiller : ' + tool.piege, 'small muted'),
+        element('p', 'Exemple fictif', 'small'), methodTable(example, 'Exemple : ' + tool.titre),
+        button('Télécharger le modèle vierge (CSV)', () => downloadTemplate({
+          id: tool.id, modele: { colonnes: tool.colonnes, lignes: [tool.colonnes.map(() => '')] }
+        })));
+      list.append(card);
+    }
+    const methods = element('div', null, 'actions boot-links');
+    for (const id of module.methode) {
+      const method = state.methods.find(item => item.id === id);
+      if (method) {
+        const link = button(method.nom, () => openMethod(method, { pane: 'library', trigger: link }));
+        methods.append(link);
+      }
+    }
+    const transfer = element('section', null, 'boot-exercise');
+    transfer.append(element('h3', 'À essayer sur votre PTD'), element('p', module.transfert));
+    body.append(list, transfer, element('h3', 'Approfondir avec les fiches méthodes'), methods);
+    if (module.atelier.length) {
+      const workbench = element('div');
+      workbench.dataset.bootWorkbench = '';
+      workbench.hidden = !isStudent();
+      const links = element('div', null, 'actions boot-links');
+      for (const kind of module.atelier) {
+        const link = button(tools[kind][0], () => openTool(kind, { bootTrigger: link }));
+        links.append(link);
+      }
+      workbench.append(element('h3', 'Ouvrir un brouillon d’équipe'), links);
+      body.append(workbench);
+    }
+    const entry = element('details', null, 'boot-module');
+    entry.open = Boolean(chosen || state.bootExpanded.has(module.id));
+    entry.addEventListener('toggle', () => {
+      if (!entry.isConnected || chosen) return;
+      if (entry.open) state.bootExpanded.add(module.id);
+      else state.bootExpanded.delete(module.id);
+    });
+    entry.append(summary, body);
+    return [entry];
+  });
+  $('#boot-count').textContent = modules.length + (modules.length === 1 ? ' atelier' : ' ateliers');
+  $('#boot-modules').replaceChildren(...modules);
+}
+
+function setupBootcamp(content) {
+  state.bootcamp = content;
+  $('#boot-case').textContent = content.cas;
+  $('#boot-sources').replaceChildren(...content.sources.map(([title, url]) => {
+    const li = element('li');
+    const link = element('a', title);
+    link.href = url;
+    li.append(link);
+    return li;
+  }));
+  $('#boot-competences').replaceChildren(...[['', 'Toutes les compétences'],
+    ...content.competences.map(item => [item.id, item.id + '  ' + item.title])].map(([code, title]) => {
+    const control = button(title, () => setBootCompetence(code), 'secondary boot-chip');
+    control.dataset.code = code;
+    return control;
+  }));
+  setBootCompetence('');
+  renderLibraryView();
+}
+
 function closeMethod() {
   const origin = state.methodReturn;
   $('#method-detail').hidden = true;
   $('#method-detail').replaceChildren();
   $('#method-search').hidden = false;
-  $('#library-search').hidden = false;
-  $('#method-list').hidden = false;
+  renderLibraryView();
   state.methodReturn = null;
   if (['coach', 'tools'].includes(origin?.pane)) showPane(origin.pane, { focus: !origin.trigger?.isConnected });
   if (origin?.trigger?.isConnected) origin.trigger.focus();
@@ -452,11 +568,11 @@ function renderMethodV2(detail, method, back) {
 function openMethod(method, origin) {
   state.methodReturn = origin || state.methodReturn;
   showPane('library', { focus: false });
-  $('#library-search').hidden = true;
-  $('#method-list').hidden = true;
+  $('#method-detail').hidden = false;
+  renderLibraryView();
   const detail = $('#method-detail');
   const returnLabels = { coach: 'Retour à la conversation', tools: 'Retour à l’outil' };
-  const back = button(returnLabels[state.methodReturn?.pane] || 'Retour aux méthodes', closeMethod);
+  const back = button(returnLabels[state.methodReturn?.pane] || 'Retour à la bibliothèque', closeMethod);
   if (state.v2) {
     renderMethodV2(detail, method, back);
     detail.hidden = false;
@@ -515,6 +631,10 @@ async function loadLibrary() {
   addOptions($('#method-category'), categories.map(value => [value, value]));
   addOptions($('#method-competence'), competences.map(value => [value, value]));
   renderMethods();
+  if (state.v2) {
+    try { setupBootcamp(await api('/api/library-v2/bootcamp')); }
+    catch { /* Un parcours indisponible ne masque pas les fiches existantes. */ }
+  }
   renderToolIndex();
   renderSession();
   if (state.v2 && isStudent()) await refreshCalendar();
@@ -595,7 +715,7 @@ function openTool(kind, origin = null, forceReload = false) {
     state.activeTool = kind;
     $('#tool-conflict').hidden = stored.version === view.version;
     state.toolOrigin = origin;
-    $('#tool-back').textContent = origin === 'library' ? 'Retour à la fiche' : 'Tous les outils';
+    $('#tool-back').textContent = origin?.bootTrigger ? 'Retour au parcours' : origin === 'library' ? 'Retour à la fiche' : 'Tous les outils';
     $('#tool-views').hidden = false;
     $('#tool-index').hidden = true;
     $('#active-tool-title').textContent = tools[kind][0];
@@ -790,6 +910,7 @@ function renderSession() {
     : 'Consignez le besoin, les exigences, les questions et les décisions. Choisissez ce qui reste privé.';
   $('#project-controls').hidden = !isStudent();
   $('#tool-nav').hidden = !state.v2 || !isStudent();
+  for (const section of document.querySelectorAll('[data-boot-workbench]')) section.hidden = !isStudent();
   $('#project-tools').hidden = !state.v2 || !isStudent();
   $('#review-panel').hidden = !state.v2 || !isStudent();
   $('#next-week').textContent = state.v2 ? 'Situation fictive suivante' : 'Simuler le jeudi suivant';
@@ -825,8 +946,7 @@ function clearSession() {
   $('#home-project-slot').textContent = '';
   $('#method-detail').replaceChildren();
   $('#method-detail').hidden = true;
-  $('#library-search').hidden = false;
-  $('#method-list').hidden = false;
+  renderLibraryView();
   $('#method-search').value = '';
   state.methodReturn = null;
   closeEditor();
@@ -856,7 +976,10 @@ document.querySelectorAll('[data-pane]').forEach(control => control.addEventList
   else showPane(control.dataset.pane);
 }));
 $('#tool-back').addEventListener('click', () => {
-  if (state.toolOrigin === 'library' && !$('#method-detail').hidden) showPane('library', { focus: false });
+  if (state.toolOrigin?.bootTrigger?.isConnected && $('#method-detail').hidden) {
+    showPane('library', { focus: false });
+    state.toolOrigin.bootTrigger.focus();
+  } else if (state.toolOrigin === 'library' && !$('#method-detail').hidden) showPane('library', { focus: false });
   else showToolIndex();
 });
 $('#tool-reload').addEventListener('click', () => {
@@ -952,7 +1075,14 @@ $('#review-form').addEventListener('submit', event => {
   }, { answering: true });
 });
 
-for (const id of ['method-search', 'method-category', 'method-competence']) $('#' + id).addEventListener('input', renderMethods);
+for (const id of ['method-search', 'method-category']) $('#' + id).addEventListener('input', renderMethods);
+$('#method-competence').addEventListener('input', () => setBootCompetence($('#method-competence').value));
+for (const [id, mode] of [['boot-show', 'parcours'], ['boot-catalogue', 'catalogue']]) {
+  $('#' + id).addEventListener('click', () => {
+    state.bootMode = mode;
+    renderLibraryView();
+  });
+}
 $('#project-filter').addEventListener('change', renderProject);
 for (const id of ['refresh-project', 'refresh-checkpoint']) $('#' + id).addEventListener('click', () => perform(async () => {
   await refreshProject();
@@ -1000,6 +1130,7 @@ addOptions($('#item-kind'), Object.entries(kindLabels));
 scopeDescription();
 renderSession();
 syncControls();
+if (state.requestedPane === 'library') showPane('library', { focus: false });
 perform(async () => {
   const results = await Promise.allSettled([loadLibrary(), (async () => {
     const profiles = await api('/api/demo-users');

@@ -1,0 +1,108 @@
+{
+  "version": "v0.1",
+  "cas": "Une équipe fictive de sept élèves étudie pour un atelier municipal la faisabilité d’un réemploi de contenants. Elle doit recommander une option avant la fin du semestre. Le commanditaire fournit une partie des données ; l’équipe doit vérifier le reste.",
+  "sources": [
+    ["MOOC Gestion de Projet — tronc commun, études de cas et spécialisations", "https://mooc.gestiondeprojet.pm/"],
+    ["GdP-Lab — mise en pratique sur des projets en équipe", "https://lab.gestiondeprojet.pm/"],
+    ["Gestion de Projet — collecte de données", "https://gestiondeprojet.pm/collecte-de-donnees/"]
+  ],
+  "reperes": {
+    "A1": "Une personne qui n’a pas assisté à l’échange peut distinguer le besoin, les contraintes, la solution suggérée et ce qui reste à confirmer.",
+    "A2": "Un pair peut relier un livrable à ses activités et expliquer l’effet d’un retard à partir des dépendances.",
+    "A3": "L’équipe peut justifier une adaptation à partir d’un écart observé et dire quand elle vérifiera son effet.",
+    "B1": "Chaque membre sait quel résultat est attendu, qui peut agir et quel relais est nécessaire.",
+    "B2": "Une personne absente peut retrouver les options discutées, le compromis et qui a tranché.",
+    "B3": "Le collectif formule un blocage sans juger les personnes et vérifie l’effet d’un ajustement qu’il a choisi.",
+    "C1": "La conclusion remonte à des observations identifiables ; une explication alternative et les limites restent visibles.",
+    "C2": "L’équipe justifie qui risque d’être affecté, quelles contraintes sont non négociables et ce qu’elle peut transmettre.",
+    "D1": "Le commanditaire peut corriger la reformulation et reconnaître les décisions qui relèvent de lui.",
+    "D2": "L’étudiant peut relier un geste à un effet observé et dire ce qu’il essaiera différemment sur une autre situation.",
+    "D3": "Un lecteur ou un auditeur peut retrouver la preuve, sa limite et la décision que la restitution aide à prendre."
+  },
+  "modules": [
+    {
+      "id": "decouvrir", "titre": "Comprendre la demande", "moment": "Avant et après le premier rendez-vous",
+      "livrable": "Une reformulation discutée avec le commanditaire et deux incertitudes à lever.",
+      "cas": "« Proposez-nous des contenants réutilisables. » La personne qui signe le projet parle de déchets ; l’équipe qui réceptionne parle de temps de manutention. Le premier rendez-vous dure 45 minutes.",
+      "mission": "Préparez l’ordre du jour du rendez-vous d’équipe. Rédigez une question par point de vue et notez qui peut confirmer la reformulation.",
+      "relecture": "Testez deux hypothèses séparées : réduire les déchets et éviter une charge excessive. Distribuez les rôles d’animation et de prise de notes entre les membres présents. Reformulez ce que vous avez compris et laissez le commanditaire corriger. « Réutilisable » ne précise pas encore le résultat attendu.",
+      "transfert": "À la fin du premier entretien, faites relire votre compte rendu par un autre membre : peut-il retrouver un accord explicite, une divergence et la personne à qui demander confirmation ?",
+      "methode": ["M01", "M02"], "atelier": [],
+      "outils": [
+        {"id":"carte-acteurs","titre":"Carte des acteurs et des décisions","competences":["A1","D1","C2"],"usage":"Repérer qui subit les effets, qui détient les données et qui arbitre. Une personne peut cumuler plusieurs rôles.","piege":"Ne confondez pas influence et droit de valider.","colonnes":["Acteur","Effet sur son travail","Information qu’il détient","Décision qu’il peut prendre","Comment le consulter"],"exemple":["Équipe de réception","Plus de manipulations","Durée actuelle d’une livraison","Aucune sur le choix final","Observer une réception puis vérifier le constat"]},
+        {"id":"guide-entretien","titre":"Guide d’entretien et rôles du rendez-vous","competences":["D1","B1","A1"],"usage":"Ordre conseillé : objectif partagé, faits et usages, contraintes, reformulation, suite. Attribuer des rôles distincts avant la rencontre.","piege":"Remplacez « Le réemploi vous conviendrait-il ? » par une question sur l’usage actuel.","colonnes":["Séquence","Question ou résultat attendu","Animation","Prise de notes","Point à reconfirmer"],"exemple":["Usages actuels","Comment se déroule une réception ordinaire ?","Membre A","Membre B","Cas des livraisons en fin de journée"]},
+        {"id":"compte-rendu","titre":"Compte rendu : faits, accords et ouverts","competences":["A1","D1","B2"],"usage":"Après l’entretien, séparer le constat sourcé, l’accord explicite et les questions laissées ouvertes.","piege":"Une proposition du client n’est pas un accord de périmètre.","colonnes":["Type : fait, accord ou ouvert","Formulation","Source ou validation","Suivi","Responsable"],"exemple":["Ouvert","Le nettoyage sur place est-il possible ?","Question posée lors du premier échange","Confirmer auprès de l’atelier","Membre C"]}
+      ]
+    },
+    {
+      "id": "cadrer", "titre": "Passer au cahier des charges", "moment": "Quand vous devez fixer ce que l’équipe étudie",
+      "livrable": "Un périmètre explicite, des exigences vérifiables et une WBS centrée sur les livrables.",
+      "cas": "Le commanditaire veut « un système simple et durable ». Votre équipe prévoit un rapport de recommandation, mais le planning commence par « planifier », « interviewer », « faire l’étude ».",
+      "mission": "Proposez une manière de vérifier « simple » sans inventer de seuil accepté. Décomposez le rapport en deux sous-livrables et identifiez une activité pour en produire un.",
+      "relecture": "Un mode de vérification possible est l’observation d’une réception selon un protocole convenu. Le seuil reste à discuter. « Synthèse des contraintes d’usage » et « comparaison argumentée » sont des produits ; « mener des entretiens » est une activité qui alimente le premier.",
+      "transfert": "Choisissez une exigence de votre cahier des charges. Donnez-la à un pair : peut-il expliquer comment la vérifier et relier le résultat à un livrable, sans supposer un accord ?",
+      "methode": ["M03", "M04", "M05", "M07"], "atelier": ["specification"],
+      "outils": [
+        {"id":"analyse-fonctionnelle","titre":"Analyse fonctionnelle : usages et contraintes","competences":["A1","C2"],"usage":"Décrire le service attendu dans une situation donnée avant de choisir une solution.","piege":"« Fournir un bac en inox » prescrit déjà un moyen.","colonnes":["Situation d’usage","Acteur","Service attendu","Contrainte","À vérifier avec"],"exemple":["Fin de livraison","Personne à la réception","Identifier les contenants à rendre","Espace de stockage limité","Équipe de réception"]},
+        {"id":"matrice-exigences","titre":"Matrice de traçabilité et de vérification","competences":["A1","C1","C2"],"usage":"Relier chaque exigence à un besoin, à une preuve attendue et à un statut de validation.","piege":"Un critère testable peut rester proposé : n’attribuez pas d’accord sans source.","colonnes":["ID","Besoin / source","Exigence","Critère d’acceptation","Preuve attendue","Statut"],"exemple":["EX01","Réception / premier entretien","Le retour est réalisable sans interrompre la réception","Seuil à convenir","Observation chronométrée sur des cas définis","À discuter"]},
+        {"id":"wbs-livrables","titre":"WBS : arbre des livrables","competences":["A2","B1"],"usage":"Décomposer le périmètre en produits et sous-produits. Estimer et affecter les activités dans votre plan de travail.","piege":"Un jalon marque un point de passage ; il n’est ni une activité ni un lot de travail.","colonnes":["Code WBS","Code parent","Livrable / sous-livrable","Ce qui est inclus","Critère d’achèvement"],"exemple":["1.2","1","Comparaison des options","Résultats, limites et hypothèses","Chaque option documentée selon les mêmes critères"]}
+      ]
+    },
+    {
+      "id": "planifier", "titre": "Organiser les jeudis", "moment": "Au passage du cours de méthode au travail autonome",
+      "livrable": "Un plan réaliste à deux jeudis, avec relais, dépendances et une décision explicite.",
+      "cas": "La validation des questions tarde. Deux membres attendent pour lancer les entretiens, trois préparent le même tableau et une personne n’a plus de tâche claire. Le prochain jeudi inclut une présentation intermédiaire.",
+      "mission": "Construisez l’ordre des activités en justifiant un vrai lien de dépendance ; proposez une activité qui peut avancer et un point de décision au prochain jeudi.",
+      "relecture": "Les entretiens dépendent d’un guide suffisamment stabilisé ; préparer les créneaux ou tester le format de saisie peut avancer. Nommer des responsables ne règle pas le déséquilibre à lui seul : rendez visible la charge et discutez qui a l’autonomie pour agir.",
+      "transfert": "Alignez le plan des deux prochains jeudis sur vos dates réelles. Simulez le retard d’une activité : un pair peut-il dire quel livrable sera touché et ce qui peut avancer pendant ce temps ?",
+      "methode": ["M07", "M08", "M11"], "atelier": ["gantt", "raci", "calendar"],
+      "outils": [
+        {"id":"reseau-dependances","titre":"Préparer un réseau de dépendances (PERT)","competences":["A2","A3"],"usage":"Tester l’ordre réel des activités avant de les dater. Identifier le travail mené en parallèle et la conséquence d’un retard.","piege":"La durée d’un jalon est nulle. Deux activités placées à la suite ne sont pas forcément dépendantes.","colonnes":["Activité","Prédécesseur nécessaire","Pourquoi","Durée estimée","Peut avancer en parallèle"],"exemple":["Réaliser les entretiens","Stabiliser le guide testé","Poser les mêmes questions clés","5 jours calendaires, créneaux compris","Préparer la grille d’analyse"]},
+        {"id":"kanban-charge","titre":"Tableau Kanban et travail en cours","competences":["A3","B1","B3"],"usage":"Rendre visibles à faire, en cours, bloqué et terminé. Avant d’ouvrir une tâche, discuter de ce que l’équipe doit finir ou débloquer.","piege":"Attribuer des tâches ne suffit pas si les décisions restent concentrées sur la même personne.","colonnes":["Résultat à obtenir","État","Responsable","Blocage","Prochaine action","Terminé quand"],"exemple":["Guide testé","Bloqué","Binôme terrain","Avis en attente","Tester une version auprès d’un pair","Questions ambiguës corrigées"]},
+        {"id":"revue-jeudi","titre":"Revue de coordination du jeudi","competences":["A3","B1","B2","B3"],"usage":"Commencer par le résultat vérifié depuis le dernier jeudi, puis décider quoi débloquer et répartir avant le prochain créneau.","piege":"Un tour de table sur l’activité ne remplace pas une décision de coordination.","colonnes":["Résultat observable","Écart ou blocage","Décision attendue aujourd’hui","Responsable","À revoir quand"],"exemple":["2 créneaux acceptés","3 interlocuteurs non confirmés","Mobiliser un second canal de contact","Binôme terrain","Jeudi suivant"]}
+      ]
+    },
+    {
+      "id": "enqueter", "titre": "Enquêter et mettre les preuves à l’épreuve", "moment": "Avant de défendre un résultat technique",
+      "livrable": "Un dossier court : hypothèses, preuves disponibles, limites et décision d’investigation.",
+      "cas": "Quatre personnes volontaires trouvent un prototype simple, mais la réception de fin de journée n’a pas été observée. Le retour des contenants s’est mal passé lors d’un essai.",
+      "mission": "Formulez une conclusion défendable, une hypothèse alternative à tester et une observation qui pourrait contredire votre explication.",
+      "relecture": "Décrivez l’observation et le recrutement. L’essai renseigne sur quatre volontaires, pas sur toutes les conditions. Un incident peut dépendre du rangement ou du moment de réception, pas seulement du contenant. Cherchez un contraste contrôlé avant de conclure.",
+      "transfert": "Prenez une affirmation de votre projet. Faites remonter un pair jusqu’à la donnée d’origine et demandez-lui de trouver une explication plausible que votre méthode ne départage pas.",
+      "methode": ["M10", "M12", "M14"], "atelier": ["risks"],
+      "outils": [
+        {"id":"plan-collecte","titre":"Plan de collecte et couverture des cas","competences":["C1","C2","D1"],"usage":"Choisir les cas à comparer selon ce que vous voulez inférer. Préciser les exclusions et la couverture.","piege":"Un échantillon de convenance peut éclairer une piste, pas représenter la population.","colonnes":["Question","Cas à couvrir","Mode de recrutement","Mesure / protocole","Cas manquants","Limite"],"exemple":["Quand les retours échouent-ils ?","Réceptions normales et tardives","Créneaux proposés à l’atelier","Observer le même geste","Créneau tardif","Pas de comparaison temporelle établie"]},
+        {"id":"hypothese-preuve","titre":"Registre hypothèse–preuve","competences":["C1","C2"],"usage":"Repérer la preuve disponible, l’explication concurrente et le test susceptible de les départager.","piege":"Les causes d’un diagramme d’Ishikawa restent des hypothèses tant qu’elles ne sont pas éprouvées.","colonnes":["Hypothèse","Observation et source","Cause alternative","Test ou contre-exemple","Conclusion provisoire"],"exemple":["Le rangement ralentit le retour","Un essai, note terrain","Affluence à la réception","Comparer le geste à charge similaire avec deux rangements","Non tranché"]},
+        {"id":"audit-source","titre":"Relecture critique d’une source ou d’une réponse IA","competences":["C1","C2","D3"],"usage":"Identifier exactement le résultat revendiqué, remonter à la source et vérifier le périmètre de validité.","piege":"Une référence existante peut ne pas étayer l’affirmation qui lui est attribuée.","colonnes":["Affirmation","Source d’origine et emplacement","Ce qui est établi","Ce qui reste hors périmètre","Usage dans le rapport"],"exemple":["Le réemploi réduit les déchets dans notre atelier","Note terrain 01, essai unique","Un contenant a été repris à la réception","Impact global et taux réel de retour","Présenter comme piste à mesurer"]}
+      ]
+    },
+    {
+      "id": "arbitrer", "titre": "Arbitrer sans épuiser l’équipe", "moment": "Quand une demande change ou que le projet s’enlise",
+      "livrable": "Une décision attribuée, une option mise de côté et un test de fonctionnement collectif.",
+      "cas": "À deux jeudis de la restitution, le client demande un pilote supplémentaire. Deux personnes l’ont déjà promis oralement ; d’autres viennent moins. Les données pour comparer les options restent partielles.",
+      "mission": "Préparez deux options avec leurs effets sur le cahier des charges, les preuves et la charge. Précisez qui doit trancher et comment recueillir les objections avant de reconfirmer le délai.",
+      "relecture": "Comparez un pilote réduit à une recommandation conditionnelle. Une promesse orale rapportée ne fixe pas à elle seule le périmètre. Reliez les options à des capacités et preuves concrètes. Pour la participation, partez d’un fait de coordination et proposez un essai réversible ; cherchez à comprendre les contraintes.",
+      "transfert": "À partir d’une demande ou d’un blocage réel, proposez deux options sur une page. Demandez à un membre en désaccord de reformuler le compromis, puis fixez avec lui le signe qui fera revoir la décision.",
+      "methode": ["M06", "M09", "M12", "M13", "M15"], "atelier": ["decision-matrix", "risks", "decisions"],
+      "outils": [
+        {"id":"impact-changement","titre":"Fiche d’impact d’une demande de changement","competences":["A3","B2","D1"],"usage":"Comparer la référence actuelle avec le changement demandé. Examiner coût, délai, preuve et arbitrage avant de promettre.","piege":"Ajoutez l’option de maintenir le périmètre et distinguez le demandeur du décideur.","colonnes":["Demande / source","Référence actuelle","Option","Impact sur livrable, délai et charge","Preuve sacrifiée ou ajoutée","Qui décide","Statut"],"exemple":["Pilote additionnel / réunion","Rapport de faisabilité","Pilote sur un cas","Une séance terrain en plus ; moins de temps de synthèse","Un essai, pas de démonstration robuste","Commanditaire après discussion équipe","Envisagé"]},
+        {"id":"sensibilite-options","titre":"Test de sensibilité d’une décision","competences":["C1","C2","B2"],"usage":"Faire varier un poids, une estimation ou une hypothèse crédible. Si le classement s’inverse, expliquer de quoi dépend le choix.","piege":"Un bon score ne compense pas une contrainte obligatoire non satisfaite.","colonnes":["Option","Hypothèse fragile","Variante plausible","Effet sur le choix","Vérification ou condition"],"exemple":["Pilote réduit","Créneau disponible","Le créneau est annulé","Privilégier la recommandation conditionnelle","Confirmer la réservation avant engagement"]},
+        {"id":"reprise-collectif","titre":"Point de reprise quand le collectif décroche","competences":["B3","B2","D2"],"usage":"Décrire les faits observables, demander ce qui bloque, convenir d’un essai court et de son signe d’utilité.","piege":"Évitez « les autres ne sont pas motivés » ou le suivi individuel déguisé. Cherchez une contrainte et un ajustement de travail.","colonnes":["Fait observable","Question au groupe","Essai jusqu’au prochain jeudi","Signe utile","Moment de retour"],"exemple":["Deux tâches ouvertes depuis trois séances","Qu’est-ce qui empêche de les finir ?","Un binôme traite un seul blocage","Un résultat testable est disponible","Début du prochain jeudi"]}
+      ]
+    },
+    {
+      "id": "restituer", "titre": "Restituer et retenir ce qui servira ensuite", "moment": "Avant la soutenance, puis en retour d’expérience",
+      "livrable": "Une recommandation sourcée, une passation utilisable et un prochain geste individuel.",
+      "cas": "Le jury demande : « Est-ce que vous recommandez le déploiement ? » L’équipe a un résultat prometteur sur un créneau mais pas de données sur un cycle long. Rétrospectivement, les blocages étaient souvent signalés trop tard.",
+      "mission": "Préparez une réponse en une minute. Reliez la recommandation à une preuve et une limite. Choisissez ensuite une action personnelle que vous pourrez refaire sur un autre projet.",
+      "relecture": "Une recommandation de test sur un périmètre donné peut être plus solide qu’un oui général. Précisez ce que le commanditaire devra observer pour décider. Pour le prochain projet, remplacer « mieux communiquer » par un geste observable : annoncer le blocage dès qu’il menace un résultat, puis relire l’effet avec l’équipe.",
+      "transfert": "Répétez la réponse à une objection devant un pair et demandez-lui d’identifier la preuve et sa limite. Après la restitution, gardez pour vous un geste à réessayer et le signe qui vous dira s’il aide.",
+      "methode": ["M09", "M14", "M15"], "atelier": ["decisions"],
+      "outils": [
+        {"id":"argument-preuve","titre":"Storyboard affirmation–preuve–limite","competences":["D3","C1","D1"],"usage":"Construire l’oral autour des décisions du commanditaire. Associer chaque affirmation importante à une preuve et à ce qu’elle ne permet pas de conclure.","piege":"Un exemple oral illustre un résultat ; il n’est pas une preuve de généralité.","colonnes":["Affirmation","Preuve et emplacement","Limite","Recommandation","Question probable"],"exemple":["Un essai prolongé mérite d’être mené","Observation 02, réception du matin","Un seul créneau","Tester matin et fin de journée avant de déployer","Qu’est-ce qui ferait abandonner la piste ?"]},
+        {"id":"fiche-passation","titre":"Passation au commanditaire","competences":["D3","D1","C2"],"usage":"Documenter ce qui est réutilisable, dans quelles conditions, et qui pourra poursuivre. Vérifier ce qui peut être transmis.","piege":"Ne transmettez que les éléments nécessaires et autorisés, même si les annexes sont pratiques.","colonnes":["Élément","Usage prévu","Limite ou donnée manquante","Responsable de suite","Transmission autorisée"],"exemple":["Protocole d’observation","Reproduire les mesures","Pas testé en réception tardive","Référent atelier à confirmer","À vérifier"]},
+        {"id":"debrief-reflexif","titre":"Retour d’expérience individuel et transfert","competences":["D2","B3"],"usage":"Choisir un épisode précis et expliquer ce qui a changé dans votre compréhension. Décider d’un geste à essayer, avec un signe de progrès.","piege":"Un jugement sur soi ou sur les autres renseigne moins qu’un fait observé. Gardez ce bilan dans vos notes si vous ne souhaitez pas le partager.","colonnes":["Épisode observable","Ce que j’ai tenté","Effet constaté","Autre explication ou action possible","Geste à essayer","Signe de progrès"],"exemple":["Guide bloqué deux jeudis","J’ai attendu le tour de table","Le binôme terrain a perdu un créneau","Signaler la dépendance dès qu’elle est visible","Demander un arbitrage en début de séance","Étape débloquée avec un responsable"]}
+      ]
+    }
+  ]
+}

@@ -160,3 +160,40 @@ body.ptd-v2 {
   .ptd-gantt-toolbar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ptd-gantt-toolbar button { font-size: .82rem; padding-inline: .35rem; }
 }
+
+/* Bibliothèque : compétences, ateliers et modèles de travail. */
+.boot-skills { background: var(--surface); border-radius: 1.3rem; padding: clamp(1rem, 3vw, 1.6rem); }
+.boot-skills h2, #boot-title { letter-spacing: -.032em; }
+.boot-skills p { margin: .4rem 0 1rem; }
+.boot-skills .boot-skill-hint { margin: .9rem 0 0; color: var(--ink); }
+.boot-competences { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .45rem; }
+.ptd-v2 .boot-chip { display: block; min-width: 0; border-radius: .65rem; text-align: left; font-size: .85rem; line-height: 1.35; }
+.ptd-v2 .boot-chip[aria-pressed="true"], .ptd-v2 .boot-nav button[aria-pressed="true"] { background: #005bbd; color: white; border-color: #005bbd; }
+.boot-nav { margin: 1.6rem 0 1.25rem; }
+#bootcamp > p { max-width: 74ch; }
+.boot-modules { display: grid; gap: .75rem; margin-block: .6rem 1.3rem; }
+.boot-module { border: 1px solid var(--line); border-radius: 1rem; background: white; min-width: 0; }
+.boot-module > summary { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: .85rem; padding: 1.15rem; list-style: none; }
+.boot-module > summary::-webkit-details-marker { display: none; }
+.boot-module > summary::after { content: "+"; font-weight: 600; color: var(--teal); }
+.boot-module[open] > summary::after { content: "−"; }
+.boot-module[open] > summary { border-bottom: 1px solid var(--line); }
+.boot-index { color: var(--teal); font-size: 1rem; font-variant-numeric: tabular-nums; font-weight: 600; }
+.boot-module-copy { display: grid; gap: .18rem; }
+.boot-module-title { font-size: clamp(1rem, 3vw, 1.36rem); line-height: 1.15; letter-spacing: -.025em; font-weight: 650; }
+.boot-moment { color: var(--muted); font-size: .84rem; }
+.boot-output { font-size: .94rem; margin-top: .2rem; }
+.boot-module-body { padding: clamp(.8rem, 3vw, 1.35rem); display: grid; gap: .7rem; min-width: 0; }
+.boot-exercise { border-radius: .8rem; padding: 1rem; background: var(--surface); }
+.boot-module-body > h3 { margin-top: .55rem; }
+.boot-exercise p, .boot-tool p { margin-block: .5rem; }
+.boot-case { margin-block: .65rem; }
+.boot-case > summary, .boot-tool > summary, .boot-module > summary { cursor: pointer; }
+.boot-case > summary { font-weight: 600; color: var(--teal); }
+.boot-case li { margin-block: .3rem; }
+.boot-tool-list { display: grid; gap: .45rem; min-width: 0; }
+.boot-tool { border: 1px solid var(--line); border-radius: .65rem; padding: .75rem; min-width: 0; }
+.boot-tool > summary { font-weight: 600; }
+.boot-tool .boot-codes { display: inline-block; margin-left: .5rem; font-weight: 400; }
+.boot-tool .method-table { margin-block: .5rem .75rem; }
+.boot-links button { max-width: 100%; text-align: left; font-size: .87rem; }

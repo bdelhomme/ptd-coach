@@ -1,5 +1,12 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Parcours de la bibliothèque · D-043
+
+Lire `docs/PTD_BIBLIOTHEQUE_PARCOURS.md`. Le parcours est une ressource
+étudiante expérimentale, indépendante du contexte IA. Préserver le candidat
+V0.3, les identifiants des méthodes V2, la séparation entre modèles vierges
+et exemples fictifs et les droits des brouillons d’équipe.
+
 ## Atelier et bibliothèque V2 · D-040
 
 La V2 démarre avec GLM Flash selon D-041. Le prochain cadrage à éprouver

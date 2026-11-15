@@ -275,3 +275,14 @@ rappel général a allongé deux réponses sans corriger les inventions. Le mode
 de revue dédié réduit le contexte et demande un retour ciblé sans réécriture.
 Deux nouveaux essais ont évité les ajouts factuels observés ; la restitution
 des limites reste à améliorer. [Guide et arbitrages](PTD_V2.md).
+
+## Bibliothèque : passer du catalogue à la pratique sur le projet
+
+Le porteur souhaite une bibliothèque plus ambitieuse, proche d’un bootcamp,
+avec les compétences en tête et les travaux de Rémi Bachelet comme
+inspiration. Il précise que la demande porte actuellement sur la
+bibliothèque seule. La première proposition associe cas fil rouge, mise en
+pratique, relecture différée et transfert sur un vrai épisode de PTD.
+Les outils ouvrent sur une production inspectable par un pair.
+Les compétences restent candidates et les usages restent à observer.
+[Conception et passation](PTD_BIBLIOTHEQUE_PARCOURS.md).
