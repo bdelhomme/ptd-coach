@@ -120,3 +120,17 @@ l’ensemble des compétences et recette sur téléphone physique. Les fiches
 spécifiques sur l’animation de réunion, le PDCA, l’évaluation des sources et
 la faisabilité restent à approfondir. Le [dossier
 pilote](CHECKLIST_PILOTE_PTD.md) s’applique toujours.
+
+## Aperçu graphique
+
+La branche `feat/ptd-v2-design-preview` adapte la hiérarchie des
+[pages Apple France](https://www.apple.com/fr/mac/) à PTD Coach. La page
+d’accueil privilégie le titre, le point d’entrée et une photographie de
+couverture. Les écrans de travail reprennent la palette et les composants
+de navigation. Les parcours accueil, bibliothèque, coach et Gantt ont été
+vérifiés dans le navigateur, dont les vues à 1 440 et 390 px.
+
+[Photographie originale de couverture](../web/ptd-cover.jpg), générée
+avec l’outil ImageGen intégré. Prompt employé :
+
+> Photorealistic natural editorial photograph for the landing page of a French engineering school semester project workspace. Extra-wide horizontal composition designed to crop to a 3:1 banner. A top-down, slightly angled view of a pale brushed aluminum worktable. In the central band are a few tangible artifacts of hands-on engineering project work: an open ivory graph-paper notebook with small rough lines but no readable text, a silver mechanical pencil, and three small unlabeled rounded material samples in chalk white, warm recycled paper fiber and muted vermilion. Arrange the objects in a clean restrained diagonal from left to right, with room at the edges, filling the wide composition. Calm overcast daylight, real tactile surfaces, gentle deep shadows, slight lens grain, luminous natural tones and a quiet cobalt accent from a single paper tab. Premium editorial product photography with realistic paper texture, understated precise art direction. No people, no screen, no Apple products or branding, no logos, no typography, no watermark.

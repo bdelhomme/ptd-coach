@@ -1,5 +1,6 @@
 """Offline repository checks; no application or pedagogical validation."""
 
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -23,6 +24,9 @@ REQUIRED = (
 PRIVATE_DIRS = {".venv", "node_modules", "local-data", "student-data",
                 "private-source-documents", ".git"}
 PRIVATE_SUFFIXES = {".pem", ".key", ".docx", ".sqlite", ".sqlite3", ".dump", ".bak"}
+REVIEWED_BINARY_ASSETS = {
+    "web/ptd-cover.jpg": "08fd63fd9169c1217681d65c51b4c1357e333bd247383196386ef36a86452a33",
+}
 TOKEN_PATTERNS = (
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b"),
@@ -71,6 +75,14 @@ def check_repository(root, paths):
             continue
         if path.is_symlink():
             errors.append("Symlink requires explicit review: " + name)
+            continue
+        if name in REVIEWED_BINARY_ASSETS:
+            try:
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            except OSError:
+                digest = None
+            if digest != REVIEWED_BINARY_ASSETS[name]:
+                errors.append("Binary asset differs from its reviewed fingerprint: " + name)
             continue
         try:
             content = path.read_text(encoding="utf-8")

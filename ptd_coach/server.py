@@ -28,7 +28,8 @@ PROJECT_ASSETS = {"/": ("ptd.html", "text/html"), "/coach": ("ptd.html", "text/h
                   "/workbench-v2.css": ("workbench-v2.css", "text/css"),
                   "/gantt-v2.js": ("gantt-v2.js", "text/javascript"),
                   "/gantt-v2.css": ("gantt-v2.css", "text/css"),
-                  "/ptd-v2.css": ("ptd-v2.css", "text/css")}
+                  "/ptd-v2.css": ("ptd-v2.css", "text/css"),
+                  "/ptd-cover.jpg": ("ptd-cover.jpg", "image/jpeg")}
 COOKIE = "ptd_demo"
 
 
@@ -69,7 +70,7 @@ class Handler(BaseHTTPRequestHandler):
     def reply(self, status, value, content_type="application/json", cookie=None, download=False):
         body = value if isinstance(value, bytes) else json.dumps(value, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
-        self.send_header("Content-Type", content_type + "; charset=utf-8")
+        self.send_header("Content-Type", content_type if content_type.startswith("image/") else content_type + "; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
