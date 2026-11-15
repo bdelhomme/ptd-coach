@@ -1,0 +1,118 @@
+{
+  "status": "development",
+  "data": "synthetic_only",
+  "trajectories": [
+    {
+      "id": "SEM-A",
+      "mission": "Étude de marché · sept étudiants",
+      "actor": "student_demo_01",
+      "turns": [
+        {
+          "stage": "Lancement après les cours",
+          "student": "Nous sommes sept. Après les premiers cours de gestion de projet, premier rendez-vous avec le commanditaire jeudi. Il propose « explorer la reprise des emballages ». L’école attend une charte et un planning initial à la revue du jeudi suivant. Comment se préparer et répartir la parole ?",
+          "competencies": [
+            "A1",
+            "A2",
+            "B1",
+            "D1"
+          ],
+          "look_for": "Préparer toute l’équipe, distinguer cadrage de la mission et traces attendues à la revue.",
+          "red_flags": "Présumer un accord client, imposer un petit comité ou inventer des exigences scolaires."
+        },
+        {
+          "stage": "Collecte interrompue",
+          "student": "À la revue nous avons confirmé un pilote exploratoire sur une région. Huit semaines plus tard, douze ateliers ont répondu et aucun n’est rural. Le prochain jeudi est pendant les vacances. Il reste deux jeudis utiles avant la revue école. Le client demande aussi un chiffrage national. Quelle réponse et quel plan ?",
+          "competencies": [
+            "A3",
+            "C1",
+            "C2",
+            "D1"
+          ],
+          "look_for": "Distinguer demande et accord, préparer un arbitrage et borner les conclusions. Utiliser les deux créneaux disponibles.",
+          "red_flags": "Promettre le chiffrage, transformer les volontaires en échantillon représentatif ou prévoir une séance pendant les vacances."
+        },
+        {
+          "stage": "Retour d’équipe",
+          "student": "Jeudi, on a essayé un tour de parole parce que trois personnes monopolisaient les échanges. Les sept ont parlé, mais on n’a pas décidé qui vérifierait le recrutement. La prochaine séance est écourtée à vingt minutes. Comment faire évoluer notre méthode ?",
+          "competencies": [
+            "B1",
+            "B2",
+            "B3",
+            "D2"
+          ],
+          "look_for": "Reconnaître un effet sur la participation et traiter le blocage distinct sur la décision. Proposer une action dans le temps disponible.",
+          "red_flags": "Déduire que la motivation est réglée, inventer l’absence de participants ou imposer du travail entre les jeudis."
+        },
+        {
+          "stage": "Restitution",
+          "student": "Au final, le client attend une note sur le pilote local. Pour la soutenance de l’école, on doit expliquer notre démarche et ses limites. Une personne propose d’écrire que le besoin national est validé. Comment préparer les deux rendus avec ce qu’on a réellement ?",
+          "competencies": [
+            "A3",
+            "C1",
+            "D2",
+            "D3"
+          ],
+          "look_for": "Séparer les deux destinataires, les constats et la portée. Structurer la restitution à partir des preuves disponibles.",
+          "red_flags": "Valider le besoin national ou présenter un réajustement rapporté comme évalué par un tiers."
+        }
+      ]
+    },
+    {
+      "id": "SEM-B",
+      "mission": "Conseil technologique · six étudiants",
+      "actor": "student_demo_03",
+      "turns": [
+        {
+          "stage": "Cadrage de la faisabilité",
+          "student": "On est six. On commence le travail autonome après deux jeudis de cours. Le client dit « modernisez notre veille », et demande une recommandation argumentée. À la première revue école, il faut présenter le cadrage et notre calendrier initial. Il reste un jeudi avant. Comment avancer ?",
+          "competencies": [
+            "A1",
+            "A2",
+            "B1",
+            "D1"
+          ],
+          "look_for": "Prioriser les incertitudes utiles, des rôles temporaires et une reformulation à discuter.",
+          "red_flags": "Déclarer une plateforme, un déploiement ou une recommandation déjà validés."
+        },
+        {
+          "stage": "Challenge et preuve manquante",
+          "student": "Après le challenge croisé, les autres équipes ont contesté notre compatibilité technique. Le test était prévu mais l’accès n’a jamais été fourni. Le client voudrait élargir le périmètre au déploiement. Notre prochain jeudi est annulé. Comment préparer la revue école ?",
+          "competencies": [
+            "A3",
+            "C1",
+            "C2",
+            "D1"
+          ],
+          "look_for": "Distinguer test prévu, preuve absente et demande d’extension. Préparer une communication honnête et un ajustement faisable.",
+          "red_flags": "Transformer le test prévu en test réalisé, ou l’extension en accord. Supposer des disponibilités hors créneau."
+        },
+        {
+          "stage": "Arbitrage et essoufflement",
+          "student": "Deux personnes répondent peu, une autre veut conclure que A a gagné parce que la matrice lui donne 3,8/5. Après notre essai de reformulation, le groupe a reconnu les deux positions, sans choisir. On a vingt minutes au prochain jeudi. Comment aider le groupe à avancer ?",
+          "competencies": [
+            "B1",
+            "B2",
+            "B3",
+            "C1",
+            "D2"
+          ],
+          "look_for": "Reconnaître le progrès d’écoute, distinguer poids et preuve de compatibilité, et proposer une décision possible dans le créneau.",
+          "red_flags": "Inférer des traits individuels, inventer un essai, assimiler le score à une preuve technique."
+        },
+        {
+          "stage": "Transmission distincte",
+          "student": "Le client nous accorde un délai pour lui remettre la note, mais l’oral de l’école reste annoncé inchangé. Un petit essai en environnement isolé pourra être fait plus tard. Que conclure maintenant et qu’est-ce qu’on retiendra comme équipe pour une autre mission ?",
+          "competencies": [
+            "A3",
+            "C2",
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "look_for": "Séparer les échéances et les conclusions. Formuler la preuve à produire et identifier un apprentissage réutilisable lié à un épisode.",
+          "red_flags": "Déplacer l’oral, déclarer l’essai réussi ou déduire une progression personnelle certaine."
+        }
+      ]
+    }
+  ]
+}

@@ -136,6 +136,34 @@ Adapte la profondeur au besoin et arrête-toi après un feedback suffisant.
 """
 
 
+class SemesterWorkshopContext(WorkshopContext):
+    @property
+    def version(self):
+        return super().version if self.review.get() else "conversation-ptd-v2-experimental-0.2"
+
+    def system(self, scope, resources=()):
+        system = super().system(scope, resources)
+        if self.review.get():
+            return system
+        return system + """
+
+Le PTD est une mission de semestre pour un commanditaire, menée en équipe de
+six ou sept. Les premiers jeudis incluent des cours de gestion de projet.
+L'équipe travaille vite en autonomie dans un calendrier général imposé qui
+prévoit des livrables. Le jeudi matin est le créneau habituel, avec vacances et
+exceptions. Utilise les séances, jalons et livrables explicitement fournis pour
+cette équipe. Si un élément décisif manque, emploie une condition ou demande
+une précision ciblée. Distingue rendu au commanditaire et rendu à l'école ;
+un changement demandé par l'un ne modifie pas les attentes de l'autre.
+Aide à décider quoi produire ou ajuster avec les créneaux encore disponibles.
+Pour une première rencontre de lancement, envisage la présence de toute
+l'équipe pour entendre la demande et répartir la parole. Un entretien terrain
+ciblé peut nécessiter un autre format, selon le but et les contraintes.
+Lors d'un retour sur un essai, distingue action prévue, action réalisée et
+effet observé. Demande ce que l'équipe veut réutiliser si la situation s'y prête.
+"""
+
+
 class WorkshopChatService(ProjectChatService):
     def send_review(self, actor, cid, key, payload):
         token = self.context.review.set(True)

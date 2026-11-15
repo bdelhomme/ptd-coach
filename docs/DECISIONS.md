@@ -137,3 +137,14 @@ Le démarrage V2 utilise Flash en `low`, avec le plafond de sortie de 2 000
 tokens testé dans la comparaison. Les paramètres locaux gardent la priorité.
 Le prochain cadrage à éprouver est décrit dans le
 [document sur la pratique réflexive](PTD_PRATIQUE_REFLEXIVE.md).
+
+## D-042 — Cadre réel du semestre dans le coach V2
+
+Le porteur précise le fonctionnement du PTD. Une équipe de six ou sept
+étudiants travaille un semestre pour un commanditaire. Les premiers jeudis
+incluent un enseignement de gestion de projet, puis les équipes prennent
+rapidement en charge le projet dans un calendrier global imposé. Les vacances
+et exceptions limitent les créneaux. Le contexte de conversation V2 0.2
+explicite cette structure et distingue les livrables école et commanditaire.
+Les dates et livrables d’une équipe doivent être confirmés et sourcés.
+[Recette de semestre](../pedagogy/evaluations/ptd-v2-demo/README.md#deux-trajectoires-de-semestre-sur-quatre-étapes).

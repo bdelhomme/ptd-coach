@@ -81,11 +81,11 @@ def main():
             database = local / "coach-integrated-demo.sqlite3"
         else:
             from .demo_v2 import DEMOS, PROJECTS_V2
-            from .library_v2 import WorkshopChatService, WorkshopContext
+            from .library_v2 import SemesterWorkshopContext, WorkshopChatService
             from .workbench import Workbench
             project = ProjectService(local / "project-v2-demo.sqlite3", PROJECTS_V2)
             workbench = Workbench(project, DEMOS)
-            context = WorkshopContext(project)
+            context = SemesterWorkshopContext(project)
             database = local / "coach-v2-demo.sqlite3"
         chat_class = WorkshopChatService if workbench is not None else ProjectChatService
     try:

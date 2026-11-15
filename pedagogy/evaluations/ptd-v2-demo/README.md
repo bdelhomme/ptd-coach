@@ -205,3 +205,48 @@ dépend du critère retenu et repose sur une réponse par modèle. [Réponse exa
 de Small](small-fatigue-comparaison.jsonl).
 
 SHA-256 du JSONL `570206715e66e79bc9dc085dcb6039852fc579ae2bbcc9184a58edd8ddcfb36b`.
+
+## Deux trajectoires de semestre sur quatre étapes
+
+Les [situations de développement](../../qa/PTD_SEMESTER_V2_DEV.json) suivent
+une équipe de sept en étude de marché et une équipe de six en conseil
+technologique. Quatre tours par équipe relient le lancement après les cours,
+une revue sous contrainte de calendrier, un retour sur un changement de
+fonctionnement et les deux rendus. Les livrables et les délais de chaque
+scénario sont fictifs. Le cadre structurel vient des précisions du porteur
+et les jalons types du [dossier de référence](../../../docs/REFERENCE_MATERIAL.md),
+dont le planning détaillé est prévisionnel.
+
+GLM Flash en `low`, température 0,2, délai de 45 s et plafond de 2 000
+tokens de sortie. Les deux variantes reçoivent les mêmes messages étudiants
+aux étapes de simulation 1, 4, 6 et 7, avec des fils distincts et un tour par
+étape. Chaque modèle poursuit les réponses propres à sa variante. Les huit
+tours par variante sont complets. V2 0.1 totalise 32 457 tokens, contre 32 808
+pour V2 0.2. Les consignes de revue d’extrait restent séparées.
+[Réponses exactes et métadonnées](semestre-v2.jsonl).
+
+- **Conseil technologique.** Après le jeudi annulé, V2 0.1 propose de répartir
+  du travail hors créneau avec disponibilités à confirmer. V2 0.2 invite à
+  replacer le travail, préserve l’absence de preuve et distingue la demande
+  d’extension de l’accord. Au dernier tour, les deux distinguent les deux
+  rendus, et V2 0.2 garde mieux le caractère encore éventuel de l’essai.
+  Elle attribue toutefois sans preuve le délai client à la posture de l’équipe.
+- **Étude de marché.** Les deux structurent le lancement et distinguent les
+  deux rendus. Les deux suggèrent un chiffrage national conditionnel avec
+  une base insuffisante. V2 0.2 reprend plus tard son propre chiffrage proposé
+  comme « déjà préparé », alors que l’étudiant n’a pas dit l’avoir fait. Elle
+  évoque aussi une relance pendant les vacances et une préparation avant
+  le jeudi écourté. La relecture et la provenance des états du projet restent
+  prioritaires avant de conclure à une amélioration générale.
+
+Prochaine étape de recette. Ajouter un livrable partiel fictif à chaque revue
+et une évolution dans les repères confirmés du projet. Vérifier qu’une action
+seulement suggérée par le coach reste au statut de proposition, qu’une preuve
+absente reste absente, et que tout délai suit la source habilitée pour le
+rendu correspondant. Faire relire les réponses sur ces critères et sur la
+place des décisions étudiantes. Une exécution par variante suffit à relever
+ces défauts. La couverture des onze compétences décrit les critères des
+scénarios, et leur évaluation pédagogique demande une revue humaine.
+
+SHA-256 du JSONL
+`9b118f5888a9a5f9a4513d60f0c6608fe3419f6011971123b68c51ca7f5aaf9d`.

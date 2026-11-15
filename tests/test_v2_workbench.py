@@ -8,7 +8,7 @@ import unittest
 
 import test_a2_http as a2_http
 from ptd_coach.demo_v2 import DEMOS, PROJECTS_V2
-from ptd_coach.library_v2 import WorkshopChatService, WorkshopContext, WorkshopMockProvider, catalogue_v2, projection, select_v2
+from ptd_coach.library_v2 import SemesterWorkshopContext, WorkshopChatService, WorkshopMockProvider, catalogue_v2, projection, select_v2
 from ptd_coach.project import ProjectService
 from ptd_coach.server import DemoServer
 from ptd_coach.service import Service
@@ -79,7 +79,7 @@ class WorkbenchV2HTTPTest(unittest.TestCase):
         root = Path(self.temp.name)
         project = ProjectService(root / "project.sqlite3", PROJECTS_V2)
         self.provider = Capture()
-        self.chat = WorkshopChatService(root / "chat.sqlite3", self.provider, context=WorkshopContext(project))
+        self.chat = WorkshopChatService(root / "chat.sqlite3", self.provider, context=SemesterWorkshopContext(project))
         self.workbench = Workbench(project, DEMOS)
         self.server = DemoServer(("127.0.0.1", 0), Service(root / "a2.sqlite3"), self.chat, project, self.workbench)
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
@@ -145,9 +145,27 @@ class WorkbenchV2HTTPTest(unittest.TestCase):
         self.assertEqual(reply["invocations"][0]["resource_ids"], ["M14"])
         self.assertEqual(reply["invocations"][0]["prompt_version"], "review-ptd-v2-experimental-0.3")
         self.assertIn(excerpt, self.provider.last_request[-1]["content"])
+        self.assertNotIn("Le PTD est une mission de semestre", self.provider.last_request[0]["content"])
         self.assertNotIn(calendar["sessions"], str(self.provider.last_request))
         self.assertEqual(self.request(path, session=b)[0], 404)
         self.assertEqual(self.request(path + "/export", session=self.login("tutor_demo_01"))[0], 403)
+
+    def test_conversation_uses_semester_context_without_unconfirmed_dates(self):
+        student = self.login()
+        _, _, thread = self.request("/api/coach/conversations", "POST", {
+            "scope": "collective", "synthetic_confirmed": True, "coach_version": "v08",
+        }, student)
+        path = "/api/coach/conversations/" + thread["id"] + "/messages"
+        status, _, reply = self.request(path, "POST", {
+            "message": "Le prochain jeudi est annulé et le client veut déplacer son rendu.",
+            "version": thread["version"],
+        }, student)
+        self.assertEqual(status, 200, reply)
+        self.assertEqual(reply["invocations"][0]["prompt_version"], "conversation-ptd-v2-experimental-0.2")
+        system = self.provider.last_request[0]["content"]
+        self.assertIn("rendu au commanditaire et rendu à l'école", system)
+        self.assertIn("vacances et", system)
+        self.assertNotIn("10/06", system)
 
     def test_invalid_workbench_input_does_not_persist(self):
         a = self.login()
