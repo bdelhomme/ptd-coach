@@ -10,6 +10,8 @@ revue d’extrait dispose d’un contexte dédié après deux essais infructueux
 cadrage général. [Guide et passation](PTD_V2.md) ·
 [Résultats Mistral](../pedagogy/evaluations/ptd-v2-demo/README.md).
 
+[Passation et reprise de la démo GLM en high](PTD_PASSATION.md).
+
 ## Historique · application intégrée
 
 La [PR #16](https://github.com/bdelhomme/ptd-coach/pull/16), branche
