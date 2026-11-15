@@ -13,9 +13,10 @@ REASONING_EFFORTS = {
 }
 
 
-def settings(root):
+def settings(root, *, v2=False):
+    default_model = "zai-glm-5-3-flash" if v2 else "mistral-small-latest"
     values = {"CHAT_PROVIDER": "mistral", "MISTRAL_API_KEY": "",
-              "MISTRAL_MODEL": "mistral-small-latest", "CHAT_MAX_TOKENS": "700",
+              "MISTRAL_MODEL": default_model, "CHAT_MAX_TOKENS": "",
               "CHAT_TIMEOUT_SECONDS": "45", "CHAT_MAX_CALLS": "100",
               "MISTRAL_REASONING_EFFORT": "low"}
     path = root / ".env"
@@ -27,6 +28,8 @@ def settings(root):
                     values[key.strip()] = value.strip().strip("\"'")
     for key in values:
         values[key] = os.environ.get(key, values[key])
+    if not values["CHAT_MAX_TOKENS"]:
+        values["CHAT_MAX_TOKENS"] = "2000" if v2 and values["MISTRAL_MODEL"] == default_model else "700"
     if values["CHAT_PROVIDER"] not in ("mock", "mistral"):
         raise ValueError("CHAT_PROVIDER doit être mock ou mistral")
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.:/-]{0,119}", values["MISTRAL_MODEL"]):

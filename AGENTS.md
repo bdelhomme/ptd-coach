@@ -2,6 +2,11 @@
 
 ## Atelier et bibliothèque V2 · D-040
 
+La V2 démarre avec GLM Flash selon D-041. Le prochain cadrage à éprouver
+est décrit dans `docs/PTD_PRATIQUE_REFLEXIVE.md`. Les critères portent sur
+des actions et observations situées. Réutiliser les droits des fils et les
+confirmations explicites pour tout passage d’une séance à l’autre.
+
 Lire `docs/PTD_V2.md` avant d’étendre l’atelier. Le catalogue V2 a une
 source canonique, deux représentations et des fiches en brouillon. Les
 outils sont des brouillons d’équipe avec versions, hors du contexte du coach.

@@ -128,3 +128,12 @@ autorisé. Le Gantt signale les incohérences fin-début et laisse l’arbitrage
 des dates à l’équipe. Le catalogue commun alimente la fiche riche et une
 projection bornée pour le coach. Les exemples et fiches restent en relecture.
 Les modes antérieurs et le candidat V0.3 sont préservés. [Guide V2](PTD_V2.md).
+
+## D-041 — GLM Flash et pratique réflexive
+
+Le porteur choisit GLM 5.3 Flash pour la V2 et demande de préciser comment le
+coach aidera les étudiants à progresser dans les situations relationnelles.
+Le démarrage V2 utilise Flash en `low`, avec le plafond de sortie de 2 000
+tokens testé dans la comparaison. Les paramètres locaux gardent la priorité.
+Le prochain cadrage à éprouver est décrit dans le
+[document sur la pratique réflexive](PTD_PRATIQUE_REFLEXIVE.md).

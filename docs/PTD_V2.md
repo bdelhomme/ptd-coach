@@ -7,6 +7,12 @@ recette sont fictifs. La bibliothèque reste en brouillon pédagogique.
 
 ## Lancer et essayer
 
+La V2 utilise par défaut GLM 5.3 Flash en `low`, avec une sortie plafonnée à
+2 000 tokens. Si ton fichier `.env` fixe déjà `MISTRAL_MODEL`, cette valeur
+garde la priorité au redémarrage. Les modes historiques conservent leurs
+valeurs par défaut. Le prochain travail pédagogique porte sur la
+[pratique réflexive](PTD_PRATIQUE_REFLEXIVE.md).
+
 Depuis le dépôt, sur Mac :
 
 ```sh

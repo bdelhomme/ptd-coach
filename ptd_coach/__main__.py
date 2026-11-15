@@ -53,7 +53,6 @@ def main():
     local = args.data_dir if args.data_dir is not None else root / "local-data"
     local.mkdir(mode=0o700, parents=True, exist_ok=True)
     service = Service(local / "a2-demo.sqlite3")
-    chat_settings = settings(root)
     context = None
     database = local / "coach-demo.sqlite3"
     project = None
@@ -62,6 +61,7 @@ def main():
     alternate_modes = sum((args.bibliotheque_experimentale, args.cadrage_fiabilite, args.coach_historique, args.ptd_v1))
     if alternate_modes > 1:
         parser.error("Choisissez un seul mode de comparaison")
+    chat_settings = settings(root, v2=alternate_modes == 0)
     if args.cadrage_fiabilite:
         from .chat_context_reliable import ReliableContext
         context = ReliableContext()
