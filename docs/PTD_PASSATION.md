@@ -35,8 +35,8 @@ Ouvrir [le coach](http://127.0.0.1:8798/coach) avec un compte fictif. Le
 démarrage standard de la V2 utilise GLM Flash en `low`. La démo `high`
 dispose d’un dossier de données distinct.
 
-Le fil d’essai individuel du porteur a fait l’objet d’une sauvegarde locale
-avec un export lisible, un export JSON et des copies SQLite de la démo.
-Le demander au porteur si l’analyse de cet échange est utile à la reprise.
-Consulter ses messages seulement à la demande du porteur. Les métadonnées
-d’appel permettent de retrouver les versions et les ressources sélectionnées.
+Le [fil d’essai individuel en high](../pedagogy/evaluations/ptd-v2-demo/essai-individuel-glm-high/README.md)
+est disponible en Markdown et en JSON avec ses métadonnées. Lire la note
+associée pour retrouver les points à examiner dans le verbatim. Les copies
+SQLite de la démo sont dans la sauvegarde locale et servent à restaurer son
+état sur le Mac.

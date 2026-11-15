@@ -1,0 +1,393 @@
+{
+  "format": "ptd-coach-local-handoff.v1",
+  "exported_at": "2026-11-15T11:10:28.698941+01:00",
+  "code_commit": "ad80f00271dc3ddaed6e84c58c7757b16eff65f3",
+  "settings": {
+    "model": "zai-glm-5-3-flash",
+    "effort": "high",
+    "max_tokens": 2000
+  },
+  "conversation": {
+    "created_at": "2026-11-15T09:34:41.505303+00:00",
+    "scope": "individual",
+    "coach_version": "v08",
+    "messages": [
+      {
+        "role": "user",
+        "content": "ok c'est la première séance de travail en autonomie et je sais pas du tout ce quon doit faire en fait",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:35:15.322625+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Pas de panique, c'est exactement le travail de la première séance : comprendre la mission avant de produire quoi que ce soit.\n\nVoici ce que votre brief dit actuellement : évaluer les conditions d'un pilote de reprise d'emballages auprès de petits ateliers, pour le Fabricant des Rives. Le livrable final est une recommandation argumentée, qui montre aussi les limites du terrain.\n\nPour cette séance, trois choses concrètes :\n\n1. **Reformulez la mission avec vos mots** : « Qu'est-ce que le commanditaire attendra concrètement à la fin ? » Si chaque membre formule différemment, c'est un signal qu'il faut clarifier.\n2. **Listez ce que vous ne savez pas** : par exemple, qu'entend-il exactement par « pilote » ? Quel budget ou quel critère de réussite ? Ces questions seront utiles pour un premier échange avec lui.\n3. **Notez vos contraintes connues** : le créneau du jeudi matin, le calendrier du semestre.\n\nUn bon livrable de séance 1, c'est une liste de questions claires pour le commanditaire, pas encore un planning. Vous voulez qu'on travaille la reformulation de la mission ensemble ?",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:35:15.322646+00:00"
+      },
+      {
+        "role": "user",
+        "content": "on doit se faire des livrables d'équipe à chaque séance ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:36:07.549185+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Non, pas nécessairement — il faut distinguer deux choses :\n\n- **Les livrables du calendrier général** : votre semestre a un calendrier imposé qui prévoit des rendus. C'est cette liste qui fait foi. Dans les données de votre projet que je vois, je n'ai pas le détail de ces livrables ni leurs dates — vérifiez le calendrier fourni par l'école, c'est votre référence.\n- **Ce que vous produisez à chaque séance** : c'est du travail interne, pas un livrable formel. Une séance peut aboutir à une liste de questions, un brouillon, une décision répartie entre membres. Ça n'a pas besoin d'être formaté ni rendu à qui que ce soit.\n\nLe réflexe utile : à la fin de chaque jeudi, noter en trois lignes ce qui est décidé et qui fait quoi. Ça évite de repartir de zéro la fois suivante, sans transformer chaque séance en production formelle.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:36:07.549198+00:00"
+      },
+      {
+        "role": "user",
+        "content": "ok donc tu nous déconseilles de faire une sorte d'ordre du jour et de rendu de décision après chaque séance de travail? Comment on peut bien organiser une séance de travail ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:37:24.235574+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Petite correction : je te déconseillais justement l'inverse — un ordre du jour et une trace de décision légers, oui ; un « livrable » formel à rendre, non. La nuance compte : une trace interne de trois lignes n'est pas une production à formater.\n\nPour organiser une séance de travail, une structure simple suffit :\n\n1. **Objectif de la séance** (une phrase : « sortir la liste de questions pour le commanditaire »)\n2. **Ordre du jour** : 2-3 points maximum, pas dix\n3. **Temps de travail effectif** sur le point principal, pas seulement discussion\n4. **Fin de séance** : décisions notées, qui fait quoi d'ici la prochaine fois\n\nExemple pour votre jeudi : objectif = préparer le premier contact avec le Fabricant des Rives ; point 1 = chacun note ce qu'il ne comprend pas du brief ; point 2 = fusion en une liste commune de questions ; fin = un membre désigné pour centraliser.\n\nLe piège classique en équipe de sept : une séance sans objectif devient une discussion générale de deux heures.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:37:24.235600+00:00"
+      },
+      {
+        "role": "user",
+        "content": "oui une séance sans objectif on discute, certains font autre chose sur leur portable c'est difficile donc. COmment tu nous conseilles de fonctionner, est ce qu'on soit passer un temps pour faire l'ordre du jour ? Est ce qu'on doit avoir un doc de suivi sur le semestre aussi pour partager notre travail, ou pour bien nous organiser quoi",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:38:54.104453+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Oui aux deux, mais proportionnés :\n\n**L'ordre du jour** : 5 minutes suffisent, idéalement préparées avant. Le plus efficace : un membre propose deux points dans le fil d'équipe avant le jeudi, et on valide en début de séance. Si personne ne l'a fait, prenez les 5 premières minutes sur place — mais avec un chrono, sinon la préparation devient la séance.\n\n**Le doc de suivi** : oui, un seul document partagé pour tout le semestre, simple. Trois sections suffisent :\n- décisions prises (date + décision + qui fait quoi)\n- questions en attente (pour le commanditaire, l'école…)\n- prochaines échéances connues\n\nLe piège à éviter : créer cinq documents (un par séance, un par membre…). Un seul fichier vivant, que chacun peut consulter avant le jeudi, vaut mieux qu'un bel outil que personne ne remplit. Le test : si un membre absent peut comprendre où en est l'équipe en deux minutes de lecture, votre suivi est bon.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:38:54.104464+00:00"
+      },
+      {
+        "role": "user",
+        "content": "mais ca serait quoi ce doc ? Genre un google doc ? C'est ca que tu conseilles ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:40:24.988757+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "L'outil importe peu — ce qui compte, c'est qu'il soit partagé, accessible à tous et modifiable par tous. Un Google Doc fait très bien l'affaire, tout comme un doc partagé sur l'espace de l'école si vous en avez un, ou un simple document collaboratif.\n\nTrois critères pour choisir :\n- **Tout le monde y accède sans demander** (pas un fichier sur l'ordi d'un seul membre)\n- **Modifiable en séance** pendant que vous discutez\n- **Trouvable** : épinglé dans votre fil d'équipe, pas perdu dans une messagerie\n\nUn Google Doc simple avec vos trois sections (décisions, questions en attente, échéances) suffit largement. Inutile d'un outil de gestion de projet sophistiqué pour une équipe de sept sur un semestre — le risque est de passer plus de temps à administrer l'outil qu'à avancer sur la mission.\n\nSi demain vous avez besoin de plus (par exemple un planning de tâches avec des responsables), vous pourrez ajouter un tableau dans le même doc avant de changer d'outil.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:40:24.988772+00:00"
+      },
+      {
+        "role": "user",
+        "content": "Genre je vais faire mon diagramme de Gant sur un google doc ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:41:07.151679+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Non, pas vraiment — un document de texte est un mauvais support pour un Gantt. Pour ça, un tableur (Google Sheets) fonctionne bien : des lignes pour les tâches, des colonnes pour les semaines, des cellules colorées pour les périodes. Ou un outil dédié si l'école en fournit un.\n\nMais attention à l'ordre des choses : vous êtes en semaine 1 et vous venez de dire que vous ne savez pas ce que vous devez faire. Un Gantt maintenant serait de la décoration — vous placeriez des tâches inventées sur des dates approximatives.\n\nLa séquence logique :\n1. **Clarifier la mission** (votre séance 1) et récupérer le calendrier de l'école avec ses jalons imposés\n2. **Lister les gros livrables** et les dates connues\n3. **Ensuite seulement**, construire un Gantt qui relie vos tâches aux échéances réelles\n\nVotre doc de suivi texte reste utile dès maintenant ; le Gantt vient quand vous saurez ce que vous planifiez. Un Gantt bâti sur des hypothèses en semaine 1, c'est du temps perdu que vous referez entièrement deux semaines plus tard.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:41:07.151702+00:00"
+      },
+      {
+        "role": "user",
+        "content": "ok donc comment tu conseilles de nous organsier sur les 3 prochaines semaines alors ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:42:00.915464+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Voici une trame pour trois semaines, à ajuster selon votre calendrier d'école — je n'ai pas le détail de vos jalons imposés dans les données, donc vérifiez les dates réelles :\n\n**Semaine 1 (maintenant) — Clarifier**\n- Séance de jeudi : reformuler la mission, lister les questions pour le commanditaire, créer le doc de suivi\n- Envoyer les questions au Fabricant des Rives ou préparer le premier échange\n- Récupérer le calendrier officiel avec les livrables et dates imposés\n\n**Semaine 2 — Structurer**\n- Intégrer les réponses du commanditaire (ou relancer s'il n'a pas répondu)\n- Lister les gros livrables du semestre et les dates connues\n- Premier brouillon de découpage : quelles grandes étapes pour produire la recommandation ? (terrain, analyse, rédaction…)\n- C'est ici que le Gantt devient utile, sur tableur\n\n**Semaine 3 — Répartir**\n- Attribuer les premières tâches concrètes avec des responsables nommés\n- Identifier ce qui nécessite un contact terrain (les petits ateliers) et commencer à le préparer\n\nLe fil conducteur : comprendre → planifier → exécuter. L'erreur fréquente serait d'inverser, c'est-à-dire se répartir des tâches floues dès la semaine 1.\n\nUn point d'attention : la disponibilité du commanditaire est souvent le facteur limitant. Contactez-le tôt, ses réponses conditionnent vos semaines 2 et 3.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:42:00.915495+00:00"
+      },
+      {
+        "role": "user",
+        "content": "ok top tu es pas en train de trop m'aider par hasard ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:43:11.351762+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Bonne question, et il est sain de la poser. Réponse honnête : un peu, oui — sur la méthode d'organisation. Mais c'est délibéré et limité.\n\nCe que j'ai fait : vous donner des repères génériques de gestion de projet (ordre du jour, doc de suivi, séquence comprendre → planifier → exécuter). C'est le rôle du coach au démarrage, quand vous n'avez pas encore de méthode.\n\nCe que je ne ferai pas, et où la ligne se situe :\n- **Décider à votre place** : la trame des trois semaines est une proposition, pas un plan validé. C'est à votre équipe de l'ajuster, la contester, la modifier en séance.\n- **Produire le contenu de la mission** : la reformulation du brief, les questions au commanditaire, l'analyse du terrain — ça, c'est votre travail. Si je vous écris vos livrables, vous n'apprenez rien et votre recommandation ne sera pas la vôtre.\n- **Trancher vos arbitrages d'équipe** : qui fait quoi, comment vous répartissez la parole — des décisions humaines qui vous appartiennent.\n\nLe vrai test viendra en séance : si vous savez tenir une réunion avec objectif et trace de décision sans me demander quoi faire, c'est gagné. D'ici là, sollicitez-moi autant que nécessaire — c'est le moment où c'est utile.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:43:11.351791+00:00"
+      },
+      {
+        "role": "user",
+        "content": "est ce que la confidentalité des échanges ou des documents que je ferai relire dans cette plateforme est vérifiée ? Les données sont bien protégées ? Je pense si je mets des données ici du client surtout",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:44:57.571665+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Question importante, et je vais être précis plutôt que rassurant.\n\nCe que je peux vous dire sur le fonctionnement : le fil de conversation et les éléments de contexte autorisés sont transmis au fournisseur du modèle (Mistral) à chaque échange, et le fil est conservé sur le Mac après la réponse. Je ne peux donc pas vous promettre une confidentialité absolue des échanges.\n\nConséquence pratique pour votre cas : **ne mettez pas de données sensibles du client ici** — ni données personnelles de personnes interrogées, ni informations confidentielles du Fabricant des Rives (chiffres d'affaires, noms de contacts, détails commerciaux).\n\nCe qui est raisonnable de faire relire ici :\n- des formulations génériques (« synthèse des entretiens », « analyse des contraintes des ateliers »)\n- des structures de documents, des trames d'entretien\n- des extraits anonymisés, sans noms ni données identifiables\n\nPour les données réelles du terrain, gardez-les dans vos documents d'équipe internes, et ne partagez ici que ce qui est nécessaire pour obtenir de l'aide sur la forme ou la méthode. C'est d'ailleurs une bonne habitude professionnelle : en mission réelle, on applique le même principe avec tout outil externe.\n\nSi un doute subsiste sur le cadre exact de la plateforme, votre encadrant à l'école pourra confirmer les conditions — je ne peux pas me porter garant au-delà de ce que je viens de décrire.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:44:57.571693+00:00"
+      },
+      {
+        "role": "user",
+        "content": "Mais notre encadrant a dit qu'il utilisant justement une IA francaise pour garder la souveraienté sur les données et leur usage quoi",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:46:26.855820+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Votre encadrant a raison sur un point, mais l'argument a des limites qu'il faut comprendre.\n\n**Ce que « IA française » apporte réellement** : Mistral est une entreprise française, soumise au RGPD et au droit européen. Les données ne relèvent pas du droit américain (Cloud Act), et l'hébergement est en Europe. C'est un vrai argument de souveraineté juridique.\n\n**Ce que ça ne garantit pas** :\n- La souveraineté juridique n'est pas de la confidentialité. Vos messages partent quand même vers un service externe, qui les traite selon ses conditions d'utilisation.\n- « Soumis au RGPD » ne signifie pas « aucune donnée conservée ni réutilisée » — cela dépend des paramètres choisis par la plateforme et de la version du service utilisée.\n- Je ne peux pas vérifier moi-même les conditions contractuelles entre votre école et le fournisseur.\n\nDonc la conclusion pratique reste la même que précédemment, avec une nuance : le choix d'un fournisseur européen est un bon point de cadre, mais il ne change pas la règle de bon sens pour vous. Pour des données client réellement sensibles, la prudence professionnelle veut qu'on ne les transmette à aucun outil externe sans y être autorisé explicitement — et c'est le commanditaire, pas l'encadrant ni l'IA, qui décide ce qui est partageable.\n\nSi c'est un enjeu pour votre mission, posez la question directement à votre encadrant : « peut-on mettre des données du client dans cet outil, et lesquelles ? » Sa réponse vaudra règle d'équipe.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:46:26.855831+00:00"
+      },
+      {
+        "role": "user",
+        "content": "est ce que toi tu gardes en mémoire nos échanges jusqu'à la fin du semestre ?",
+        "author_id": "student_demo_01",
+        "created_at": "2026-11-15T09:51:16.283809+00:00"
+      },
+      {
+        "role": "assistant",
+        "content": "Non, pas au sens où un humain se souviendrait. Voici précisément comment ça fonctionne :\n\n**Dans cette conversation** : le fil complet est conservé sur le Mac après chaque réponse, et il me est retransmis à chaque nouveau message. C'est pour ça que je peux vous répondre en tenant compte de tout ce qu'on a dit depuis le début — je ne « me souviens » pas, je relis le fil à chaque tour.\n\n**Entre les conversations** : si vous ouvrez une nouvelle discussion, je ne retrouve pas celle-ci. Je n'ai pas de mémoire qui s'accumule sur vous ou votre équipe d'un échange à l'autre, sauf si le fil est de nouveau fourni. Et même dans un fil, cette conservation ne constitue pas un suivi de vos compétences dans le temps — je ne construis aucun profil de vous.\n\n**Conséquences pratiques** :\n- Si vous changez de conversation et voulez de la continuité, il faudra me redonner le contexte utile (mission, où vous en êtes).\n- Ce que vous écrivez ici reste dans le fil stocké sur le Mac — même remarque que tout à l'heure sur les données sensibles : ce qui est écrit reste lisible dans l'historique de la conversation.\n\nDonc pour répondre simplement : je vous accompagne tour par tour dans ce fil, mais je ne suis pas une mémoire de votre semestre. Votre doc de suivi d'équipe, lui, jouera ce rôle — et c'est plutôt sain que ce soit lui et pas moi.",
+        "author_id": "coach",
+        "created_at": "2026-11-15T09:51:16.283825+00:00"
+      }
+    ],
+    "invocations": [
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:35:11.471341+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "2c5374fb04c903b221834a4dc5023410261ffaf459e3410ff3000ef221c94f83",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 3122,
+          "completion_tokens": 379,
+          "total_tokens": 3501
+        },
+        "latency_ms": 3848,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:36:00.435853+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "ee6f9e4c5c1bf37898040d8eb9708a70fdf7a3689a7f08d25c7c7070846f44b0",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 3416,
+          "completion_tokens": 356,
+          "total_tokens": 3772
+        },
+        "latency_ms": 7110,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:37:21.073636+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "824f89ca63495076d1aabc07b749468f5a050c754ce801738228693bd6beeccf",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 3681,
+          "completion_tokens": 318,
+          "total_tokens": 3999
+        },
+        "latency_ms": 3158,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:38:51.248290+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "170553176a99c2ad154b52f9ed0a24046f2b5f39f17123ae8c182b0675027db3",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 4009,
+          "completion_tokens": 278,
+          "total_tokens": 4287
+        },
+        "latency_ms": 2853,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:40:19.848326+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "39ada4f85cd5debf0b4c4e287d59904175cfd95ba2f363fc5dc32a0c34aae961",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 4262,
+          "completion_tokens": 275,
+          "total_tokens": 4537
+        },
+        "latency_ms": 5137,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:41:01.526333+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "d962c5936aa09a7fa9effae89f5f3a1fdc5a2fbea7dcdaa9aaf6c3638fb4b64c",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 4524,
+          "completion_tokens": 347,
+          "total_tokens": 4871
+        },
+        "latency_ms": 5621,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:41:56.780960+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "aa832064aebd55225f31d31bc6ceb02704e150e85f8e1c9b849e03f6edd49e88",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 4811,
+          "completion_tokens": 430,
+          "total_tokens": 5241
+        },
+        "latency_ms": 4131,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:43:09.157195+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "ebe307a058b7cba92b11aa7af1a729940951efc43637230e7c332becf0e5f8f5",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 5189,
+          "completion_tokens": 396,
+          "total_tokens": 5585
+        },
+        "latency_ms": 2190,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:44:55.193636+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "876a74689be59742ece8e78d15660bab6314ccbd5e14fe58a4fc6f63e22d98f0",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 5561,
+          "completion_tokens": 400,
+          "total_tokens": 5961
+        },
+        "latency_ms": 2374,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:46:18.060958+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "42eac718bc32249e4dc7d51e6312648b7b835ea887ae13fe14ec2df0569a4074",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 5923,
+          "completion_tokens": 440,
+          "total_tokens": 6363
+        },
+        "latency_ms": 8791,
+        "finish_reason": "stop"
+      },
+      {
+        "status": "succeeded",
+        "created_at": "2026-11-15T09:51:13.337489+00:00",
+        "provider": "mistral",
+        "model_requested": "zai-glm-5-3-flash",
+        "model_returned": "zai-glm-5-3-flash",
+        "prompt_version": "conversation-ptd-v2-experimental-0.2",
+        "coach_version": "v08",
+        "context_sha256": "43379f2d399249e3aa2a05a3685e823220379f05231d6b2709aa1e2ffe47bf24",
+        "system_sha256": "532c35f500898caee52cc78de3e76586bacf98351668194d9f464045a55e75a9",
+        "messages_sha256": "d278189f219086b7024824d67814499252cab27089c6a96fdfd4d6a14c5747b5",
+        "resource_ids": [],
+        "max_tokens": 2000,
+        "temperature": 0.2,
+        "usage": {
+          "prompt_tokens": 6308,
+          "completion_tokens": 406,
+          "total_tokens": 6714
+        },
+        "latency_ms": 2943,
+        "finish_reason": "stop"
+      }
+    ]
+  }
+}

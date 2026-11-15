@@ -1,4 +1,9 @@
-# Recette pédagogique V2 sur deux missions fictives
+# Essais pédagogiques de PTD Coach V2
+
+[Passation du projet](../../../docs/PTD_PASSATION.md) ·
+[Essai individuel GLM Flash en high, échange complet et métadonnées](essai-individuel-glm-high/README.md)
+
+## Premiers essais sur deux missions fictives
 
 Huit appels à `mistral-small-latest`, température 0,2, sortie plafonnée à
 700 tokens et délai de 45 s. Le premier passage contient deux tours par
