@@ -113,7 +113,27 @@
       </div>
     </section>
     <section id="pane-library" class="pane" aria-labelledby="library-title" hidden>
-      <div class="page-heading"><h1 id="library-title" tabindex="-1">Bibliothèque</h1><p>Consultez les méthodes, leurs exemples et leurs sources sans appel au coach.</p></div>
+      <div class="page-heading"><h1 id="library-title" tabindex="-1">Bibliothèque</h1><p>Choisissez une compétence à travailler ou partez du prochain résultat à obtenir pour votre projet.</p></div>
+      <div id="bootcamp-start" hidden>
+        <section class="boot-skills" aria-labelledby="boot-skills-title">
+          <h2 id="boot-skills-title">Compétences à travailler</h2>
+          <p class="muted">Référentiel candidat V0.3. Choisissez une compétence pour retrouver les exercices et outils qui la mobilisent.</p>
+          <div id="boot-competences" class="boot-competences"></div>
+          <p id="boot-skill-hint" class="boot-skill-hint" role="status" hidden></p>
+        </section>
+        <div class="actions boot-nav" role="group" aria-label="Vues de la bibliothèque">
+          <button id="boot-show" class="secondary" type="button" aria-pressed="true">Parcours PTD</button>
+          <button id="boot-catalogue" class="secondary" type="button" aria-pressed="false">Fiches méthodes</button>
+        </div>
+        <section id="bootcamp" aria-labelledby="boot-title">
+          <h2 id="boot-title">Du premier rendez-vous à la restitution</h2>
+          <p>Utilisez ces ateliers à votre rythme, au fil des jeudis. Essayez l’exercice fictif, comparez votre démarche avec les repères de relecture, puis reprenez le modèle sur votre projet.</p>
+          <details class="boot-case"><summary>Le cas fil rouge</summary><p id="boot-case"></p></details>
+          <p id="boot-count" class="small muted" role="status"></p>
+          <div id="boot-modules" class="boot-modules"></div>
+          <details class="boot-case"><summary>Sources et approfondissements</summary><ul id="boot-sources"></ul></details>
+        </section>
+      </div>
       <div id="library-search" class="card">
         <div class="method-search-input">
           <label for="method-search">Rechercher une méthode ou une difficulté</label>

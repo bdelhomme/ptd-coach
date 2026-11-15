@@ -148,3 +148,10 @@ et exceptions limitent les créneaux. Le contexte de conversation V2 0.2
 explicite cette structure et distingue les livrables école et commanditaire.
 Les dates et livrables d’une équipe doivent être confirmés et sourcés.
 [Recette de semestre](../pedagogy/evaluations/ptd-v2-demo/README.md#deux-trajectoires-de-semestre-sur-quatre-étapes).
+
+## D-043 — Refonte limitée à la bibliothèque
+
+Le porteur demande de renforcer la bibliothèque, de garder les compétences
+au premier plan et de s’inspirer de Rémi Bachelet. Le périmètre est confirmé ;
+les six ateliers et les modalités de relecture restent proposés.
+[Parcours et arbitrages](PTD_BIBLIOTHEQUE_PARCOURS.md).

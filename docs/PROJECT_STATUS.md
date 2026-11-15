@@ -1,5 +1,9 @@
 # État du projet — à actualiser à chaque changement
 
+**Bibliothèque uniquement, D-043.** La branche `feat/ptd-library-bootcamp`
+propose six ateliers, 18 modèles de travail et une entrée par compétence
+candidate. [Essai et passation](PTD_BIBLIOTHEQUE_PARCOURS.md).
+
 ## Chantier en cours · ensemble du PTD
 
 **V2 expérimentale, D-040.** [PR #17](https://github.com/bdelhomme/ptd-coach/pull/17),

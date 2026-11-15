@@ -1,7 +1,8 @@
 # Reprendre PTD Coach
 
-Le développement applicatif est en pause pendant que le porteur découvre le
-PTD en suivant une équipe. Le projet reste disponible pour des essais
+La bibliothèque fait l’objet d’un [chantier ciblé](PTD_BIBLIOTHEQUE_PARCOURS.md).
+Le développement du coach et des autres espaces reste en pause pendant que le
+porteur découvre le PTD en suivant une équipe. Le projet reste disponible pour des essais
 exploratoires. Le porteur envisage d’observer les situations qui coincent et
 les pratiques d’IA déjà présentes, notamment après un cours sur la
 contextualisation des demandes et l’examen critique des réponses.
