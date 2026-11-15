@@ -122,3 +122,28 @@ Un essai distinct avec `high` peut ensuite isoler l’effet du réglage sur
 les cas les plus difficiles, à contexte égal et avec mesure de la latence,
 du coût, de la fidélité aux faits et de la qualité de l’aide.
 [Options de raisonnement Mistral](https://docs.mistral.ai/inference/conversations/reasoning).
+
+### Élargir les trajectoires à partir des sujets 2025–2026
+
+Le porteur a fourni un classeur de la promotion 2025–2026. La colonne
+« Projets » contient 14 intitulés distincts. Elle fait apparaître des missions
+de comparaison technique et économique, de transition industrielle, d’étude
+de marché et d’évolution des pratiques de travail. Les trajectoires ci-dessous
+sont des composites fictifs. Les contraintes, étapes, résultats et livrables
+décrits sont des données de test créées pour la recette. Le classeur et ses
+coordonnées restent dans l’espace local.
+
+| Trajectoire de développement | Lancement | Épreuve du semestre | Rendus et retour réflexif |
+| --- | --- | --- | --- |
+| **Achats et impact environnemental** · six étudiants | Un industriel fictif veut comparer des offres à moindre empreinte. L’équipe doit négocier le périmètre et construire une grille de comparaison. | Les fournisseurs répondent sur des périmètres différents. Après une interruption de calendrier, le commanditaire demande un classement. L’équipe documente les écarts de données et décide quelles comparaisons restent défendables. | Note de décision conditionnelle au client et oral école sur l’incertitude. L’équipe revient sur l’effet de sa grille et explique quelle demande de preuve elle réutilisera. |
+| **Évolution d’une pratique d’atelier** · sept étudiants | Un responsable fictif veut améliorer le passage des informations entre deux équipes. Préparer des entretiens et une observation de terrain. | Le responsable et les opérateurs décrivent des priorités différentes. L’accès est raccourci. Un membre propose de conclure à une « résistance au changement ». L’équipe doit vérifier son interprétation et reconvenir d’un essai réalisable. | Comparer les options et présenter au client un format d’essai. À l’oral école, distinguer le changement observé de ce que le groupe suppose et examiner qui a pu contribuer à la décision. |
+| **Choix d’un outil d’assistance documentaire** · six étudiants | Un service technique fictif envisage un outil d’IA pour chercher dans sa documentation. Définir les usages et les critères avec les personnes concernées. | Après la revue, l’équipe constate que les réponses plausibles sont parfois dépourvues de source. Le commanditaire veut élargir le test à des documents dont le partage est incertain. L’équipe utilise un corpus factice et discute des conditions de comparaison. | Présenter une recommandation avec limites et critères de vérification, puis expliquer à l’école comment l’équipe a fait évoluer un protocole et dissocié qualité perçue et fiabilité observée. |
+
+Ces trajectoires complètent les deux trajectoires déjà jouées. Pour chaque
+nouvelle trajectoire, préparer quatre tours et trois artefacts partiels
+fictifs correspondant à un cadrage, un état de preuve et une restitution.
+Introduire au moins un changement de source ou d’engagement entre les tours.
+Les tester avec le contexte réellement transmis au coach, dans une
+conversation par équipe. Les critères portent sur les décisions des
+étudiants, la qualité des preuves et la capacité à réutiliser un geste de
+projet. Ces trois trajectoires sont définies pour une prochaine recette.
