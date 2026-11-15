@@ -185,3 +185,23 @@ CHAT_PROVIDER=mistral MISTRAL_MODEL=zai-glm-5-3-flash MISTRAL_REASONING_EFFORT=l
 Empreintes SHA-256 du JSONL et du contexte, respectivement
 `130841010196e7cbade5381bb4bb25142bf34cdb3437d6a1e712360906c6b09f` et
 `cc2c35528da5e7f4d1049ad4ec347abc39fbd36589343edb847ac3cace3ed6ee`.
+
+### Rejeu du désaccord et de la démobilisation avec Small
+
+Un appel supplémentaire à `mistral-small-latest` utilise la même requête
+étudiante et le même contexte système que Flash, avec égalité de l’empreinte
+`messages_sha256`, température 0,2, plafond de 2 000 tokens et délai de 45 s.
+Small utilise le fournisseur standard, Flash le fournisseur avec raisonnement
+`low`. Small a répondu en 3,25 s avec 3 065 tokens, contre 4,14 s et 3 371
+tokens pour Flash sur ce tour. Les deux réponses sont complètes.
+
+Small n’ajoute pas les deux essais que Flash présente comme confirmés. Il
+propose toutefois une préparation avant jeudi malgré la disponibilité
+inconnue et cite une fiche « Animation de groupe » absente du catalogue V2.
+Son ordre du jour aide à structurer le travail, mais traite peu les
+interruptions et la baisse de participation. Flash propose une prise de
+contact individuelle sans reproche et une décision plus ciblée. Le classement
+dépend du critère retenu et repose sur une réponse par modèle. [Réponse exacte
+de Small](small-fatigue-comparaison.jsonl).
+
+SHA-256 du JSONL `570206715e66e79bc9dc085dcb6039852fc579ae2bbcc9184a58edd8ddcfb36b`.
