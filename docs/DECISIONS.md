@@ -118,3 +118,33 @@ antérieurs et leurs gels restent consultables. La mémoire est manuelle,
 corrigeable, séparée par périmètre. Les brouillons, confirmations et partages
 sont des actions distinctes. Les comptes et autorisations de la démo ne valent
 pas pour un pilote institutionnel. Voir [rapport](RAPPORT_PTD_INTEGRE.md).
+
+## D-040 — Bibliothèque canonique et atelier V2
+
+La mission du porteur autorise une nouvelle tranche applicative depuis la
+PR #16. L’atelier conserve des brouillons d’équipe distincts de la mémoire
+confirmée. Une revue d’extrait explicitement soumise passe par le fil
+autorisé. Le Gantt signale les incohérences fin-début et laisse l’arbitrage
+des dates à l’équipe. Le catalogue commun alimente la fiche riche et une
+projection bornée pour le coach. Les exemples et fiches restent en relecture.
+Les modes antérieurs et le candidat V0.3 sont préservés. [Guide V2](PTD_V2.md).
+
+## D-041 — GLM Flash et pratique réflexive
+
+Le porteur choisit GLM 5.3 Flash pour la V2 et demande de préciser comment le
+coach aidera les étudiants à progresser dans les situations relationnelles.
+Le démarrage V2 utilise Flash en `low`, avec le plafond de sortie de 2 000
+tokens testé dans la comparaison. Les paramètres locaux gardent la priorité.
+Le prochain cadrage à éprouver est décrit dans le
+[document sur la pratique réflexive](PTD_PRATIQUE_REFLEXIVE.md).
+
+## D-042 — Cadre réel du semestre dans le coach V2
+
+Le porteur précise le fonctionnement du PTD. Une équipe de six ou sept
+étudiants travaille un semestre pour un commanditaire. Les premiers jeudis
+incluent un enseignement de gestion de projet, puis les équipes prennent
+rapidement en charge le projet dans un calendrier global imposé. Les vacances
+et exceptions limitent les créneaux. Le contexte de conversation V2 0.2
+explicite cette structure et distingue les livrables école et commanditaire.
+Les dates et livrables d’une équipe doivent être confirmés et sourcés.
+[Recette de semestre](../pedagogy/evaluations/ptd-v2-demo/README.md#deux-trajectoires-de-semestre-sur-quatre-étapes).

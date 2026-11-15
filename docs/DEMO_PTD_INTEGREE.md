@@ -1,10 +1,13 @@
 # Essayer PTD Coach sur plusieurs semaines
 
+Ce guide présente la démonstration de la PR #16. Le lancement standard de
+la branche V2 ouvre [le nouvel atelier](PTD_V2.md).
+
 Depuis la racine du dépôt, lancez la démo avec une base de recette isolée.
 
 ```sh
 make bootstrap
-CHAT_PROVIDER=mock .venv/bin/python -m ptd_coach --port 8765 --data-dir local-data/recette-ptd
+CHAT_PROVIDER=mock .venv/bin/python -m ptd_coach --ptd-v1 --port 8765 --data-dir local-data/recette-ptd
 ```
 
 Ouvrez [PTD Coach](http://127.0.0.1:8765/). Les sept étudiants de l’équipe

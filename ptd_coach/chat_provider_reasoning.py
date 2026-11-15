@@ -1,4 +1,4 @@
-"""Opt-in Large 4 provider; preserves the frozen legacy provider unchanged."""
+"""Provider for chat models with adjustable reasoning."""
 import json
 import socket
 import time
@@ -6,14 +6,16 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener
 
 from .chat_provider import Completion, ENDPOINT, MistralChatProvider, NoRedirect
+from .chat_config import REASONING_EFFORTS
 from .service import DomainError
 
 
 class MistralReasoningProvider(MistralChatProvider):
     def __init__(self, api_key, model, max_tokens=700, timeout=45, effort='low'):
         super().__init__(api_key, model, max_tokens, timeout)
-        if effort not in ('low', 'medium', 'high'):
-            raise ValueError('MISTRAL_REASONING_EFFORT doit être low, medium ou high')
+        efforts = REASONING_EFFORTS.get(model, ("low", "medium", "high"))
+        if effort not in efforts:
+            raise ValueError("MISTRAL_REASONING_EFFORT doit être " + ", ".join(efforts) + " pour ce modèle")
         self.effort = effort
 
     def complete(self, messages):

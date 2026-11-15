@@ -23,19 +23,25 @@ ASSETS = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascri
           "/bibliotheque": ("library.html", "text/html"), "/library.js": ("library.js", "text/javascript"),
           "/library.css": ("library.css", "text/css")}
 PROJECT_ASSETS = {"/": ("ptd.html", "text/html"), "/coach": ("ptd.html", "text/html"),
-                  "/ptd.js": ("ptd.js", "text/javascript"), "/ptd.css": ("ptd.css", "text/css")}
+                  "/ptd.js": ("ptd.js", "text/javascript"), "/ptd.css": ("ptd.css", "text/css"),
+                  "/workbench-v2.js": ("workbench-v2.js", "text/javascript"),
+                  "/workbench-v2.css": ("workbench-v2.css", "text/css"),
+                  "/gantt-v2.js": ("gantt-v2.js", "text/javascript"),
+                  "/gantt-v2.css": ("gantt-v2.css", "text/css"),
+                  "/ptd-v2.css": ("ptd-v2.css", "text/css")}
 COOKIE = "ptd_demo"
 
 
 class DemoServer(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, address, service, chat=None, project=None):
+    def __init__(self, address, service, chat=None, project=None, workbench=None):
         if address[0] != "127.0.0.1":
             raise ValueError("The fictitious demo must bind to 127.0.0.1")
         self.service = service
         self.chat = chat
         self.project = project
+        self.workbench = workbench
         self.sessions = {}
         self.session_lock = threading.Lock()
         super().__init__(address, Handler)
@@ -92,17 +98,18 @@ class Handler(BaseHTTPRequestHandler):
                     401, "unauthorized", "Ouvrez une session de démonstration.")
             return dict(session)
 
-    def body(self):
+    def body(self, limit=32000):
         require(self.headers.get("Content-Type", "").split(";")[0].strip() == "application/json",
                 415, "content_type", "Le corps doit être un objet JSON.")
         require(not self.headers.get("Transfer-Encoding"))
         try:
             length = int(self.headers.get("Content-Length", "0"))
-            require(0 < length <= 32000, 413, "body_size", "Requête trop volumineuse ou vide.")
+            require(0 < length <= limit, 413, "body_size", "Requête trop volumineuse ou vide.")
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
             require(type(payload) is dict)
+            json.dumps(payload, ensure_ascii=False).encode("utf-8")
             return payload
-        except (UnicodeError, ValueError):
+        except (UnicodeError, ValueError, RecursionError):
             raise DomainError(400, "invalid_json", "JSON invalide.") from None
 
     def do_GET(self):
@@ -113,6 +120,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_DELETE(self):
         self.dispatch("DELETE")
+
+    def workbench_request(self, method, kind, actor):
+        workbench = self.server.workbench
+        require(workbench is not None, 404, "not_found", "Atelier V2 indisponible.")
+        if method == "GET":
+            return self.reply(200, workbench.example(actor) if kind == "examples" else workbench.read(actor, kind))
+        if method == "POST":
+            return self.reply(200, workbench.save(actor, kind, self.body(limit=1_048_576)))
+        raise DomainError(404, "not_found", "Outil inconnu.")
 
     def project_request(self, method, path, actor):
         project = self.server.project
@@ -150,6 +166,10 @@ class Handler(BaseHTTPRequestHandler):
             if method == "GET" and path == "/api/library":
                 from .library import catalogue
                 return self.reply(200, catalogue())
+            if method == "GET" and path == "/api/library-v2":
+                require(self.server.workbench is not None, 404, "not_found", "Bibliothèque V2 indisponible.")
+                from .library_v2 import catalogue_v2
+                return self.reply(200, catalogue_v2())
             if method == "GET" and path == "/api/health":
                 return self.reply(200, {"status": "ok", "provider": "mock", "demo": True})
             if method == "GET" and path == "/api/demo-users":
@@ -182,6 +202,8 @@ class Handler(BaseHTTPRequestHandler):
             key = self.headers.get("Idempotency-Key")
             if path == "/api/project" or path.startswith("/api/project/"):
                 return self.project_request(method, path, actor)
+            if path.startswith("/api/workbench/"):
+                return self.workbench_request(method, path.removeprefix("/api/workbench/"), actor)
             if path.startswith("/api/coach/"):
                 chat = self.server.chat
                 require(chat is not None, 503, "chat_unavailable", "Le coach conversationnel n'est pas activé sur ce serveur.")
@@ -202,6 +224,9 @@ class Handler(BaseHTTPRequestHandler):
                         return self.reply(200, chat.conversation(actor, cid))
                     if len(parts) == 5 and parts[4] == "messages" and method == "POST":
                         return self.reply(200, chat.send(actor, cid, key, self.body()))
+                    if len(parts) == 5 and parts[4] == "review" and method == "POST":
+                        require(self.server.workbench is not None, 404, "not_found", "Revue V2 indisponible.")
+                        return self.reply(200, chat.send_review(actor, cid, key, self.body()))
                     if len(parts) == 5 and parts[4] == "export" and method == "GET":
                         return self.reply(200, chat.export(actor, cid), download="ptd-conversation-fictive.json")
                 raise DomainError(404, "not_found", "Page introuvable.")

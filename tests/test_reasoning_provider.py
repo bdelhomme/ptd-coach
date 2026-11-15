@@ -46,6 +46,34 @@ class ReasoningTest(unittest.TestCase):
         config['MISTRAL_MODEL']='mistral-small-latest'
         self.assertIs(type(provider_from_settings(config)), MistralChatProvider)
 
+    def test_flash_config_uses_its_own_efforts_and_keeps_output_cap(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from ptd_coach.__main__ import apply_test_output_policy
+        from ptd_coach.chat_config import provider_from_settings, settings
+
+        config = {"CHAT_PROVIDER": "mistral", "MISTRAL_API_KEY": "test-key",
+                  "MISTRAL_MODEL": "zai-glm-5-3-flash", "MISTRAL_REASONING_EFFORT": "max",
+                  "CHAT_MAX_TOKENS": "2000"}
+        with TemporaryDirectory() as directory, patch.dict("os.environ", config, clear=True):
+            root = Path(directory)
+            provider = provider_from_settings(settings(root))
+            with patch.dict("os.environ", {"MISTRAL_REASONING_EFFORT": "medium"}):
+                with self.assertRaises(ValueError):
+                    settings(root)
+
+        with self.assertRaises(ValueError):
+            apply_test_output_policy(provider, True, True)
+        response = raw([{"type": "thinking", "thinking": "private"}, {"type": "text", "text": "Bonjour."}])
+        response["model"] = config["MISTRAL_MODEL"]
+        opener = FakeOpener(response)
+        with patch("ptd_coach.chat_provider_reasoning.build_opener", return_value=opener):
+            result = provider.complete([{"role": "user", "content": "Bonjour"}])
+        request = json.loads(opener.request.data)
+        self.assertEqual((request["model"], request["reasoning_effort"], request["max_tokens"]),
+                         (config["MISTRAL_MODEL"], "max", 2000))
+        self.assertEqual(result.message, "Bonjour.")
+
     def test_tool_calls_rejected(self):
         data=raw([{'type':'text','text':'Réponse'}])
         data['choices'][0]['message']['tool_calls']=[{'id':'forbidden'}]

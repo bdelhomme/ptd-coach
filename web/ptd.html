@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PTD Coach · Espace de projet</title>
   <link rel="stylesheet" href="/ptd.css">
+  <link rel="stylesheet" href="/ptd-v2.css">
+  <link rel="stylesheet" href="/gantt-v2.css">
+  <link rel="stylesheet" href="/workbench-v2.css">
   <script type="module" src="/ptd.js"></script>
 </head>
 <body>
@@ -22,6 +25,7 @@
       <button type="button" data-pane="coach" data-student>Coach</button>
       <button type="button" data-pane="library">Bibliothèque</button>
       <button type="button" data-pane="project" id="project-nav">Notre projet</button>
+      <button type="button" data-pane="tools" id="tool-nav" hidden>Outils</button>
       <button type="button" data-pane="checkpoint" data-student>Faire le point</button>
     </nav>
   </header>
@@ -85,6 +89,22 @@
             <textarea id="chat-message" rows="3" maxlength="4000" required placeholder="Décrivez la situation et ce que vous voulez éclaircir."></textarea>
             <div class="row"><p class="small muted" id="chat-usage"></p><button id="send-message" type="submit">Envoyer au coach</button></div>
           </form>
+          <details id="review-panel" class="review-panel" hidden>
+            <summary>Faire relire un extrait fictif</summary>
+            <form id="review-form" class="flow">
+              <div><label for="review-kind">Type de document</label><select id="review-kind">
+                <option>Cahier des charges</option><option>Méthode d’enquête</option><option>Analyse de données</option>
+                <option>Planning Gantt</option><option>Analyse multicritère</option><option>Argumentation ou restitution</option>
+              </select></div>
+              <label for="review-text">Extrait à faire relire</label>
+              <textarea id="review-text" rows="5" maxlength="3200" required></textarea>
+              <button id="review-example" type="button" class="secondary">Charger l’extrait fictif de ma mission</button>
+              <label class="check"><input id="review-consent" type="checkbox" required>
+                Je confirme que cet extrait est fictif. Il sera conservé dans le fil ouvert et transmis à Mistral si ce fournisseur est activé.</label>
+              <p id="review-scope" class="small muted"></p>
+              <button id="review-send" type="submit" disabled>Demander une revue pédagogique</button>
+            </form>
+          </details>
           <p class="small muted">Sur ce Mac, seuls les comptes fictifs autorisés accèdent au fil. En mode Mistral, le message, l’historique du fil et les éléments de contexte autorisés sont envoyés à l’API.</p>
         </div>
       </div>
@@ -106,6 +126,8 @@
     <section id="pane-project" class="pane" aria-labelledby="project-title" hidden>
       <div class="page-heading"><div class="row"><h1 id="project-title" tabindex="-1">Notre projet</h1><button type="button" id="refresh-project" class="secondary">Actualiser le projet</button></div><p id="project-intro"></p></div>
       <div id="project-summary" class="card project-summary"></div>
+      <p id="project-calendar-summary" class="small muted" hidden></p>
+      <div class="actions" id="project-tools" hidden><button type="button" data-pane="tools" class="secondary">Ouvrir les outils du projet</button></div>
       <div id="project-controls" class="row section-bar">
         <div><label for="project-filter">Éléments à afficher</label><select id="project-filter"><option value="collective">Équipe</option><option value="individual">Mes notes privées</option></select></div>
         <button type="button" id="add-item">Ajouter un élément</button>
@@ -127,6 +149,17 @@
       </form>
       </div>
       <div id="project-items" class="item-list"></div>
+    </section>
+    <section id="pane-tools" class="pane" aria-labelledby="tools-title" hidden>
+      <div class="page-heading"><h1 id="tools-title" tabindex="-1">Outils de projet</h1><p>Les brouillons enregistrés sont visibles par votre équipe. Leur contenu reste dans l’atelier.</p></div>
+      <div id="tool-index" class="tool-grid"></div>
+      <div id="tool-views" hidden>
+        <button type="button" id="tool-back" class="secondary">Tous les outils</button>
+        <h2 id="active-tool-title" tabindex="-1"></h2>
+        <div id="tool-conflict" class="notice" hidden><p>Une autre version a été enregistrée. Vous pouvez copier votre travail avant de la charger.</p>
+          <button type="button" id="tool-reload" class="secondary">Recharger la version enregistrée</button></div>
+        <div id="tool-content"></div>
+      </div>
     </section>
     <section id="pane-checkpoint" class="pane" aria-labelledby="checkpoint-title" hidden>
       <div class="page-heading"><div class="row"><h1 id="checkpoint-title" tabindex="-1">Faire le point</h1><button type="button" id="refresh-checkpoint" class="secondary">Actualiser le projet</button></div><p>Reprenez les éléments confirmés, notez un obstacle ou convenez d’une action pour la prochaine séance.</p></div>

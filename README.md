@@ -8,9 +8,11 @@ d’équipe, la motivation et la restitution. Ils mettent en jeu les onze
 compétences candidates et servent à repérer les défauts du coach.
 [Audit global du PTD — 12 novembre 2026](docs/AUDIT_GLOBAL_PTD_2026_11_12.md).
 
-- **À la racine `/`**, l’application intégrée réunit le coach, la bibliothèque,
-  l’atelier de projet et le point d’étape. Suivez une équipe fictive sur six
-  jeudis et essayez les vues étudiant et tuteur. [Guide de démonstration](docs/DEMO_PTD_INTEGREE.md).
+- **À la racine `/`**, la V2 réunit coach, bibliothèque de 15 méthodes, Gantt,
+  cahier des charges et outils de projet. Essayez une étude de marché ou une
+  mission de conseil technologique fictive. [Guide V2](docs/PTD_V2.md).
+- **Avec `--ptd-v1`**, retrouvez le projet de démonstration intégré de la PR #16.
+  [Guide de la démo précédente](docs/DEMO_PTD_INTEGREE.md).
 - **Sur `/historique-a2`**, le premier prototype simulé illustre A2, la
   compétence candidate « Structurer et planifier le projet ».
 - **Sur `/coach` avec `--coach-historique`**, l’interface historique permet

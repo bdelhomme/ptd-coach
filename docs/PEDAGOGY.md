@@ -1,5 +1,9 @@
 # Architecture pédagogique
 
+Le [cadrage du dispositif PTD et de PTD Coach](PTD_DISPOSITIF_PEDAGOGIQUE.md)
+relie les objectifs du semestre, les occasions d’apprentissage et le rôle
+de l’application. C’est une proposition pour discussion avec l’équipe pédagogique.
+
 ## Évolution expérimentale V0.8 — D-029
 
 Le porteur autorise désormais un contexte pédagogique adaptatif séparé, avec

@@ -264,3 +264,14 @@ accessible. L’équipe décide des repères à confirmer, le tuteur prépare so
 échange à partir des éléments partagés. La revue indépendante a fait revoir
 le découpage des extraits et la traçabilité du partage. Le rapport consigne
 les corrections, preuves de recette et limites pédagogiques. [Rapport](RAPPORT_PTD_INTEGRE.md).
+
+## R-021 — Des outils utilisables et une revue fidèle à l’extrait
+
+Le porteur demande des situations de niveau ingénieur et des outils utilisables
+directement depuis les méthodes. Deux missions fictives permettent de varier
+les décisions, les preuves et le calendrier. Les outils ne deviennent pas
+une source automatique pour le coach. Les essais montrent qu’ajouter un
+rappel général a allongé deux réponses sans corriger les inventions. Le mode
+de revue dédié réduit le contexte et demande un retour ciblé sans réécriture.
+Deux nouveaux essais ont évité les ajouts factuels observés ; la restitution
+des limites reste à améliorer. [Guide et arbitrages](PTD_V2.md).
