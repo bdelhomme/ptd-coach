@@ -37,7 +37,7 @@
           <label for="scope">Nouvelle conversation</label>
           <select id="scope"><option value="individual">Privée · moi uniquement</option><option value="collective">Collective · mon équipe</option></select>
           <p id="scope-help" class="muted"></p>
-          <label class="confirm"><input id="synthetic" type="checkbox">J’utilise des données fictives. Mes messages seront conservés localement et, avec Mistral, transmis à son API.</label>
+          <label class="confirm"><input id="synthetic" type="checkbox">J’utilise des données fictives. Mes messages seront conservés localement et transmis au fournisseur configuré en mode API.</label>
           <button id="new">Commencer une conversation</button>
           <nav id="conversations" aria-label="Conversations accessibles"></nav>
           <details class="resources"><summary>Ressources de méthode · brouillons</summary><div id="resources"></div></details>
@@ -50,7 +50,7 @@
           <p id="waiting" role="status" hidden>Le coach prépare sa réponse…</p>
           <form id="compose"><label for="message">Votre message</label><textarea id="message" maxlength="4000" rows="4" placeholder="Décrivez votre besoin ou posez simplement votre question…" required></textarea><div class="compose-actions"><span class="muted">Pas de quiz ni d’objectif imposé.</span><button id="send" type="submit">Envoyer au coach</button></div></form>
           <div class="foot"><p id="usage" class="muted"></p><button id="export" class="subtle">Exporter cette conversation</button></div>
-          <p class="muted boundary">Ce fil est conservé sur ce Mac et transmis à Mistral à chaque envoi en mode API. Les réponses sont des aides à examiner ; elles ne valident ni compétence ni engagement d’équipe. Aucun partage privé ni modification de planning n’est effectué par le coach.</p>
+          <p class="muted boundary">Ce fil est conservé sur ce Mac. En mode API, son historique est envoyé au fournisseur affiché à chaque appel. Examinez les réponses avant d’agir. L’équipe reste responsable de ses décisions et de ses partages.</p>
         </section>
       </div>
     </div>

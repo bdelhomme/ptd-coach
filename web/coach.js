@@ -74,8 +74,9 @@ function renderConversation() {
   $('#visibility').textContent = !conversation ? 'Choisissez votre espace' : collective ? 'Collectif · équipe uniquement' : 'Privé · ce compte uniquement';
   $('#visibility').className = 'badge' + (collective ? ' collective' : '');
   $('#conversation-title').textContent = collective ? 'Réfléchir ensemble.' : 'De quoi avez-vous besoin ?';
-  $('#provider').textContent = (conversation ? conversation.coach_version.toUpperCase().replace('V0', 'V0.') + ' · ' : '') + (state.config.provider === 'mistral' ? 'API Mistral' : 'Simulation hors réseau') + ' · ' + state.config.model +
-    (state.config.configured ? '' : ' · Clé absente : ajoutez MISTRAL_API_KEY dans .env, puis redémarrez le serveur.');
+  const providerLabel = { mistral: 'API Mistral', albert: 'Albert API', mock: 'Simulation hors réseau' };
+  $('#provider').textContent = (conversation ? conversation.coach_version.toUpperCase().replace('V0', 'V0.') + ' · ' : '') + (providerLabel[state.config.provider] || state.config.provider) + ' · ' + state.config.model +
+    (state.config.configured ? '' : ' · Configurez la clé du fournisseur dans .env, puis redémarrez le serveur.');
   $('#starters').hidden = !!conversation?.messages.length;
   const messages = conversation?.messages || [];
   $('#messages').replaceChildren(...messages.map((message, index) => {

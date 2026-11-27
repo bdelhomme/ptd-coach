@@ -263,7 +263,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(200, service.revoke(actor, parts[2], key, self.body()))
             raise DomainError(404, "not_found", "Page introuvable.")
         except DomainError as error:
-            self.reply(error.status, {"error": {"code": error.code, "message": error.message}})
+            message = error.message
+            if error.code == "missing_key" and self.server.chat.provider.name == "albert":
+                message = "Ajoutez ALBERT_API_KEY dans .env puis redémarrez le serveur."
+            self.reply(error.status, {"error": {"code": error.code, "message": message}})
         except (BrokenPipeError, ConnectionResetError):
             pass
         except Exception:

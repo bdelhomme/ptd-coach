@@ -1,5 +1,12 @@
 # Consignes communes à tous les développeurs et assistants IA
 
+## Essai Albert API
+
+Lire `docs/PTD_ALBERT_API.md`. Le fournisseur Albert est optionnel et
+le modèle se choisit avec `ALBERT_MODEL`. Vérifier le catalogue du compte
+avant un essai, laisser la clé dans `.env` local et utiliser exclusivement
+les trajectoires fictives de développement pour la comparaison.
+
 ## Parcours de la bibliothèque · D-043
 
 Lire `docs/PTD_BIBLIOTHEQUE_PARCOURS.md`. Le parcours est une ressource

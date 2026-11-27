@@ -46,7 +46,7 @@
             <h2>Choisir un profil fictif</h2>
             <label for="profile">Profil de démonstration</label>
             <select id="profile" required><option value="">Chargement des profils…</option></select>
-            <label class="check"><input type="checkbox" id="demo-consent" required> Je saisis uniquement des données fictives. En mode Mistral, les messages du coach et son contexte autorisé sont transmis à l’API.</label>
+            <label class="check"><input type="checkbox" id="demo-consent" required> Je saisis uniquement des données fictives. En mode API, les messages du coach et le contexte autorisé sont transmis au fournisseur configuré.</label>
             <button id="sign-in" type="submit">Ouvrir mon espace</button>
           </form>
           <div id="home-project" hidden>
@@ -103,12 +103,12 @@
               <textarea id="review-text" rows="5" maxlength="3200" required></textarea>
               <button id="review-example" type="button" class="secondary">Charger l’extrait fictif de ma mission</button>
               <label class="check"><input id="review-consent" type="checkbox" required>
-                Je confirme que cet extrait est fictif. Il sera conservé dans le fil ouvert et transmis à Mistral si ce fournisseur est activé.</label>
+                Je confirme que cet extrait est fictif. Il sera conservé dans le fil ouvert et transmis au fournisseur configuré en mode API.</label>
               <p id="review-scope" class="small muted"></p>
               <button id="review-send" type="submit" disabled>Demander une revue pédagogique</button>
             </form>
           </details>
-          <p class="small muted">Sur ce Mac, seuls les comptes fictifs autorisés accèdent au fil. En mode Mistral, le message, l’historique du fil et les éléments de contexte autorisés sont envoyés à l’API.</p>
+          <p class="small muted">Sur ce Mac, seuls les comptes fictifs autorisés accèdent au fil. En mode API, le message, l’historique du fil et les éléments de contexte autorisés sont envoyés au fournisseur affiché.</p>
         </div>
       </div>
     </section>
