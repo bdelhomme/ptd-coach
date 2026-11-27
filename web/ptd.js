@@ -244,7 +244,8 @@ function renderCoach() {
     : 'Ouvrez un fil privé ou d’équipe pour soumettre un extrait.';
   $('#thread-visibility').textContent = thread ? (collective ? 'Fil de l’équipe' : 'Fil privé') : 'Aucun fil ouvert';
   const config = state.config;
-  $('#provider').textContent = config ? (config.provider === 'mistral' ? 'Mistral' : 'Simulation hors réseau')
+  const providerLabel = { mistral: 'Mistral', albert: 'Albert API', mock: 'Simulation hors réseau' };
+  $('#provider').textContent = config ? (providerLabel[config.provider] || config.provider)
     + ' · ' + config.model + ' · ' + config.prompt_version
     + (config.configured ? '' : ' · Clé locale absente') : '';
   $('#chat-examples').hidden = Boolean(thread?.messages.length);

@@ -1,5 +1,9 @@
 # État du projet — à actualiser à chaque changement
 
+**Reprise du coach sur Albert API.** La branche `feat/ptd-albert-api` ajoute
+un fournisseur configurable et rejoue les trajectoires fictives du semestre.
+[Paramètres, méthode et passation](PTD_ALBERT_API.md).
+
 **Bibliothèque uniquement, D-043.** La branche `feat/ptd-library-bootcamp`
 propose six ateliers, 18 modèles de travail et une entrée par compétence
 candidate. [Essai et passation](PTD_BIBLIOTHEQUE_PARCOURS.md).

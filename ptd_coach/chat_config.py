@@ -4,6 +4,7 @@ import os
 import re
 
 from .chat_provider import MistralChatProvider, MockChatProvider
+from .chat_provider_albert import DEFAULT_MODEL as ALBERT_DEFAULT_MODEL, AlbertChatProvider
 
 
 REASONING_EFFORTS = {
@@ -13,9 +14,10 @@ REASONING_EFFORTS = {
 }
 
 
-def settings(root, *, v2=False):
+def settings(root, *, v2=False, provider_override=None):
     default_model = "zai-glm-5-3-flash" if v2 else "mistral-small-latest"
     values = {"CHAT_PROVIDER": "mistral", "MISTRAL_API_KEY": "",
+              "ALBERT_API_KEY": "", "ALBERT_MODEL": ALBERT_DEFAULT_MODEL,
               "MISTRAL_MODEL": default_model, "CHAT_MAX_TOKENS": "",
               "CHAT_TIMEOUT_SECONDS": "45", "CHAT_MAX_CALLS": "100",
               "MISTRAL_REASONING_EFFORT": "low"}
@@ -28,15 +30,21 @@ def settings(root, *, v2=False):
                     values[key.strip()] = value.strip().strip("\"'")
     for key in values:
         values[key] = os.environ.get(key, values[key])
+    if provider_override is not None:
+        values["CHAT_PROVIDER"] = provider_override
     if not values["CHAT_MAX_TOKENS"]:
-        values["CHAT_MAX_TOKENS"] = "2000" if v2 and values["MISTRAL_MODEL"] == default_model else "700"
-    if values["CHAT_PROVIDER"] not in ("mock", "mistral"):
-        raise ValueError("CHAT_PROVIDER doit être mock ou mistral")
-    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.:/-]{0,119}", values["MISTRAL_MODEL"]):
-        raise ValueError("MISTRAL_MODEL invalide")
-    efforts = REASONING_EFFORTS.get(values["MISTRAL_MODEL"], ("low", "medium", "high"))
-    if values["MISTRAL_REASONING_EFFORT"] not in efforts:
-        raise ValueError("MISTRAL_REASONING_EFFORT doit être " + ", ".join(efforts) + " pour ce modèle")
+        extended = values["CHAT_PROVIDER"] == "albert" or (v2 and values["MISTRAL_MODEL"] == default_model)
+        values["CHAT_MAX_TOKENS"] = "2000" if extended else "700"
+    provider = values["CHAT_PROVIDER"]
+    if provider not in ("mock", "mistral", "albert"):
+        raise ValueError("CHAT_PROVIDER doit être mock, mistral ou albert")
+    model_key = "ALBERT_MODEL" if provider == "albert" else "MISTRAL_MODEL"
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.:/-]{0,119}", values[model_key]):
+        raise ValueError(model_key + " invalide")
+    if provider != "albert":
+        efforts = REASONING_EFFORTS.get(values["MISTRAL_MODEL"], ("low", "medium", "high"))
+        if values["MISTRAL_REASONING_EFFORT"] not in efforts:
+            raise ValueError("MISTRAL_REASONING_EFFORT doit être " + ", ".join(efforts) + " pour ce modèle")
     for key, lower, upper in (("CHAT_MAX_TOKENS", 128, 2048), ("CHAT_TIMEOUT_SECONDS", 5, 90),
                               ("CHAT_MAX_CALLS", 1, 10000)):
         try:
@@ -51,6 +59,9 @@ def settings(root, *, v2=False):
 def provider_from_settings(values):
     if values["CHAT_PROVIDER"] == "mock":
         return MockChatProvider()
+    if values["CHAT_PROVIDER"] == "albert":
+        return AlbertChatProvider(values["ALBERT_API_KEY"], values["ALBERT_MODEL"],
+                                  values["CHAT_MAX_TOKENS"], values["CHAT_TIMEOUT_SECONDS"])
     if values["MISTRAL_MODEL"] in REASONING_EFFORTS:
         from .chat_provider_reasoning import MistralReasoningProvider
         return MistralReasoningProvider(values["MISTRAL_API_KEY"], values["MISTRAL_MODEL"],

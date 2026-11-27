@@ -286,3 +286,13 @@ pratique, relecture différée et transfert sur un vrai épisode de PTD.
 Les outils ouvrent sur une production inspectable par un pair.
 Les compétences restent candidates et les usages restent à observer.
 [Conception et passation](PTD_BIBLIOTHEQUE_PARCOURS.md).
+
+## Essayer un autre fournisseur pour le coach
+
+Le porteur reprend le développement avec Albert API et souhaite tester
+DeepSeek. L’essai reprend deux trajectoires fictives déjà jouées avec GLM
+pour éclairer le choix du modèle. La DINUM propose GPT-OSS 120B pour des
+tâches de conversation complexes et recommande DeepSeek V4 Flash pour le
+code pendant son expérimentation. Le jugement de coaching se lit dans
+les réponses et leurs effets sur les décisions étudiantes.
+[Paramètres et résultats](PTD_ALBERT_API.md).
