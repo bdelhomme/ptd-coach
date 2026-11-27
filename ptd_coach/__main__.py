@@ -43,6 +43,7 @@ def main():
     parser.add_argument("--cadrage-fiabilite", action="store_true", help="Coach de fiabilité expérimental, base séparée")
     parser.add_argument("--coach-historique", action="store_true", help="Comparaison historique V0.7/V0.8")
     parser.add_argument("--ptd-v1", action="store_true", help="Démonstration intégrée de la PR #16")
+    parser.add_argument("--essai-etudiant", action="store_true", help="Mission fictive en centre de recherche, bases distinctes")
     parser.add_argument("--data-dir", type=Path, help="Dossier de données fictives pour une recette isolée")
     parser.add_argument("--sans-plafond-test", action="store_true", help="Ne demande pas de plafond de sortie pour ce test expérimental Large 4")
     args = parser.parse_args()
@@ -59,7 +60,7 @@ def main():
     workbench = None
     chat_class = ChatService
     alternate_modes = sum((args.bibliotheque_experimentale, args.cadrage_fiabilite, args.coach_historique, args.ptd_v1))
-    if alternate_modes > 1:
+    if alternate_modes > 1 or (args.essai_etudiant and alternate_modes):
         parser.error("Choisissez un seul mode de comparaison")
     chat_settings = settings(root, v2=alternate_modes == 0)
     if args.cadrage_fiabilite:
@@ -83,10 +84,17 @@ def main():
             from .demo_v2 import DEMOS, PROJECTS_V2
             from .library_v2 import SemesterWorkshopContext, WorkshopChatService
             from .workbench import Workbench
-            project = ProjectService(local / "project-v2-demo.sqlite3", PROJECTS_V2)
-            workbench = Workbench(project, DEMOS)
-            context = SemesterWorkshopContext(project)
-            database = local / "coach-v2-demo.sqlite3"
+            if args.essai_etudiant:
+                from .student_trial import StudentTrialContext, StudentTrialProject, TRIAL_EXAMPLES
+                project = StudentTrialProject(local / "project-student-trial.sqlite3")
+                workbench = Workbench(project, TRIAL_EXAMPLES)
+                context = StudentTrialContext(project)
+                database = local / "coach-student-trial.sqlite3"
+            else:
+                project = ProjectService(local / "project-v2-demo.sqlite3", PROJECTS_V2)
+                workbench = Workbench(project, DEMOS)
+                context = SemesterWorkshopContext(project)
+                database = local / "coach-v2-demo.sqlite3"
         chat_class = WorkshopChatService if workbench is not None else ProjectChatService
     try:
         provider = apply_test_output_policy(provider_from_settings(chat_settings), args.sans_plafond_test, args.cadrage_fiabilite)
