@@ -817,6 +817,9 @@ function renderItem(item, editPane) {
 
 function renderProject() {
   const data = state.project;
+  const mission = $('#coach-mission');
+  mission.hidden = !data || !isStudent();
+  mission.textContent = data ? 'Mission · ' + data.project.title : '';
   const summary = $('#project-summary');
   const items = $('#project-items');
   const checkpoint = $('#checkpoint-items');

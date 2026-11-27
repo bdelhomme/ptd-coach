@@ -1,5 +1,9 @@
 # État du projet — à actualiser à chaque changement
 
+**Essai comme étudiant.** Une mission fictive en centre de recherche est
+disponible dans un espace isolé avec Albert API.
+[Lancement et recette](PTD_ESSAI_ETUDIANT.md).
+
 **Reprise du coach sur Albert API.** La branche `feat/ptd-albert-api` ajoute
 un fournisseur configurable et rejoue les trajectoires fictives du semestre.
 [Paramètres, méthode et passation](PTD_ALBERT_API.md).

@@ -296,3 +296,14 @@ tâches de conversation complexes et recommande DeepSeek V4 Flash pour le
 code pendant son expérimentation. Le jugement de coaching se lit dans
 les réponses et leurs effets sur les décisions étudiantes.
 [Paramètres et résultats](PTD_ALBERT_API.md).
+
+## Essayer le coach comme un étudiant
+
+Une conversation locale a mis en évidence le décalage entre le sujet
+présenté par l’étudiant et la mission rattachée au compte de démonstration.
+Les empreintes de requête ont confirmé la présence des consignes et du
+projet fictif préexistant sur les deux tours. Le porteur souhaite maintenant
+tester en situation. Le scénario Atlas donne au profil de recette une
+mission cohérente et visible sur le coach. Les premiers retours réels
+montrent une posture plus juste au lancement et encore directive ensuite.
+[Guide de reprise](PTD_ESSAI_ETUDIANT.md).
