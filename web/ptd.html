@@ -41,7 +41,7 @@
           <h1 id="home-title" tabindex="-1">Votre espace de projet.</h1>
           <p>Préparez vos séances, travaillez en équipe et retrouvez vos décisions au fil du semestre.</p>
         </div>
-        <div class="hero-profile">
+        <div class="hero-profile" id="home-sign-in">
           <form id="sign-in-form">
             <h2>Choisir un profil fictif</h2>
             <label for="profile">Profil de démonstration</label>
@@ -65,34 +65,49 @@
       </div>
     </section>
     <section id="pane-coach" class="pane" aria-labelledby="coach-title" hidden>
-      <div class="page-heading"><h1 id="coach-title" tabindex="-1">Parler au coach</h1><p>Posez votre question librement. Les décisions restent à l’équipe.</p></div>
-      <p class="small muted" id="coach-mission" hidden></p>
-      <div class="workspace-grid">
-        <aside class="card thread-sidebar">
-          <h2>Conversations</h2>
-          <label for="thread-scope">Espace du nouveau fil</label>
-          <select id="thread-scope"><option value="individual">Privé</option><option value="collective">Équipe</option></select>
-          <p class="small muted" id="scope-description"></p>
-          <button type="button" id="new-thread">Nouveau fil</button>
-          <div id="thread-list" class="thread-list"></div>
-        </aside>
-        <div class="card conversation">
-          <div class="row"><div><span class="tag" id="thread-visibility">Aucun fil ouvert</span><p class="small muted" id="provider"></p></div><button type="button" id="refresh-thread" class="secondary">Actualiser</button></div>
-          <div id="chat-log" role="log" aria-label="Messages du fil" aria-live="polite"></div>
-          <div id="chat-examples" class="flow">
-            <p class="small muted">Quelques idées pour commencer</p>
-            <div class="actions">
-              <button type="button" class="secondary" data-example="Le besoin du commanditaire reste flou. Comment le reformuler pour lui demander de confirmer ?">Clarifier le besoin</button>
-              <button type="button" class="secondary" data-example="Nous hésitons entre deux propositions et l’équipe se démobilise. Comment préparer notre jeudi ?">Mobiliser l’équipe</button>
-              <button type="button" class="secondary" data-example="Comment vérifier une exigence et présenter le résultat au commanditaire ?">Vérifier une exigence</button>
-            </div>
+      <div class="coach-heading">
+        <div>
+          <h1 id="coach-title" tabindex="-1">Sur quoi veux-tu avancer ?</h1>
+          <p id="coach-intro" class="muted">Un rendez-vous à préparer, un choix à faire ou une difficulté d’équipe.</p>
+        </div>
+        <p class="coach-mission small" id="coach-mission" hidden></p>
+      </div>
+      <div id="coach-sign-in" class="coach-sign-in" hidden></div>
+      <div id="coach-workspace" hidden>
+        <div class="coach-toolbar">
+          <span class="tag" id="thread-visibility" hidden></span>
+          <div class="coach-toolbar-actions">
+            <button type="button" id="new-thread" class="secondary" hidden>Nouveau fil</button>
+            <details id="coach-history">
+              <summary>Conversations</summary>
+              <div class="coach-history-panel">
+                <div id="thread-list" class="thread-list"></div>
+                <button type="button" id="refresh-thread" class="secondary">Actualiser</button>
+              </div>
+            </details>
           </div>
-          <p id="chat-waiting" class="small muted" role="status" hidden>Le coach prépare une réponse…</p>
-          <form id="chat-form">
-            <label for="chat-message">Votre message</label>
-            <textarea id="chat-message" rows="3" maxlength="4000" required placeholder="Décrivez la situation et ce que vous voulez éclaircir."></textarea>
-            <div class="row"><p class="small muted" id="chat-usage"></p><button id="send-message" type="submit">Envoyer au coach</button></div>
-          </form>
+        </div>
+        <div id="chat-log" role="log" aria-label="Messages du fil" aria-live="polite" hidden></div>
+        <p id="chat-waiting" class="small muted" role="status" hidden>Le coach prépare une réponse…</p>
+        <form id="chat-form">
+          <label for="chat-message" class="sr-only">Votre message</label>
+          <textarea id="chat-message" rows="2" maxlength="4000" required placeholder="Raconte ce qui se passe dans ton projet…"></textarea>
+          <div class="coach-composer-actions">
+            <div id="coach-scope-picker">
+              <label for="thread-scope">Qui peut lire ce fil ?</label>
+              <select id="thread-scope" aria-describedby="scope-description"><option value="individual">Privé</option><option value="collective">Équipe</option></select>
+              <span class="sr-only" id="scope-description"></span>
+            </div>
+            <p id="chat-thread-state" class="small muted" role="status" hidden></p>
+            <button id="send-message" type="submit">Envoyer</button>
+          </div>
+        </form>
+        <div id="chat-examples" class="actions" aria-label="Idées de conversation">
+          <button type="button" class="secondary" data-example="On va rencontrer le commanditaire pour la première fois et je ne sais pas par quoi commencer.">Préparer un rendez-vous</button>
+          <button type="button" class="secondary" data-example="On n’arrive pas à se mettre d’accord sur la suite. Comment faire avancer l’équipe jeudi ?">Débloquer l’équipe</button>
+          <button type="button" class="secondary" data-example="J’aimerais revenir sur quelque chose qui n’a pas marché à notre dernière séance.">Faire le point après jeudi</button>
+        </div>
+        <div class="coach-extras">
           <details id="review-panel" class="review-panel" hidden>
             <summary>Faire relire un extrait fictif</summary>
             <form id="review-form" class="flow">
@@ -109,7 +124,12 @@
               <button id="review-send" type="submit" disabled>Demander une revue pédagogique</button>
             </form>
           </details>
-          <p class="small muted">Sur ce Mac, seuls les comptes fictifs autorisés accèdent au fil. En mode API, le message, l’historique du fil et les éléments de contexte autorisés sont envoyés au fournisseur affiché.</p>
+          <details class="coach-technical">
+            <summary>Modèle et données du fil</summary>
+            <p class="small muted" id="provider"></p>
+            <p class="small muted" id="chat-usage"></p>
+            <p class="small muted">En mode API, le fournisseur affiché reçoit les messages du fil et le contexte du projet autorisé.</p>
+          </details>
         </div>
       </div>
     </section>

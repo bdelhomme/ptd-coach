@@ -307,3 +307,11 @@ tester en situation. Le scénario Atlas donne au profil de recette une
 mission cohérente et visible sur le coach. Les premiers retours réels
 montrent une posture plus juste au lancement et encore directive ensuite.
 [Guide de reprise](PTD_ESSAI_ETUDIANT.md).
+
+## Faire de la conversation le point d’entrée
+
+Le porteur demande de prioriser le chatbot et de rendre l’entrée plus fluide.
+L’aperçu ouvre le coach, simplifie le premier envoi et donne une place
+secondaire à l’historique et aux métriques. La [note d’arbitrage](PTD_NOTE_PRIORITE_CHATBOT.md)
+relie les problèmes observés à l’ordre proposé des travaux. La posture
+pédagogique sur plusieurs tours reste le principal point à éprouver.

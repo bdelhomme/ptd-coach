@@ -1,5 +1,8 @@
 # État du projet — à actualiser à chaque changement
 
+**Priorité au chatbot.** L’entrée ouvre la conversation et le premier envoi
+crée le fil. [Note d’état et d’arbitrage](PTD_NOTE_PRIORITE_CHATBOT.md).
+
 **Essai comme étudiant.** Une mission fictive en centre de recherche est
 disponible dans un espace isolé avec Albert API.
 [Lancement et recette](PTD_ESSAI_ETUDIANT.md).

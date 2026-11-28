@@ -197,3 +197,62 @@ body.ptd-v2 {
 .boot-tool .boot-codes { display: inline-block; margin-left: .5rem; font-weight: 400; }
 .boot-tool .method-table { margin-block: .5rem .75rem; }
 .boot-links button { max-width: 100%; text-align: left; font-size: .87rem; }
+
+/* Le coach garde une seule colonne de lecture, même quand l’historique est fermé. */
+#pane-coach { max-width: 49rem; margin-inline: auto; }
+.coach-heading { display: grid; gap: .85rem; margin: clamp(1.2rem, 5vh, 2.8rem) 0 1.35rem; }
+.coach-heading h1 { font-size: clamp(2rem, 5.1vw, 3.65rem); letter-spacing: -.055em; }
+.coach-heading p { margin-top: .42rem; }
+.coach-heading .coach-mission { margin: 0; color: var(--muted); }
+.coach-sign-in { max-width: 30rem; padding: clamp(1rem, 3vw, 1.5rem); background: var(--surface, #f3f6f7); border-radius: 1.15rem; }
+.coach-sign-in #sign-in { width: 100%; }
+.coach-sign-in .check { font-size: .85rem; }
+.coach-toolbar, .coach-toolbar-actions { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.coach-toolbar { justify-content: space-between; min-height: 2.55rem; margin-bottom: .5rem; }
+.coach-toolbar-actions { margin-left: auto; }
+.coach-toolbar button, .coach-toolbar summary, .coach-extras summary { font-size: .85rem; }
+.coach-toolbar button { min-height: 2.2rem; padding: .3rem .7rem; }
+#coach-history { position: relative; }
+#coach-history summary { cursor: pointer; color: var(--muted); padding: .48rem .25rem; }
+.coach-history-panel {
+  position: absolute; right: 0; z-index: 2; width: min(17rem, 72vw); min-width: 0;
+  padding: .65rem; border: 1px solid var(--line); border-radius: .85rem;
+  background: #fff; box-shadow: 0 .6rem 1.8rem #17345119;
+}
+.coach-history-panel .thread-list { margin: 0 0 .55rem; max-height: 13rem; }
+#coach-workspace #chat-log { margin: 0 -.25rem .55rem; padding: .25rem; gap: .9rem; max-height: 56vh; }
+#coach-workspace .message { max-width: 94%; }
+#coach-workspace .message.user { width: fit-content; max-width: min(88%, 39rem); justify-self: end; margin-left: 0; }
+#coach-workspace .message.assistant { justify-self: start; }
+#coach-workspace .message .details p, #coach-workspace .message .details button { font-size: .8rem; }
+#coach-workspace .message .details button { min-height: 2.2rem; padding: .35rem .65rem; }
+#chat-waiting { margin-block: .5rem; }
+#coach-workspace #chat-form {
+  display: grid; gap: .52rem; margin: 0; padding: .5rem; background: #fff;
+  border: 1px solid var(--line); border-radius: 1.3rem;
+  box-shadow: 0 .55rem 1.4rem #16345510;
+}
+#coach-workspace #chat-form:focus-within { border-color: var(--teal); }
+#coach-workspace #chat-message {
+  display: block; min-height: 4.3rem; padding: .7rem .85rem; border: 0;
+  appearance: none; background: transparent; line-height: 1.5;
+}
+#coach-workspace #chat-message:focus-visible { outline: none; }
+.coach-composer-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .65rem; padding-left: .6rem; }
+.coach-composer-actions #send-message { margin-left: auto; }
+#coach-scope-picker { display: flex; align-items: center; gap: .45rem; }
+#coach-scope-picker label { margin: 0; color: var(--muted); font-size: .78rem; font-weight: 500; }
+#coach-scope-picker select { width: auto; min-height: 2.12rem; padding: .18rem .4rem; border-radius: .6rem; font-size: .84rem; }
+#chat-examples { margin: .8rem 0 0; gap: .4rem; }
+#chat-examples button { padding: .35rem .7rem; min-height: 2.3rem; color: var(--teal); background: var(--pale); border-color: transparent; font-size: .84rem; }
+.coach-extras { display: flex; flex-wrap: wrap; align-items: start; gap: .45rem .9rem; margin-top: 1.15rem; }
+.coach-extras > details { color: var(--muted); }
+.coach-extras > details[open] { flex-basis: 100%; }
+.coach-extras summary { cursor: pointer; }
+.coach-extras #review-panel { margin: 0; }
+.coach-technical p { margin: .28rem 0; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .coach-heading { margin-top: .6rem; }
+  #coach-workspace .message { max-width: 100%; }
+  #coach-workspace #chat-log { max-height: 49vh; }
+}
