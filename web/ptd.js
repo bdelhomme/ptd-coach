@@ -27,12 +27,13 @@ const tools = {
 };
 const state = {
   pane: 'home',
-  requestedPane: { '/coach': 'coach', '/bibliotheque-ptd': 'library' }[window.location.pathname] || 'home',
+  requestedPane: window.location.pathname === '/bibliotheque-ptd' ? 'library' : 'coach',
   session: null,
   profiles: [],
   config: null,
   threads: [],
   thread: null,
+  draftPreview: '',
   project: null,
   calendar: null,
   editing: null,
@@ -96,10 +97,11 @@ function syncControls() {
   $('#sign-out').disabled = state.busy;
   $('#new-thread').disabled = state.busy || !state.config;
   $('#refresh-thread').disabled = state.busy || !state.config;
-  $('#send-message').disabled = state.busy || !state.config?.configured || !state.thread || state.thread.pending;
+  $('#send-message').disabled = state.busy || !state.config?.configured || Boolean(state.thread?.pending);
   $('#review-send').disabled = $('#send-message').disabled;
   $('#review-text').readOnly = state.answering;
   $('#chat-message').readOnly = state.answering;
+  $('#thread-scope').disabled = state.busy;
   $('#chat-waiting').hidden = !state.answering;
   $('#save-item').disabled = state.busy;
   $('#add-item').disabled = state.busy || !state.project;
@@ -151,8 +153,9 @@ async function api(path, method = 'GET', payload) {
   const ended = 'La session fictive a pris fin. Choisissez un profil pour reprendre.';
   if (identityVersion !== state.identityVersion || (session && state.session !== session)) throw new Error(ended);
   if (session && (response.status === 401 || data?.error?.code === 'csrf_forbidden')) {
+    const destination = state.pane === 'coach' ? 'coach' : 'home';
     clearSession();
-    showPane('home', { focus: false });
+    showPane(destination, { focus: false });
     $('#profile').focus();
     if (path === '/api/demo-session' && method === 'DELETE' && response.status === 401) return null;
     throw new Error(ended);
@@ -173,21 +176,32 @@ async function api(path, method = 'GET', payload) {
 }
 
 function showPane(name, { focus = true } = {}) {
-  if (['coach', 'project', 'checkpoint', 'tools'].includes(name) && !state.session) {
-    state.requestedPane = name;
+  if (!state.session) state.requestedPane = name;
+  if (['project', 'checkpoint', 'tools'].includes(name) && !state.session) {
     showPane('home', { focus: false });
+    state.requestedPane = name;
     announce('Choisissez un profil fictif pour ouvrir cet espace.');
     $('#profile').focus();
     return;
   }
-  if (['coach', 'checkpoint', 'tools'].includes(name) && !isStudent()) name = 'project';
+  if (state.session && ['coach', 'checkpoint', 'tools'].includes(name) && !isStudent()) name = 'project';
   state.pane = name;
   for (const pane of panes) pane.hidden = pane.id !== 'pane-' + name;
+  placeSignIn();
   for (const item of document.querySelectorAll('.navigation [data-pane]')) {
     if (item.dataset.pane === name) item.setAttribute('aria-current', 'page');
     else item.removeAttribute('aria-current');
   }
   if (focus) $('#' + name + '-title').focus();
+}
+
+function placeSignIn() {
+  const coach = state.pane === 'coach' && !state.session;
+  const form = $('#sign-in-form');
+  const slot = $(coach ? '#coach-sign-in' : '#home-sign-in');
+  if (form.parentNode !== slot) slot.prepend(form);
+  $('#coach-sign-in').hidden = !coach;
+  $('#sign-in').textContent = coach ? 'Ouvrir le coach' : 'Ouvrir mon espace';
 }
 
 function dateLabel(value, time = false) {
@@ -199,9 +213,11 @@ function dateLabel(value, time = false) {
 }
 
 function scopeDescription() {
-  $('#scope-description').textContent = $('#thread-scope').value === 'collective'
+  const collective = (state.thread?.scope || $('#thread-scope').value) === 'collective';
+  $('#scope-description').textContent = collective
     ? 'Les étudiants de votre équipe fictive peuvent lire ce fil.'
     : 'Votre profil fictif est le seul étudiant autorisé à lire ce fil.';
+  $('#review-scope').textContent = collective ? 'Destination : fil d’équipe.' : 'Destination : fil privé.';
 }
 
 function renderThreadList() {
@@ -214,7 +230,9 @@ function renderThreadList() {
     const entry = button(scopeLabels[thread.scope] + ' · ' + dateLabel(thread.created_at, true), () => perform(async () => {
       state.thread = await api('/api/coach/conversations/' + encodeURIComponent(thread.id));
       $('#chat-message').value = '';
+      $('#coach-history').open = false;
       renderCoach();
+      $('#chat-message').focus();
     }));
     if (thread.id === state.thread?.id) entry.setAttribute('aria-current', 'true');
     return entry;
@@ -240,15 +258,20 @@ function renderCoach() {
     state.reviewThreadId = thread?.id || null;
     $('#review-consent').checked = false;
   }
-  $('#review-scope').textContent = thread ? (collective ? 'Destination : fil d’équipe.' : 'Destination : fil privé.')
-    : 'Ouvrez un fil privé ou d’équipe pour soumettre un extrait.';
-  $('#thread-visibility').textContent = thread ? (collective ? 'Fil de l’équipe' : 'Fil privé') : 'Aucun fil ouvert';
+  $('#thread-visibility').hidden = !thread;
+  $('#thread-visibility').textContent = collective ? 'Fil de l’équipe' : 'Fil privé';
+  $('#coach-scope-picker').hidden = Boolean(thread);
+  $('#new-thread').hidden = !thread;
+  scopeDescription();
   const config = state.config;
   const providerLabel = { mistral: 'Mistral', albert: 'Albert API', mock: 'Simulation hors réseau' };
   $('#provider').textContent = config ? (providerLabel[config.provider] || config.provider)
     + ' · ' + config.model + ' · ' + config.prompt_version
     + (config.configured ? '' : ' · Clé locale absente') : '';
-  $('#chat-examples').hidden = Boolean(thread?.messages.length);
+  const hasMessages = Boolean(thread?.messages.length || state.draftPreview);
+  $('#chat-examples').hidden = hasMessages;
+  $('#coach-title').textContent = hasMessages ? 'Conversation' : 'Sur quoi veux-tu avancer ?';
+  $('#coach-intro').hidden = hasMessages;
   const invocations = thread?.invocations.filter(invocation => invocation.status === 'succeeded') || [];
   let replyIndex = 0;
   const articles = (thread?.messages || []).map(message => {
@@ -298,13 +321,20 @@ function renderCoach() {
     article.append(details);
     return article;
   });
+  if (state.draftPreview) {
+    const pending = element('article', null, 'message user');
+    pending.append(element('p', 'Vous', 'speaker'), element('p', state.draftPreview));
+    articles.push(pending);
+  }
+  $('#chat-log').hidden = !hasMessages;
   $('#chat-log').replaceChildren(...articles);
   $('#chat-log').scrollTop = $('#chat-log').scrollHeight;
   const total = thread?.usage?.known_tokens?.total_tokens;
-  $('#chat-usage').textContent = thread
-    ? (thread.pending ? 'Appel en cours ou résultat incertain. Actualisez avant un nouvel envoi.'
-      : 'Consommation connue du fil ' + (total ?? 0).toLocaleString('fr-FR') + ' tokens.')
-    : 'Créez un fil privé ou d’équipe pour envoyer un message.';
+  $('#chat-usage').textContent = thread ? 'Consommation connue : ' + (total ?? 0).toLocaleString('fr-FR') + ' tokens.' : '';
+  const status = $('#chat-thread-state');
+  status.textContent = thread?.pending ? 'Appel en cours ou résultat incertain. Actualisez dans Conversations.'
+    : config && !config.configured ? 'La clé du fournisseur doit être configurée pour envoyer un message.' : '';
+  status.hidden = !status.textContent;
   renderThreadList();
   syncControls();
 }
@@ -901,6 +931,8 @@ function renderSession() {
   $('#identity').textContent = profile?.label || '';
   $('#sign-out').hidden = !profile;
   $('#sign-in-form').hidden = Boolean(profile);
+  $('#coach-workspace').hidden = !isStudent();
+  placeSignIn();
   $('#home-project').hidden = !profile || !state.project;
   for (const node of document.querySelectorAll('[data-student]')) node.hidden = tutor;
   $('#project-title').textContent = tutor ? 'Éléments partagés avec le tuteur' : 'Notre projet';
@@ -926,6 +958,7 @@ function clearSession() {
   state.config = null;
   state.threads = [];
   state.thread = null;
+  state.draftPreview = '';
   state.project = null;
   state.calendar = null;
   renderCalendar();
@@ -940,6 +973,7 @@ function clearSession() {
   state.keys.clear();
   state.createKeySignature = null;
   $('#chat-message').value = '';
+  $('#coach-history').open = false;
   $('#review-form').reset();
   $('#review-panel').open = false;
   $('#demo-consent').checked = false;
@@ -1010,25 +1044,32 @@ $('#sign-in-form').addEventListener('submit', event => {
     await loadSession();
     showPane(state.requestedPane);
     state.requestedPane = 'home';
+    if (state.pane === 'coach') $('#chat-message').focus();
   });
 });
 $('#sign-out').addEventListener('click', () => perform(async () => {
   try { await api('/api/demo-session', 'DELETE'); }
   finally {
     clearSession();
-    showPane('home', { focus: false });
+    showPane('coach', { focus: false });
     $('#profile').focus();
   }
 }));
-$('#thread-scope').addEventListener('change', scopeDescription);
-$('#new-thread').addEventListener('click', () => perform(async () => {
-  state.thread = await api('/api/coach/conversations', 'POST', {
-    scope: $('#thread-scope').value, synthetic_confirmed: true, coach_version: state.config.default_coach_version
-  });
+$('#thread-scope').addEventListener('change', () => {
+  scopeDescription();
+  $('#review-consent').checked = false;
+});
+$('#new-thread').addEventListener('click', () => {
+  if (state.busy) return;
+  state.thread = null;
+  $('#chat-message').value = '';
+  $('#thread-scope').value = 'individual';
+  $('#coach-history').open = false;
+  $('#review-form').reset();
+  $('#review-panel').open = false;
   renderCoach();
-  await refreshThreads();
   $('#chat-message').focus();
-}));
+});
 $('#refresh-thread').addEventListener('click', () => perform(async () => {
   if (state.thread) state.thread = await api('/api/coach/conversations/' + encodeURIComponent(state.thread.id));
   await refreshThreads();
@@ -1037,20 +1078,42 @@ $('#refresh-thread').addEventListener('click', () => perform(async () => {
 }));
 $('#chat-form').addEventListener('submit', event => {
   event.preventDefault();
-  if (!state.thread || !state.config?.configured || state.thread.pending) return;
+  if (!state.config?.configured || state.thread?.pending) return;
   const message = $('#chat-message').value.trim();
   if (!message) return;
   perform(async () => {
-    await sendToCoach(message);
-    $('#chat-message').value = '';
-    if (state.pane === 'coach') $('#chat-message').focus();
+    state.draftPreview = message;
+    renderCoach();
+    try {
+      await ensureThread();
+      await sendToCoach(message);
+      $('#chat-message').value = '';
+    } finally {
+      state.draftPreview = '';
+      renderCoach();
+      if (state.session && state.pane === 'coach') $('#chat-message').focus();
+    }
   }, { answering: true });
 });
+
+$('#chat-message').addEventListener('keydown', event => {
+  if (event.key === 'Enter' && (event.metaKey || event.ctrlKey) && !event.isComposing) {
+    event.preventDefault();
+    if (!$('#send-message').disabled) $('#chat-form').requestSubmit();
+  }
+});
+
+async function ensureThread() {
+  if (state.thread) return;
+  state.thread = await api('/api/coach/conversations', 'POST', {
+    scope: $('#thread-scope').value, synthetic_confirmed: true, coach_version: state.config.default_coach_version
+  });
+  state.threads.unshift({ ...state.thread, created_at: new Date().toISOString() });
+}
 
 async function sendToCoach(message) {
   const { id, version } = state.thread;
   state.thread = await api('/api/coach/conversations/' + encodeURIComponent(id) + '/messages', 'POST', { message, version });
-  renderCoach();
 }
 
 $('#review-example').addEventListener('click', () => perform(async () => {
@@ -1064,15 +1127,19 @@ $('#review-example').addEventListener('click', () => perform(async () => {
 $('#review-text').addEventListener('input', () => { $('#review-consent').checked = false; });
 $('#review-form').addEventListener('submit', event => {
   event.preventDefault();
-  if (!state.v2 || !isStudent() || !state.thread || !state.config?.configured || state.thread.pending || !$('#review-consent').checked) return;
+  if (!state.v2 || !isStudent() || !state.config?.configured || state.thread?.pending || !$('#review-consent').checked) return;
   const excerpt = $('#review-text').value.trim();
   if (!excerpt) return;
   perform(async () => {
+    await ensureThread();
     const { id, version } = state.thread;
-    state.thread = await api('/api/coach/conversations/' + encodeURIComponent(id) + '/review', 'POST', {
-      kind: $('#review-kind').value, excerpt, synthetic_confirmed: true, version
-    });
-    renderCoach();
+    try {
+      state.thread = await api('/api/coach/conversations/' + encodeURIComponent(id) + '/review', 'POST', {
+        kind: $('#review-kind').value, excerpt, synthetic_confirmed: true, version
+      });
+    } finally {
+      renderCoach();
+    }
     $('#review-form').reset();
     $('#review-panel').open = false;
     announce('Revue ajoutée au fil.');
@@ -1134,7 +1201,7 @@ addOptions($('#item-kind'), Object.entries(kindLabels));
 scopeDescription();
 renderSession();
 syncControls();
-if (state.requestedPane === 'library') showPane('library', { focus: false });
+showPane(state.requestedPane, { focus: false });
 perform(async () => {
   const results = await Promise.allSettled([loadLibrary(), (async () => {
     const profiles = await api('/api/demo-users');
@@ -1142,6 +1209,7 @@ perform(async () => {
     $('#profile').replaceChildren(element('option', 'Choisir un profil'));
     $('#profile').firstElementChild.value = '';
     addOptions($('#profile'), state.profiles.map(profile => [profile.id, profile.label]));
+    if (state.profiles.some(profile => profile.id === 'student_demo_01')) $('#profile').value = 'student_demo_01';
     try {
       const session = await api('/api/me');
       if (state.profiles.some(profile => profile.id === session.user.id)) {
